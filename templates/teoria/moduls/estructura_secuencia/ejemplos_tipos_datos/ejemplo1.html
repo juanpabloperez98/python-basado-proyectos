@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}    
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<link rel="stylesheet" href="{% static 'css/ejemplos.css' %}">
+{% endblock styles %}
+
+{% block title %}
+    Tipos datos - ejemplo 1    
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">        
+        <li class="nav-item">            
+            <li class="nav-item">
+                <a class="nav-link" href="/tipos_datos#ejemplos"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>             
+        </li>  
+      </ul>
+    </div>
+</nav>       
+{% endblock headers %}
+
+
+{% block content %}
+<!-- Enunciado -->
+<div class="container row mx-auto mt-5" id="enunciado">
+    <div class="col-lg-12 text-center my-3 mx-auto">
+        <h1 class="">Ejemplo 1</h1>
+    </div>
+    <div class="col-lg-6 part-1 mx-auto mt-5 p-5" style="margin-bottom: 5%; height: 100%;">
+        <h1 class="title-modul text-center my-3">Enunciado</h1>
+        <div class="container">
+            <p>
+                Declarar una variable de tipo entero, después de haberla declarado, se pide que se imprima por pantalla la variable
+            </p>
+        </div>
+        <button class="btn btn-block btn-success" id="start">Empezar</button>                
+    </div>
+</div>    
+<!-- Codigo -->
+<div class="container row mx-auto mt-5 desactivate" id="codigo">    
+    <div class="col-lg-5 mt-3 mx-auto bg-light">
+        <h1 class="text-center mt-3 p-2" style="font-size: 20px;">Solución</h1>
+          
+    <div class="container code text-justify mt-2">     
+      <pre>
+        <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>variable = 20</span>
+<span id="2"><span class="pr-n mr-3">2</span>print("La variables es: ",variable)</span>
+        </code>
+      </pre>
+    </div>
+
+    <div class="container code mt-2 desactivate" id="output">
+      <code>
+        <span class="pr-n">Salida</span> <br>
+        <span class="mt-2" style="color: black;">La variable es: 20</span>               
+      </code>
+    </div>
+
+    <div class="my-5 text-justify" id="botones">
+      <button id="ejecutar" class="btn btn-outline-primary"><i class="fas fa-play mr-2"></i> Ejecutar</button>          
+      <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i> Explicar codigo</button>
+      <a id="reiniciar" href="./" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i> Reiniciar</a>          
+    </div>
+
+    </div>
+    <!-- Explicación -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion">
+        <h1 class="text-center mt-3 p-2" style="font-size: 20px;">Explicación</h1>
+          
+    <div class="container code text-justify mt-2">     
+      <pre>
+        <code class="language-c">
+<span id="1"><span class="pr-n mr-3">1</span>Se declara una variable llamada "variable" en este caso, y la igualamos a un entero, el numero 20.</span>
+<span id="2"><span class="pr-n mr-3">2</span>Con la palabra reservada print, imprimimos la variable, en este caso "variable", que contiene el numero 20</span>
+        </code>
+      </pre>
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>    
+    <script src="{% static 'js/highlight.pack.js' %}"></script>
+    <script>
+        hljs.initHighlightingOnLoad()      
+    </script>
+    <script src="{% static 'js/tipos_datos/ejemplos/ejemplo1.js' %}"></script>
+{% endblock scripts %}
+    
+
+    
+    
+    

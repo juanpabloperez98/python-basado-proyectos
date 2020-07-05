@@ -1,0 +1,64 @@
+/* Fonts */
+@font-face{
+    font-family: "Roboto Light";
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Light";
+}
+
+.nav-link:hover{
+    color: #dfe6e9 !important;        
+}
+
+.presentation{
+    margin-top: 5%;
+}
+
+h1,
+#title-navabar{
+    font-weight: bold;
+}
+
+.section-moduls{
+    background-color: rgba(209, 216, 224,.3);
+}
+
+.modul{
+    margin-top: 80px;
+}
+
+.modul img{
+    border-radius:150px;
+}
+
+.page-footer{
+    color: white;
+}
+
+/* #teoria image img:hover,
+#practica image img:hover{
+    width: 200px;
+} */
+
+
+
+.modulos .img img:hover{
+    width: 200px;    
+}
+
+.title-modul{
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+@media(max-width: 539px){
+    #logo-utp{
+        width: 300px;
+    }
+}

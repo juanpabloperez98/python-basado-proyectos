@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">    
+{% endblock styles %}
+    
+
+{% block title %}
+home    
+{% endblock title %}
+
+{% block headers %}    
+    {% include 'headers/header1.html' %}
+{% endblock headers %}
+
+
+{% block content %}
+<!-- Part1 -->
+<div class="container row mx-auto presentation">
+    <div class="col-lg-6 col-sm-12 mt-5">
+        <h1 class="display-6">Enseñanza del lenguaje python basado en proyectos</h1>
+        <div class="text mt-5">
+            <p>
+                Enseñanza del lenguaje python basado en proyectos, 
+                es un software creado por la Universidad Tecnológica de Pereira,
+                 que tiene como objetivo explicar al alumno sobre este maravilloso e 
+                 increíble lenguaje de programación. En este software se pueden señalar 
+                 dos partes importantes. La parte teórica y la parte practica, en la parte 
+                 teórica se tiene como objetivo poder enseñar los aspectos mas importantes 
+                 con respecto a este lenguaje de programación, su estructura, su sintaxis 
+                 y su manejo a la hora de llevar un problema planteado. 
+                 La parte practica busca generar en el alumno la capacidad de poder 
+                 sobrellevar diferentes problemas que se pueden presentar a la hora de realizar 
+                 un proyecto.
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12 mx-auto text-center logo-utp">
+        <img src="./static/images/Logo_U.T.P.png" id="logo-utp" class="my-5" alt="logo-utp" style="width: 100%;">
+    </div>
+</div>
+<!-- Part2 -->
+<div class="container row mx-auto presentation">
+    <div class="col-lg-6 text-center">
+        <h1 class="display-5">¿Que vamos aprender?</h1>
+        <div class="text text-justify mx-auto">
+            <p>
+                Como se menciono anteriormente el software maneja dos partes importantes, 
+                que son la parte teórica y la parte practica. En la parte teórica aprenderemos 
+                sobre los aspectos mas relevantes de este lenguaje de programación. Aprenderemos todo lo relacionado con las estructuras de secuencia, 
+                tal como, declarar una variable, ver los tipos de variables, como se manejan los operadores 
+                aritméticos, los operadores lógicos, etc. También se aprenderá sobre 
+                todo lo relacionado con estructuras de selección y estructuras repetitivas, los ciclos, y 
+                las condicionales. A su vez se manejaran las estructuras de datos como listas, matrices, y 
+                cadenas. Por ultimo se explicara todo lo relacionado con funciones,recursividad y archivos. 
+                Adicional a eso se manejara una sección donde se explicara el manejo de gráficos con una librería 
+                conocida como Tkinter.
+                <br>
+                En la parte practica, se busca desarrollar en el estudiante la capacidad de 
+                poder resolver problemas de programación en el lenguaje python. 
+                La metodología con la que se busca enseñar todo lo aprendido en la 
+                sección de teoría, es basándonos en proyectos. Con lo cual, la parte 
+                practica cuenta con 6 proyectos, los cuales cuentan con una manera didáctica 
+                de resolverlos. 
+                Se le recomienda al estudiante que mientras se va desarrollando el 
+                proyecto en el software, este lo vaya realizando en su propio computador. 
+                Al final de cada proyecto se le entregara un link al estudiante en donde 
+                podrá encontrar, el repositorio en donde esta alojado cada proyecto.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-lg-6 text-center">
+        <h1 class="display-5">Lenguaje Python</h1>
+        <div class="text text-justify mx-auto">
+            <p>
+                Antes de empezar con todo, es bueno aprender un poco sobre lo que es el lenguaje python, sus ventajas, sus desventajas y cuales son sus principales características las cuales lo hacen uno de los lenguajes mas llamativos a la hora de aprender programación.<br>
+                Python es un lenguaje de programación de propósito general muy poderoso y flexible, a la vez que sencillo y fácil de aprender. Es un lenguaje de alto nivel, que permite procesar fácilmente todo tipo de estructuras de datos, tanto numéricos como de texto.<br>
+                Tiene una gran variedad bibliotecas, las cuales permiten el desarrollo de casi todo tipo de software, como lo son aplicativos webs, GUIs de escritorio, programación de redes, desarrollo de software y juegos, entre otras.<br>
+                Este lenguaje de programación tiene características significativas las cuales lo hacen diferente a muchos otros lenguajes de programación existentes. Por ejemplo: Python es un lenguaje interpretado, es decir, no es compilado, a diferencia de otros lenguajes como lo son C ó C++, es multiplataforma, lo cual nos permite poder ejecutar su código en cualquier sistema operativo, es un lenguaje multiparadigma, el cual soporta varios paradigmas de programación, etc.<br>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Part3 -->
+<div class="container row mx-auto presentation section-moduls p-5 text-center">
+    <div class="col-lg-12">
+        <h1 class="display-5 mt-3">¿Vamos aprender?</h1>            
+    </div>
+
+    <div class="col-lg-6 col-sm-12 modul">
+        <a href="{% url 'main_app:teoria_index' %}" class="modulos">
+            <div class="img">
+                <img src="./static/images/image.jpg" alt="teoria">
+                <div class="text">
+                    <h1 class="title-modul">Teoria</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-6 col-sm-12 modul">
+        <a href="./pages/practica/index.html" class="modulos">
+            <div class="img">
+                <img src="./static/images/image.jpg" alt="practica">
+                <div class="text">
+                    <h1 class="title-modul">Practica con proyectos</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>    
+{% endblock content %}
+    
+    
+    

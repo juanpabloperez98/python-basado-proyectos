@@ -1,0 +1,57 @@
+/* Fonts */
+@font-face{
+    font-family: "Roboto Light";
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Light";
+}
+
+h1,
+#title-navabar{
+    font-weight: bold;
+}
+
+.part-1{
+    border-radius: 40px;
+    background-color: rgba(209, 216, 224,.3);
+}
+
+.image img{
+    border-radius: 20px;
+    width: 100%;
+}
+
+.img img{
+    border-radius:150px;
+    background-color: rgba(209, 216, 224,.3);
+}
+
+
+.title-modul{
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+
+.page-footer{
+    color: white;
+}
+
+.modulos .img img:hover{
+    width: 280px;    
+}
+
+@media(max-width: 390px){
+    .img img{
+        width: 200px;
+    }
+    .modulos .img img:hover{
+        width: 180px;    
+    }
+}

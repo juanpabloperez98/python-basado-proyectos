@@ -1,0 +1,13 @@
+{% extends 'headers/base.html' %}
+{% block li %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'main_app:teoria_index' %}"><i class="fas fa-home mr-1"></i>Teoria</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+        Siguiente sección</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'main_app:estructuras_de_secuencia' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+</li>
+{% endblock li %}

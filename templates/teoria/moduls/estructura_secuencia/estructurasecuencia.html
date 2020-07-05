@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/practica-estructuras-secuencia.css' %}">    
+{% endblock styles %}
+    
+
+{% block title %}
+    Estructuras de secuencia    
+{% endblock title %}
+
+
+{% block headers %}
+    {% include 'headers/header3.html' %}    
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="col-lg-12 text-center mt-5">
+        <h1 class="display-5">Estructuras de Secuencia</h1>
+    </div>
+    <div class="col-lg-6 col-sm-12 text-lg-justify mt-5 part-1 p-5">
+        <h1 class="display-5">¿Que son las estructuras de secuencia?</h1>
+        <div class="text">
+            <p class="mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident ullam, eaque pariatur fugit commodi at aperiam autem quis ad repudiandae nulla aspernatur distinctio adipisci tenetur laborum est laboriosam eligendi sapiente! Aliquid provident at fugit voluptatum totam cupiditate sint voluptas, magnam sunt, illum vero facilis quibusdam tempore nam unde maxime praesentium quos. Quidem corporis hic ducimus nemo iure soluta modi suscipit inventore vitae? Harum dignissimos doloremque aliquid quos corporis dolorem a, explicabo voluptatibus veniam nisi suscipit accusamus recusandae exercitationem nam in repellendus? Recusandae temporibus eos ipsum error obcaecati sunt repellat totam, eius id voluptas dolorum blanditiis repudiandae! Quas, doloremque dolor?                    
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12  mt-5">
+        <div class="text">
+            <img src="{% static 'images/estructura_de_secuencia.png' %}" alt="estructuras_secuencia" style="width: 100%; margin-top: 10%;">
+        </div>
+    </div>
+</div>
+
+
+<div class="container row mx-auto part-1 mt-5">
+    <div class="col-lg-12 text-center mt-5 p-5">
+        <h1 class="display-5">Vamos aprender</h1>
+        <hr>
+    </div>
+    <div class="col-lg-6 my-5 text-center modul">
+        <a href="{% url 'main_app:tipos_datos' %}" class="modulos">
+            <div class="img">
+                <img src="{% static 'images/Estructuras_secuencia/TiposDatos.png' %}" alt="img" width="200">
+                <div class="text">
+                    <h1 class="title-modul">Tipos de datos</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-6 my-5 text-center modul">
+        <a href="" class="modulos">
+            <div class="img">
+                <img src="{% static 'images/Estructuras_secuencia/Operadores.png' %}" alt="img" width="200">
+                <div class="text">
+                    <h1 class="title-modul">Expresiones y operadores</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+    
+{% endblock content %}
+
+    
+    
+    

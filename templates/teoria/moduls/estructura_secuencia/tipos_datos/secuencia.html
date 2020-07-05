@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/secuencias.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Tipos de datos - Secuencias
+{% endblock title %}
+
+{% block headers %}
+{% include 'headers/header5.html' %}
+{% endblock headers %}
+
+
+{% block content %}
+
+<div class="container row mx-auto">
+        
+    <div class="row">
+        <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-5">
+            <h1 class="title-modul"><span class="pr mr-2">1</span> Secuencias</h1>
+            <hr>
+            <p class="text-justify">
+                Una secuencia es un contenedor de artículos ordenados e indexados por enteros no negativos. 
+                En Python tenemos: strings (simple y Unicode), tuplas, listas y sets. 
+                Se tiene la posibilidad de crear nuevos tipos de secuencias.
+            </p>
+        </div>
+        
+        <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-5">
+            <h1 class="title-modul"><span class="pr mr-2">2</span> Iterables</h1>
+            <hr>
+            <p class="text-justify">
+                El concepto de Python que generaliza la idea de "secuencia" es el concepto de "iterable".Todas las secuencias son iterables, pero existen más iterables, como las "listas", por ejemplo. Cuando hablamos de iterables nos referimos a "iterables acotados" (que tienen un principio y un final).
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container row mx-auto my-2 part-1 p-5 ">
+    
+    <div class="col-lg-12 mx-auto text-center mb-5">
+        <h1 class="title-modul"><span class="pr mr-2">3</span> Strings</h1>
+        <hr>
+        <p class="text-justify">
+            Un objeto string (simple o Unicode) es una secuencia de caracteres utilizado para guardar y representar textos.
+            Los strings en Python son inmutables. 
+            Los objetos string nos van a proporcionar muchos métodos.
+        </p>
+    </div>
+    
+    <div class="col-lg-12 text-center">
+        <h1 class="title-modul"><span class="pr mr-2">4</span> Ejemplos Strings</h1>
+        <hr>
+    </div>
+    <div class="col-lg-6 col-sm-12 ">            
+    <p class="text-justify container">
+        Para definir un string utilizaremos comillas simples o dobles:
+    </p>
+    <div class="text text-justify">
+        <div class="container mx-auto">
+            <pre>
+              <code class="python codigo">variable1 = 'Este es un string'
+variable2 = "Este también es un string"</code>
+            </pre>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">            
+        <p class="text-justify container">
+            Se utilizará backslash para escapar una comilla:
+        </p>
+        <div class="text text-justify">
+            <div class="container mx-auto">
+                <pre>
+                  <code class="python codigo">variable1 = 'Este es un \'string\''
+variable2 = "Este también es un 'string'"</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">            
+        <p class="text-justify container">
+            Para expandir el string a dos líneas utilizaremos también backslash:
+        </p>
+        <div class="text text-justify">
+            <div class="container mx-auto">
+                <pre>
+                  <code class="python codigo">variable = "Este es un texto más largo\
+que ocupa dos líneas"</code>    
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6  col-sm-12">            
+        <p class="text-justify container">
+            Otro modo de crear un string de múltiples líneas es utilizando "tres comillas" (simples ó dobles, da igual).
+        </p>
+        <div class="text text-justify">
+            <div class="container mx-auto">
+                <pre>
+                  <code class="python codigo">variable = """Este sí que es
+un texto muy muy largo"""</code>    
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container row mx-auto my-2 part-1 p-5 ">
+    
+    <div class="col-lg-12 mx-auto text-center mb-5">
+        <h1 class="title-modul"><span class="pr mr-2">5</span> Tuplas</h1>
+        <hr>
+        <p class="text-justify">
+            Una tupla es una secuencia de items ordenada e inmutable.
+            Los items de una tupla pueden ser objetos de cualquier tipo.
+            Para especificar una tupla, lo hacemos con los elementos separados por comas dentro de paréntesis.
+        </p>
+        <ul class="text-justify container">
+            <li>
+                Una tupla con únicamente dos elementos es denominada par.
+            </li>
+            <li>
+                Para crear una tupla con un único elemento (singleton), se añade una coma al final de la expresión.                        
+            </li>
+            <li>
+                Para definir una tupla vacía, se emplean unos paréntesis vacíos.
+            </li>
+        </ul>
+    </div>
+    
+    <div class="col-lg-12 text-center">
+        <h1 class="title-modul"><span class="pr mr-2">6</span> Ejemplos Tuplas</h1>
+        <hr>
+    </div>
+    <div class="col-lg-12 col-sm-12" style="height: 100%;">            
+        <p class="text-justify container">
+            Vamos a definir tres tuplas, la primera con 3 elementos, la segunda con 1, y la tercera
+            sera un tupla vacia
+        </p>
+        <div class="text text-justify">
+            <div class="container mx-auto">
+                <pre>
+                <code class="python codigo">variable1 = (100, 200, 300)
+variable2 = (3.14,)
+variable3 = ()</code>
+                </pre>
+            </div>
+        </div>
+        <p class="text-justify container">
+            También se pueden definir las tuplas de la siguiente manera:
+        </p>
+        <div class="text text-justify">
+            <div class="container mx-auto">
+                <pre>
+                <code class="python codigo">variable1 = tuple("Hola")</code>
+                </pre>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

@@ -1,0 +1,326 @@
+/* FONTS */
+@font-face{
+    font-family: "Lato Black";
+    src: url("../fonts/Lato/Lato-Black.ttf");
+}
+@font-face{
+    font-family: "Lato Regular";
+    src: url("../fonts/Lato/Lato-Regular.ttf");
+}
+@font-face{
+    font-family: "Roboto Light";
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+
+body{
+    font-family: 'Roboto Light';
+}
+
+
+.logo img{
+    animation: latir infinite 5s linear;
+}
+
+@keyframes latir{
+    0% {
+        transform: scale(1,1);
+    }
+
+    25%{
+        transform: scale(1.05,1.05);
+    }
+
+    50%{
+        transform: scale(1.1,1.1);
+        
+    }
+
+
+    55%{
+        transform: scale(0.95,0.95);
+    }
+
+}
+
+.navbar-nav .nav-item a{
+    font-family: 'Lato Regular';
+}
+
+.navbar .collapse .navbar-nav .nav-item .dropdown-menu .nav-link:hover{
+    background-color: #dfe6e9;
+    font-size: 15px;
+}
+
+.row .content-induction{
+    margin-top: 5%;    
+}
+
+.row h1,
+.row p
+{
+    font-family: 'Roboto Light';
+}
+
+.logo_utp{
+    margin-top: 15%;
+}
+
+
+.content-C{
+    margin-top: 5%;
+}
+
+.modulos .card{
+    width: 303px;
+    
+}
+
+.modulos .card img{
+    width: 300px;
+    height: 200px;
+}
+
+.modulos .card:hover{
+    -webkit-box-shadow: 0px -3px 21px -3px rgba(120,102,120,1);
+-moz-box-shadow: 0px -3px 21px -3px rgba(120,102,120,1);
+box-shadow: 0px -3px 21px -3px rgba(120,102,120,1);
+}
+
+.bton1{
+    background-color: #FF9F1C;
+    color: white;
+    
+}
+
+.bton1:hover{
+    background-color: rgba(255, 159, 28, .8);
+    color: black;
+}
+
+
+.bton2{
+    background-color: #2EC4B6;
+    color: white;
+}
+
+.bton2:hover{
+    background-color: rgba(46, 196, 182, .8);
+    color: black;
+}
+
+div .imagen-est-selec{
+    margin: 0% 0% 0% 5%;
+
+}
+
+.sectionif h1{
+    font-size: 25px;    
+}
+
+
+
+.img-section img{
+    margin-left: 50px;
+}
+
+.mostrar-error-linea{
+    background-color: rgba(214, 48, 49,.6);
+}
+
+
+.content-simplesydobles{
+    margin-top: 2%;
+    
+    background-color: rgba(149, 165, 166,.2);
+    border-radius: 20px;
+
+
+}
+
+.section-ejemplos{
+    background-color: rgba(149, 165, 166,.2);
+    
+}
+
+progress[value] {
+    /* Elimino la apariencia por defecto */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+     
+    /* Quito el borde que aparece en Firefox */
+    border: none;
+ 
+    /* Añado mis propios estilos */
+    width: 270px;
+    height: 30px;
+    overflow:hidden;
+
+    
+     
+/*  Estos estilos solo se aplicaran al fondo de la barra en mozilla */
+        border:1px inset #666;
+    background-color:#D8D8D8;
+    border-radius : 20px ;
+}
+
+
+
+
+.desactivate{
+    display: none;
+}
+
+.pr{
+    color: rgb(187, 126, 14);
+}
+
+.pr-n{
+    color: blue;
+}
+
+.pr-l{
+    margin-left: 73px;
+}
+
+.code{
+    background-color: rgba(236, 240, 241,1.0);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 17px;
+
+}
+
+.code2{
+    
+    
+    background-color: rgba(236, 240, 241,1.0);
+    border-radius: 8px;
+
+    padding: 10px;
+    margin-bottom: 17px;
+
+}
+
+#output2 h1{
+    font-size: 20px;
+}
+
+.codep{
+    /* background-color: rgba(223, 230, 233,.6); */
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;    
+}
+
+.codep code{
+    color: black;
+}
+
+
+
+.linea-code{
+    background-color: gainsboro;
+}
+
+
+
+.pasosli{
+    list-style: none;
+    margin-top: 24px;
+    margin-right: 50px;
+}
+
+.leermas{
+    display: block; 
+    text-decoration: none;    
+    color: blue !important;
+}
+
+.leermas:hover{
+    color: rgba(46, 196, 182, .8) !important;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+
+@media(max-width:1248px){
+    .imagen-est-selec{
+        width: 500px;
+        margin: 0% 0% 0% 0%;
+        
+    }
+
+    
+    
+}
+
+@media(max-width:1192px){
+    .logo_utp{
+        
+        width: 500px;
+        
+    }
+
+    
+
+    div .imagen-est-selec{
+        
+        margin: 12% 0% 0% 6%;
+        
+        
+    }
+}
+
+@media(max-width:990px){
+
+    .logo_utp{
+        margin-bottom: 10%;        
+    }
+
+    div .imagen-est-selec{
+        width: 700px;
+        margin: 0% 0% 0% 0%;
+        
+    }
+    
+
+}
+
+
+
+@media(max-width:766px){
+
+    .modulos div .card{        
+        margin: 0 auto 0 auto;
+    }
+
+    div .imagen-est-selec{
+        width: 570px;
+    }
+
+}
+
+@media(max-width:678px){
+    
+
+    .logo_utp{        
+        width: 300px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    div .imagen-est-selec{
+        display: none;
+    }
+    
+}

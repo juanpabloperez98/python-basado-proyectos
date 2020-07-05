@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Tipos de datos
+{% endblock title %}
+
+
+{% block headers %}
+{% include 'headers/header4.html' %}
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+
+    <!-- 1.1.1 Variables -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">1.1.1</span> Variables</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Una variable es un nombre que se refiera a un objeto que reside
+                en memoria.
+                El objeto por lo general es de un tipo de dato especifico ya sea
+                numero o
+                cadena de texto o alguno de los otros tipos existentes en
+                Python.
+                Cada variable debe tener un nombre único llamado identificador.
+                Eso es muy de ayuda pensar las variables como contenedores que
+                contienen
+                data el cual puede ser cambiado después a través de técnicas de
+                programación.
+            </p>
+        </div>
+    </div>
+    <!-- 1.1.2 Alcance de las variables -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-lg-3">
+        <h1 class="title-modul"><span class="pr mr-2">1.1.2</span> Alcance de
+            las variables</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Las variables en Python son locales por defecto. Esto quiere
+                decir que las variables definidas y utilizadas en el bloque de
+                código de una función, sólo tienen existencia dentro de la
+                misma, y no interfieren con otras variables del resto del
+                código.
+                A su vez, las variables existentes fuera de una función, no son
+                visibles dentro de la misma.En caso de que sea conveniente o
+                necesario, una variable local puede convertirse en una variable
+                global declarándola explícitamente como tal con la sentencia
+                global.
+            </p>
+        </div>
+    </div>
+    <!-- Ejemplos -->
+    <div class="col-lg-12 mx-auto text-center part-1 p-5 mt-2" style="height:
+        100%;">
+        <!-- ------------------------------------------------------------------------------------------ -->
+        <h1 class="title-modul"><span class="pr mr-2">1.1.3</span> Ejemplos de
+            variables</h1>
+        <hr>
+        <div class="text text-justify">
+            <p>
+                A continuación se presentan unos ejemplos de variables.
+                Se creará un par de variable a modo de ejemplo. Uno de tipo
+                cadenas de caracteres ó string y otro de tipo entero, mas
+                adelante se explicaran sobre los tipos de datos existentes
+            </p>
+            <div class="container mx-auto">
+                <pre>
+                  <code class="language-python mx-auto codigo">c = "Hola mundo"
+e = 21                  </code>
+                </pre>
+            </div>
+            <p>
+                Como nos pudimos dar cuenta, en Python no es necesario declarar
+                el tipo de variable que se desea manejar, a diferencia de muchos
+                otros lenguajes.
+            </p>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------ -->
+        <h1 class="title-modul"><span class="pr mr-2">1.1.4</span> Ejemplo
+            cambiar valor a una variable</h1>
+        <hr>
+        <div class="text text-justify">
+            <p>
+                A continuación, se cambiará el valor para una variable de tipo
+                cadenas de caracteres a modo de ejemplo:
+            </p>
+            <div class="container mx-auto">
+                <pre>
+                  <code class="language-python mx-auto codigo">c = "Hola soy una variable"
+c = "Hola soy la variable cambiada"</code>
+                </pre>
+            </div>
+            <p>
+                Como pudimos ver, primero se le asigno a la variable c el valor
+                de una cadena de caracteres, y posteriormente volvimos a igualar
+                la misma variable c con una nueva cadena de caracteres, de esta
+                manera se esta actualizando el valor de la variable c de manera
+                sencilla.
+            </p>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------ -->
+        <h1 class="title-modul"><span class="pr mr-2">1.1.5</span> Ejemplo
+            asignar múltiples valores</h1>
+        <hr>
+        <div class="text text-justify">
+            <p>
+                A continuación se crearan múltiples variables y asignandoseles
+                múltiples valores:
+            </p>
+            <div class="container mx-auto">
+                <pre>
+                  <code class="language-python mx-auto codigo">a,b,c = 5,3.2,"Hola Mundo"                          
+                  </code>
+                </pre>
+            </div>
+            <p>
+                Si se desea asignar el mismo valor a múltiples variables al
+                mismo tiempo, se puede hacer lo siguiente:
+            </p>
+            <div class="container mx-auto">
+                <pre>
+                  <code class="python mx-auto codigo">x = y = z = True
+                  </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container row mx-auto">
+    <!-- 1.1.6 Palabras reservadas -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-2">
+        <h1 class="title-modul"><span class="pr mr-2">1.1.6</span> Palabras
+            reservadas</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Existen ciertas palabras que tienen significado especial para el
+                intérprete de Python. Estas no pueden utilizarse para ningún
+                otro fin (como ser nombrar valores) excepto para el que han sido
+                creadas. Algunas de estas son:
+                <ul class="container">
+                    <li>in</li>
+                    <li>is</li>
+                    <li>break</li>
+                    <li>print</li>
+                    <li>not</li>
+                    <li>del</li>
+                    <li>import</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <!-- 1.1.7 Tipos de datos -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-2" id="type-data">
+        <h1 class="title-modul"><span class="pr mr-2">1.1.7</span> Tipos de
+            datos en python</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Como se especifico anteriormente, para declarar variables en
+                Python no es necesario declarar el tipo de dato que puede
+                almacenar. <br>
+                El funcionamiento de los programas Python depende de los datos
+                que maneja.
+                Todos los valores de datos en Python son objetos, y cada objeto,
+                o valor, tiene "un tipo".
+                Tener en cuenta que, cada tipo de objeto determina qué
+                operaciones va a soportar el objeto y, por lo tanto, qué
+                operaciones se van a poder realizar con esos valores de los
+                datos, qué atributos tiene y si va a poder ser "mutable" o no.
+            </p>
+            <ul class="container">
+                <li>
+                    <a href="{% url 'main_app:numeros' %}">Números</a>
+                </li>
+                <li>
+                    <a href="{% url 'main_app:secuencia' %}">Secuencias</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container row mx-auto mb-5 mt-2 part-1" id="carrousel">
+    <div class="col-lg-12 text-center mt-5">
+        <h1 class="display-5"> Ejemplos</h1>
+        <hr>
+    </div>
+
+    <div class="col-lg-5 mx-auto" id="ejemplos">
+        <div id="carouselExampleIndicators" class="carousel slide"
+            data-ride="carousel">
+
+            <div class="carousel-inner mx-auto text-center p-5">
+                {% for i in '123456' %}
+                {% if i == '1' %}
+                <div class="carousel-item active">
+                    <a href="{% url 'main_app:ejemplo1-td' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% else %}
+                {% if i == '2' %}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo2-td' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '3'%}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo3-td' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '4'%}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo4-td' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '5'%}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo5-td' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% elif i == '6'%}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo6-td' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% endif %}
+
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators"
+                role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark"
+                    aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators"
+                role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark"
+                    aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()      
+    </script>
+{% endblock scripts %}

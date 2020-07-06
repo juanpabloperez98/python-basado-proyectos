@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+    Tipos de operadores relacionales
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+            width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'main_app:operadores' %}"><i
+                            class="fas fa-undo-alt mr-2"></i>Volver</a>
+                </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row">
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Operador ==</h1>
+            <p class="text-justify">
+                El operador == evalua que los valores sean iguales para varios tipos de datos.
+            </p>
+            <hr>
+            <div class="container code  mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>variable = 5</span>
+    <span id="2"><span class="pr-n mr-3">2</span>variable2 = 3</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(variable == variable2)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">False</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+            
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Operador !=</h1>
+            <p class="text-justify">
+                El operador != evalua si los valores son distintos.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero1 = 10</span>
+<span id="2"><span class="pr-n mr-3">2</span>numero2 = 6</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(numero1 != numero2)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">True</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Operador &#60;</h1>
+            <p class="text-justify">
+                El operador &#60; evalua si el valor del lado izquierdo es menor que el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero1 = 10</span>
+<span id="3"><span class="pr-n mr-3">2</span>numero2 = 5</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(numero1 &#60; numero2)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output3">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">False</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">4</span> Operador ></h1>
+            <p class="text-justify">
+                El operador > evalua si el valor del lado izquierdo es mayor que el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero1 = 10</span>
+<span id="3"><span class="pr-n mr-3">2</span>numero2 = 5</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(numero1 > numero2)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output4">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">True</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode4()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">5</span> Operador &#60;=</h1>
+            <p class="text-justify">
+                El operador &#60;= evalua si el valor del lado izquierdo es menor o igual que el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero1 = 4</span>
+<span id="3"><span class="pr-n mr-3">2</span>numero2 = 2</span>
+<span id="3"><span class="pr-n mr-3">4</span>print(numero1 <= numero2)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output5">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">False</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode5()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">6</span>  Operador >=</h1>
+            <p class="text-justify">
+                El operador >= evalua si el valor del lado izquierdo es mayor o igual que el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero1 = 5</span>
+<span id="3"><span class="pr-n mr-3">2</span>numero2 = 2</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(numero1 >= numero2)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output6">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">True</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode6()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+       
+
+    </div>
+</div>
+    
+{% endblock content %}
+
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>    
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>            
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class','container code mt-2')
+    }
+</script>
+    
+{% endblock scripts %}
+    
+    

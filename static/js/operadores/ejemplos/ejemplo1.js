@@ -8,7 +8,7 @@
 
     // Salida
     salida = ()=>{        
-        document.getElementById('salida').innerHTML = 'El numero ingresado por el usuario es: ' + lista_datos[0]
+        document.getElementById('salida').innerHTML = 'El doble del numero es: ' + (lista_datos[0]*2)
     }
 
     explicacion = () => { /* La función */

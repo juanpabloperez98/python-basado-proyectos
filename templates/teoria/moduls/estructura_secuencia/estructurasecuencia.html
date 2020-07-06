@@ -21,13 +21,20 @@
 {% block content %}
 <div class="container row mx-auto">
     <div class="col-lg-12 text-center mt-5">
-        <h1 class="display-5">Estructuras de Secuencia</h1>
+        <h1 class="display-5">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3.204 5L8 10.481 12.796 5H3.204zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+              </svg>
+            Estructuras de Secuencia
+        </h1>
     </div>
-    <div class="col-lg-6 col-sm-12 text-lg-justify mt-5 part-1 p-5">
+    <div class="col-lg-6 col-sm-12 text-lg-justify mt-5 part-1 p-5 ">
         <h1 class="display-5">¿Que son las estructuras de secuencia?</h1>
-        <div class="text">
-            <p class="mt-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident ullam, eaque pariatur fugit commodi at aperiam autem quis ad repudiandae nulla aspernatur distinctio adipisci tenetur laborum est laboriosam eligendi sapiente! Aliquid provident at fugit voluptatum totam cupiditate sint voluptas, magnam sunt, illum vero facilis quibusdam tempore nam unde maxime praesentium quos. Quidem corporis hic ducimus nemo iure soluta modi suscipit inventore vitae? Harum dignissimos doloremque aliquid quos corporis dolorem a, explicabo voluptatibus veniam nisi suscipit accusamus recusandae exercitationem nam in repellendus? Recusandae temporibus eos ipsum error obcaecati sunt repellat totam, eius id voluptas dolorum blanditiis repudiandae! Quas, doloremque dolor?                    
+        <div class="">
+            <p class="mt-5 font-weight-bold">
+                Las estructuras de secuencia o también llamadas estructuras secuenciales, hace referencia al orden de ejecución de instrucciones que se hace de forma secuencial, o sea, una instrucción después de la otra. <br>
+                Las instrucciones se suceden de tal forma que el resultado de la anterior puede afectar la siguiente. <br>
+                Es el orden básico de ejecución en los lenguajes de programación, y su orden es de arriba a abajo. 
             </p>
         </div>
     </div>
@@ -55,7 +62,7 @@
         </a>
     </div>
     <div class="col-lg-6 my-5 text-center modul">
-        <a href="" class="modulos">
+        <a href="{% url 'main_app:operadores' %}" class="modulos">
             <div class="img">
                 <img src="{% static 'images/Estructuras_secuencia/Operadores.png' %}" alt="img" width="200">
                 <div class="text">

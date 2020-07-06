@@ -7,7 +7,7 @@
 {% endblock styles %}
 
 {% block title %}
-    Tipos datos - ejemplo 6    
+    Operadores - ejemplo 2
 {% endblock title %}
 
 {% block headers %}
@@ -24,7 +24,7 @@
       <ul class="navbar-nav ml-auto">        
         <li class="nav-item">            
             <li class="nav-item">
-                <a class="nav-link" href="/tipos_datos#ejemplos"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+                <a class="nav-link" href="/operadores#ejemplos"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
             </li>             
         </li>  
       </ul>
@@ -37,13 +37,13 @@
 <!-- Enunciado -->
 <div class="container row mx-auto mt-5" id="enunciado">
     <div class="col-lg-12 text-center my-3 mx-auto">
-        <h1 class="">Ejemplo 6</h1>
+        <h1 class="">Ejemplo 2</h1>
     </div>
     <div class="col-lg-6 part-1 mx-auto mt-5 p-5" style="margin-bottom: 5%; height: 100%;">
         <h1 class="title-modul text-center my-3">Enunciado</h1>
         <div class="container">
             <p>
-                Realice un programa que pida dos números al usuario, e imprima True si son iguales ó False si no lo son.
+                Se tiene una variable llamada base que esta inicializada en 2, se necesita realizar un programa que le pida al usuario que ingrese un numero, el cual representara el exponente al que se quiere elevar la variable base. Imprimir el valor del numero elevado.
             </p>
         </div>
         <button class="btn btn-block btn-success" id="start">Empezar</button>                
@@ -57,9 +57,10 @@
     <div class="container code text-justify mt-2">     
       <pre>
         <code class="language-python">
-<span id="1"><span class="pr-n mr-3">1</span>numero1 = int(input("Ingrese numero 1: "))</span>
-<span id="2"><span class="pr-n mr-3">2</span>numero2 = int(input("Ingrese numero 2: "))</span>
-<span id="3"><span class="pr-n mr-3">3</span>print(numero1 is numero2)</span>
+<span id="1"><span class="pr-n mr-3">1</span>base = 2</span>
+<span id="2"><span class="pr-n mr-3">2</span>expo = int(input("Ingrese exponente: "))</span>
+<span id="3"><span class="pr-n mr-3">3</span>base**=expo</span>
+<span id="3"><span class="pr-n mr-3">4</span>print("El numero elevado al exponente es: ",base)</span>
         </code>
       </pre>
     </div>
@@ -68,10 +69,7 @@
     <div class="container code mt-2 desactivate" id="date">
         <form class="mt-3">
             <div class="form-group">
-                <input type="text" class="form-control" id="dato-1" placeholder="Ingrese numero 1">
-            </div>
-            <div class="form-group desactivate" id="parent-1">
-              <input type="text" class="form-control" id="dato-2" placeholder="Ingrese numero 2">
+                <input type="text" class="form-control" id="dato-1" placeholder="Ingrese exponente">
             </div>
         </form>
     </div>
@@ -79,15 +77,15 @@
     <div class="container code mt-2 desactivate" id="output">
       <code>
         <span class="pr-n">Salida</span> <br>
-        <span class="mt-2" id="salida" style="color: black;"></span>
+        <span class="mt-2" id="salida" style="color: black;"></span>               
       </code>
     </div>
 
     <div class="my-5 text-justify" id="botones">
-      <button id="ejecutar" class="btn btn-outline-primary"><i class="fas fa-play mr-2"></i> Ejecutar</button>          
-      <button id="seguir" class="btn btn-outline-primary desactivate"><i class="fas fa-play mr-2"></i> Seguir</button>          
-      <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i> Explicar codigo</button>          
-      <a id="reiniciar" href="./" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i> Reiniciar</a>          
+        <button id="ejecutar" class="btn btn-outline-primary"><i class="fas fa-play mr-2"></i> Ejecutar</button>          
+        <button id="seguir" class="btn btn-outline-primary desactivate"><i class="fas fa-play mr-2"></i> Seguir</button>          
+        <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i> Explicar codigo</button>          
+        <a id="reiniciar" href="./" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i> Reiniciar</a>          
     </div>
 
     </div>
@@ -95,17 +93,18 @@
     <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion">
         <h1 class="text-center mt-3 p-2" style="font-size: 20px;">Explicación</h1>
           
-    <div class="container code text-justify mt-2" id="explain-div">     
+    <div class="container code text-justify mt-2">     
       <pre>
-        <code class="language-python" id="code-add">
-<span id=""><span class="pr-n mr-3">1</span>Declaramos la variable "numero1" e igualamos al numero que ingrese el usuario</span>
-<span id=""><span class="pr-n mr-3">2</span>Declaramos la variable "numero2" e igualamos al segundo numero que ingrese el usuario</span>
-<span id=""><span class="pr-n mr-3">3</span>Si numero1 es igual a numero2 nos imprime True, de lo contrario imprimirá False <br><span class="mr-3"></span>  "NOTA": La palabra reservada is es la que nos permite validar si numero1 es del mismo tipo de dato e igual valor que numero2</span>
+        <code class="language-python">
+<span id=""><span class="pr-n mr-3">1</span>Declaramos la variable "base" y la igualamos a 2</span>
+<span id=""><span class="pr-n mr-3">2</span>Le pedimos al usuario que ingrese el exponente y lo guardamos en la variable "expo"</span>
+<span id=""><span class="pr-n mr-3">3</span>Utilizamos el operador **= para elevar "base" al numero "expo"</span>
+<span id=""><span class="pr-n mr-3">4</span>Imprimimos el numero elevado</span>
         </code>
       </pre>
     </div>
     </div>
-</div>    
+</div>
 {% endblock content %}
 
 {% block scripts %}
@@ -114,5 +113,6 @@
     <script>
         hljs.initHighlightingOnLoad()      
     </script>
-    <script src="{% static 'js/tipos_datos/ejemplos/ejemplo6.js' %}"></script>
+    <script src="{% static 'js/operadores/ejemplos/ejemplo2.js' %}"></script>
 {% endblock scripts %}
+    

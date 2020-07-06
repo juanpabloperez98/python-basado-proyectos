@@ -1,14 +1,13 @@
 (function(){
     // Variables globales
-    var num_inputs = 1,
+    var num_inputs = 2,
         i = 0,
         lista_datos = []
 
-    
-
     // Salida
     salida = ()=>{        
-        document.getElementById('salida').innerHTML = 'El numero ingresado por el usuario es: ' + lista_datos[0]
+        promedio = (lista_datos[0] + lista_datos[1])/2
+        document.getElementById('salida').innerHTML = "El promedio es: " + promedio
     }
 
     explicacion = () => { /* La función */
@@ -24,10 +23,12 @@
             parent = 'parent-'+i.toString()
             dato = document.getElementById(form).value
         if (dato && !isNaN(dato)){
+            dato = parseInt(dato)            
             lista_datos.push(dato)
             document.getElementById(form).parentNode.setAttribute('class','desactivate')            
-            if(num_inputs > 1){
+            if(i != num_inputs){
                 document.getElementById(parent).setAttribute('class','form-group')
+                
             }
         }else{
             i--

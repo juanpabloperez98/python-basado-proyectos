@@ -1,14 +1,14 @@
 (function(){
     // Variables globales
-    var num_inputs = 1,
+    var num_inputs = 2,
         i = 0,
         lista_datos = []
 
-    
-
     // Salida
     salida = ()=>{        
-        document.getElementById('salida').innerHTML = 'El numero ingresado por el usuario es: ' + lista_datos[0]
+        doble1 = lista_datos[0]*2
+        doble2 = lista_datos[1]*2        
+        document.getElementById('salida').innerHTML = "Suma del doble de las edades: " + (doble1 + doble2)
     }
 
     explicacion = () => { /* La función */
@@ -24,10 +24,12 @@
             parent = 'parent-'+i.toString()
             dato = document.getElementById(form).value
         if (dato && !isNaN(dato)){
+            dato = parseInt(dato)            
             lista_datos.push(dato)
             document.getElementById(form).parentNode.setAttribute('class','desactivate')            
-            if(num_inputs > 1){
+            if(i != num_inputs){
                 document.getElementById(parent).setAttribute('class','form-group')
+                
             }
         }else{
             i--
@@ -68,6 +70,7 @@
         document.getElementById('enunciado').setAttribute("class","desactivate")
         document.getElementById('codigo').setAttribute("class","container row mx-auto mt-5")
     }
+    
     document.getElementById('start').addEventListener('click',empezar)
 
 }())

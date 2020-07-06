@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Operadores
+{% endblock title %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">        
+        <li class="nav-item">            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main_app:estructuras_de_secuencia' %}"><i class="fas fa-home mr-1"></i>Estructuras de secuencia</a>   
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    Siguiente Modulo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main_app:tipos_datos' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </li>  
+      </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <!-- Operadores de asignación -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">1.2.1</span> Operadores de asignaciones</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Los operadores de asignación son expresiones que simbolizan la asignación de un valor hacia una variable o contenedor. En la sección anterior pudimos ver como le asignábamos los valores a las diferentes variables que definíamos, como así mismo vimos los tipos de variables existentes en Python. <br>
+                Existe en Python todo un grupo de operadores los cuales le permiten básicamente asignar un valor a una variable, usando el operador “=”. Con estos operadores pueden aplicar la técnica denominada asignación aumentada.  <br>
+                <span class="font-weight-bold">A continuación se muestran los tipos de operadores de asignación que existen en Python:                </span>
+            </p>
+            <ul class="container">
+                <li>
+                    <a href="{% url 'main_app:tipos-operadores-asig' %}">Tipos de operadores de asignación</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Operadores Aritmeticos -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">1.2.2</span> Operadores Aritméticos</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Los operadores aritméticos son expresiones que simbolizan una operación matemática, como por ejemplo: suma, resta, multiplicación y división principalmente. <br>
+                Los valores numéricos no son simplemente el resultado de una declaración sencilla de una variable, también pueden ser el resultado de una operación matemática. <br>
+                <span class="font-weight-bold">A continuación se muestran los principales operadores aritméticos que existen en Python: </span>
+            </p>
+            <ul class="container">
+                <li>
+                    <a href="{% url 'main_app:tipos-operadores-arit' %}">Tipos de operadores aritméticos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Operadores Relacionales -->
+    <div class="col-lg-12 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">1.2.3</span> Operadores Relacionales</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Los operadores relacionales son expresiones que simbolizan o representan una operación de comparación, como por ejemplo: mayor que, menor que, igual que, diferente de, etc. Estas expresiones devuelven como resultado un tipo de dato booleano, que nos permite validar si es Verdadero o Falso la comparación. <br>
+                <span class="font-weight-bold">A continuación se muestran los principales operadores relacionales que existen en Python: </span>
+            </p>
+            <ul class="container">
+                <li>
+                    <a href="{% url 'main_app:tipos-operadores-rel' %}">Tipos de operadores relacionales</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Ejemplos -->
+<div class="container row mx-auto mb-5 mt-2 part-1" id="carrousel">
+    <div class="col-lg-12 text-center mt-5">
+        <h1 class="display-5"> Ejemplos</h1>
+        <hr>
+    </div>
+
+    <div class="col-lg-5 mx-auto" id="ejemplos">
+        <div id="carouselExampleIndicators" class="carousel slide"
+            data-ride="carousel">
+
+            <div class="carousel-inner mx-auto text-center p-5">
+                {% for i in '123456' %}
+                {% if i == '1' %}
+                <div class="carousel-item active">
+                    <a href="{% url 'main_app:ejemplo1-op' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% else %}
+                {% if i == '2' %}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo2-op' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '3'%}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo3-op' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '4'%}
+                <div class="carousel-item">
+                    <a href="{% url 'main_app:ejemplo4-op' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '5'%}
+                <div class="carousel-item">
+                    <a href="#">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% elif i == '6'%}
+                <div class="carousel-item">
+                    <a href="#">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% endif %}
+
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators"
+                role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark"
+                    aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators"
+                role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark"
+                    aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+    
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}
+    
+    

@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+    Tipos de operadores de asignación
+{% endblock title %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+            width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'main_app:operadores' %}"><i
+                            class="fas fa-undo-alt mr-2"></i>Volver</a>
+                </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row">
+        <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+            <h1 class="title-modul"><span class="pr mr-2">1</span> Operador =</h1>
+            <p class="text-justify">
+                El operador igual a, (=), es el más simple de todos y asigna a la variable del lado izquierdo cualquier variable o resultado del lado derecho. Como se vio anteriormente su sintaxis es:
+            </p>
+            <hr>
+            <div class="container code  mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>variable = 20 #Numero entero</span>
+    <span id="2"><span class="pr-n mr-3">2</span>variable2 = "Hola mundo" #String</span>
+    <span id="3"><span class="pr-n mr-3">3</span>variable3 = (1,2,3,4) #Tupla</span>
+                </code>
+                </pre>
+            </div>
+            
+            
+        </div>
+        
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Operador +=</h1>
+            <p class="text-justify">
+                El operador += suma a la variable del lado izquierdo el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>r=5</span>
+    <span id="2"><span class="pr-n mr-3">2</span>r+=10</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(r)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">15</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Operador -=</h1>
+            <p class="text-justify">
+                El operador -= resta a la variable del lado izquierdo el valor del lado derecho. 
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>r=5</span>
+    <span id="2"><span class="pr-n mr-3">2</span>r-=10</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(r)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">5</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">4</span> Operador *=</h1>
+            <p class="text-justify">
+                El operador *= multiplica la variable del lado izquierdo el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>r=5</span>
+    <span id="2"><span class="pr-n mr-3">2</span>r*=10</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(r)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output3">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">50</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">5</span> Operador /=</h1>
+            <p class="text-justify">
+                El operador /= divide a la variable del lado izquierdo el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>r=10</span>
+    <span id="2"><span class="pr-n mr-3">2</span>r/=2</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(r)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output4">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">5</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode4()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">6</span> Operador **=</h1>
+            <p class="text-justify">
+                El operador **= calcula el exponente a la variable del lado izquierdo el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>r=2</span>
+    <span id="2"><span class="pr-n mr-3">2</span>r**=5</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(r)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output5">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">32</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode5()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">7</span>  Operador //=</h1>
+            <p class="text-justify">
+                El operador //= calcula la división entera a la variable del lado izquierdo el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>r=5</span>
+    <span id="2"><span class="pr-n mr-3">2</span>r//=2</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(r)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output6">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">2</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode6()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">8</span>  Operador %=</h1>
+            <p class="text-justify">
+                El operador %= devuelve el resto de la división a la variable del lado izquierdo el valor del lado derecho.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    <span id="1"><span class="pr-n mr-3">1</span>r=5</span>
+    <span id="2"><span class="pr-n mr-3">2</span>r%=10</span>
+    <span id="3"><span class="pr-n mr-3">3</span>print(r)</span>
+                </code>
+                </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output7">
+                <code class="text-justify">
+                <span class="pr-n">Salida</span> <br>
+                <span class="mt-2" style="color: black;">5</span>               
+                </code>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="ShowCode7()">Ejecutar codigo</button>
+            </div>
+
+            
+        </div>
+
+
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>    
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>            
+<script>    
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class','container code mt-2')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class','container code mt-2')
+    }
+</script>
+{% endblock scripts %}
+    

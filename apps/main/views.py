@@ -44,3 +44,28 @@ class ejemplo6_td(TemplateView):
     template_name = "teoria/moduls/estructura_secuencia/ejemplos_tipos_datos/ejemplo6.html"
 
 
+# Operadores
+class operadores(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/operadores.html"
+
+class tipos_operadores_asig(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/tipos_operadores/asignacion.html"
+
+class tipos_operadores_arit(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/tipos_operadores/aritmeticos.html"
+
+class tipos_operadores_rel(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/tipos_operadores/relacionales.html"
+
+# Ejemplos Operadores
+class ejemplo1_op(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/ejemplos_operadores/ejemplo1.html"
+
+class ejemplo2_op(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/ejemplos_operadores/ejemplo2.html"
+
+class ejemplo3_op(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/ejemplos_operadores/ejemplo3.html"
+
+class ejemplo4_op(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/ejemplos_operadores/ejemplo4.html"

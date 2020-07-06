@@ -52,9 +52,23 @@ h1,
     color: rgb(187, 126, 14);
 }
 
+.pr-n{
+    color: blue;
+}
+.code{
+    background-color: rgba(236, 240, 241,1.0);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 17px;
+}
+
 .codigo{
     background-color: rgba(223, 230, 233,1.0); 
     width: 50%;
+}
+
+.desactivate{
+    display: none;
 }
 
 #carrousel{

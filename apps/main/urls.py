@@ -19,4 +19,15 @@ urlpatterns = [
     path('tipos-datos/ejemplo4/',views.ejemplo4_td.as_view(),name = 'ejemplo4-td'),
     path('tipos-datos/ejemplo5/',views.ejemplo5_td.as_view(),name = 'ejemplo5-td'),
     path('tipos-datos/ejemplo6/',views.ejemplo6_td.as_view(),name = 'ejemplo6-td'),
+    # Operadores
+    path('operadores/',views.operadores.as_view(),name = 'operadores'),
+    path('tipos-operadores/asignacion',views.tipos_operadores_asig.as_view(),name = 'tipos-operadores-asig'),
+    path('tipos-operadores/aritmeticos',views.tipos_operadores_arit.as_view(),name = 'tipos-operadores-arit'),
+    path('tipos-operadores/relacionales',views.tipos_operadores_rel.as_view(),name = 'tipos-operadores-rel'),
+    # Ejemplos operadores
+    path('operadores/ejemplo1/',views.ejemplo1_op.as_view(),name = 'ejemplo1-op'),
+    path('operadores/ejemplo2/',views.ejemplo2_op.as_view(),name = 'ejemplo2-op'),
+    path('operadores/ejemplo3/',views.ejemplo3_op.as_view(),name = 'ejemplo3-op'),
+    path('operadores/ejemplo4/',views.ejemplo4_op.as_view(),name = 'ejemplo4-op'),
+
 ]

@@ -69,3 +69,9 @@ class ejemplo3_op(TemplateView):
 
 class ejemplo4_op(TemplateView):
     template_name = "teoria/moduls/estructura_secuencia/ejemplos_operadores/ejemplo4.html"
+
+class ejemplo5_op(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/ejemplos_operadores/ejemplo5.html"
+
+class ejemplo6_op(TemplateView):
+    template_name = "teoria/moduls/estructura_secuencia/ejemplos_operadores/ejemplo6.html"

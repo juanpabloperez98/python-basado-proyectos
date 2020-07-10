@@ -29,5 +29,7 @@ urlpatterns = [
     path('operadores/ejemplo2/',views.ejemplo2_op.as_view(),name = 'ejemplo2-op'),
     path('operadores/ejemplo3/',views.ejemplo3_op.as_view(),name = 'ejemplo3-op'),
     path('operadores/ejemplo4/',views.ejemplo4_op.as_view(),name = 'ejemplo4-op'),
+    path('operadores/ejemplo5/',views.ejemplo5_op.as_view(),name = 'ejemplo5-op'),
+    path('operadores/ejemplo6/',views.ejemplo6_op.as_view(),name = 'ejemplo6-op'),
 
 ]

@@ -124,6 +124,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #apps
     'apps.main',
+    'apps.graficos',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,81 @@
+---------line # 1--------------
+def pagarnomina(lista_empleados):
+def pagarnomina(capital_nomina):
+def pagarnomina(lista_empleados, capital_nomina): ***
+def pagarnomina():
+
+---------line # 5--------------
+empleado = lista_empleados[]
+lista_empleados[i]
+empleado = lista_empleados[i + 1]
+empleado = lista_empleados[i] ***
+
+---------line # 6--------------
+if (empleado[0] == cc): ***
+if (empleado[1] == cc):
+if (empleado[0]):
+if (empleado[0] = cc):
+
+---------line # 8--------------
+capital_nomina -= empleado[]
+capital_nomina -= empleado[5] ***
+capital_nomina += empleado[5]
+empleado[5] --
+
+
+---------line # 12--------------
+return (True)
+return (capital_nomina)
+return (True, capital_nomina) ***
+True, capital_nomina
+
+
+---------line # 7--------------
+if(empleado[4] > 2 or empleado[4] < 4):
+if(empleado[4] > 2 and empleado[4] > 4): 
+if(empleado[4] > 2 and empleado[4] < 4): ***
+if(empleado[4] < 2 and empleado[4] > 4):
+---------line # 9--------------
+if(boni < capital_nomina): ***
+if(boni > capital_nomina):
+if(boni != capital_nomina):
+if(boni += capital_nomina):
+---------line # 11--------------
+empleado[4] = 0 ***
+empleado[4] += 0
+empleado["4"] = 0
+empleado[] = 0
+
+---------line # 17--------------
+boni = empleado[5] - 0.40
+boni = empleado[5] / 0.40
+boni = empleado[1] * 0.40
+boni = empleado[5] * 0.40 ***
+
+---------line # 19--------------
+empleado[3] += 1 ***
+empleado[3] -= 1
+empleado[3] *= 1
+empleado[1] += 1
+
+
+
+---------line # 16--------------
+estado, capital_nomina = pagarnomina()
+capital_nomina = pagarnomina(lista_empleados, capital_nomina)
+estado, capital_nomina = pagarnomina(lista_empleados, capital_nomina) ***
+estado = pagarnomina(lista_empleados, capital_nomina)
+
+---------line # 17--------------
+estado == True
+if(estado == True): ***
+else(estado == True):
+if(estado = True):
+
+
+
+
+
+
+
+

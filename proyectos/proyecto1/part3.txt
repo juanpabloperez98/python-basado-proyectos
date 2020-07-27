@@ -1,0 +1,31 @@
+---------line # 1--------------
+def registrar_nuevo():
+registrar_nuevo(lista_empleados)
+def registrar_nuevo(lista_empleados):  ***
+registrar_nuevo():
+---------line # 3--------------
+input("Ingrese nombre: ")
+nombre = input()
+"Ingrese nombre: "
+nombre = input("Ingrese nombre: ") ***
+---------line # 6--------------
+numero_ventas += 1
+numero_ventas = 0 ***
+numero_ventas -= 1
+numero_ventas -= 0
+---------line # 7--------------
+salario = input("Ingrese el salario $: ")
+salario = "Ingrese el salario $: "
+salario = int(input("Ingrese el salario $: ")) *** 
+int(input("Ingrese el salario $: "))
+---------line # 9-------------- 
+lista_empleados.append(datos) ***
+lista_empleados.add(datos)
+lista_empleados.(datos)
+lista_empleados.[datos]
+
+---------line # 1-------------- 
+registrar_nuevo()
+registrar_nuevo("lista_empleados")
+registrar_nuevo
+registrar_nuevo(lista_empleados) ***

@@ -38,7 +38,7 @@ Primera Interfaz grafica
 <div class="container row mx-auto">
     <div class="row mx-auto">
         <!-- 1 Tk() -->
-        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+        <div class="col-lg-12 mx-auto text-center part-1 p-5 mt-3">
             <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Tk()</h1>
             <p class="text-justify">
                 Tk() es una función de la librería Tkinter, la cual nos representa la raíz o la iniciación de toda la interfaz grafica que se va a manejar, en otras palabras, esta función nos devolverá la pantalla principal en la cual podremos incluir algunas configuraciones e implementar algunos elementos de los mencionados anteriormente. <span class="font-weight-bold">A continuación un pequeño ejemplo:</span>
@@ -68,8 +68,8 @@ Primera Interfaz grafica
             </div>
             
             <div class="text-center">
-                <button class="btn btn-primary btn-sm" id="btn-open" onclick="ShowCode()">Ejecutar codigo</button>
-                <button class="btn btn-success btn-sm desactivate" id="btn-close" onclick="HidenCode()">Cerrar</button>
+                <button class="btn botonBlue btn-sm" id="btn-open" onclick="ShowCode()">Ejecutar codigo</button>
+                <button class="btn botonYellow btn-sm desactivate" id="btn-close" onclick="HidenCode()">Cerrar</button>
             </div>
             
 
@@ -79,7 +79,7 @@ Primera Interfaz grafica
         </div>
 
         <!-- 2 Atributos -->
-        <div class="col-lg-6 col-sm-12 mx-auto part-1 p-5 mt-3" id="atributos">
+        <div class="col-lg-12 col-sm-12 mx-auto text-center part-1 p-5 mt-3" id="atributos">
             <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Atributos del Tk()</h1>
             <p class="text-justify" id="enunciado-items">
                 Ya vimos como crear nuestra primera ventana con la función Tk(), ahora veremos como darle ciertas características a la ventana principal, asignándole una serie de atributos que permitirán personalizar un poco esta ventana root.
@@ -88,7 +88,7 @@ Primera Interfaz grafica
             <hr>
             
             <div>
-                <ul class="container" id="items">
+                <ul class="container text-justify" id="items">
                     <li>
                         <a href="#atributos" onclick="ShowCodeEx('1')">Agregar titulo</a>
                     </li>
@@ -126,8 +126,8 @@ Primera Interfaz grafica
                     </div>
                     
                     <div class="text-center">
-                        <button class="btn btn-primary btn-sm" id="btn-1"  onclick="ShowCode2()">Ejecutar codigo</button>
-                        <button class="btn btn-success btn-sm" onclick="HideCoden('1')">Cerrar</button>
+                        <button class="btn botonBlue btn-sm" id="btn-1"  onclick="ShowCode2()">Ejecutar codigo</button>
+                        <button class="btn botonYellow btn-sm" onclick="HideCoden('1')">Cerrar</button>
                     </div>
                 </div>
 
@@ -155,8 +155,8 @@ Primera Interfaz grafica
                     </div>
                     
                     <div class="text-center">
-                        <button class="btn btn-primary btn-sm " id="btn-2" onclick="ShowCode3()">Ejecutar codigo</button>
-                        <button class="btn btn-success btn-sm " onclick="HideCoden('2')">Cerrar</button>
+                        <button class="btn botonBlue btn-sm " id="btn-2" onclick="ShowCode3()">Ejecutar codigo</button>
+                        <button class="btn botonYellow btn-sm " onclick="HideCoden('2')">Cerrar</button>
                     </div>
                 </div>
 
@@ -186,8 +186,8 @@ Primera Interfaz grafica
                     </div>
                     
                     <div class="text-center">
-                        <button class="btn btn-primary btn-sm " id="btn-3" onclick="ShowCode4()">Ejecutar codigo</button>
-                        <button class="btn btn-success btn-sm " onclick="HideCoden('3')">Cerrar</button>
+                        <button class="btn botonBlue btn-sm " id="btn-3" onclick="ShowCode4()">Ejecutar codigo</button>
+                        <button class="btn botonYellow btn-sm " onclick="HideCoden('3')">Cerrar</button>
                     </div>
                 </div>
 
@@ -226,8 +226,8 @@ Primera Interfaz grafica
                     </div>
                     
                     <div class="text-center">
-                        <button class="btn btn-primary btn-sm " id="btn-4" onclick="ShowCode5()">Ejecutar codigo</button>
-                        <button class="btn btn-success btn-sm " onclick="HideCoden('4')">Cerrar</button>
+                        <button class="btn botonBlue btn-sm " id="btn-4" onclick="ShowCode5()">Ejecutar codigo</button>
+                        <button class="btn botonYellow btn-sm " onclick="HideCoden('4')">Cerrar</button>
                     </div>
                 </div>
 
@@ -253,7 +253,7 @@ Primera Interfaz grafica
 <script>
     var ShowCode = () => {
         document.getElementById('output').setAttribute('class','container code mt-2')
-        document.getElementById('btn-close').setAttribute('class','btn btn-success btn-sm')
+        document.getElementById('btn-close').setAttribute('class','btn botonYellow btn-sm')
         document.getElementById('btn-open').setAttribute('class','desactivate')
 
     }
@@ -261,7 +261,7 @@ Primera Interfaz grafica
     var HidenCode = () => {
         document.getElementById('output').setAttribute('class','desactivate')
         document.getElementById('btn-close').setAttribute('class','desactivate')
-        document.getElementById('btn-open').setAttribute('class','btn btn-primary btn-sm')
+        document.getElementById('btn-open').setAttribute('class','btn botonBlue btn-sm')
     }
 
     var ShowCode2 = () => {
@@ -297,11 +297,11 @@ Primera Interfaz grafica
         elemento = 'item-'+param
         output = 'output'+(parseInt(param)+1).toString()
         boton = 'btn-'+param
-        document.getElementById('items').setAttribute('class','container') //Activo los elementos de la lista ul        
+        document.getElementById('items').setAttribute('class','container text-justify') //Activo los elementos de la lista ul        
         document.getElementById(elemento).setAttribute('class','container code mx-auto text-justify desactivate') //DEsactivo el codigo
         document.getElementById(output).setAttribute('class','container code mt-2 desactivate')
         document.getElementById('enunciado-items').setAttribute('class','text-justify')
-        document.getElementById(boton).setAttribute('class','btn btn-primary btn-sm')
+        document.getElementById(boton).setAttribute('class','btn botonBlue btn-sm')
     }
 </script>            
     

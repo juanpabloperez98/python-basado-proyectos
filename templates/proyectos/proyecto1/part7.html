@@ -1,0 +1,500 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+Proyecto1 parte - 7
+{% endblock title %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+  type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+      width="30">
+    <span id="title-navabar">Python basado en proyectos</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item desactivate" id="part">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-final' %}">
+          <i class="far fa-window-maximize"></i> Ver
+          codigo final</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1' %}"><i
+            class="fas fa-undo-alt mr-2"></i>Volver</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+  <!-- Enunciado -->
+  <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+    <h1 class="title-modul"> Parte 7</h1>
+    <hr>
+    <p class="text-justify">
+      Esta es la parte numero 7 y la final del proyecto, en esta parte se va
+      realizar la función venta_carro, la cual cumple con la función de realizar
+      la venta de un carro. En esta función se pedirá la cedula del empleado que
+      realizo la venta y se aumentara el numero de ventas del empleado
+      correspondiente, adicional a esto actualizaremos el capital de nomina
+      existente, sumándole el valor de la venta del carro, después se retornara
+      dos valores un booleano y el capital de nomina actualizado.
+    </p>
+    <h1 class="title-modul">¿Como se realizara?</h1>
+    <hr>
+    <p class="text-justify">
+      Lo primero que se va hacer, es pedir la cedula del empleado que realizo la
+      venta, y después se pedirá el valor de la venta, de la misma manera como
+      se ha venido haciendo en los apartados anteriores, se obtendrá la longitud
+      de la lista de empleados, y se empezara a recorrer por indice, validando
+      si existe algún empleado con la cedula ingresada por el usuario. Una vez
+      se haya encontrado el empleado relacionado a esa cedula, se aumentara en
+      1, el numero de ventas del empleado y el capital de nomina aumentara en el
+      valor de la venta, se retornara un booleano True, y el capital de nomina
+      actualizado. Dado el caso de que no se encuentre ningún empleado con la
+      cedula ingresada la función retornara un false y el capital de nomina
+      actualizado.
+    </p>
+
+    <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+  </div>
+</div>
+
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+
+  <!-- Siguiente parte -->
+  <div class="text-center col-lg-12 mx-auto my-5 desactivate"
+    id="siguiente-ejercicio">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+      <br> Puedes pasar a la siguiente parte</h1>
+    <hr>
+
+  </div>
+
+  <!-- Codigo -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+    <!-- Función  -->
+    <div class="container code text-justify mt-2" id="new-employee">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función venta_carro</h1>
+      <pre>
+        <code class="language-python">
+    <span><span class="pr-n mr-3">1</span>def venta_carro(lista_empleados,capital_nomina):</span>
+    <span><span class="pr-n mr-3">2</span>    cc = int(input("Ingrese cedula del empleado que realizo la venta: "))</span>
+    <span id="l1" class="linea-code"><span class="pr-n mr-3">3</span>    <span class="desactivate" id="l-1">valor = int(input("Ingrese el valor de la venta: "))</span></span>
+    <span><span class="pr-n mr-3">4</span>    longitud_lista = len(lista_empleados)</span>
+    <span id="l2" class="linea-code"><span class="pr-n mr-3">5</span>    <span class="desactivate" id="l-2">for i in range(longitud_lista):</span></span>
+    <span><span class="pr-n mr-3">6</span>        empleado = lista_empleados[i]</span>
+    <span><span class="pr-n mr-3">7</span>        if (empleado[0] == cc):</span>
+    <span id="l3" class="linea-code"><span class="pr-n mr-3">8</span>           <span class="desactivate" id="l-3">empleado[4] += 1</span></span>
+    <span id="l4" class="linea-code"><span class="pr-n mr-3">9</span>           <span class="desactivate" id="l-4">capital_nomina += valor</span></span>
+    <span><span class="pr-n mr-3">10</span>         print("\nVenta realizada con exito por el empleado ",empleado[1])</span>
+    <span id="l5" class="linea-code"><span class="pr-n mr-3">11</span>         <span class="desactivate" id="l-5">return (True,capital_nomina)</span></span>
+    <span><span class="pr-n mr-3">12</span>    return (False,capital_nomina)</span>
+                    </code>
+              </pre>
+      <div id="botones-register" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+
+
+    </div>
+
+    <!-- Main -->
+    <div class="container code text-justify mt-2 desactivate" id="main">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función main</h1>
+      <pre>
+                <code class="language-python">
+    <span><span class="pr-n mr-3">1</span><span class="">def main():</span></span>
+    <span><span class="pr-n mr-3">2</span>   <span>fin = False</span></span>
+    <span><span class="pr-n mr-3">3</span>   <span>lista_empleados = []</span></span>
+    <span><span class="pr-n mr-3">4</span>   <span>capital_nomina = int(input("Ingrese el capital de nomina: "))</span></span>
+    <span><span class="pr-n mr-3">5</span>   while (fin != True):</span>
+    <span><span class="pr-n mr-3">6</span>      <span>menu()</span></span>
+    <span><span class="pr-n mr-3">7</span>      <span>if(opcion == 1):</span></span>
+    <span><span class="pr-n mr-3">8</span>          registrar_nuevo(lista_empleados)</span>    
+    <span><span class="pr-n mr-3">9</span>      <span>elif(opcion == 2):</span></span>
+    <span><span class="pr-n mr-3">10</span>       <span>estado = eliminar_empleado(lista_empleados)</span></span>
+    <span><span class="pr-n mr-3">11</span>       <span>if(estado == True):</span></span>
+    <span><span class="pr-n mr-3">12</span>           <span>print("\nEmpleado Eliminado!!\n")</span></span>
+    <span><span class="pr-n mr-3">13</span>       <span>else:</span></span>
+    <span><span class="pr-n mr-3">14</span>           <span>print("\nEmpleado no Eliminado!!\n")</span></span>
+    <span><span class="pr-n mr-3">15</span>    elif(opcion == 3):</span>
+    <span><span class="pr-n mr-3">16</span>       <span>estado, capital_nomina = pagarnomina(lista_empleados, capital_nomina)</span></span>
+    <span><span class="pr-n mr-3">17</span>       <span>if(estado == True):</span></span>
+    <span><span class="pr-n mr-3">18</span>          print("\nNomina cancelada con exito!!\n")</span>
+    <span><span class="pr-n mr-3">19</span>       else:</span>
+    <span><span class="pr-n mr-3">20</span>          print("\nEl capital no alcanza!!\n")</span>
+    <span><span class="pr-n mr-3">21</span>    elif(opcion == 4):</span>
+    <span><span class="pr-n mr-3">22</span>       estado, capital_nomina = pagarbonificaciones(lista_empleados, capital_nomina)</span>
+    <span><span class="pr-n mr-3">23</span>       if(estado == True):</span>
+    <span><span class="pr-n mr-3">24</span>          print("\Bonificación cancelada con exito!!\n")</span>
+    <span><span class="pr-n mr-3">25</span>       else:</span>
+    <span><span class="pr-n mr-3">26</span>          print("\nLa bonificacion no pudo ser realizada!!\n")</span>
+    <span><span class="pr-n mr-3">27</span>    elif(opcion == 5):</span>
+    <span><span class="pr-n mr-3">28</span>       estado = ver_detalle(lista_empleados)</span>
+    <span><span class="pr-n mr-3">29</span>       if(estado == True):</span>
+    <span><span class="pr-n mr-3">30</span>           print("\nNo se pudo encontrar el empleado\n")</span>
+    <span><span class="pr-n mr-3">31</span>    elif(opcion == 6):</span>
+    <span id="2l1" class="linea-code"><span class="pr-n mr-3">32</span>       <span class="desactivate" id="2l-1">estado,capital_nomina = venta_carro(lista_empleados,capital_nomina)</span></span>
+    <span id="2l2" class="linea-code"><span class="pr-n mr-3">33</span>       <span class="desactivate" id="2l-2">if(estado == False):</span></span>
+    <span><span class="pr-n mr-3">34</span>           print("\nNo se pudo encontrar el empleado\nVuelva a intentar")</span>
+    <span><span class="pr-n mr-3">35</span>    elif(opcion == 7):</span>
+    <span><span class="pr-n mr-3">36</span>       print("\nHasta luego\n")</span>
+    <span><span class="pr-n mr-3">37</span>       fin = True</span>
+    <span><span class="pr-n mr-3">38</span>    else:print("\nEscoja una opción correcta\n")</span>
+
+                </code>
+            </pre>
+      <div id="botones-main" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicarmain"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+    </div>
+
+    <div id="botones-1" class="desactivate">
+      <a href="#" class="btn botonBlue desactivate" id="btn-registrar_nuevo"><i
+          class="far fa-eye"></i> Ver función venta_carro</a>
+
+      <a href="#" class="btn botonBlue" id="btn-main"><i class="far fa-eye"></i>
+        Ver función main</a>
+    </div>
+  </div>
+  <!-- Desarrollo 1 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+      <!-- #3 -->
+      <div class="p-3 mt-3" id="1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 3</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se necesita pedir el valor de la venta, ¿Que linea de código debería
+            venir aquí?
+          </p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-1">
+              <option>Opciones</option>
+              <option>valor = int(input("Ingrese el valor de la venta: "))</option>
+              <option>valor = input("Ingrese el valor de la venta: ")</option>
+              <option>valor = int("Ingrese el valor de la venta: ")</option>
+              <option>int(input("Ingrese el valor de la venta: "))</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La palabra reservada <span class="pr">int</span>, permite volver a
+            entero lo que ingrese el
+            usuario por pantalla
+          </p>
+        </div>
+      </div>
+      <!-- #5 -->
+      <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 5</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se va a recorrer la lista de empleados por indice, ¿Como se hace
+            esto?
+          </p>
+          <form action="" name="formulario2" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-2">
+              <option>Opciones</option>
+              <option>for i in longitud_lista:</option>
+              <option>while i in range(longitud_lista):</option>
+              <option>for i in range(longitud_lista):</option>
+              <option>for i in range():</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Como se ha venido viendo, la palabra reservada <span class="pr">range</span>,
+            me permite
+            definir el rango en el que se va hacer el ciclo <span class="pr">for</span>.
+          </p>
+        </div>
+      </div>
+      <!-- #8 -->
+      <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 8</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se necesita aumentar el numero de ventas del empleado en 1, ¿Que
+            linea de código debería venir aquí?
+          </p>
+          <form action="" name="formulario3" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-3">
+              <option>Opciones</option>
+              <option>empleado[2] += 1</option>
+              <option>empleado[3] -= 1</option>
+              <option>empleado[4] += 1</option>
+              <option>empleado[1] -= 1</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La lista <span class="pr">empleado</span> contiene la información de
+            un empleado de acuerdo
+            al indice en el que se va, para sumarle 1 al <span class="pr-n">numero
+              de ventas</span> solo
+            basta con utilizar el operador <span class="pr">+=</span> 1, a la
+            lista empleado en la
+            posición 4.
+          </p>
+        </div>
+      </div>
+      <!-- #9 -->
+      <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 8</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Ahora se necesita aumentar el capital de nomina en el valor de la
+            venta realizada, ¿Como se hace esto?
+          </p>
+          <form action="" name="formulario4" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-4">
+              <option>Opciones</option>
+              <option>capital_nomina += valor</option>
+              <option>capital_nomina -= valor</option>
+              <option>capital_nomina *= valor</option>
+              <option>capital_nomina /= valor</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Al capital de nomina se le aumenta valor utilizando el operador
+            <span class="pr">+=</span>.
+          </p>
+        </div>
+      </div>
+      <!-- #11 -->
+      <div class="p-3 mt-3 desactivate" id="5" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 11</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se debe retornar un booleano True y el capital de nomina, ¿Como se
+            hace esto?
+          </p>
+          <form action="" name="formulario5" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-5">
+              <option>Opciones</option>
+              <option>return (capital_nomina)</option>
+              <option>return (True)</option>
+              <option>return (True,capital_nomina)</option>
+              <option>retorno True,capital_nomina</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La palabra reservada <span class="pr-n">return</span>, permite
+            devolver los valores que le
+            pasemos como parámetro
+          </p>
+        </div>
+      </div>
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar" href="./parte4" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- Desarrollo 2 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion2">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+
+      <!-- Linea # 32 -->
+      <div class="p-3 mt-3" id="d2-1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 32</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se necesita hacer el llamado a la función venta_carro, recordar que
+            esta función retorna dos valores, un booleano y el capital nomina
+            actualizado, también recordar que se le manda como parámetro dos
+            valores la lista_empleados y el capital_nomina, ¿Como se haría el
+            llamado?
+          </p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-1">
+              <option>Opciones</option>
+              <option>estado,capital_nomina = venta_carro(capital_nomina)</option>
+              <option>estado,capital_nomina = venta_carro(lista_empleados)</option>
+              <option>estado,capital_nomina =
+                venta_carro(lista_empleados,capital_nomina)</option>
+              <option>estado,capital_nomina = venta_carro()</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Los valores que retorna la función serán guardados en las variables
+            <span class="pr">estado</span> y <span class="pr">capital_nomina</span>
+            respectivamente.
+          </p>
+        </div>
+      </div>
+
+      <!-- Linea # 33 -->
+      <div class="p-3 mt-3 desactivate" id="d2-2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 33</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se requiere validar si estado es verdadero o falso, ¿Que linea de
+            código debería venir aquí?
+          </p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-2">
+              <option>Opciones</option>
+              <option>if(estado = False):</option>
+              <option>if(estado == False):</option>
+              <option>if(!estado):</option>
+              <option>if(estado = True):</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Con el if, se valida si <span class="pr">estado</span>, que es la
+            variable que contiene el
+            valor booleano que retorno la función <span class="pr-n">ver_carro</span>
+            es verdadera o es
+            falsa.
+          </p>
+        </div>
+      </div>
+
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar2"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente2"><i
+            class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar2" href="./parte4" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- Explicación 1-->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+    id="explicacionCode1">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div1">
+      <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+    </div>
+  </div>
+  <!-- Explicación 2-->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+    id="explicacionCode2">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div">
+      <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función **2</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+{% endblock content %}
+
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part7.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

@@ -1,0 +1,778 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+Proyecto1 parte - 5
+{% endblock title %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+  type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+      width="30">
+    <span id="title-navabar">Python basado en proyectos</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item desactivate" id="part">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part6' %}"><i class="fa fa-arrow-right"
+            aria-hidden="true"></i> Parte 6</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1' %}"><i
+            class="fas fa-undo-alt mr-2"></i>Volver</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+  <!-- Enunciado -->
+  <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+    <h1 class="title-modul"> Parte 5</h1>
+    <hr>
+    <p class="text-justify">
+
+      En esta quinta parte, lo que se va a realizar es el pago de nominas y el
+      pago de bonificaciones, por lo que se van a crear dos funciones. La
+      primera que se llamara pagarnomina y la segunda que se llamara
+      pagarbonificaciones. Estas dos funciones manejan una estructura similar,
+      por lo que al realizar una, la segunda sera mas sencilla aun de entender.
+      Adicional a esto, se harán el llamado a las funciones en la función
+      principal main.
+    </p>
+    <h1 class="title-modul">¿Como se realizara?</h1>
+    <hr>
+    <h1 class="title-modul text-justify" style="font-size: 15px;">Para
+      pagarnomina</h1>
+    <p class="text-justify">
+      Igual que como el apartado anterior de eliminar empleado, se va a pedir
+      que
+      se ingrese la cedula, después se cojera la longitud de la lista de
+      empleados y se recorrerá la lista por indice atreves de un ciclo for, se
+      cojera el empleado correspondiente, y se validara que el capital de nomina
+      actual, sea mayor que el valor de nomina del empleado. Una vez se haya
+      validado y se cumpla esa condición el capital de nomina disminuirá con lo
+      que se le pago al empleado, dado el caso de que no se cumpla la condición
+      de que el capital de nomina sea mayor al sueldo del empleado usaremos un
+      break para romper el ciclo for, se retornara un booleano True, y el
+      capital de nomina actualizado. Dado el caso que nunca se haya encontrado
+      un empleado con dicha cedula ingresada, entonces se retornara un False y
+      el capital de nomina.
+    </p>
+
+    <hr>
+
+    <h1 class="title-modul text-justify" style="font-size: 15px;">Para
+      pagarbonificaciones</h1>
+    <p class="text-justify">
+      En esta función se hará exactamente lo mismo que en la función anterior,
+      solo que aquí se validara que el numero de ventas del empleado escogido
+      sea mayor a 2 y menor a 4, para así poder aplicar la bonificación del 20%.
+      Si no se cumple esta condición se validara entonces que el numero de
+      ventas sea mayor a 4 para poder aplicar así la bonificación del 40%. Si
+      ninguna de estas condiciones se cumple, entonces se imprimirá por pantalla
+      que el empleado no recibe bonificación.
+    </p>
+
+    <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+  </div>
+</div>
+
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+
+  <!-- Siguiente parte -->
+  <div class="text-center col-lg-12 mx-auto my-5 desactivate"
+    id="siguiente-ejercicio">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+      <br> Puedes pasar a la siguiente parte</h1>
+    <hr>
+
+  </div>
+
+  <!-- Codigo -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+    <!-- Función nomina -->
+    <div class="container code text-justify mt-2" id="new-employee">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función pagarnomina</h1>
+      <pre>
+        <code class="language-python">
+    <span id="l1" class="linea-code"><span class="pr-n mr-3">1</span><span class="desactivate" id="l-1">def pagarnomina(lista_empleados, capital_nomina):</span></span>
+    <span><span class="pr-n mr-3">2</span>  cc = int(input("Ingrese cedula del empleado: "))</span>
+    <span><span class="pr-n mr-3">3</span>  longitud_lista = len(lista_empleados)</span>
+    <span><span class="pr-n mr-3">4</span>  for i in range(longitud_lista):</span>
+    <span id="l2" class="linea-code"><span class="pr-n mr-3">5</span>    <span class="desactivate" id="l-2">empleado = lista_empleados[i]</span></span>
+    <span id="l3" class="linea-code"><span class="pr-n mr-3">6</span>    <span class="desactivate" id="l-3">if (empleado[0] == cc):</span></span>
+    <span><span class="pr-n mr-3">7</span>      if(capital_nomina > empleado[5]):</span>
+    <span id="l4" class="linea-code"><span class="pr-n mr-3">8</span>          <span class="desactivate" id="l-4">capital_nomina -= empleado[5]</span></span>
+    <span><span class="pr-n mr-3">9</span>      else</span>
+    <span><span class="pr-n mr-3">10</span>        break</span>
+    <span id="l5" class="linea-code"><span class="pr-n mr-3">11</span>    <span class="desactivate" id="l-5">return (True, capital_nomina)</span></span>
+    <span><span class="pr-n mr-3">12</span> return (False, capital_nomina)</span>   
+                    </code>
+              </pre>
+      <div id="botones-nomina" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicar1"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+
+
+    </div>
+
+    <!-- Función bonificaciones -->
+    <div class="container code text-justify mt-2 desactivate"
+      id="new-employee2">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función pagarbonificaciones</h1>
+      <pre>
+        <code class="language-python">
+    <span><span class="pr-n mr-3">1</span>def pagarbonificaciones(lista_empleados, capital_nomina):</span>
+    <span><span class="pr-n mr-3">2</span>   cc = int(input("Ingrese cedula del empleado: "))</span>
+    <span><span class="pr-n mr-3">3</span>   longitud_lista = len(lista_empleados)</span>
+    <span><span class="pr-n mr-3">4</span>   for i in range(longitud_lista):</span>
+    <span><span class="pr-n mr-3">5</span>      empleado = lista_empleados[i]</span>
+    <span><span class="pr-n mr-3">6</span>      if (empleado[0] == cc):</span>
+    <span id="2l1" class="linea-code"><span class="pr-n mr-3">7</span>         <span class="desactivate" id="2l-1">if(empleado[4] > 2 and empleado[4] &#60; 4):</span></span>
+    <span><span class="pr-n mr-3">8</span>            boni = empleado[5] * 0.20</span>
+    <span id="2l2" class="linea-code"><span class="pr-n mr-3">9</span>            <span class="desactivate" id="2l-2">if(boni &#60; capital_nomina):</span></span>
+    <span><span class="pr-n mr-3">10</span>               empleado[3] += 1</span>
+    <span id="2l3" class="linea-code"><span class="pr-n mr-3">11</span>               <span class="desactivate" id="2l-3">empleado[4] = 0</span></span>
+    <span><span class="pr-n mr-3">12</span>               return (True, capital_nomina)</span>
+    <span><span class="pr-n mr-3">13</span>           else:</span>
+    <span><span class="pr-n mr-3">14</span>               print("\nEl capital no es suficiente\n")</span>
+    <span><span class="pr-n mr-3">15</span>               break</span>
+    <span><span class="pr-n mr-3">16</span>        elif(empleado[4] > 4):</span>
+    <span id="2l4" class="linea-code"><span class="pr-n mr-3">17</span>           <span class="desactivate" id="2l-4">boni = empleado[5] * 0.40</span></span>
+    <span><span class="pr-n mr-3">18</span>           if(boni &#60; capital_nomina):</span>
+    <span id="2l5" class="linea-code"><span class="pr-n mr-3">19</span>               <span class="desactivate" id="2l-5">empleado[3] += 1</span></span>
+    <span><span class="pr-n mr-3">20</span>               empleado[4] = 0</span>
+    <span><span class="pr-n mr-3">21</span>               return (True, capital_nomina)</span>
+    <span><span class="pr-n mr-3">22</span>            else:</span>
+    <span><span class="pr-n mr-3">23</span>               print("\nEl capital no es suficiente\n")</span>
+    <span><span class="pr-n mr-3">24</span>               break</span>
+    <span><span class="pr-n mr-3">25</span>          else:</span>
+    <span><span class="pr-n mr-3">26</span>              print("\nEl empleado no recibe bonificacion\n")</span>
+    <span><span class="pr-n mr-3">27</span>              break</span>
+    <span><span class="pr-n mr-3">28</span>  return (False, capital_nomina)</span>    
+                    </code>
+              </pre>
+      <div id="botones-boni" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicar2"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+
+
+    </div>
+
+
+    <!-- Main -->
+    <div class="container code text-justify mt-2 desactivate" id="main">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función main</h1>
+      <pre>
+                <code class="language-python">
+    <span><span class="pr-n mr-3">1</span><span class="">def main():</span></span>
+    <span><span class="pr-n mr-3">2</span>   <span>fin = False</span></span>
+    <span><span class="pr-n mr-3">3</span>   <span>lista_empleados = []</span></span>
+    <span><span class="pr-n mr-3">4</span>   <span>capital_nomina = int(input("Ingrese el capital de nomina: "))</span></span>
+    <span><span class="pr-n mr-3">5</span>   while (fin != True):</span>
+    <span><span class="pr-n mr-3">6</span>      <span>menu()</span></span>
+    <span><span class="pr-n mr-3">7</span>      <span>if(opcion == 1):</span></span>
+    <span><span class="pr-n mr-3">8</span>          registrar_nuevo(lista_empleados)</span>    
+    <span><span class="pr-n mr-3">9</span>      <span>elif(opcion == 2):</span></span>
+    <span><span class="pr-n mr-3">10</span>        <span>estado = eliminar_empleado(lista_empleados)</span></span>
+    <span><span class="pr-n mr-3">11</span>        <span>if(estado == True):</span></span>
+    <span><span class="pr-n mr-3">12</span>            <span>print("\nEmpleado Eliminado!!\n")</span></span>
+    <span><span class="pr-n mr-3">13</span>        <span>else:</span></span>
+    <span><span class="pr-n mr-3">14</span>            <span>print("\nEmpleado no Eliminado!!\n")</span></span>
+    <span><span class="pr-n mr-3">15</span>    elif(opcion == 3):</span>
+    <span id="3l1" class="linea-code"><span class="pr-n mr-3">16</span>       <span class="desactivate" id="3l-1">estado, capital_nomina = pagarnomina(lista_empleados, capital_nomina)</span></span>
+    <span id="3l2" class="linea-code"><span class="pr-n mr-3">17</span>       <span class="desactivate" id="3l-2">if(estado == True):</span></span>
+    <span><span class="pr-n mr-3">18</span>          print("\nNomina cancelada con exito!!\n")</span>
+    <span><span class="pr-n mr-3">19</span>       else:</span>
+    <span><span class="pr-n mr-3">20</span>          print("\nEl capital no alcanza!!\n")</span>
+    <span><span class="pr-n mr-3">20</span>    elif(opcion == 4):</span>
+    <span><span class="pr-n mr-3">21</span>       estado, capital_nomina = pagarbonificaciones(lista_empleados, capital_nomina)</span>
+    <span><span class="pr-n mr-3">22</span>       if(estado == True):</span>
+    <span><span class="pr-n mr-3">23</span>          print("\Bonificación cancelada con exito!!\n")</span>
+    <span><span class="pr-n mr-3">24</span>       else:</span>
+    <span><span class="pr-n mr-3">25</span>          print("\nLa bonificacion no pudo ser realizada!!\n")</span>
+    <span><span class="pr-n mr-3">26</span>    elif(opcion == 5):</span>
+    <span><span class="pr-n mr-3">27</span>    elif(opcion == 6):</span>
+    <span><span class="pr-n mr-3">28</span>    elif(opcion == 7):</span>
+    <span><span class="pr-n mr-3">29</span>       print("\nHasta luego\n")</span>
+    <span><span class="pr-n mr-3">30</span>       fin = True</span>
+    <span><span class="pr-n mr-3">31</span>    else:print("\nEscoja una opción correcta\n")</span>
+
+                </code>
+            </pre>
+      <div id="botones-main" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicar3"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+    </div>
+
+    <div id="botones-1" class="desactivate">
+      <a href="#" class="btn botonBlue desactivate" id="btn-pagarnomina"><i
+          class="far fa-eye"></i> Ver función pagarnomina</a>
+
+      <a href="#" class="btn botonBlue" id="btn-bonificaciones"><i
+          class="far fa-eye"></i> Ver función pagarbonificaciones</a>
+
+      <a href="#" class="btn botonBlue" id="btn-main"><i class="far fa-eye"></i>
+        Ver función main</a>
+    </div>
+  </div>
+
+
+  <!-- Desarrollo 1 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+      <!-- #1 -->
+      <div class="p-3 mt-3" id="1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 1</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se debe crear la función
+            pagarnomina, que recibe como parámetro dos variables, ¿Como se haría
+            esto?</p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-1">
+              <option>Opciones</option>
+              <option>def pagarnomina(lista_empleados):</option>
+              <option>def pagarnomina(capital_nomina):</option>
+              <option>def pagarnomina(lista_empleados, capital_nomina):</option>
+              <option>def pagarnomina():</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La función <span class="pr">pagarnomina</span> recibe dos variables
+            que son la lista de empleados y el capital de nomina que se pidió al
+            comienzo del programa
+          </p>
+        </div>
+      </div>
+      <!-- #5 -->
+      <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 5</h1>
+          <p class="text-justify mt-3 font-weight-bold">Como se esta recorriendo
+            la lista por indice, se necesita guardar el empleado correspondiente
+            por el indicie i, en una variable llamada empleado. ¿Que linea de
+            código debería venir aquí?
+          </p>
+          <form action="" name="formulario2" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-2">
+              <option>Opciones</option>
+              <option>empleado = lista_empleados[]</option>
+              <option>lista_empleados[i]</option>
+              <option>empleado = lista_empleados[i + 1]</option>
+              <option>empleado = lista_empleados[i]</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Como se ha venido explicando la lista de empleados contiene una
+            serie de más listas que guardan la información de un empleado, por
+            lo que que al usar la <span class="pr-n">expresión</span>
+            lista_empleados[i] estamos
+            accediendo a otra lista que contiene la información concreta de un
+            empleado en especifico. Por lo que al hacer esto, lo que quedaría
+            guardado en la variable empleado seria, una lista con la información
+            del empleado en la posición i.
+            <br>
+            <span class="pr">Ejemplo</span>: <br>empleado=lista_empleados[i]
+            <br>
+            empleado->[10881234,’juan’,’suarez’,0,0,1’200.000]
+          </p>
+        </div>
+      </div>
+      <!-- #6 -->
+      <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 6</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se debe validar si lo que hay en empleado en la posición 0, que hace
+            referencia a la posición donde se guarda la cedula de un empleado es
+            igual a la cedula que ingreso el usuario en la linea # 2. ¿Como se
+            haría esto?
+          </p>
+          <form action="" name="formulario3" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-3">
+              <option>Opciones</option>
+              <option>if (empleado[0] == cc):</option>
+              <option>if (empleado[1] == cc):</option>
+              <option>if (empleado[0]):</option>
+              <option>if (empleado[0] = cc):</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Si se tiene por ejemplo <span class="pr-n">empleado =
+              [1033123,’Andres’,’Hernandez’,0,0,1’500.000]</span>. Al decir
+            <span class="pr">empleado[0]</span>,
+            lo que se esta haciendo es acceder a la cedula de este empleado,
+            que para este caso seria 1033123.
+          </p>
+        </div>
+      </div>
+      <!-- #8 -->
+      <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 8</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita disminuir el
+            capital de nomina actual con el salario del empleado al que se le
+            esta cancelando la nomina. ¿Que linea de código debería venir aquí?</p>
+          <form action="" name="formulario4" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-4">
+              <option>Opciones</option>
+              <option>capital_nomina -= empleado[]</option>
+              <option>capital_nomina -= empleado[5]</option>
+              <option>capital_nomina += empleado[5]</option>
+              <option>empleado[5] --</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se utiliza la expresión <span class="pr-n">empleado[ 5 ]</span>,
+            para acceder al salario de un empleado. De esta manera obtenemos el
+            valor
+            en el que se
+            disminuye el capital de nomina.
+          </p>
+        </div>
+      </div>
+      <!-- #12 -->
+      <div class="p-3 mt-3 desactivate" id="5" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 12</h1>
+          <p class="text-justify mt-3 font-weight-bold">La variable <span
+              class="pr">datos</span>, es
+            una lista con todos los datos del empleado nuevo, ahora se
+            requiere agregar a la lista <span class="pr">lista_empleados</span>,
+            la lista datos. ¿Que
+            linea de código vendría aquí? .</p>
+          <form action="" name="formulario5" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-5">
+              <option>Opciones</option>
+              <option>return (True)</option>
+              <option>return (capital_nomina)</option>
+              <option>return (True, capital_nomina)</option>
+              <option>True, capital_nomina</option>
+            </select>
+          </form>
+        </div>
+
+
+        <div class="seleccion p-5 desactivate" id="exp-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La palabra reservada <span class="pr">return</span> nos permite
+            retornar los valores que le
+            indiquemos, en este caso un <span class="pr-n">True</span> y el
+            capital de nomina actualizado
+          </p>
+        </div>
+      </div>
+
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar" href="./parte5" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo 2 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion2">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+
+      <!-- # 7 -->
+      <div class="p-3 mt-3" id="d2-1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 7</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se necesita validar si el numero de ventas de un empleado es mayor a
+            2 o menor a 4, ¿Que linea de código debería venir aquí?
+          </p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-1">
+              <option>Opciones</option>
+              <option>if(empleado[4] > 2 or empleado[4] &#60; 4):</option>
+              <option>if(empleado[4] > 2 and empleado[4] > 4): </option>
+              <option>if(empleado[4] > 2 and empleado[4] &#60; 4): </option>
+              <option>if(empleado[4] &#60; 2 and empleado[4] > 4):</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Como se explicó anteriormente, la variable <span class="pr">empleado</span>
+            es una lista con
+            la información de un empleado, para acceder a el <span class="pr-n">numero
+              de ventas</span> de
+            un empleado, se utiliza como indice el numero 4.
+          </p>
+        </div>
+      </div>
+      <!-- # 9 -->
+      <div class="p-3 mt-3 desactivate" id="d2-2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 9</h1>
+          <p class="text-justify mt-3 font-weight-bold">En la linea anterior
+            sacamos el valor de la bonificación, ahora se requiere que validemos
+            si ese valor es menor al capital de nomina, ¿Como se hace esto?</p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-2">
+              <option>Opciones</option>
+              <option>if(boni &#60; capital_nomina): </option>
+              <option>if(boni > capital_nomina):</option>
+              <option>if(boni != capital_nomina):</option>
+              <option>if(boni += capital_nomina):</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Comparamos si la variable <span class="pr">boni</span> (que es el
+            valor de la bonificación),
+            es menor al capital de nomina actual.
+          </p>
+        </div>
+      </div>
+      <!-- # 11 -->
+      <div class="p-3 mt-3 desactivate" id="d2-3" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 11</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Como ya se ha pagado la bonificación, se necesita poner en 0 el
+            numero de ventas del empleado, ¿Como se haría esto?.
+          </p>
+          <form action="" name="formulario3" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-3">
+              <option>Opciones</option>
+              <option>empleado[4] = 0 </option>
+              <option>empleado[4] += 0</option>
+              <option>empleado["4"] = 0</option>
+              <option>empleado[] = 0</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Accediendo a la lista <span class="pr">empleado</span> en la
+            posición 4 que representa el
+            <span class="pr-n">numero de ventas</span> de un empleado, se iguala
+            a 0 para poder reiniciar su valor.
+          </p>
+        </div>
+      </div>
+      <!-- # 17 -->
+      <div class="p-3 mt-3 desactivate" id="d2-4" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 17</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se necesita obtener el valor de la bonificación que es del 40%, ¿Que
+            linea de código debería venir aquí?
+          </p>
+          <form action="" name="formulario4" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-4">
+              <option>Opciones</option>
+              <option>boni = empleado[5] - 0.40</option>
+              <option>boni = empleado[5] / 0.40</option>
+              <option>boni = empleado[1] * 0.40</option>
+              <option>boni = empleado[5] * 0.40 </option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Accedemos al <span class="pr-n">salario del empleado</span>, que en
+            este caso esta en la
+            posición 5 de la lista empleado y multiplicamos por 0.40 para
+            obtener el
+            valor de la bonificación.
+          </p>
+        </div>
+      </div>
+      <!-- # 19 -->
+      <div class="p-3 mt-3 desactivate" id="d2-5" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 19</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Una vez se haya pagado la bonificación, se requiere aumentar el
+            numero de bonificaciones pagadas al empleado en 1, ¿Como se hace
+            esto?
+          </p>
+          <form action="" name="formulario5" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-5">
+              <option>Opciones</option>
+              <option>empleado[3] += 1 </option>
+              <option>empleado[3] -= 1</option>
+              <option>empleado[3] *= 1</option>
+              <option>empleado[1] += 1</option>
+            </select>
+          </form>
+        </div>
+
+
+        <div class="seleccion p-5 desactivate" id="exp2-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Accediendo a la lista <span class="pr">empleado</span>, en la
+            posición 3, accedemos al
+            numero de bonificaciones pagadas hasta el momento al empleado, de
+            esta manera, se le aumenta el valor en 1.
+          </p>
+        </div>
+      </div>
+
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar2"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente2"><i
+            class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar2" href="./parte5" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo 3 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion3">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+
+      <!-- # 16 -->
+      <div class="p-3 mt-3" id="d3-1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel3-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 16</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se va hacer el llamado a la función pagarnomina, recordar que esta
+            función retorna dos valores, ¿Como se podría hacer el llamado a la
+            función?
+          </p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s3-1">
+              <option>Opciones</option>
+              <option>estado, capital_nomina = pagarnomina()</option>
+              <option>capital_nomina = pagarnomina(lista_empleados, capital_nomina)</option>
+              <option>estado, capital_nomina = pagarnomina(lista_empleados, capital_nomina)</option>
+              <option>estado = pagarnomina(lista_empleados, capital_nomina)</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp3-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La función se le mandan como parámetros la lista de empleado y el
+            capital de nomina, y esta retorna dos valores un <span class="pr-n">booleano</span> y el
+            <span class="pr">capital de nomina</span> actualizado, para esto, se declara <span class="pr">estado</span> que va a
+            recibir el valor booleano y utilizamos la variable de <span class="pr">capital_nomina</span>
+            para actualizar el valor del capital de nomina retornado por la
+            función
+          </p>
+        </div>
+      </div>
+      <!-- # 17 -->
+      <div class="p-3 mt-3 desactivate" id="d3-2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel3-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 17</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se necesita validar si estado es igual a True, ¿Como se haría esto?
+          </p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s3-2">
+              <option>Opciones</option>
+              <option>estado == True</option>
+              <option>if(estado == True):</option>
+              <option>else(estado == True):</option>
+              <option>if(estado = True):</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp3-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Con la palabra reservada <span class="pr">if</span>, validamos si el estado es igual a True
+          </p>
+        </div>
+      </div>
+
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar3"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente3"><i
+            class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar3" href="./parte5" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Explicación 1-->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+    id="explicacionCode1">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div1">
+      <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+    </div>
+  </div>
+
+  <!-- Explicación 2-->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+    id="explicacionCode2">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div">
+      <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función **2</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+    </div>
+  </div>
+
+  <!-- Explicación 3-->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+    id="explicacionCode3">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div">
+      <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función **2</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+    </div>
+  </div>
+
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+{% endblock content %}
+
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part5.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

@@ -25,6 +25,22 @@
     color: blue;
 }
 
+.botonBlue{
+    background-color: #4B8BBE; color: white;
+}
+
+.botonBlue:hover{
+    color: black;
+}
+
+.botonYellow{
+    background-color: #FFE873; color: black;
+}
+
+.botonYellow:hover{
+    color: white;
+}
+
 .page-footer{
     color: white;
 }

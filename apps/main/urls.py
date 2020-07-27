@@ -31,5 +31,8 @@ urlpatterns = [
     path('operadores/ejemplo4/',views.ejemplo4_op.as_view(),name = 'ejemplo4-op'),
     path('operadores/ejemplo5/',views.ejemplo5_op.as_view(),name = 'ejemplo5-op'),
     path('operadores/ejemplo6/',views.ejemplo6_op.as_view(),name = 'ejemplo6-op'),
+    #Proyectos
+    path('proyectos',views.proyectos.as_view(),name = 'proyectos'),
+
 
 ]

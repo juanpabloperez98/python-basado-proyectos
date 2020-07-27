@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+Proyecto1 parte - 1
+{% endblock title %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+  type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+      width="30">
+    <span id="title-navabar">Python basado en proyectos</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item desactivate" id="part2">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part2' %}"><i class="fa fa-arrow-right"
+            aria-hidden="true"></i> Parte2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1' %}"><i
+            class="fas fa-undo-alt mr-2"></i>Volver</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+  <!-- Enunciado -->
+  <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+    <h1 class="title-modul"> Parte 1</h1>
+    <hr>
+    <p class="text-justify">
+      En esta primera parte, se desarrollara la función principal y su llamado,
+      en esta función se va a realizar toda la lógica de la llamada a las demás
+      funciones correspondientes con respecto a una opción escogida por el
+      usuario, cabe a clarar que esta solo es la primera parte, por lo que si
+      usted copia el código en su ordenador, se dará cuenta que le saldrán una
+      serie de errores, la recomendación es que vaya copiando el código y
+      ejecútelo solo hasta haber llegado a la parte final del proyecto
+    </p>
+    <h1 class="title-modul">¿Como se realizara?</h1>
+    <hr>
+    <p class="text-justify">
+      Se realizara una función llamada main(), la cual debe ser llamada
+      dentro del programa para que este corra.
+      Dentro de esta función se va a pedir el capital de nomina con el que se va a
+      trabajar y se definira una lista para guardar todos los empleados
+      registrados en el programa, aquí se utiliza un ciclo while que nos
+      permitirá correr el programa sin que se cierre, solo se cerrara cuando el
+      usuario de la opción de salir, se va a validar todas las opciones
+      correspondientes para poder hacer las llamadas a las otras funciones
+      <br>
+      <span class="pr">NOTA</span>: Hay algunas funciones que se llamaran
+      pero se van a realizar en apartados siguientes
+    </p>
+
+    <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+  </div>
+</div>
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+
+  <!-- Siguiente parte -->
+  <div class="text-center col-lg-12 mx-auto my-5 desactivate"
+    id="siguiente-ejercicio">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+      <br> Puedes pasar a la siguiente parte</h1>
+    <hr>
+    
+  </div>
+
+  <!-- Codigo -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+    <div class="container code text-justify mt-2">
+      <pre>
+            <code class="language-python">
+    <span><span class="pr-n mr-3">1</span><span class="">def main():</span></span>
+    <span><span class="pr-n mr-3">2</span>   <span>fin = False</span></span>
+    <span><span class="pr-n mr-3">3</span>   <span>lista_empleados = []</span></span>
+    <span id="l1" class="linea-code"><span class="pr-n mr-3">4</span>   <span class="desactivate" id="l-1">capital_nomina = int(input("Ingrese el capital de nomina: "))</span></span>
+    <span><span class="pr-n mr-3">5</span>   while (fin != True):</span>
+    <span id="l2" class="linea-code"><span class="pr-n mr-3">6</span>      <span class="desactivate" id="l-2">menu()</span></span>
+    <span id="l3" class="linea-code"><span class="pr-n mr-3">7</span>      <span class="desactivate" id="l-3">opcion = int(input("Ingrese una opcion: "))</span></span>
+    <span><span class="pr-n mr-3">8</span>      <span>if(opcion == 1):</span></span>
+    <span><span class="pr-n mr-3">9</span>      <span>elif(opcion == 2):</span></span>
+    <span><span class="pr-n mr-3">10</span>    elif(opcion == 3):</span>
+    <span><span class="pr-n mr-3">11</span>    elif(opcion == 4):</span>
+    <span><span class="pr-n mr-3">12</span>    elif(opcion == 5):</span>
+    <span><span class="pr-n mr-3">13</span>    elif(opcion == 6):</span>
+    <span><span class="pr-n mr-3">14</span>    elif(opcion == 7):</span>
+    <span id="l4" class="linea-code"><span class="pr-n mr-3">15</span>        <span class="desactivate" id="l-4">print("\nHasta luego\n")</span></span>
+    <span id="l5" class="linea-code"><span class="pr-n mr-3">16</span>        <span class="desactivate" id="l-5">fin = True</span></span>
+    <span><span class="pr-n mr-3">17</span>    else:print("\nEscoja una opción correcta\n")</span>
+    <span id="l6" class="linea-code"><span class="pr-n mr-3">18</span><span style="margin-left: -5px;"><span class="desactivate" id="l-6">main()</span></span></span>
+            </code>
+        </pre>
+    </div>
+
+    <div id="botones-1" class="desactivate">
+      <a href="#" class="btn botonYellow" id="explicar"><i class="fas
+          fa-align-justify"></i> Explicar codigo</a>
+    </div>
+  </div>
+  <!-- Desarrollo -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+      <!-- #4 -->
+      <div class="p-3 mt-3" id="1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 4</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita pedir el
+            capital de nomina con el que se va a trabajar, ¿Que linea de código
+            debería venir aquí? </p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-1">
+              <option>Opciones</option>
+              <option>capital_nomina = input("Ingrese el capital de nomina: ")</option>
+              <option>capital_nomina = "Ingrese el capital de nomina: "</option>
+              <option>capital_nomina = int(input("Ingrese el capital de nomina:
+                "))</option>
+              <option>capital_nomina = int("Ingrese el capital de nomina: ")</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Para pedir el capital de
+            nomina, es necesario utilizar la palabra reservada <span class="pr">input</span>
+            para poder capturar datos por pantalla, adicional a eso se utiliza
+            <span class="pr">int</span> para volver lo ingresado por el usuario
+            en entero</p>
+        </div>
+      </div>
+      <!-- #6 -->
+      <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 6</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita hacer la
+            llamada a una función menu, ¿Que linea de código debería venir aquí?
+          </p>
+          <form action="" name="formulario2" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-2">
+              <option>Opciones</option>
+              <option>menu</option>
+              <option>menu()</option>
+              <option>menu[]</option>
+              <option>menu[capital_nomina]</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Para llamar a una
+            función solo basta con poner el nombre de la función acompañado por
+            () <br> <span class="pr">NOTA</span>: la función <span class="pr">menu()</span>
+            la crearemos en el siguiente apartado</p>
+        </div>
+      </div>
+      <!-- #7 -->
+      <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 7</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se pedirá al usuario que
+            ingrese una opción, ¿Como se puede lograr? </p>
+          <form action="" name="formulario3" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-3">
+              <option>Opciones</option>
+              <option>opcion = "Ingrese una opcion: "</option>
+              <option>opcion = int("Ingrese una opcion: ")</option>
+              <option>opcion = "Ingrese una opcion: "</option>
+              <option>opcion = int(input("Ingrese una opcion: ")) </option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Igual que en la linea #
+            4 es necesario utilizar la palabra reservada <span class="pr">input</span>
+            para poder capturar datos por pantalla, adicional a eso se utiliza
+            <span class="pr">int</span> para volver lo ingresado por el usuario
+            en entero</p>
+        </div>
+      </div>
+      <!-- #15 -->
+      <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 15</h1>
+          <p class="text-justify mt-3 font-weight-bold">Dado el caso que el
+            usuario escoja la opción 7, se imprimirá por pantalla un mensaje de
+            despedida, ¿Que linea de código debería venir aquí?</p>
+          <form action="" name="formulario4" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-4">
+              <option>Opciones</option>
+              <option>print("\nHasta luego\n")</option>
+              <option>print(\nHasta luego\n)</option>
+              <option>prin("\nHasta luego\n")</option>
+              <option>print("")</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Con un simple print
+            imprimimos por pantalla un mensaje, los <span class="pr">"\n"</span>
+            sirven para hacer un salto de linea</p>
+        </div>
+      </div>
+      <!-- #16 -->
+      <div class="p-3 mt-3 desactivate" id="5" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 16</h1>
+          <p class="text-justify mt-3 font-weight-bold">SI el usuario escogió la
+            opción 7, se necesitara cerrar el ciclo while de la linea # 5, ¿Como
+            podemos hacer esto?</p>
+          <form action="" name="formulario5" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-5">
+              <option>Opciones</option>
+              <option>fin = False</option>
+              <option>fin = "True"</option>
+              <option>fin = True</option>
+              <option>fin -= 5</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-5">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Al poner <span
+              class="pr">fin = True</span>, se le esta diciendo al ciclo <span
+              class="pr">while</span> que no se vuelva a repetir, puesto que
+            este corre siempre y cuando <span class="pr">fin</span> sea
+            diferente de True.</p>
+        </div>
+      </div>
+      <!-- #18 -->
+      <div class="p-3 mt-3 desactivate" id="6" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-6">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 18</h1>
+          <p class="text-justify mt-3 font-weight-bold">Para poder correr todo
+            el programa, es necesario hacer la llamada a la función que ya
+            creamos de la misma manera como hicimos el llamado a la función
+            menu() en la linea # 6, ¿Que linea de código debería venir aquí?</p>
+          <form action="" name="formulario6" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-6">
+              <option>Opciones</option>
+              <option>main[]</option>
+              <option>main()</option>
+              <option>main</option>
+              <option>main[capital_nomina]</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-6">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Para llamar a una
+            función solo basta con poner el nombre de la función acompañado por
+            <span class="pr">()</span></p>
+        </div>
+      </div>
+
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar" href="./" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- Explicación -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="explicacionCode">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div">
+      <pre>
+        <code class="language-python" id="code-add">
+<span class=""><span class="pr-n mr-3">1</span>  Se crea la función main. Con la palabra reservada "def", acompañada del nombre que se le quiera dar se pude crear una función en Python.</span>
+<span class=""><span class="pr-n mr-3">2</span>  Creamos una variable fin y la igualamos a False. <br>  <span class="pr ml-4">NOTA</span>: esta variable es la que nos va a permitir manejar el ciclo while de la linea # 5</span>
+<span class=""><span class="pr-n mr-3">3</span>  Creamos una lista donde se van a guardar los empleados registrados, la lista se llamara "lista_empleados" para evitar confusiones a la hora del desarrollo</span>
+<span class=""><span class="pr-n mr-3">4</span>  Pedimos el capital de nomina con el que se va a trabajar.</span>
+<span class=""><span class="pr-n mr-3">5</span>  Creamos un ciclo while, que nos permite hacer un ciclo infinito, que solo se detendrá cuando el usuario escoja la opción 7 <br>  <span class="pr ml-4">NOTA</span>: El ciclo while se ejecutara siempre y cuando <span class="pr">fin</span> sea diferente de True</span>
+<span class=""><span class="pr-n mr-3">6</span>  Llamamos a la función "menu()" <br>  <span class="pr ml-4">NOTA</span>: Como se menciono anteriormente, la función menu() se creara en el apartado siguientes.</span>
+<span class=""><span class="pr-n mr-3">7</span>  Una vez se muestre el menú, le pediremos al usuario que escoja una opción mostrada. La opción ingresada por el usuario se guardara en la variable "opcion"</span>
+<span class=""><span class="pr-n mr-3">8</span>  validamos si "opcion" es igual a 1</span>
+<span class=""><span class="pr-n mr-3">9</span>  validamos si "opcion" es igual a 2</span>
+<span class=""><span class="pr-n mr-3">10</span>validamos si "opcion" es igual a 3</span>
+<span class=""><span class="pr-n mr-3">11</span>validamos si "opcion" es igual a 4</span>
+<span class=""><span class="pr-n mr-3">12</span>validamos si "opcion" es igual a 5</span>
+<span class=""><span class="pr-n mr-3">13</span>validamos si "opcion" es igual a 6</span>
+<span class=""><span class="pr-n mr-3">14</span>validamos si "opcion" es igual a 7</span>
+<span class=""><span class="pr-n mr-3">15</span>Si el usuario escogió la opción 7, se muestra un mensaje de despedida</span>
+<span class=""><span class="pr-n mr-3">16</span>Como se menciono en la linea 5, el ciclo infinito solo corre siempre y cuando <span class="pr">fin</span> sea diferente de True, para terminar el ciclo, se iguala <span class="pr">fin</span> a True</span>
+<span class=""><span class="pr-n mr-3">17</span>Validamos si ninguna de las opciones fue escogida, de ser así imprimimos por pantalla un mensaje de error</span>
+<span class=""><span class="pr-n mr-3">18</span>Se hace el llamado a la función <span class="pr">main()</span> ya creada.</span>
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+{% endblock content %}
+
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part1.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

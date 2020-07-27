@@ -1,17 +1,21 @@
 from tkinter import *
 """ Frames """
-raiz = Tk()
-raiz.config(bg="blue")
+root = Tk()
+root.config()
+root.geometry("300x300")
 miFrame = Frame()
-# miFrame.pack(side = "right",anchor ="n")
+miFrame.config(bg="red",width="100",height="100")
 miFrame.pack()
-miFrame.config(bg="red")
-miFrame.config(width="650", height="350")
+# miFrame.pack(side = "right",anchor ="n")
+# miFrame.pack()
+# miFrame.config(bg="red")
+# miFrame.config(width="650", height="350")
 
-miFrame.config(bd=35)
+# miFrame.config(bd=35)
 # miFrame.config(relief="groove")
-miFrame.config(relief="sunken")
-miFrame.config(cursor="hand2")
+# miFrame.config(relief="sunken")
+# miFrame.config(cursor="hand2")
 
 
-raiz.mainloop()
+
+root.mainloop()

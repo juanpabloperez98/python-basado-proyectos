@@ -1,0 +1,44 @@
+---------line # 3--------------
+len(lista_empleados)
+longitud_lista = lista_empleados
+longitud_lista = len(lista_empleados) ***
+longitud_lista = len(lista_empleados[0])
+---------line # 4--------------
+for i range(longitud_lista):
+for i in range(longitud_lista): ***
+for i in range():
+while i in range(longitud_lista):
+---------line # 6--------------
+if (empleado[0] = cc):
+if (empleado[] == cc):
+if (empleado[0]):
+if (empleado[0] == cc): ***
+---------line # 8--------------
+print("Cedula: ", empleado[0]) ***
+print("Cedula: ", empleado[1])
+print("Cedula: ", empleado[2])
+print("Cedula: ", empleado[3])
+---------line # 13--------------
+print("Salario: ", empleado[2])
+print("Salario: ", empleado[1])
+print("Salario: ", empleado[5]) ***
+print("Salario: ", empleado[3])
+---------line # 15--------------
+return True
+return False ***
+return -1
+return
+
+
+
+
+---------line # 27--------------
+estado = ver_detalle(lista_empleados) ***
+estado = ver_detalle()
+ver_detalle(lista_empleados)
+ver_detalle()
+---------line # 28--------------
+if(estado = True):
+if(!estado):
+if(estado == True): ***
+if(estado not True):

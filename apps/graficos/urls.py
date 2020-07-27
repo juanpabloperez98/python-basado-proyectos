@@ -8,4 +8,7 @@ urlpatterns = [
     path('tkinter/',views.tkinter.as_view(),name = 'graficos-tkinter'),
     # Primera interfaz grafica
     path('primera-interfaz/',views.firts_gui.as_view(),name = 'graficos-firts-gui'),
+    # Interfaz Grafica con Frames
+    path('frames/',views.frames.as_view(),name = 'graficos-frames'),
+
 ]

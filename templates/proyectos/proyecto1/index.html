@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">    
+{% endblock styles %}
+    
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">        
+        <li class="nav-item">            
+            <a class="nav-link" href="{% url 'main_app:proyectos' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+        </li>  
+      </ul>
+    </div>
+</nav>  
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Proyecto 1</h1>        
+        <hr>
+        <p class="text-center pr">Sistema de nominas</p>
+        <div class="text-justify mt-3">
+            <p>
+                Se desea realizar un sistema de nominas para una empresa de venta de carros, el cual consiste en llevar un registro de los empleados que tiene la empresa, las ventas realizadas por el empleado, y las bonificaciones que tiene cada empleado.                                
+                <br>
+                El software debe tener un menú que le permita al administrador del programa poder hacer las siguiente tareas:
+            </p>
+            <ul class="container">
+                <li>Registrar un nuevo empleado.</li>
+                <li>Eliminar un empleado.</li>
+                <li>Pagar nomina.</li>
+                <li>Pagar bonificaciones.</li>
+                <li>Ver detalles del empleado </li>
+                <li>Venta de un carro</li>
+            </ul>
+            
+            <div class="desactivate" id="content-show">
+                <h1 class="title-modul"> Para tener en cuenta:</h1>                             
+                <ul class="container">
+                    <li class="mt-1">Al momento de correr el programa debe pedir el capital de nomina con el que se va a trabajar</li>
+                    <hr>
+                    <li class="mt-1">Al momento de registrar un nuevo empleado se pedirán (cc,nombre,apellido,salario)</li>
+                    <hr>
+                    <li class="mt-1">El pago de nomina se realiza basado al salario del empleado, y dependerá del capital de nomina que tenga la empresa, dado el caso de que el capital no sea suficiente para pagar la nomina, se deberá informar al administrador</li>
+                    <hr>
+                    <li class="mt-1">El pago de bonificaciones dependerá del numero de ventas que haya realizado un empleado,si el numero de ventas de un empleado supera un valor a 2, su bonificación sera del 20% con respecto a su salario, si es mayor a 4, sera de un 40% con respecto a su salario, se debe disminuir el capital de nomina cada que se haga un pago de bonificación</li>
+                    <hr>
+                    <li class="mt-1">Al pagar bonificaciones, el numero de ventas del empleado se reducirá a 0 y las bonificaciones aumentaran a 1</li>
+                    <hr>
+                    <li class="mt-1">Ver detalles del empleado, mostrara los detalles del empleado (cc,nombre,apellido,bonificaciones,numero ventas,salario)</li>
+                    <hr>
+                    <li class="mt-1">Al vender un carro, la venta del carro sumara al capital de nomina y aumentara el numero de ventas del empleado que vendió el carro</li>
+                    <hr>
+                </ul>
+                <br>
+                <h1 class="title-modul"> Temas a tratar:</h1>
+                <ul class="container">
+                    <li>
+                        <a href="{% url 'main_app:estructuras_de_secuencia' %}">
+                            Estructuras de secuencia    
+                        </a>
+                        </li>
+                    <li>
+                        <a href="#">
+                            Estructuras condicionales    
+                        </a>
+                        </li>
+                    <li>
+                        <a href="#">
+                            Estructuras repetitivas    
+                        </a>
+                        </li>
+                    <li>
+                        <a href="#">
+                            Estructuras de datos (listas)
+                        </a></li>
+                    <li>
+                        <a href="#">
+                            Funciones    
+                        </a>
+                    </li>
+                </ul>
+                <hr>                
+                <h1 class="title-modul"> Partes a tratar:</h1>
+                <ul class="container">
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-part1' %}">
+                            Parte 1: Crear función principal
+                        </a>
+                        </li>
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-part2' %}">
+                            Parte 2: Dibujar el menu
+                        </a>
+                        </li>
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-part3' %}">
+                            Parte 3: Registrar empleado
+                        </a>
+                        </li>
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-part4' %}">
+                            Parte 4: Eliminar un empleado
+                        </a></li>
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-part5' %}">
+                            Parte 5: Pagar nomina y bonificaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-part6' %}">
+                            Parte 6: Ver detalles del empleado
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-part7' %}">
+                            Parte 7: Venta de un carro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto1_app:proyecto1-final' %}">
+                            Parte final: Ver codigo completo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#content-show" onclick="ShowStatement()" id="leer-mas">Leer más</a>
+            <a href="#" onclick="HideStatement()" class="desactivate" id="leer-menos">Leer menos</a>
+
+            <div class="w-25 mx-auto mt-4">
+                <a href="{% url 'proyecto1_app:proyecto1-part1' %}" class="btn btn-block botonBlue">Empezar proyecto</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+
+    <script>
+        var ShowStatement = () =>{
+            document.getElementById('content-show').setAttribute('class','')
+            document.getElementById('leer-mas').setAttribute('class','desactivate')            
+            document.getElementById('leer-menos').setAttribute('class','')            
+        }
+
+        var HideStatement = () =>{
+            document.getElementById('content-show').setAttribute('class','desactivate')
+            document.getElementById('leer-mas').setAttribute('class','')
+            document.getElementById('leer-menos').setAttribute('class','desactivate')
+        }
+    </script>
+    
+{% endblock scripts %}
+    
+
+    

@@ -1,0 +1,37 @@
+---------line # 3--------------
+valor = int(input("Ingrese el valor de la venta: ")) ***
+valor = input("Ingrese el valor de la venta: ")
+valor = int("Ingrese el valor de la venta: ")
+int(input("Ingrese el valor de la venta: "))
+---------line # 5--------------
+for i in longitud_lista:
+while i in range(longitud_lista):
+for i in range(longitud_lista): ***
+for i in range():
+---------line # 8--------------
+empleado[2] += 1
+empleado[4] += 1 ***
+empleado[3] -= 1
+empleado[1] -= 1
+---------line # 9--------------
+capital_nomina += valor ***
+capital_nomina -= valor
+capital_nomina *= valor
+capital_nomina /= valor
+---------line # 11--------------
+return (capital_nomina)
+return (True)
+return (True,capital_nomina) ***
+retorno True,capital_nomina
+
+
+---------line # 31--------------
+estado,capital_nomina = venta_carro(capital_nomina)
+estado,capital_nomina = venta_carro(lista_empleados)
+estado,capital_nomina = venta_carro(lista_empleados,capital_nomina) ***
+estado,capital_nomina = venta_carro()
+---------line # 32--------------
+if(estado = False):
+if(estado == False): ***
+if(!estado):
+if(estado = True):

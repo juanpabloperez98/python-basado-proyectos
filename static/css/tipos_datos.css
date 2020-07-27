@@ -55,6 +55,16 @@ h1,
 .pr-n{
     color: blue;
 }
+
+.botonBlue{
+    background-color: #4B8BBE; color: white;
+}
+
+.botonBlue:hover{
+    color: black;
+}
+
+
 .code{
     background-color: rgba(236, 240, 241,1.0);
     border-radius: 8px;

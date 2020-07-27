@@ -125,6 +125,7 @@ INSTALLED_APPS = [
     #apps
     'apps.main',
     'apps.graficos',
+    'apps.proyecto1',
 ]
 
 MIDDLEWARE = [

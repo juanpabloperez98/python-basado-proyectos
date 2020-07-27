@@ -1,0 +1,408 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+Proyecto1 parte - 4
+{% endblock title %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+  type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+      width="30">
+    <span id="title-navabar">Python basado en proyectos</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item desactivate" id="part">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part5' %}"><i class="fa fa-arrow-right"
+            aria-hidden="true"></i> Parte 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1' %}"><i
+            class="fas fa-undo-alt mr-2"></i>Volver</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+  <!-- Enunciado -->
+  <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+    <h1 class="title-modul"> Parte 4</h1>
+    <hr>
+    <p class="text-justify">
+      Esta es la cuarta parte del proyecto, hasta el momento hemos creado la
+      función principal, su menú y la función registrar_nuevo, que lo que
+      permitía era poder agregar a la lista_empleados, otra lista que contenía
+      los datos de un empleado nuevo. Ahora en esta parte, lo que se va a
+      realizar es que se pueda eliminar un empleado de la lista de acuerdo a una
+      cedula ingresada. Adicional a eso, se hará la llamada a la función
+      realizada(eliminar_empleado) en la función main.
+    </p>
+    <h1 class="title-modul">¿Como se realizara?</h1>
+    <hr>
+    <p class="text-justify">
+      Para poder realizar esta función, lo primero que se deberá hacer es
+      pedirle al usuario que ingrese la cedula del empleado que desea eliminar,
+      después de esto se recorrerá la lista de empleado por indice para poder
+      encontrar el empleado correspondiente y así eliminarlo de la lista. Una
+      vez se haya encontrado el empleado la función retornara un True, dado el
+      caso que no haya encontrado ningún empleado, retornara un False.
+    </p>
+
+    <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+  </div>
+</div>
+
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+
+  <!-- Siguiente parte -->
+  <div class="text-center col-lg-12 mx-auto my-5 desactivate"
+    id="siguiente-ejercicio">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+      <br> Puedes pasar a la siguiente parte</h1>
+    <hr>
+
+  </div>
+
+  <!-- Codigo -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+    <!-- Función  -->
+    <div class="container code text-justify mt-2" id="new-employee">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función eliminar_empleado</h1>
+      <pre>
+        <code class="language-python">
+    <span><span class="pr-n mr-3">1</span>def eliminar_empleado(lista_empleados):</span>
+    <span><span class="pr-n mr-3">2</span>   cc = int(input("Ingrese cedula del empleado: "))</span>
+    <span id="l1" class="linea-code"><span class="pr-n mr-3">3</span>   <span class="desactivate" id="l-1">longitud_lista = len(lista_empleados)</span></span>
+    <span id="l2" class="linea-code"><span class="pr-n mr-3">4</span>   <span class="desactivate" id="l-2">for i in range(longitud_lista):</span></span>    
+    <span><span class="pr-n mr-3">5</span>       empleado = lista_empleados[i]</span>
+    <span><span class="pr-n mr-3">6</span>       if (empleado[0] == cc):</span>
+    <span id="l3" class="linea-code"><span class="pr-n mr-3">7</span>           <span class="desactivate" id="l-3">lista_empleados.pop(i)</span></span>    
+    <span><span class="pr-n mr-3">8</span>           return True</span>
+    <span><span class="pr-n mr-3">9</span>   return False</span>
+                    </code>
+              </pre>
+      <div id="botones-register" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+
+
+    </div>
+
+    <!-- Main -->
+    <div class="container code text-justify mt-2 desactivate" id="main">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función main</h1>
+      <pre>
+                <code class="language-python">
+    <span><span class="pr-n mr-3">1</span><span class="">def main():</span></span>
+    <span><span class="pr-n mr-3">2</span>   <span>fin = False</span></span>
+    <span><span class="pr-n mr-3">3</span>   <span>lista_empleados = []</span></span>
+    <span><span class="pr-n mr-3">4</span>   <span>capital_nomina = int(input("Ingrese el capital de nomina: "))</span></span>
+    <span><span class="pr-n mr-3">5</span>   while (fin != True):</span>
+    <span><span class="pr-n mr-3">6</span>   <span>menu()</span></span>
+    <span><span class="pr-n mr-3">7</span>   <span>if(opcion == 1):</span></span>
+    <span><span class="pr-n mr-3">8</span>       registrar_nuevo(lista_empleados)</span>    
+    <span><span class="pr-n mr-3">9</span>   <span>elif(opcion == 2):</span></span>
+    <span id="2l1" class="linea-code"><span class="pr-n mr-3">10</span>     <span class="desactivate" id="2l-1">estado = eliminar_empleado(lista_empleados)</span></span>
+    <span id="2l2" class="linea-code"><span class="pr-n mr-3">11</span>     <span class="desactivate" id="2l-2">if(estado == True):</span></span>
+    <span><span class="pr-n mr-3">12</span>         <span>print("\nEmpleado Eliminado!!\n")</span></span>
+    <span><span class="pr-n mr-3">13</span>     <span>else:</span></span>
+    <span><span class="pr-n mr-3">14</span>         <span>print("\nEmpleado no Eliminado!!\n")</span></span>
+    <span><span class="pr-n mr-3">15</span> elif(opcion == 3):</span>
+    <span><span class="pr-n mr-3">16</span> elif(opcion == 4):</span>
+    <span><span class="pr-n mr-3">17</span> elif(opcion == 5):</span>
+    <span><span class="pr-n mr-3">18</span> elif(opcion == 6):</span>
+    <span><span class="pr-n mr-3">19</span> elif(opcion == 7):</span>
+    <span><span class="pr-n mr-3">20</span>    print("\nHasta luego\n")</span>
+    <span><span class="pr-n mr-3">21</span>    fin = True</span>
+    <span><span class="pr-n mr-3">22</span> else:print("\nEscoja una opción correcta\n")</span>
+
+                </code>
+            </pre>
+      <div id="botones-main" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicarmain"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+    </div>
+
+    <div id="botones-1" class="desactivate">
+      <a href="#" class="btn botonBlue desactivate" id="btn-registrar_nuevo"><i
+          class="far fa-eye"></i> Ver función eliminar_empleado</a>
+
+      <a href="#" class="btn botonBlue" id="btn-main"><i class="far fa-eye"></i>
+        Ver función main</a>
+    </div>
+  </div>
+  <!-- Desarrollo 1 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+      <!-- #3 -->
+      <div class="p-3 mt-3" id="1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 3</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita saber
+            cuantos empleados están registrados hasta el momento, para ello se
+            va a coger la longitud de la lista de empleados y la igualamos a una
+            variable longitud_lista, ¿Que linea de código debería venir aquí?</p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-1">
+              <option>Opciones</option>
+              <option>longitud_lista = lista_empleados</option>
+              <option>longitud_lista = len()</option>
+              <option>longitud_lista = len(lista_empleados)</option>
+              <option>len(lista_empleados)</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La palabra reservada <span class="pr">len</span>, devuelve el numero
+            de elementos o longitud, que tiene una lista
+          </p>
+        </div>
+      </div>
+      <!-- #4 -->
+      <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 4</h1>
+          <p class="text-justify mt-3 font-weight-bold">Necesitamos recorrer la
+            lista de empleados por indice. ¿Como se haría esto?
+          </p>
+          <form action="" name="formulario2" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-2">
+              <option>Opciones</option>
+              <option>for i in range():</option>
+              <option>for i in longitud_lista:</option>
+              <option>while i in range(longitud_lista):</option>
+              <option>for i in range(longitud_lista):</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La palabra reservada <span class="pr">range</span> permite que el
+            ciclo for empiece en 0 y vaya hasta el numero que le indiquemos,
+            para esta caso la longitud de la lista
+          </p>
+        </div>
+      </div>
+      <!-- #7 -->
+      <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 7</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Una vez encontrado el empleado se necesita eliminar de la lista
+            dicho empleado. Sabiendo el indice en el que se encuentra, ¿Que
+            linea de código debería venir aquí ?
+          </p>
+          <form action="" name="formulario3" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-3">
+              <option>Opciones</option>
+              <option>lista_empleados.append(i)</option>
+              <option>lista_empleados.pop(i)</option>
+              <option>lista_empleados.delete(i)</option>
+              <option>pop(i)</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            La palabra <span class="pr">pop</span>, lo que hace es eliminar el
+            elemento i de una lista
+            <br>
+            <span class="pr">Ejemplo</span>: Se tiene una <span class="pr-n">lista=["juan",
+              "carlos", "andres"]</span>, al utilizar <span class="pr">lista.pop(1)</span>,
+            la lista quedaría de esta manera <span class="pr-n">lista =
+              ["juan","andres"]</span>, pop elimina el elemento de una lista
+          </p>
+        </div>
+      </div>
+
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar" href="./parte4" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- Desarrollo 2 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion2">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+
+      <!-- Linea # 10 -->
+      <div class="p-3 mt-3" id="d2-1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 10</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se requiere hacer el
+            llamado a la función, hay que recordar que la función
+            eliminar_empleado retorna un booleano, ¿Que linea de código debería
+            venir aquí?</p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-1">
+              <option>Opciones</option>
+              <option>estado = eliminar_empleado(lista_empleados)</option>
+              <option>estado = eliminar_empleado()</option>
+              <option>eliminar_empleado(lista_empleados)</option>
+              <option>eliminar_empleado()</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Como la función <span class="pr">eliminar_empleado</span> retorna un
+            booleano, declaramos la
+            variable <span class="pr-n">estado</span> y la igualamos a la
+            llamada de la función.
+          </p>
+        </div>
+      </div>
+
+      <!-- Linea # 11 -->
+      <div class="p-3 mt-3 desactivate" id="d2-2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel2-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 11</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita validar si
+            la variable estado es verdadera o falsa, ¿Como se haría esto?</p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s2-2">
+              <option>Opciones</option>
+              <option>if(not estado == True):</option>
+              <option>if(estado = True):</option>
+              <option>if(estado == True):</option>
+              <option>if(!estado):</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp2-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">
+            Se valida con un <span class="pr">if</span>, si lo que retorno la función fue un True o False
+          </p>
+        </div>
+      </div>
+
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar2"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente2"><i
+            class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar2" href="./parte4" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- Explicación 1-->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+    id="explicacionCode1">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div1">
+      <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+    </div>
+  </div>
+  <!-- Explicación 2-->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+    id="explicacionCode2">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div">
+      <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función **2</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+    </div>
+  </div>
+
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+{% endblock content %}
+
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part4.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

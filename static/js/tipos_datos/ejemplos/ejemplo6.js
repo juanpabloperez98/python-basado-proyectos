@@ -17,7 +17,7 @@
         document.getElementById('explicacion').setAttribute('class','col-lg-5 mt-3 mx-auto bg-light')
         document.getElementById('explicar').removeEventListener('click',explicacion)
         document.getElementById('explicar').setAttribute('class','desactivate')
-        document.getElementById('reiniciar').setAttribute('class','btn btn-outline-success')
+        document.getElementById('reiniciar').setAttribute('class','btn botonYellow')
     }   
 
     // Comprobar datos
@@ -49,7 +49,7 @@
             document.getElementById('seguir').setAttribute('class','desactivate') /* Ocultar boton */
             document.getElementById('output').setAttribute('class','container code mt-2') /* Mostrar salida */
             document.getElementById('date').setAttribute('class','desactivate') /* Desactivamos */
-            document.getElementById('explicar').setAttribute('class','btn btn-outline-success') /* Mostrar boton explicar */
+            document.getElementById('explicar').setAttribute('class','btn botonYellow') /* Mostrar boton explicar */
             document.getElementById('explicar').addEventListener('click',explicacion) /* COgemos el elemento le agregamos la función click */
             salida()
         }
@@ -60,7 +60,7 @@
     ejecutar = () => { /* La función */
         document.getElementById('ejecutar').removeEventListener('click',ejecutar) /* Eliminamos evento */
         document.getElementById('ejecutar').setAttribute('class','desactivate') /* Ocultamos boton */
-        document.getElementById('seguir').setAttribute('class','btn btn-outline-primary') /* Ocultamos boton */        
+        document.getElementById('seguir').setAttribute('class','btn botonBlue') /* Ocultamos boton */        
         document.getElementById('seguir').addEventListener('click',siguiente) /* Agregamos evento */
         document.getElementById('date').setAttribute('class','container code mt-2')
     }    

@@ -14,3 +14,6 @@ class tkinter(TemplateView):
 
 class firts_gui(TemplateView):
     template_name = "teoria/moduls/graficos/firts_gui.html"
+
+class frames(TemplateView):
+    template_name = "teoria/moduls/graficos/frames.html"

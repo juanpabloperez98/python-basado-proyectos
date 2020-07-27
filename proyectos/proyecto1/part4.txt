@@ -1,0 +1,30 @@
+---------line # 3--------------
+longitud_lista = lista_empleados
+longitud_lista = len()
+longitud_lista = len(lista_empleados) ***
+len(lista_empleados)
+---------line # 4--------------
+for i in range():
+for i in longitud_lista:
+while i in range(longitud_lista):
+for i in range(longitud_lista): ***
+---------line # 7--------------
+lista_empleados.append(i)
+lista_empleados.pop(i) ***
+lista_empleados.delete(i)
+pop(i)
+
+
+
+---------line # 10--------------
+estado = eliminar_empleado(lista_empleados) ***
+estado = eliminar_empleado()
+eliminar_empleado(lista_empleados)
+eliminar_empleado()
+
+---------line # 11--------------
+if(not estado == True):
+if(estado = True):
+if(estado == True): ***
+if(!estado):
+

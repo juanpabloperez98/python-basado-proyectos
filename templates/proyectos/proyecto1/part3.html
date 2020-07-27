@@ -1,0 +1,428 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+Proyecto1 parte - 3
+{% endblock title %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+  type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+      width="30">
+    <span id="title-navabar">Python basado en proyectos</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item desactivate" id="part">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part4' %}"><i
+            class="fa fa-arrow-right"
+            aria-hidden="true"></i> Parte4</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1' %}"><i
+            class="fas fa-undo-alt mr-2"></i>Volver</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+  <!-- Enunciado -->
+  <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+    <h1 class="title-modul"> Parte 3</h1>
+    <hr>
+    <p class="text-justify">
+      En esta tercera parte se va a realizar la función registrar_nuevo, que es
+      la función que nos va a permitir pedir los datos de un nuevo empleado y
+      agregarlos a la lista lista_empleados que declaramos en la parte # 1,
+      ademas de eso, en la parte 1 del proyecto, se validaron las opciones que
+      podría escoger el usuario, por eso, se va modificar cuando el usuario
+      escoja la opción 1. Cuando se escoja la opción 1 se va hacer la llamada a
+      la función registrar_nuevo que se acabo de crear.
+    </p>
+    <h1 class="title-modul">¿Como se realizara?</h1>
+    <hr>
+    <p class="text-justify">
+      En esta tercera parte se va a realizar la función registrar_nuevo, que es
+      la función que nos va a permitir pedir los datos de un nuevo empleado y
+      agregarlos a la lista lista_empleados que declaramos en la parte # 1,
+      ademas de eso, en la parte 1 del proyecto, se validaron las opciones que
+      podría escoger el usuario, por eso, se va modificar cuando el usuario
+      escoja la opción 1. Cuando se escoja la opción 1 se va hacer la llamada a
+      la función registrar_nuevo que se acabo de crear.
+    </p>
+
+    <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+  </div>
+</div>
+
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+
+  <!-- Siguiente parte -->
+  <div class="text-center col-lg-12 mx-auto my-5 desactivate"
+    id="siguiente-ejercicio">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+      <br> Puedes pasar a la siguiente parte</h1>
+    <hr>
+
+  </div>
+
+  <!-- Codigo -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+    <!-- Función  -->
+    <div class="container code text-justify mt-2" id="new-employee">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función registrar_nuevo</h1>
+      <pre>
+                    <code class="language-python">
+    <span id="l1" class="linea-code"><span class="pr-n mr-3">1</span><span class="desactivate" id="l-1">def registrar_nuevo(lista_empleados):</span></span>
+    <span><span class="pr-n mr-3">2</span>  cc = int(input("Cedula: "))</span>
+    <span id="l2" class="linea-code"><span class="pr-n mr-3">3</span>  <span class="desactivate" id="l-2">nombre = input("Ingrese nombre: ")</span></span>
+    <span><span class="pr-n mr-3">4</span>  apellido = input("Ingrese apellido: ")</span>
+    <span><span class="pr-n mr-3">5</span>  bonificaciones = 0</span>
+    <span id="l3" class="linea-code"><span class="pr-n mr-3">6</span>  <span class="desactivate" id="l-3">numero_ventas = 0</span></span>
+    <span id="l4" class="linea-code"><span class="pr-n mr-3">7</span>  <span class="desactivate" id="l-4">salario = int(input("Ingrese el salario $: "))</span></span>
+    <span><span class="pr-n mr-3">8</span>  datos = [cc, nombre, apellido, bonificaciones,numero_ventas, salario]</span>
+    <span id="l5" class="linea-code"><span class="pr-n mr-3">9</span>  <span class="desactivate" id="l-5">lista_empleados.append(datos)</span></span>
+    <span><span class="pr-n mr-3">10</span>print("\Empleado registrado con exito!\n")</span>
+                    </code>
+              </pre>
+      <div id="botones-register" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+
+
+    </div>
+
+    <!-- Main -->
+    <div class="container code text-justify mt-2 desactivate" id="main">
+      <h1 class="text-center mt-5 p-2" style="font-size: 20px;color: rgba(149,
+        165, 166,1);">Función main</h1>
+      <pre>
+                <code class="language-python">
+<span><span class="pr-n mr-3">1</span><span class="">def main():</span></span>
+<span><span class="pr-n mr-3">2</span>   <span>fin = False</span></span>
+<span><span class="pr-n mr-3">3</span>   <span>lista_empleados = []</span></span>
+<span><span class="pr-n mr-3">4</span>   <span>capital_nomina = int(input("Ingrese el capital de nomina: "))</span></span>
+<span><span class="pr-n mr-3">5</span>   while (fin != True):</span>
+<span><span class="pr-n mr-3">6</span>   <span>menu()</span></span>
+<span><span class="pr-n mr-3">7</span>   <span>if(opcion == 1):</span></span>
+<span id="2l1" class="linea-code"><span class="pr-n mr-3">8</span>      <span class="desactivate" id="2l-1">registrar_nuevo(lista_empleados)</span></span>
+<span><span class="pr-n mr-3">9</span>      <span>elif(opcion == 2):</span></span>
+<span><span class="pr-n mr-3">10</span>    elif(opcion == 3):</span>
+<span><span class="pr-n mr-3">11</span>    elif(opcion == 4):</span>
+<span><span class="pr-n mr-3">12</span>    elif(opcion == 5):</span>
+<span><span class="pr-n mr-3">13</span>    elif(opcion == 6):</span>
+<span><span class="pr-n mr-3">14</span>    elif(opcion == 7):</span>
+<span><span class="pr-n mr-3">15</span>      print("\nHasta luego\n")</span>
+<span><span class="pr-n mr-3">16</span>      fin = True</span>
+<span><span class="pr-n mr-3">18</span>    else:print("\nEscoja una opción correcta\n")</span>
+
+                </code>
+            </pre>
+      <div id="botones-main" class="desactivate">
+        <a href="#" class="btn botonYellow" id="explicarmain"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+      </div>
+    </div>
+
+    <div id="botones-1" class="desactivate">
+      <a href="#" class="btn botonBlue desactivate" id="btn-registrar_nuevo"><i
+          class="far fa-eye"></i> Ver función registrar_nuevo</a>
+
+      <a href="#" class="btn botonBlue"id="btn-main"><i class="far fa-eye"></i>
+        Ver función main</a>
+    </div>
+  </div>
+  <!-- Desarrollo 1 -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+      <!-- #1 -->
+      <div class="p-3 mt-3" id="1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 1</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se va a crear la función
+            registrar_nuevo, que va a recibir como parámetro a lista_empleado,
+            ¿Que linea de código debería venir aquí?</p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-1">
+              <option>Opciones</option>
+              <option>def registrar_nuevo():</option>
+              <option>registrar_nuevo(lista_empleados)</option>
+              <option>def registrar_nuevo(lista_empleados): </option>
+              <option>registrar_nuevo():</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Para crear la función
+            solo basta utilizar la palabra reservada <span class="pr">def</span>,
+            acompañada del nombre que se le quiera dar a la función y paréntesis
+            (): .Si se desea enviar valores por parámetro seria <span
+              class="pr">(nombre_variable):</span>
+          </div>
+        </div>
+        <!-- #3 -->
+        <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+          <div class="seleccion p-5" id="sel-2">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Linea # 3</h1>
+            <p class="text-justify mt-3 font-weight-bold">Se va a pedir al
+              usuario que ingrese el nombre del nuevo empleado, ¿Como se hace
+              esto?
+            </p>
+            <form action="" name="formulario2" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+              <select class="form-control form-control-lg" id="s-2">
+                <option>Opciones</option>
+                <option>input("Ingrese nombre: ")</option>
+                <option>nombre = input()</option>
+                <option>"Ingrese nombre: "</option>
+                <option>nombre = input("Ingrese nombre: ")</option>
+              </select>
+            </form>
+          </div>
+          <div class="seleccion p-5 desactivate" id="exp-2">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Felicitaciones</h1>
+            <p class="text-justify mt-3 font-weight-bold">Para pedir un dato por
+              pantalla solo basta con usar la palabra reservada <span
+                class="pr">input</span>, acompañado del mensaje</p>
+          </div>
+        </div>
+        <!-- #6 -->
+        <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+          <div class="seleccion p-5" id="sel-3">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Linea # 6</h1>
+            <p class="text-justify mt-3 font-weight-bold">El numero de ventas de
+              un empleado, al igual que las bonificaciones por determinación
+              empezaran en 0, ¿Que linea de código vendría aquí? </p>
+            <form action="" name="formulario3" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+              <select class="form-control form-control-lg" id="s-3">
+                <option>Opciones</option>
+                <option>numero_ventas += 1</option>
+                <option>numero_ventas = 0</option>
+                <option>numero_ventas -= 1</option>
+                <option>numero_ventas -= 0</option>
+              </select>
+            </form>
+          </div>
+          <div class="seleccion p-5 desactivate" id="exp-3">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Felicitaciones</h1>
+            <p class="text-justify mt-3 font-weight-bold">Declaramos la variable
+              <span class="pr">numero_ventas</span> y la igualamos a 0</p>
+          </div>
+        </div>
+        <!-- #7 -->
+        <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+          <div class="seleccion p-5" id="sel-4">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Linea # 7</h1>
+            <p class="text-justify mt-3 font-weight-bold">Se necesita pedir el
+              salarió del empleado nuevo, ¿Como se haría esto?</p>
+            <form action="" name="formulario4" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+              <select class="form-control form-control-lg" id="s-4">
+                <option>Opciones</option>
+                <option>salario = input("Ingrese el salario $: ")</option>
+                <option>salario = "Ingrese el salario $: "</option>
+                <option>salario = int(input("Ingrese el salario $: ")) </option>
+                <option>int(input("Ingrese el salario $: "))</option>
+              </select>
+            </form>
+          </div>
+          <div class="seleccion p-5 desactivate" id="exp-4">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Felicitaciones</h1>
+            <p class="text-justify mt-3 font-weight-bold">Como el salario debe
+              ser un entero, usamos la palabra reservada <span class="pr">int</span>
+              para capturar el salario ingresado por el usuario </p>
+          </div>
+        </div>
+        <!-- #9 -->
+        <div class="p-3 mt-3 desactivate" id="5" style="width: 100%;">
+          <div class="seleccion p-5" id="sel-5">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Linea # 9</h1>
+            <p class="text-justify mt-3 font-weight-bold">La variable <span
+                class="pr">datos</span>, es
+              una lista con todos los datos del empleado nuevo, ahora se
+              requiere agregar a la lista <span class="pr">lista_empleados</span>,
+              la lista datos. ¿Que
+              linea de código vendría aquí? .</p>
+            <form action="" name="formulario5" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+              <select class="form-control form-control-lg" id="s-5">
+                <option>Opciones</option>
+                <option>lista_empleados.append(datos)</option>
+                <option>lista_empleados.add(datos)</option>
+                <option>lista_empleados.(datos)</option>
+                <option>lista_empleados.[datos]</option>
+              </select>
+            </form>
+          </div>
+          <div class="seleccion p-5 desactivate" id="exp-5">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Felicitaciones</h1>
+            <p class="text-justify mt-3 font-weight-bold">Para agregar datos a
+              una lista solo basta con llamar a <span class="pr">lista</span> en
+              la que se quiere agregar y llamamos a la función <span class="pr">append</span>
+              que me permite agregar lo que le pasemos en los paréntesis, para
+              este caso la lista datos. <br> <span class="pr">Ejemplo</span>: Se
+              tiene una lista vaciá <span class="pr">lista = []</span> y una lista con números <span class="pr">lista2 =
+                [1,2,3]</span>. Al usar <span class="pr">append</span> de la manera <span class="pr-n">lista.append(lista2)</span>, se
+              obtiene como resultado <span class="pr">lista = [[1,2,3]]</span>, una lista dentro de otra
+              lista</p>
+          </div>
+        </div>
+
+        <div class="botones text-center mb-3">
+          <button class="btn botonYellow" id="probar"><i class="fas
+              fa-arrow-right"></i> Probar</button>
+          <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+              fa-arrow-right"></i> Seguir</button>
+          <a id="reiniciar" href="./" class="btn botonBlue" id="reiniciar"><i
+              class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+        </div>
+
+      </div>
+    </div>
+    <!-- Desarrollo 2 -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion2">
+      <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+      <div class="container code text-justify mt-2">
+
+        <div class="p-3 mt-3" id="1" style="width: 100%;">
+          <div class="seleccion p-5" id="sel2-1">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Linea # 1</h1>
+            <p class="text-justify mt-3 font-weight-bold">Se necesita hacer el
+              llamado a la función que se acabo de crear, ¿Que linea de código
+              debería venir aquí?</p>
+            <form action="" name="formulario1" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+              <select class="form-control form-control-lg" id="s2-1">
+                <option>Opciones</option>
+                <option>registrar_nuevo()</option>
+                <option>registrar_nuevo("lista_empleados")</option>
+                <option>registrar_nuevo</option>
+                <option>registrar_nuevo(lista_empleados)</option>
+              </select>
+            </form>
+          </div>
+          <div class="seleccion p-5 desactivate" id="exp2-1">
+            <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+              class="text-center mt-2">Felicitaciones</h1>
+            <p class="text-justify mt-3 font-weight-bold">
+              Para hacer la llamada a una función, solo basta con colocar el
+              <span class="pr">nombre</span> de la función acompañado de
+              paréntesis y la variable que se va a pasar por parámetro
+            </p>
+          </div>
+        </div>
+
+        <div class="botones text-center mb-3">
+          <button class="btn botonYellow" id="probar2"><i class="fas
+              fa-arrow-right"></i> Probar</button>
+          <button class="btn botonBlue desactivate" id="siguiente2"><i
+              class="fas
+              fa-arrow-right"></i> Seguir</button>
+          <a id="reiniciar2" href="./" class="btn botonBlue" id="reiniciar"><i
+              class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+        </div>
+
+      </div>
+    </div>
+    <!-- Explicación 1-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+      id="explicacionCode1">
+      <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+      <div class="container code text-justify mt-2" id="explain-div1">
+        <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+      </div>
+    </div>
+    <!-- Explicación 2-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate"
+      id="explicacionCode2">
+      <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+      <div class="container code text-justify mt-2" id="explain-div">
+        <pre>
+            <code class="language-python" id="code-add">
+      <span class=""><span class="pr-n mr-3">1</span>Definimos la función **2</span>
+      <span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+      <span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+      <span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+      <span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+      <span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+      <span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+      <span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+      <span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+            </code>
+          </pre>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div style="margin-bottom: 10%;">
+
+  </div>
+  {% endblock content %}
+
+
+
+  {% block scripts %}
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+  <script src="{% static 'js/proyectos/proyecto1/part3.js' %}"></script>
+  <script src="{% static 'js/highlight.pack.js' %}"></script>
+  <script>
+        hljs.initHighlightingOnLoad()      
+</script>
+  {% endblock scripts %}

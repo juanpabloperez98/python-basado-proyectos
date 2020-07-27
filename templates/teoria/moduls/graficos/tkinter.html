@@ -25,7 +25,7 @@ Tkinter
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">        
         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <a class="nav-link" href="{% url 'main_app:proyectos' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i>
                 Practica con proyectos</a>
         </li>
         <li class="nav-item">            
@@ -95,16 +95,16 @@ Tkinter
     </div>
 
     <!-- 6.1.3 Frames -->
-    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="frames">
         <h1 class="title-modul"><span class="pr mr-2">6.1.3</span> Frames</h1>
         <hr>
         <div class="text-justify mt-3">
             <p>
-                Se le conoce como root o raíz, ya que es el componente principal donde se inicializa toda la interfaz grafica, esta definido por la llamada a la función Tk() de la librería Tkinter. Es un estandar llamar la variable root o raiz mas sin embargo no es determinante a la hora de crear un programa, a continuación se muestra como realizar una interfaz grafica con la función Tk():                
+                Los frames o marcos, son una especie de contenedor, el cual nos permite al igual que el root o raíz, poner elementos dentro de el. En otras palabras un frame, es como una raíz, pero a diferencia de esta, el frame no se representa como una venta propiamente, sino mas bien como un elemento que contiene mas elementos y que se puede ubicar dentro de la ventana principal o raíz.
             </p>
             <ul class="container">
                 <li>
-                    <a href="#">Primera interfaz grafica</a>
+                    <a href="{% url 'graficos_app:graficos-frames' %}">Interfaz grafica con frames</a>
                 </li>
             </ul>
         </div>

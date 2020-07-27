@@ -1,0 +1,483 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<link rel="stylesheet" href="{% static 'css/final.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+            width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" id="part">
+                <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part7'
+                    %}"><i
+                        class="fa fa-arrow-right"
+                        aria-hidden="true"></i> Siguiente proyecto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto1_app:proyecto1' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<!-- Principal -->
+<div class="content row mx-auto" id="main">
+    <div class="col-lg-8 mx-auto text-center part-1 p-5 mt-5">
+        <h1 class="title-modul" style="font-size: 30px;color: rgba(149, 165,
+            166,1);"> ¡¡Felicitaciones!!</h1>
+        <p class="text-justify mt-3">
+            Felicitaciones usted ha completado todo el proyecto de sistema de
+            nominas, la Universidad Tecnológica de Pereira, espera que el
+            estudiante haya podido entender al máximo los temas tratados en este
+            proyecto, si tiene alguna duda, no dude en volver a realizar el
+            proyecto o el/los apartados en los que encuentre falencias y dudas.
+            También puede consultar a su profesor sobre las dudas puntuales que
+            se tengan o repasar la <a href="{% url 'main_app:teoria_index' %}">teoría</a>
+            de Python.
+            <br>
+            A continuación se presentara todo el código del proyecto y las
+            funciones realizadas, le recomendamos copiar el código en su
+            computadora
+        </p>
+
+        <button class="btn btn-block mx-auto botonBlue" id="ShowCompleteCode">Ver
+            codigo completo</button>
+    </div>
+
+</div>
+
+<!-- Codigos -->
+<div class="content row mx-auto desactivate" id="codes">
+    <!-- Función main()  -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light" id="codemain">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función main()</h1>
+            <pre>
+            <code class="language-python">
+        <span><span class="pr-n mr-3">1</span>def main():</span>
+        <span><span class="pr-n mr-3">2</span>   fin = False</span>
+        <span><span class="pr-n mr-3">3</span>   lista_empleados = []</span>
+        <span><span class="pr-n mr-3">4</span>   capital_nomina = int(input("Ingrese el capital de nomina: "))</span>
+        <span><span class="pr-n mr-3">5</span>   while (fin != True):</span>
+        <span><span class="pr-n mr-3">6</span>        <span id="f-menu" class="call_f" onclick="ShowFuntionMenu()">menu()</span></span>
+        <span><span class="pr-n mr-3">7</span>        opcion = int(input("Ingrese una opcion: "))</span>
+        <span><span class="pr-n mr-3">8</span>        if(opcion == 1):</span>
+        <span><span class="pr-n mr-3">9</span>              <span id="f-registrar" class="call_f" onclick="ShowFuntionRegistrar()">registrar_nuevo(lista_empleados)</span></span>
+        <span><span class="pr-n mr-3">10</span>      elif(opcion == 2):</span>
+        <span><span class="pr-n mr-3">11</span>            estado = <span class="call_f" onclick="ShowFutionEliminar()">eliminar_empleado(lista_empleados)</span></span>
+        <span><span class="pr-n mr-3">12</span>            if(estado == True):</span>
+        <span><span class="pr-n mr-3">13</span>                 print("\nEmpleado Eliminado!!\n")</span>
+        <span><span class="pr-n mr-3">14</span>            else:</span>
+        <span><span class="pr-n mr-3">15</span>                 print("\nEmpleado No encontrado!!\n")</span>
+        <span><span class="pr-n mr-3">16</span>      elif(opcion == 3):</span>
+        <span><span class="pr-n mr-3">17</span>             estado, capital_nomina = <span class="call_f" onclick="ShowFutionpagarnomina()">pagarnomina(lista_empleados, capital_nomina)</span></span>
+        <span><span class="pr-n mr-3">18</span>             if(estado == True):</span>
+        <span><span class="pr-n mr-3">19</span>                 print("\nNomina cancelada con exito!!\n")</span>
+        <span><span class="pr-n mr-3">20</span>             else:</span>
+        <span><span class="pr-n mr-3">21</span>                 print("\nEl capital no alcanza!!\n")</span>
+        <span><span class="pr-n mr-3">22</span>      elif(opcion == 4):</span>
+        <span><span class="pr-n mr-3">23</span>             estado, capital_nomina = <span class="call_f" onclick="ShowFutionpagarbonificaciones()">pagarbonificaciones(lista_empleados, capital_nomina)</span></span>
+        <span><span class="pr-n mr-3">24</span>             if(estado == True):</span>
+        <span><span class="pr-n mr-3">25</span>                 print("\Bonificación cancelada con exito!!\n")</span>
+        <span><span class="pr-n mr-3">26</span>             else:</span>        
+        <span><span class="pr-n mr-3">27</span>                 print("\nLa bonificacion no pudo ser realizada!!\n")</span>        
+        <span><span class="pr-n mr-3">28</span>      elif(opcion == 5):</span>        
+        <span><span class="pr-n mr-3">29</span>             estado = <span class="call_f" onclick="ShowFuntionverdetalle()">ver_detalle(lista_empleados)</span></span>        
+        <span><span class="pr-n mr-3">30</span>             if (estado == False):</span>        
+        <span><span class="pr-n mr-3">31</span>                 print("\nNo se pudo encontrar el empleado\n")</span>        
+        <span><span class="pr-n mr-3">32</span>      elif(opcion == 6):</span>        
+        <span><span class="pr-n mr-3">33</span>             estado,capital_nomina = <span class="call_f" onclick="ShowFuntionVenta()">venta_carro(lista_empleados,capital_nomina)</span></span>        
+        <span><span class="pr-n mr-3">34</span>             if(estado == False):</span>        
+        <span><span class="pr-n mr-3">35</span>                 print("\nNo se pudo encontrar el empleado\nVuelva a intentar")</span>        
+        <span><span class="pr-n mr-3">36</span>      elif(opcion == 7):</span>        
+        <span><span class="pr-n mr-3">37</span>             print("\nHasta luego\n")</span>        
+        <span><span class="pr-n mr-3">38</span>             fin = True</span>        
+        <span><span class="pr-n mr-3">39</span>      else:print("\nEscoja una opción correcta\n")</span>        
+                        </code>
+                  </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+        </div>
+    </div>
+    <!-- Función menu()-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codemenu">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función menu()</h1>
+            <pre>  
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def menu():</span>
+          <span><span class="pr-n mr-3">2</span>    print("\n---SISTEMA DE NOMINAS---\n")</span>
+          <span><span class="pr-n mr-3">3</span>    print("1)Registrar un nuevo empleado.")</span>
+          <span><span class="pr-n mr-3">4</span>    print("2)Eliminar un empleado.")</span>
+          <span><span class="pr-n mr-3">5</span>    print("3)Pagar nomina.")</span>
+          <span><span class="pr-n mr-3">6</span>    print("4)Pagar bonificaciones.")</span>
+          <span><span class="pr-n mr-3">7</span>    print("5)ver detalles del empleado.")</span>
+          <span><span class="pr-n mr-3">8</span>    print("6)Venta de un carro.")</span>
+          <span><span class="pr-n mr-3">9</span>    print("7)Salir.")</span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Función registrar_nuevo(lista_empleados)-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="coderegistrar">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función registrar_nuevo(lista_empleados)</h1>
+            <pre>  
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def registrar_nuevo(lista_empleados):</span>
+          <span><span class="pr-n mr-3">2</span>    cc = int(input("Cedula: "))</span>
+          <span><span class="pr-n mr-3">3</span>    nombre = input("Ingrese nombre: ")</span>
+          <span><span class="pr-n mr-3">4</span>    apellido = input("Ingrese apellido: ")</span>
+          <span><span class="pr-n mr-3">5</span>    bonificaciones = 0</span>
+          <span><span class="pr-n mr-3">6</span>    numero_ventas = 0</span>
+          <span><span class="pr-n mr-3">7</span>    salario = int(input("Ingrese el salario $: "))</span>
+          <span><span class="pr-n mr-3">8</span>    datos = [cc, nombre, apellido, bonificaciones, numero_ventas, salario]</span>
+          <span><span class="pr-n mr-3">9</span>    lista_empleados.append(datos)</span>
+          <span><span class="pr-n mr-3">10</span>  print("\n***Empleado registrado con exito!!***\n")</span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+            
+    </div>
+
+    <!-- Función eliminar_empleado(lista_empleados)-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codeeliminar">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función eliminar_empleado(lista_empleados)</h1>
+            <pre>  
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def eliminar_empleado(lista_empleados):</span>
+          <span><span class="pr-n mr-3">2</span>    cc = int(input("Ingrese cedula del empleado: "))</span>
+          <span><span class="pr-n mr-3">3</span>    longitud_lista = len(lista_empleados)</span>
+          <span><span class="pr-n mr-3">4</span>    for i in range(longitud_lista):</span>
+          <span><span class="pr-n mr-3">5</span>        empleado = lista_empleados[i]</span>
+          <span><span class="pr-n mr-3">6</span>        if (empleado[0] == cc):</span>
+          <span><span class="pr-n mr-3">7</span>            lista_empleados.pop(i)</span>
+          <span><span class="pr-n mr-3">8</span>            return True</span>
+          <span><span class="pr-n mr-3">9</span>    return False</span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+        
+        
+    </div>
+
+    <!-- Función def pagarnomina(lista_empleados, capital_nomina)-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codepagarnomina">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función pagarnomina(lista_empleados,
+                capital_nomina)</h1>
+            <pre>  
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def pagarnomina(lista_empleados, capital_nomina):</span>
+          <span><span class="pr-n mr-3">2</span>    cc = int(input("Ingrese cedula del empleado: "))</span>
+          <span><span class="pr-n mr-3">3</span>    longitud_lista = len(lista_empleados)</span>
+          <span><span class="pr-n mr-3">4</span>    for i in range(longitud_lista):</span>
+          <span><span class="pr-n mr-3">5</span>        empleado = lista_empleados[i]</span>
+          <span><span class="pr-n mr-3">6</span>        if (empleado[0] == cc):</span>
+          <span><span class="pr-n mr-3">7</span>            if(capital_nomina > empleado[5]):</span>
+          <span><span class="pr-n mr-3">8</span>                capital_nomina -= empleado[5]</span>
+          <span><span class="pr-n mr-3">9</span>            else:</span>
+          <span><span class="pr-n mr-3">10</span>               break</span>
+          <span><span class="pr-n mr-3">11</span>           return (True, capital_nomina)</span>
+          <span><span class="pr-n mr-3">11</span>   return (False, capital_nomina)</span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+
+        
+    </div>
+
+    <!-- Función def pagarbonificaciones(lista_empleados, capital_nomina):-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codepagarbonificaciones">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función pagarbonificaciones(lista_empleados,
+                capital_nomina)</h1>
+            <pre>  
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def pagarbonificaciones(lista_empleados, capital_nomina):</span>
+          <span><span class="pr-n mr-3">2</span>    cc = int(input("Ingrese cedula del empleado: "))</span>
+          <span><span class="pr-n mr-3">3</span>    longitud_lista = len(lista_empleados)</span>
+          <span><span class="pr-n mr-3">4</span>    for i in range(longitud_lista):</span>
+          <span><span class="pr-n mr-3">5</span>        empleado = lista_empleados[i]</span>
+          <span><span class="pr-n mr-3">6</span>        if (empleado[0] == cc):</span>
+          <span><span class="pr-n mr-3">7</span>            if(empleado[4] > 2 and empleado[4] &#60; 4):</span>
+          <span><span class="pr-n mr-3">8</span>                boni = empleado[5] * 0.20</span>
+          <span><span class="pr-n mr-3">9</span>                if(boni &#60; capital_nomina):</span>
+          <span><span class="pr-n mr-3">10</span>                  empleado[3] += 1</span>
+          <span><span class="pr-n mr-3">11</span>                  empleado[4] = 0</span>
+          <span><span class="pr-n mr-3">12</span>                  return (True, capital_nomina)</span>
+          <span><span class="pr-n mr-3">13</span>              else:</span>
+          <span><span class="pr-n mr-3">14</span>                  print("\nEl capital no es suficiente\n")</span>
+          <span><span class="pr-n mr-3">15</span>                  break</span>
+          <span><span class="pr-n mr-3">16</span>          elif(empleado[4] > 4):</span>
+          <span><span class="pr-n mr-3">17</span>              boni = empleado[5] * 0.40</span>
+          <span><span class="pr-n mr-3">18</span>              if(boni &#60; capital_nomina):</span>
+          <span><span class="pr-n mr-3">19</span>                  empleado[3] += 1</span>
+          <span><span class="pr-n mr-3">20</span>                  empleado[4] = 0</span>
+          <span><span class="pr-n mr-3">21</span>                  return (True, capital_nomina)</span>
+          <span><span class="pr-n mr-3">22</span>              else:</span>
+          <span><span class="pr-n mr-3">23</span>                  print("\nEl capital no es suficiente\n")</span>
+          <span><span class="pr-n mr-3">24</span>                  break</span>
+          <span><span class="pr-n mr-3">25</span>          else:</span>
+          <span><span class="pr-n mr-3">26</span>              print("\nEl empleado no recibe bonificacion\n")</span>
+          <span><span class="pr-n mr-3">27</span>              break</span>
+          <span><span class="pr-n mr-3">28</span>   return (False, capital_nomina)</span>
+          
+          
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+
+        
+    </div>
+
+    <!-- Función def ver_detalle(lista_empleados):-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codeverdetalle">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función ver_detalle(lista_empleados)</h1>
+            <pre>  
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def ver_detalle(lista_empleados):</span>
+          <span><span class="pr-n mr-3">2</span>    cc = int(input("Ingrese cedula del empleado: "))</span>
+          <span><span class="pr-n mr-3">3</span>    longitud_lista = len(lista_empleados)</span>
+          <span><span class="pr-n mr-3">4</span>    for i in range(longitud_lista):</span>
+          <span><span class="pr-n mr-3">5</span>        empleado = lista_empleados[i]</span>
+          <span><span class="pr-n mr-3">6</span>        if (empleado[0] == cc):</span>
+          <span><span class="pr-n mr-3">7</span>            print("----EMPLEADO-----")</span>
+          <span><span class="pr-n mr-3">8</span>            print("Cedula: ", empleado[0])</span>
+          <span><span class="pr-n mr-3">9</span>            print("Nombre: ", empleado[1])</span>
+          <span><span class="pr-n mr-3">10</span>          print("Apellido: ", empleado[2])</span>
+          <span><span class="pr-n mr-3">11</span>          print("Bonificaciones pagadas: ", empleado[3])</span>
+          <span><span class="pr-n mr-3">12</span>          print("Numero ventas: ", empleado[4])</span>
+          <span><span class="pr-n mr-3">13</span>          print("Salario: ", empleado[5])</span>
+          <span><span class="pr-n mr-3">14</span>          return True</span>
+          <span><span class="pr-n mr-3">15</span>    return False</span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Función def venta_carro(lista_empleados,capital_nomina):-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codeventacarro">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función
+                venta_carro(lista_empleados,capital_nomina)</h1>
+            <pre>  
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def venta_carro(lista_empleados,capital_nomina):</span>
+          <span><span class="pr-n mr-3">2</span>    cc = int(input("Ingrese cedula del empleado que realizo la venta: "))</span>
+          <span><span class="pr-n mr-3">3</span>    valor = int(input("Ingrese el valor de la venta: "))</span>
+          <span><span class="pr-n mr-3">4</span>    longitud_lista = len(lista_empleados)</span>
+          <span><span class="pr-n mr-3">5</span>    for i in range(longitud_lista):</span>
+          <span><span class="pr-n mr-3">6</span>        empleado = lista_empleados[i]</span>
+          <span><span class="pr-n mr-3">7</span>        if (empleado[0] == cc):</span>
+          <span><span class="pr-n mr-3">8</span>            empleado[4] += 1</span>
+          <span><span class="pr-n mr-3">9</span>            capital_nomina += valor</span>
+          <span><span class="pr-n mr-3">10</span>          print("\nVenta realizada con exito por el empleado ",empleado[1])</span>
+          <span><span class="pr-n mr-3">11</span>          return (True,capital_nomina)</span>
+          <span><span class="pr-n mr-3">12</span>    return (False,capital_nomina)</span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i
+                        class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+        
+        
+    </div>
+
+    <div class="col-lg-12 text-center desactivate" id="boton">
+        <button class="btn botonBlue" onclick="ShowMainCode()" id="boton-volver"><i class="fas fa-step-backward mr-2"></i>main()</button>
+    </div>
+
+
+</div>
+
+
+<div style="margin-bottom: 14%;">
+</div>
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part-final.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()
+        var code = 0 
+        
+        const HideCodeMain = () => {
+            $('#codemain').toggle('fold')            
+            $('#boton').toggle('fold')
+        }
+
+        
+        var ShowFuntionMenu = () => {
+            $('#codemenu').toggle('fold')
+            HideCodeMain()            
+            code = 1
+        }
+
+        var ShowFuntionRegistrar = () => {
+            $('#coderegistrar').toggle('fold')
+            HideCodeMain()
+            code = 2
+        }
+
+        var ShowFutionEliminar = () => {
+            $('#codeeliminar').toggle('fold')
+            HideCodeMain()
+            code = 3
+        }
+
+        var ShowFutionpagarnomina = () => {
+            $('#codepagarnomina').toggle('fold')
+            HideCodeMain()
+            code = 4
+        }
+
+        var ShowFutionpagarbonificaciones = () => {
+            $('#codepagarbonificaciones').toggle('fold')
+            HideCodeMain()
+            code = 5
+        }
+
+        var ShowFuntionverdetalle = () => {
+            $('#codeverdetalle').toggle('fold')
+            HideCodeMain()
+            code = 6
+        }
+
+        var ShowFuntionVenta = () => {            
+            $('#codeventacarro').toggle('fold')
+            HideCodeMain()
+            code = 7
+        }
+
+        
+        const ShowMainCode = () => {
+            switch(code){
+                case 1:
+                    ShowFuntionMenu()                    
+                    break
+                case 2:
+                    ShowFuntionRegistrar()
+                    break
+                case 3:
+                    ShowFutionEliminar()
+                    break
+                case 4:
+                    ShowFutionpagarnomina()
+                    break
+                case 5:
+                    ShowFutionpagarbonificaciones()
+                    break
+                case 6:
+                    ShowFuntionverdetalle()
+                    break
+                case 7:
+                    ShowFuntionVenta()
+                    break
+            }
+        }
+
+
+
+
+</script>
+{% endblock scripts %}

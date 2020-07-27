@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+Proyecto1 parte - 2
+{% endblock title %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+  type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
+      width="30">
+    <span id="title-navabar">Python basado en proyectos</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item desactivate" id="part">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part3' %}"><i class="fa fa-arrow-right"
+            aria-hidden="true"></i> Parte3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'proyecto1_app:proyecto1' %}"><i
+            class="fas fa-undo-alt mr-2"></i>Volver</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+  <!-- Enunciado -->
+  <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+    <h1 class="title-modul"> Parte 2</h1>
+    <hr>
+    <p class="text-justify">
+      Esta es la segunda parte, si bien recuerdan, en el apartado anterior hicimos una llamada a la función menu(). Esta llamada esta hecha correctamente, pero hay un gran error y es que la función main() aun no esta creada. En esta sección se creara la función menu() que servirá para mostrar al usuario, la opciones que puede escoger.
+    </p>
+    <h1 class="title-modul">¿Como se realizara?</h1>
+    <hr>
+    <p class="text-justify">
+      Lo primero que se hará es crear la función menu(), después de esto a través de una serie de print, se mostrara por pantalla las opciones que puede realizar el usuario.
+    </p>
+
+    <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+  </div>
+</div>
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+
+  <!-- Siguiente parte -->
+  <div class="text-center col-lg-12 mx-auto my-5 desactivate"
+    id="siguiente-ejercicio">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+      <br> Puedes pasar a la siguiente parte</h1>
+    <hr>
+    
+  </div>
+
+  <!-- Codigo -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+    <div class="container code text-justify mt-2">
+      <pre>
+            <code class="language-python">
+    <span id="l1" class="linea-code"><span class="pr-n mr-3">1</span><span class="desactivate" id="l-1">def menu():</span></span>
+    <span><span class="pr-n mr-3">2</span>   print("\n---SISTEMA DE NOMINAS---\n")</span>
+    <span id="l2" class="linea-code"><span class="pr-n mr-3">3</span>   <span class="desactivate" id="l-2">print("1)Registrar un nuevo empleado.")</span></span>
+    <span><span class="pr-n mr-3">4</span>   print("2)Eliminar un empleado.")</span>
+    <span id="l3" class="linea-code"><span class="pr-n mr-3">5</span>   <span class="desactivate" id="l-3">print("3)Pagar nomina.")</span></span>
+    <span><span class="pr-n mr-3">6</span>   print("4)Pagar bonificaciones.")</span>
+    <span id="l4" class="linea-code"><span class="pr-n mr-3">7</span>   <span class="desactivate" id="l-4">print("5)ver detalles del empleado.")</span></span>
+    <span><span class="pr-n mr-3">8</span>   print("6)Venta de un carro.")</span>
+    <span><span class="pr-n mr-3">9</span>   print("7)Salir.")</span>
+            </code>
+        </pre>
+    </div>
+
+    <div id="botones-1" class="desactivate">
+      <a href="#" class="btn botonYellow" id="explicar"><i class="fas
+          fa-align-justify"></i> Explicar codigo</a>
+    </div>
+  </div>
+  <!-- Desarrollo -->
+  <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+    <div class="container code text-justify mt-2">
+      <!-- #1 -->
+      <div class="p-3 mt-3" id="1" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 1</h1>
+          <p class="text-justify mt-3 font-weight-bold">Necesitamos crear la función, ¿Que es lo primero que se debería de hacer?</p>
+          <form action="" name="formulario1" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-1">
+              <option>Opciones</option>
+              <option>menu():</option>
+              <option>def menu:</option>
+              <option>def menu(): </option>
+              <option>menu:</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-1">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Para crear la función solo basta utilizar la palabra reservada <span class="pr">def</span>, acompañada del nombre que se le quiera dar a la función y paréntesis (): 
+        </div>
+      </div>
+      <!-- #3 -->
+      <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 6</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita que mostrale al usuario que una opción que puede realizar es Registrar un nuevo empleado,  ¿Que linea de código debería venir aquí?
+          </p>
+          <form action="" name="formulario2" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-2">
+              <option>Opciones</option>
+              <option>print("1)Registrar un nuevo empleado.") </option>
+              <option>prin("1)Registrar un nuevo empleado.")</option>
+              <option>print(1)Registrar un nuevo empleado.)</option>
+              <option>"1)Registrar un nuevo empleado."</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-2">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+          <p class="text-justify mt-3 font-weight-bold">Para imprimir por pantalla solo basta con usar la palabra reservada <span class="pr">print</span></p>
+        </div>
+      </div>
+      <!-- #5 -->
+      <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 7</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita mostrale al usuario que una opción que puede realizar es pagar nomina,  ¿Que linea de código debería venir aquí?</p>
+          <form action="" name="formulario3" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-3">
+              <option>Opciones</option>
+              <option>"3)Pagar nomina."</option>
+              <option>prin("3)Pagar nomina.")</option>
+              <option>print(3)Pagar nomina.)</option>
+              <option>print("3)Pagar nomina.") </option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-3">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+            <p class="text-justify mt-3 font-weight-bold">Para imprimir por pantalla solo basta con usar la palabra reservada <span class="pr">print</span></p>
+        </div>
+      </div>
+      <!-- #7 -->
+      <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+        <div class="seleccion p-5" id="sel-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Linea # 15</h1>
+          <p class="text-justify mt-3 font-weight-bold">Se necesita mostrale al usuario que una opción que puede realizar es ver detalles de un empleado,  ¿Que linea de código debería venir aquí?
+          <form action="" name="formulario4" class="section-ejemplos mx-auto
+            text-justify p-3" style="width: 75%;">
+            <select class="form-control form-control-lg" id="s-4">
+              <option>Opciones</option>
+              <option>prin("5)ver detalles del empleado.")</option>
+              <option>print("5)ver detalles del empleado.") </option>
+              <option>print(5)ver detalles del empleado.)</option>
+              <option>"5)ver detalles del empleado."</option>
+            </select>
+          </form>
+        </div>
+        <div class="seleccion p-5 desactivate" id="exp-4">
+          <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);"
+            class="text-center mt-2">Felicitaciones</h1>
+            <p class="text-justify mt-3 font-weight-bold">Para imprimir por pantalla solo basta con usar la palabra reservada <span class="pr">print</span></p>
+        </div>
+      </div>
+     
+      <div class="botones text-center mb-3">
+        <button class="btn botonYellow" id="probar"><i class="fas
+            fa-arrow-right"></i> Probar</button>
+        <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+            fa-arrow-right"></i> Seguir</button>
+        <a id="reiniciar" href="./" class="btn botonBlue" id="reiniciar"><i
+            class='fas fa-undo-alt mr-2'></i> Reiniciar</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- Explicación -->
+  <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="explicacionCode">
+    <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+    <div class="container code text-justify mt-2" id="explain-div">
+      <pre>
+        <code class="language-python" id="code-add">
+<span class=""><span class="pr-n mr-3">1</span>Definimos la función</span>
+<span class=""><span class="pr-n mr-3">2</span>Imprimimos el titulo del proyectos</span>
+<span class=""><span class="pr-n mr-3">3</span>Imprimimos la opción 1 (Registro de empleados nuevos)</span>
+<span class=""><span class="pr-n mr-3">4</span>Imprimimos la opción 2 (Eliminar un empleado)</span>
+<span class=""><span class="pr-n mr-3">5</span>Imprimimos la opción 3 (Pagar nomina)</span>
+<span class=""><span class="pr-n mr-3">6</span>Imprimimos la opción 4 (Pagar bonificaciones)</span>
+<span class=""><span class="pr-n mr-3">7</span>Imprimimos la opción 5 (Ver detalles de un empleado)</span>
+<span class=""><span class="pr-n mr-3">8</span>Imprimimos la opción 6 (Vender un carro)</span>
+<span class=""><span class="pr-n mr-3">9</span>Imprimimos la opción 7 (Salir)</span>
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+{% endblock content %}
+
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part2.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+        hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}
+
+
+
+
+
+
+
+
+
+

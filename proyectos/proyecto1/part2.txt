@@ -1,0 +1,20 @@
+---------line # 1--------------
+menu():
+def menu:
+def menu(): ***
+menu:
+---------line # 3--------------
+print("1)Registrar un nuevo empleado.") ***
+prin("1)Registrar un nuevo empleado.")
+print(1)Registrar un nuevo empleado.)
+"1)Registrar un nuevo empleado."
+---------line # 5--------------
+"3)Pagar nomina."
+prin("3)Pagar nomina.")
+print(3)Pagar nomina.)
+print("3)Pagar nomina.") ***
+---------line # 7--------------
+prin("5)ver detalles del empleado.")
+print("5)ver detalles del empleado.") ***
+print(5)ver detalles del empleado.)
+"5)ver detalles del empleado."

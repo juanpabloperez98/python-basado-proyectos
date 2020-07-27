@@ -1,0 +1,35 @@
+---------Linea 4--------------
+capital_nomina = input("Ingrese el capital de nomina: ")
+capital_nomina = "Ingrese el capital de nomina: "
+capital_nomina = int(input("Ingrese el capital de nomina: ")) ***
+capital_nomina = int("Ingrese el capital de nomina: ")
+
+---------Linea 6--------------
+menu
+menu() ***
+menu[]
+menu[capital_nomina]
+
+---------Linea 7--------------
+opcion = "Ingrese una opcion: "
+opcion = int("Ingrese una opcion: ")
+opcion = "Ingrese una opcion: "
+opcion = int(input("Ingrese una opcion: ")) ***   
+
+---------Linea 15--------------
+print("\nHasta luego\n") ***
+print(\nHasta luego\n)
+prin("\nHasta luego\n")
+print("")
+
+---------Linea 16--------------
+fin = False
+fin = "True"
+fin = True ***
+fin -= 5
+
+---------Linea 18--------------
+main[]
+main() ***
+main
+main[capital_nomina]

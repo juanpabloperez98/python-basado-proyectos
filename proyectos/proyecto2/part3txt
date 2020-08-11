@@ -1,0 +1,21 @@
+---------# 1---------------------
+def llamada_funciones(op,jugadores): **
+def llamada_funciones(jugadores):
+def llamada_funciones(op):
+def llamada_funciones():
+---------# 5---------------------
+jugadores = crear_jugador()
+crear_jugador(jugadores)
+jugadores = crear_jugador("jugadores")
+jugadores = crear_jugador(jugadores) **
+---------# 6---------------------
+op == 3:
+elif(op == 3): **
+elif(op = 3):
+if(op == 3):
+---------# 8---------------------
+else: **
+elseif:
+then:
+elif:
+

@@ -1,0 +1,423 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<link rel="stylesheet" href="{% static 'css/final.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" id="part">
+                <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part7'
+                    %}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Siguiente proyecto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto2_app:proyecto2' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<!-- Principal -->
+<div class="content row mx-auto" id="main">
+    <div class="col-lg-8 mx-auto text-center part-1 p-5 mt-5">
+        <h1 class="title-modul" style="font-size: 30px;color: rgba(149, 165,
+            166,1);"> ¡¡Felicitaciones!!</h1>
+        <p class="text-justify mt-3">
+            Felicitaciones usted ha completado todo el proyecto del juego de triqui,
+            la Universidad Tecnológica de Pereira, espera que el
+            estudiante haya podido entender al máximo los temas tratados en este
+            proyecto, si tiene alguna duda, no dude en volver a realizar el
+            proyecto o el/los apartados en los que encuentre falencias y dudas.
+            También puede consultar a su profesor sobre las dudas puntuales que
+            se tengan o repasar la <a href="{% url 'main_app:teoria_index' %}">teoría</a>
+            de Python.
+            <br>
+            A continuación se presentara todo el código del proyecto y las
+            funciones realizadas, le recomendamos copiar el código en su
+            computadora
+        </p>
+
+        <button class="btn btn-block mx-auto botonBlue" id="ShowCompleteCode">Ver
+            codigo completo</button>
+    </div>
+
+</div>
+
+<!-- Codigos -->
+<div class="content row mx-auto desactivate" id="codes">
+    <!-- Función main()  -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light" id="codemain">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función main()</h1>
+            <pre>
+            <code class="language-python">
+        <span><span class="pr-n mr-3">1</span>def main():</span>
+        <span><span class="pr-n mr-3">2</span>    jugadores = []</span>
+        <span><span class="pr-n mr-3">3</span>    fin = False</span>
+        <span><span class="pr-n mr-3">4</span>    while(fin == False):</span>
+        <span><span class="pr-n mr-3">5</span>        <span id="f-menu" class="call_f" onclick="menu()">menu()</span></span>
+        <span><span class="pr-n mr-3">6</span>        opcion = int(input(""))</span>
+        <span><span class="pr-n mr-3">7</span>        if(opcion != 4):</span>
+        <span><span class="pr-n mr-3">8</span>            <span class="call_f" onclick="llamada_funciones(1)">llamada_funciones(opcion,jugadores)</span></span>
+        <span><span class="pr-n mr-3">9</span>        else:</span>
+        <span><span class="pr-n mr-3">10</span>          print("**Hasta luego**")</span>
+        <span><span class="pr-n mr-3">11</span>          fin = True</span>
+        <span><span class="pr-n mr-3">12</span><span class="pr">main()</span></span>
+                        </code>
+                  </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+        </div>
+    </div>
+    <!-- Función menu()-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="codemenu">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función menu()</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def menu():</span>
+          <span><span class="pr-n mr-3">2</span>    print("***MENU***")</span>
+          <span><span class="pr-n mr-3">3</span>    print("1) Empezar juego")</span>
+          <span><span class="pr-n mr-3">4</span>    print("2) Crear jugador")</span>
+          <span><span class="pr-n mr-3">5</span>    print("3) Ver jugadores")</span>
+          <span><span class="pr-n mr-3">6</span>    print("4) Salir")</span>
+          <span><span class="pr-n mr-3">7</span>    print("¿Que opcion desea escoger?")</span>
+                          </code>
+                    </pre>
+        </div>
+    </div>
+
+    <!-- Función llamada_funciones(op,jugadores) -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="codecallfunctions">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función llamada_funciones(op,jugadores)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def llamada_funciones(op,jugadores):</span>
+          <span><span class="pr-n mr-3">2</span>    if(op == 1):</span>
+          <span><span class="pr-n mr-3">3</span>        jugadores = <span class="call_f" onclick="pedir_datos(1)">pedir_datos(jugadores)</span></span>
+          <span><span class="pr-n mr-3">4</span>    elif(op == 2):</span>
+          <span><span class="pr-n mr-3">5</span>        jugadores = <span class="call_f" onclick="crear_jugador()">crear_jugador(jugadores)</span></span>
+          <span><span class="pr-n mr-3">6</span>    elif(op == 3):</span>
+          <span><span class="pr-n mr-3">7</span>        <span class="call_f" onclick="ver_jugador()">ver_jugadores(jugadores)</span></span>
+          <span><span class="pr-n mr-3">8</span>    else:</span>
+          <span><span class="pr-n mr-3">9</span>        print("***Opcion no valida***")</code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- Función crear_jugador(jugadores)-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="codecrearjugador">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función crear_jugador(jugadores)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def crear_jugador(jugadores):</span>
+          <span><span class="pr-n mr-3">2</span>    nombre = input("Ingrese nombre del jugador: ")</span>
+          <span><span class="pr-n mr-3">3</span>    for player in jugadores:</span>
+          <span><span class="pr-n mr-3">4</span>        if player['nombre'] == nombre:</span>
+          <span><span class="pr-n mr-3">5</span>            print("Lo sentimos este usuario ya esta registrado")</span>
+          <span><span class="pr-n mr-3">6</span>            return jugadores</span>
+          <span><span class="pr-n mr-3">7</span>    jugador = {'nombre':'  ','partidas_ganadas':0}</span>
+          <span><span class="pr-n mr-3">8</span>    jugador['nombre'] = nombre</span>
+          <span><span class="pr-n mr-3">9</span>    jugadores.append(jugador)</span>
+          <span><span class="pr-n mr-3">10</span>  print("Jugador %s creado con exito" % (nombre))</span>
+          <span><span class="pr-n mr-3">11</span>  return jugadores </span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Función def ver_jugadores(jugadores)-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="codeverjugador">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función ver_jugadores(jugadores)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def ver_jugadores(jugadores):</span>
+          <span><span class="pr-n mr-3">2</span>    print("****Datos de jugadores****")</span>
+          <span><span class="pr-n mr-3">3</span>    for jugador in jugadores:</span>
+          <span><span class="pr-n mr-3">4</span>        print("---------------------------------------------")</span>
+          <span><span class="pr-n mr-3">5</span>        print("Jugador: ",jugador['nombre'])</span>
+          <span><span class="pr-n mr-3">6</span>        print("Partidas ganadas:",jugador['partidas_ganadas'])</span>
+          <span><span class="pr-n mr-3">7</span>        print("---------------------------------------------")</span>
+                          </code>
+                    </pre>
+        </div>
+
+
+    </div>
+
+    <!-- Función def pedir_datos(jugadores)-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codepedirdatos">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función pedir_datos(jugadores)</h1>
+            <pre>
+              <code class="language-python">
+                <span class="call_f" onclick=""></span>
+          <span><span class="pr-n mr-3">1</span>def pedir_datos(jugadores):</span>
+          <span><span class="pr-n mr-3">2</span>    if(len(jugadores)>1):</span>
+          <span><span class="pr-n mr-3">3</span>        j1,j2 =  <span class="call_f" onclick="escoger_jugadores()">escoger_jugadores(jugadores)</span></span>
+          <span><span class="pr-n mr-3">4</span>        if(j1 != 0 and j2 != 0):</span>
+          <span><span class="pr-n mr-3">5</span>            j1,j2 = <span class="call_f" onclick="escoger_fichas()">escoger_ficha(j1,j2)</span></span>
+          <span><span class="pr-n mr-3">6</span>            if(j1 != 0 and j2 != 0):</span>
+          <span><span class="pr-n mr-3">7</span>                j1,j2 = <span class="call_f" onclick="">empezar_juego(j1,j2)</span></span>
+          <span><span class="pr-n mr-3">8</span>                for jugador in jugadores:</span>
+          <span><span class="pr-n mr-3">9</span>                    if jugador['nombre'] == j1['nombre']:</span>
+          <span><span class="pr-n mr-3">10</span>                      jugador = j1</span>
+          <span><span class="pr-n mr-3">11</span>                  elif(jugador['nombre'] == j2['nombre']):</span>
+          <span><span class="pr-n mr-3">12</span>                      jugador = j2</span>
+          <span><span class="pr-n mr-3">13</span>              return jugadores</span>
+          <span><span class="pr-n mr-3">14</span>  else:</span>
+          <span><span class="pr-n mr-3">15</span>      print("***No hay jugadores suficientes***")</span>
+                          </code>
+                    </pre>
+        </div>
+    </div>
+
+    <!-- Función def escoger_jugadores(jugadores):-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codeescogerjugadores">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función
+                escoger_jugadores(jugadores)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def escoger_jugadores(jugadores):</span>
+          <span><span class="pr-n mr-3">2</span>    print("---Jugadores---")</span>
+          <span><span class="pr-n mr-3">3</span>    i = 0</span>
+          <span><span class="pr-n mr-3">4</span>    for jugador in jugadores:</span>
+          <span><span class="pr-n mr-3">5</span>        print(str(i) +  "-" + jugador['nombre'])</span>
+          <span><span class="pr-n mr-3">6</span>        i+=1</span>
+          <span><span class="pr-n mr-3">7</span>    j1 = int(input("Jugador 1 ingrese el numero del jugador a elegir: "))</span>
+          <span><span class="pr-n mr-3">8</span>    j2 = int(input("Jugador 2 ingrese el numero del jugador a elegir: "))</span>
+          <span><span class="pr-n mr-3">9</span>    if(j1 != j2):</span>
+          <span><span class="pr-n mr-3">10</span>      jugador1 = jugadores[j1]</span>
+          <span><span class="pr-n mr-3">11</span>      jugador2 = jugadores[j2]</span>
+          <span><span class="pr-n mr-3">12</span>      return jugador1, jugador2 </span>
+          <span><span class="pr-n mr-3">13</span>  else:</span>
+          <span><span class="pr-n mr-3">14</span>      print("***Los jugadores no pueden ser iguales***")</span>
+          <span><span class="pr-n mr-3">15</span>      return 0,0</span>
+                          </code>
+                    </pre>
+        </div>
+
+
+    </div>
+
+    <!-- Función def escoger_jugadores(jugadores):-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codeescogerfichas">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función
+                escoger_ficha(j1,j2)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def escoger_ficha(j1,j2):</span>
+          <span><span class="pr-n mr-3">2</span>    lista_fichas = ['*','@','$','&']</span>
+          <span><span class="pr-n mr-3">3</span>    print("***Fichas disponibles***")</span>
+          <span><span class="pr-n mr-3">4</span>    for ficha in range(len(lista_fichas)):</span>
+          <span><span class="pr-n mr-3">5</span>        print(str(ficha),lista_fichas[ficha])</span>
+          <span><span class="pr-n mr-3">6</span>    ficha1 = int(input("Jugador 1 ingrese que ficha desea utilizar:"))    </span>
+          <span><span class="pr-n mr-3">7</span>    ficha2 = int(input("Jugador 2 ingrese que ficha desea utilizar:"))</span>
+          <span><span class="pr-n mr-3">8</span>    if(ficha1 != ficha2):</span>
+          <span><span class="pr-n mr-3">9</span>        j1['ficha'] = lista_fichas[ficha1]</span>
+          <span><span class="pr-n mr-3">10</span>      j2['ficha'] = lista_fichas[ficha2] </span>
+          <span><span class="pr-n mr-3">11</span>      return j1, j2 </span>
+          <span><span class="pr-n mr-3">12</span>  else:</span>
+          <span><span class="pr-n mr-3">13</span>      print("***Los jugadores no pueden tener la misma ficha***")</span>
+          <span><span class="pr-n mr-3">14</span>      return 0,0 </span>
+                          </code>
+                    </pre>
+        </div>
+
+
+    </div>
+
+    <div class="col-lg-12 text-center desactivate" id="boton">
+        <button class="btn botonBlue" onclick="openMain()" id="boton-volver"><i
+                class="fas fa-step-backward mr-2"></i>main()</button>
+    </div>
+    <div class="col-lg-12 text-center desactivate" id="boton2">
+        <button class="btn botonBlue" onclick="openllamada_funciones()"><i
+                class="fas fa-step-backward mr-2"></i>llamada_funciones()</button>
+    </div>
+    <div class="col-lg-12 text-center desactivate" id="boton3">
+        <button class="btn botonBlue" onclick="openPedirDatos()"><i
+                class="fas fa-step-backward mr-2"></i>pedir_datos()</button>
+    </div>
+
+
+</div>
+
+
+<div style="margin-bottom: 14%;">
+</div>
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part-final.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()
+    var1 = 0
+    var2 = 0
+    var3 = 0
+
+    // Parte # 1
+    const bton1 = () => {
+        $('#boton').toggle('fold')
+    }
+    const main = () => {
+        $('#codemain').toggle('fold')
+    }
+    const menu = () => {
+        $('#codemenu').toggle('fold')
+        main()
+        bton1()
+        var1 = 1
+    }
+    const llamada_funciones = (op) => {
+        $('#codecallfunctions').toggle('fold')
+        if (op == 1) {
+            main()
+        }
+        bton1()
+        var1 = 2
+    }
+    const openMain = () => {
+        switch (var1) {
+            case 1:
+                menu()
+                break;
+            case 2:
+                llamada_funciones(1)
+                break;
+        }
+    }
+    // Parte # 2
+    const bton2 = () => {
+        $('#boton2').toggle('fold')
+    }
+    const crear_jugador = () => {
+        $('#codecrearjugador').toggle('fold')
+        llamada_funciones()
+        bton2()
+        var2 = 1
+    }
+    const ver_jugador = () => {
+        $('#codeverjugador').toggle('fold')
+        llamada_funciones()
+        bton2()
+        var2 = 2
+    }
+    const pedir_datos = (op) => {
+        $('#codepedirdatos').toggle('fold')
+        if (op == 1) {
+            llamada_funciones()
+        }
+        bton2()
+        var2 = 3
+    }
+    const openllamada_funciones = () => {
+        switch (var2) {
+            case 1:
+                crear_jugador()
+                break;
+            case 2:
+                ver_jugador()
+                break;
+            case 3:
+                pedir_datos(1)
+                break
+        }
+    }
+    // Parte # 3
+    const bton3 = () => {
+        $('#boton3').toggle('fold')
+    }
+    const escoger_jugadores = () => {
+        $('#codeescogerjugadores').toggle('fold')
+        pedir_datos()
+        bton3()
+        var3 = 1
+    }
+    const escoger_fichas = () => {
+        $('#codeescogerfichas').toggle('fold')
+        pedir_datos()
+        bton3()
+        var3 = 2
+    }
+    const openPedirDatos = () => {
+        switch (var3) {
+            case 1:
+                escoger_jugadores()
+                break;
+            case 2:
+                escoger_fichas()
+                break;
+        }
+    }
+
+
+
+
+</script>
+{% endblock scripts %}

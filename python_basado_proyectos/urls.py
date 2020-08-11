@@ -6,4 +6,5 @@ urlpatterns = [
     re_path('',include('apps.main.urls')),
     re_path('',include('apps.graficos.urls')),
     re_path('',include('apps.proyecto1.urls')),
+    re_path('',include('apps.proyecto2.urls')),
 ]

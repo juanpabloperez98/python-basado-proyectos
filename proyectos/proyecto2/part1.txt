@@ -1,0 +1,25 @@
+---------# 2---------------------
+jugadores[]
+jugadores[10]
+jugadores = [] **
+[]jugadores
+---------# 4---------------------
+for(fin == False):
+while(fin == False): **
+while("fin"):
+while():
+---------# 7---------------------
+if(opcion ! 4):
+if(opcion == 4):
+if(opcion = 4):
+if(opcion != 4): **
+---------# 8---------------------
+llamada_funciones(opcion)
+llamada_funciones(opcion,jugadores) **
+llamada_funciones(jugadores)
+llamada_funciones()
+---------# 12--------------------
+main(opcion,jugadores)
+main(opcion)
+main() **
+main(jugadores)

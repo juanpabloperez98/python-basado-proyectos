@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main_app:proyectos' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Proyecto 2</h1>
+        <hr>
+        <p class="text-center pr">Juego de triqui</p>
+        <div class="text-justify mt-3">
+            <p>
+                Se desea realizar un juego de triqui personalizado para dos jugadores, el juego consiste en el
+                tradicional juego de triqui donde el objetivo es que se forme una fila, columna o diagonal con las tres
+                fichas de un jugador. El juego finaliza cuando uno de los dos jugadores completa o forma una fila,
+                columna o diagonal con sus fichas, o cuando se llene todo el tablero, que en este caso será de 3x3 y
+                ninguno de los dos jugadores haya ganado el juego.
+            </p>
+            <div class="desactivate" id="content-show">
+                <h1 class="title-modul mb-3"> Para tener en cuenta:</h1>
+                <ul class="container">
+                    <li class="mt-1">Al comenzar el juego, se debe validar si existen los jugadores suficientes para
+                        realizar la partida (mínimo 2).</li>
+                    <hr>
+                    <li class="mt-1">Al crear un nuevo jugador solo se pedirá el nombre del jugador.</li>
+                    <hr>
+                    <li class="mt-1">Todos los jugadores tienen un número de partidas ganadas, que irá aumentando cada
+                        vez que este jugador gane, por defecto este número de partidas empieza en 0 cada vez que se
+                        registre un nuevo jugador.</li>
+                    <hr>
+                    <li class="mt-1">Cada vez que se termine una partida, se le debe preguntar al usuario si desea
+                        volver a jugar la partida o terminarla.</li>
+                    <hr>
+                    <li class="mt-1">Debe haber una opción del menú que permita visualizar los jugadores registrados y
+                        el número de partidas ganadas.</li>
+                    <hr>
+                    <li class="mt-1">Al terminar la ejecución del programa se debe mostrar en pantalla cuál es el
+                        jugador con el mayor número de partidas ganadas.</li>
+                    <hr>
+                </ul>
+                <br>
+                <h1 class="title-modul"> Temas a tratar:</h1>
+                <ul class="container">
+                    <li>
+                        <a href="{% url 'main_app:estructuras_de_secuencia' %}">
+                            Estructuras de secuencia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Estructuras condicionales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Estructuras repetitivas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Estructuras de datos (listas, matrices, diccionarios)
+                        </a></li>
+                    <li>
+                        <a href="#">
+                            Funciones
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <h1 class="title-modul"> Partes a tratar:</h1>
+                <ul class="container">
+                    <li>
+                        <a href="{% url 'proyecto2_app:part1' %}">
+                            Parte 1: Crear función principal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part2' %}">
+                            Parte 2: Función menu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part3' %}">
+                            Parte 3: Función llamada_funciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part4' %}">
+                            Parte 4: Función crear_jugador
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part5' %}">
+                            Parte 5: Función ver_jugadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part6' %}">
+                            Parte 6: Función pedir_datos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part7' %}">
+                            Parte 7: Función escoger_jugadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part8' %}">
+                            Parte 8: Función escoger_ficha
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part9' %}">
+                            Parte 9: Función empezar_juego
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part10' %}">
+                            Parte 10: Función pintar_tablero
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part11' %}">
+                            Parte 11: Función validar_ganador
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:proyecto2-final' %}">
+                            Parte final: Ver codigo completo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <a href="#content-show" onclick="ShowStatement()" id="leer-mas">Leer más</a>
+            <a href="#" onclick="HideStatement()" class="desactivate" id="leer-menos">Leer menos</a>
+
+            <div class="w-25 mx-auto mt-4">
+                <a href="{% url 'proyecto2_app:part1' %}" class="btn btn-block botonBlue">Empezar proyecto</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="margin-top: 10%;"></div>
+{% endblock content %}
+
+
+{% block scripts %}
+
+<script>
+    var ShowStatement = () => {
+        document.getElementById('content-show').setAttribute('class', 'mt-5')
+        document.getElementById('leer-mas').setAttribute('class', 'desactivate')
+        document.getElementById('leer-menos').setAttribute('class', '')
+    }
+
+    var HideStatement = () => {
+        document.getElementById('content-show').setAttribute('class', 'desactivate')
+        document.getElementById('leer-mas').setAttribute('class', '')
+        document.getElementById('leer-menos').setAttribute('class', 'desactivate')
+    }
+</script>
+
+{% endblock scripts %}

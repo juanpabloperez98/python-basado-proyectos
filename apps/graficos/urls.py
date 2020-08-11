@@ -10,5 +10,7 @@ urlpatterns = [
     path('primera-interfaz/',views.firts_gui.as_view(),name = 'graficos-firts-gui'),
     # Interfaz Grafica con Frames
     path('frames/',views.frames.as_view(),name = 'graficos-frames'),
+    # Interfaz grafica con Labels
+    path('labels/',views.labels.as_view(),name = 'graficos-labels'),
 
 ]

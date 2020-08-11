@@ -1,0 +1,20 @@
+---------# 3---------------------
+for player in range(jugadores):
+for jugadores:
+for player in jugadores: **
+for player is jugadores:
+---------# 6---------------------
+return
+return -1
+jugadores
+return jugadores **
+---------# 7---------------------
+jugador = {'partidas_ganadas':0}
+jugador = {'nombre':'','partidas_ganadas':0} **
+jugador = {'nombre':''}
+{'nombre':'','partidas_ganadas':0}
+---------# 9---------------------
+jugadores.append(jugador) **
+jugadores.append()
+jugadores.open("jugador")
+jugadores.add(jugador)

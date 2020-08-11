@@ -17,3 +17,6 @@ class firts_gui(TemplateView):
 
 class frames(TemplateView):
     template_name = "teoria/moduls/graficos/frames.html"
+
+class labels(TemplateView):
+    template_name = "teoria/moduls/graficos/labels.html"

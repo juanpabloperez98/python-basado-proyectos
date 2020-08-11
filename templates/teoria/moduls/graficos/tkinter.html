@@ -3,12 +3,12 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/tkinter.css' %}">
-<link rel="stylesheet" href="{% static 'css/default.css' %}">    
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
 {% endblock styles %}
 
 
 {% block title %}
-Tkinter    
+Tkinter
 {% endblock title %}
 
 
@@ -18,24 +18,27 @@ Tkinter
         <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
         <span id="title-navabar">Python basado en proyectos</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">        
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'main_app:proyectos' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i>
-                Practica con proyectos</a>
-        </li>
-        <li class="nav-item">            
-            <a class="nav-link" href="{% url 'graficos_app:graficos-index' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
-        </li>  
-      </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main_app:proyectos' %}"><i class="fa fa-arrow-right"
+                        aria-hidden="true"></i>
+                    Practica con proyectos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'graficos_app:graficos-index' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
     </div>
-</nav>    
+</nav>
 {% endblock headers %}
-    
+
 
 {% block content %}
 <div class="container row mx-auto">
@@ -45,7 +48,9 @@ Tkinter
         <hr>
         <div class="text-justify mt-3">
             <p>
-                Como se menciono en la sección de “Instalar Tkinter”, esta librería viene por defecto en las versiones de Python 3 o mayores, lo que significa que para poder utilizarla en nuestro programa o entorno de trabajo solo basta con importarla de esta manera:
+                Como se menciono en la sección de “Instalar Tkinter”, esta librería viene por defecto en las versiones
+                de Python 3 o mayores, lo que significa que para poder utilizarla en nuestro programa o entorno de
+                trabajo solo basta con importarla de esta manera:
             </p>
             <div class="container">
                 <pre>
@@ -55,26 +60,29 @@ Tkinter
             </div>
             <p style="margin-top: -30px;">
                 <span class="pr">NOTA</span>
-                Si se presenta algún problema o la librería no esta instalada por defecto, le recomendamos que revise la sección “Instalar Tkinter” que se encuentra en la barra de navegación del <a href="{% url 'graficos_app:graficos-index' %}">modulo Gráficos</a>.
+                Si se presenta algún problema o la librería no esta instalada por defecto, le recomendamos que revise la
+                sección “Instalar Tkinter” que se encuentra en la barra de navegación del <a
+                    href="{% url 'graficos_app:graficos-index' %}">modulo Gráficos</a>.
             </p>
             <p>
-                Tkinter maneja muchos componentes gráficos que permiten realizar toda una interfaz grafica profesional y de manera agradable, algunos de estos componente son: 
-                <ul class="container">
-                    <li>
-                        root / raiz
-                    </li>
-                    <li>
-                        Frames 
-                    </li>
-                    <li>
-                        Labels
-                    </li>
-                    <li>
-                        Entrys
-                    </li>
-                </ul>
+                Tkinter maneja muchos componentes gráficos que permiten realizar toda una interfaz grafica profesional y
+                de manera agradable, algunos de estos componente son:
+            <ul class="container">
+                <li>
+                    root / raiz
+                </li>
+                <li>
+                    Frames
+                </li>
+                <li>
+                    Labels
+                </li>
+                <li>
+                    Entrys
+                </li>
+            </ul>
             </p>
-            
+
 
         </div>
     </div>
@@ -84,7 +92,10 @@ Tkinter
         <hr>
         <div class="text-justify mt-3">
             <p>
-                Se le conoce como root o raíz, ya que es el componente principal donde se inicializa toda la interfaz grafica, esta definido por la llamada a la función Tk() de la librería Tkinter. Es un estandar llamar la variable root o raiz mas sin embargo no es determinante a la hora de crear un programa, a continuación se muestra como realizar una interfaz grafica con la función Tk():                
+                Se le conoce como root o raíz, ya que es el componente principal donde se inicializa toda la interfaz
+                grafica, esta definido por la llamada a la función Tk() de la librería Tkinter. Es un estandar llamar la
+                variable root o raiz mas sin embargo no es determinante a la hora de crear un programa, a continuación
+                se muestra como realizar una interfaz grafica con la función Tk():
             </p>
             <ul class="container">
                 <li>
@@ -100,7 +111,10 @@ Tkinter
         <hr>
         <div class="text-justify mt-3">
             <p>
-                Los frames o marcos, son una especie de contenedor, el cual nos permite al igual que el root o raíz, poner elementos dentro de el. En otras palabras un frame, es como una raíz, pero a diferencia de esta, el frame no se representa como una venta propiamente, sino mas bien como un elemento que contiene mas elementos y que se puede ubicar dentro de la ventana principal o raíz.
+                Los frames o marcos, son una especie de contenedor, el cual nos permite al igual que el root o raíz,
+                poner elementos dentro de el. En otras palabras un frame, es como una raíz, pero a diferencia de esta,
+                el frame no se representa como una venta propiamente, sino mas bien como un elemento que contiene mas
+                elementos y que se puede ubicar dentro de la ventana principal o raíz.
             </p>
             <ul class="container">
                 <li>
@@ -110,18 +124,34 @@ Tkinter
         </div>
     </div>
 
+    <!-- 6.1.4 Labels -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="labels">
+        <h1 class="title-modul"><span class="pr mr-2">6.1.4</span> Labels</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Los labels son conocidos como wigets o componentes para poder mostrar texto o imágenes. Tienen como
+                finalidad mostrar un tipo de contenido(texto o imagen), el cual no se podrá interactuar con él, es decir
+                no se puede ni arrastrar, ni borrar, etc. Si se recuerda en el apartado de los frames, se decía que un
+                frame es un tipo de contenedor que permite valga la redundancia contener diferentes tipos de elementos,
+                bueno los labels, son uno de esos tipos de elementos que pueden estar contenidos dentro de un frame.
+            </p>
+            <ul class="container">
+                <li>
+                    <a href="{% url 'graficos_app:graficos-labels' %}">Interfaz grafica con labels</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 </div>
-    
+
 {% endblock content %}
 
 {% block scripts %}
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 <script src="{% static 'js/highlight.pack.js' %}"></script>
 <script>
-        hljs.initHighlightingOnLoad()      
-    </script>
+    hljs.initHighlightingOnLoad()      
+</script>
 {% endblock scripts %}
-    
-    
-    
-    

@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Proyecto2 parte - 8
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item desactivate" id="part2">
+                <a class="nav-link" href="{% url 'proyecto2_app:part9' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Parte 9</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto2_app:proyecto2' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+    <!-- Enunciado -->
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Parte 8</h1>
+        <hr>
+        <p class="text-justify">
+            Esta es la parte donde se le va a permitir al usuario escoger la ficha con la que desea jugar, las fichas
+            que se van a manejar son simples caracteres especiales ej. * @ $ &. Esta función es muy similar a la
+            anterior, esta recibe como parámetro dos diccionarios, j1 y j2. y retornará los mismos diccionarios pero
+            esta vez con una clave nueva agregada, que será [“ficha”], que contiene el carácter especial que se haya
+            escogido para cada jugador. Si las fichas escogidas son las mismas entonces retorna dos ceros ya que una
+            partida no puede tener las mismas fichas en juego.
+
+        </p>
+        <h1 class="title-modul">¿Como se realizara?</h1>
+        <hr>
+        <p class="text-justify">
+            La primera parte que se va a realizar es crear la lista de fichas disponibles en la cual cada elemento de
+            esta será un string con los caracteres especiales especificados anteriormente, se recorrerá la lista de
+            fichas por índice y se imprime el índice y el elemento correspondiente en ese índice. Luego se pedirá a los
+            usuarios que ingresen cuales son las fichas que desean utilizar. Si las fichas escogidas son diferentes
+            entonces se retorna los diccionarios recibidos por parámetro agregándoles la nueva clave [‘ficha’] y el
+            valor corresponde a la ficha escogida por cada usuario. Si las fichas son iguales entonces retorna dos
+            ceros.
+        </p>
+        <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+    </div>
+</div>
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+    <!-- Siguiente parte -->
+    <div class="text-center col-lg-12 mx-auto my-5 desactivate" id="siguiente-ejercicio">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+            <br> Puedes pasar a la siguiente parte</h1>
+        <hr>
+    </div>
+
+    <!-- Codigo -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+        <div class="container code text-justify mt-2">
+            <pre>
+              <code class="language-python">
+      <span><span class="pr-n mr-3">1</span>def escoger_ficha(j1,j2):</span>
+      <span id="l1" class="linea-code"><span class="pr-n mr-3">2</span>    <span class="desactivate" id="l-1">lista_fichas = ['*','@','$','&']</span></span> 
+      <span><span class="pr-n mr-3">3</span>    print("*Fichas disponibles*")</span>
+      <span id="l2" class="linea-code"><span class="pr-n mr-3">4</span>    <span class="desactivate" id="l-2">for ficha in range(len(lista_fichas)):</span></span> 
+      <span><span class="pr-n mr-3">5</span>        print(str(ficha),lista_fichas[ficha])</span>
+      <span><span class="pr-n mr-3">6</span>    ficha1 = int(input("Jugador 1 ingrese que ficha desea utilizar:"))    </span>
+      <span><span class="pr-n mr-3">7</span>    ficha2 = int(input("Jugador 2 ingrese que ficha desea utilizar:"))</span>
+      <span id="l3" class="linea-code"><span class="pr-n mr-3">8</span>    <span class="desactivate" id="l-3">if(ficha1 != ficha2):</span></span> 
+      <span><span class="pr-n mr-3">9</span>        j1['ficha'] = lista_fichas[ficha1]</span>
+      <span><span class="pr-n mr-3">10</span>      j2['ficha'] = lista_fichas[ficha2]</span>
+      <span id="l4" class="linea-code"><span class="pr-n mr-3">11</span>      <span class="desactivate" id="l-4">return j1, j2</span></span> 
+      <span><span class="pr-n mr-3">12</span>  else:</span>
+      <span><span class="pr-n mr-3">13</span>      print("*Los jugadores no pueden tener la misma fich*")</span>
+      <span id="l5" class="linea-code"><span class="pr-n mr-3">14</span>      <span class="desactivate" id="l-5">return 0,0</span></span> 
+            </code>
+          </pre>
+        </div>
+        <div id="botones-1" class="desactivate">
+            <a href="#" class="btn botonYellow" id="explicar"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+        </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+        <div class="container code text-justify mt-2">
+            <!-- #2 -->
+            <div class="p-3 mt-3" id="1" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 2</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se debe crear la lista con las fichas ¿Cómo se haría esto?
+                    </p>
+                    <form action="" name="formulario1" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-1">
+                            <option>Opciones</option>
+                            <option>lista_fichas = ['']</option>
+                            <option>lista_fichas = {'*','@','$','&'}</option>
+                            <option>lista_fichas = ['*','@','$','&']</option>
+                            <option>lista_fichas = [*,@,$,&]</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Para declarar una <span class="pr-n">lista</span> solo basta con utilizar los <span class="pr">[ ]</span> y especificar los elementos dentro de
+                        ellos, en este caso son <span class="pr-n">strings</span> con caracteres especiales.
+                    </p>
+                </div>
+            </div>
+            <!-- #4 -->
+            <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 4</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se debe recorrer la lista de las fichas por índice ¿Cómo se hace esto?
+                    </p>
+                    <form action="" name="formulario2" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-2">
+                            <option>Opciones</option>
+                            <option>for ficha in range(lista_fichas):</option>
+                            <option>for ficha in len(lista_fichas):</option>
+                            <option>for ficha in lista_fichas:</option>
+                            <option>for ficha in range(len(lista_fichas)):</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Utilizando un <span class="pr">for</span> se especifica una variable <span class="pr">ficha</span> la cual va a coger un valor entre 0 y la
+                        <span class="pr-n">longitud</span> de las lista de fichas, como esta lista es <span class="pr-n">estática</span> la longitud siempre va a ser de 4,
+                        por ende la variable <span class="pr">ficha</span> coge un valor entre los rango 0 y 4.
+                    </p>
+                </div>
+            </div>
+            <!-- #8 -->
+            <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea #8</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se debe validar si la ficha del jugador 1 es diferente a la ficha del jugador 2 ¿Cómo validamos
+                        esto?
+                    </p>
+                    <form action="" name="formulario3" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-3">
+                            <option>Opciones</option>
+                            <option>if(ficha1 != ficha2):</option>
+                            <option>if(ficha1 == ficha2):</option>
+                            <option>if(ficha1 ! ficha2):</option>
+                            <option>if(ficha1 and ficha2):</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Las variables <span class="pr">ficha1</span> y <span class="pr">ficha2</span> contienen el índice (número) en el que se encuentra la ficha que
+                        desean utilizar en la <span class="pr-n">lista</span> de fichas, por eso se valida de que  <span class="pr">ficha1</span> y <span class="pr">ficha2</span> sean diferentes.
+                    </p>
+                </div>
+            </div>
+            <!-- #11 -->
+            <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-4">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea #11</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se tiene que retornar los diccionarios actualizados ¿Como se retorna en una función?
+                    </p>
+                    <form action="" name="formulario4" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-4">
+                            <option>Opciones</option>
+                            <option>return j2 </option>
+                            <option>return j1, j2</option>
+                            <option>return j1 </option>
+                            <option>return j1['ficha'], j2['ficha] </option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-4">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        <span class="pr">j1</span> y <span class="pr">j2</span> son dos diccionarios que contienen la información de dos jugadores registrados, al
+                        utilizar <span class="pr">j1[‘ficha’]</span> y <span class="pr">j2[‘ficha’]</span> lo que se está haciendo es crear una nueva <span class="pr-n">clave</span> llamada
+                        ficha para estos dos, usando el <span class="pr">return</span> se puede retornar los valores que se le indiquen, en este
+                        caso <span class="pr">j1</span> y <span class="pr">j2</span> que ya están actualizados.
+                    </p>
+                </div>
+            </div>
+            <!-- #14 -->
+            <div class="p-3 mt-3 desactivate" id="5" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-5">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 14</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Si ficha1 y ficha2 no son diferentes se debe retornar dos ceros. ¿Como se hace?
+                    </p>
+                    <form action="" name="formulario5" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-5">
+                            <option>Opciones</option>
+                            <option>return 0,0</option>
+                            <option>return  </option>
+                            <option>return 0 </option>
+                            <option>return 1 </option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-5">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Utilizando <span class="pr">return</span> se puede retornar los valores que se le indiquen a una función.
+                    </p>
+                </div>
+            </div>
+
+            <div class="botones text-center mb-3">
+                <button class="btn botonYellow" id="probar"><i class="fas
+              fa-arrow-right"></i> Probar</button>
+                <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+              fa-arrow-right"></i> Seguir</button>
+                <a id="reiniciar" href="./parte8" class="btn botonBlue" id="reiniciar"><i
+                        class='fas fa-undo-alt mr-2'></i>
+                    Reiniciar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Explicación -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="explicacionCode">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+        <div class="container code text-justify mt-2" id="explain-div">
+            <pre>
+          <code class="language-python" id="code-add">
+  <span class=""><span class="pr-n mr-3">1</span>  Se crea la función main. Con la palabra reservada "def", acompañada del nombre que se le quiera dar se pude crear una función en Python.</span>
+  <span class=""><span class="pr-n mr-3">2</span>  Creamos una variable fin y la igualamos a False. <br>  <span class="pr ml-4">NOTA</span>: esta variable es la que nos va a permitir manejar el ciclo while de la linea # 5</span>
+  <span class=""><span class="pr-n mr-3">3</span>  Creamos una lista donde se van a guardar los empleados registrados, la lista se llamara "lista_empleados" para evitar confusiones a la hora del desarrollo</span>
+  <span class=""><span class="pr-n mr-3">4</span>  Pedimos el capital de nomina con el que se va a trabajar.</span>
+  <span class=""><span class="pr-n mr-3">5</span>  Creamos un ciclo while, que nos permite hacer un ciclo infinito, que solo se detendrá cuando el usuario escoja la opción 7 <br>  <span class="pr ml-4">NOTA</span>: El ciclo while se ejecutara siempre y cuando <span class="pr">fin</span> sea diferente de True</span>
+  <span class=""><span class="pr-n mr-3">6</span>  Llamamos a la función "menu()" <br>  <span class="pr ml-4">NOTA</span>: Como se menciono anteriormente, la función menu() se creara en el apartado siguientes.</span>
+  <span class=""><span class="pr-n mr-3">7</span>  Una vez se muestre el menú, le pediremos al usuario que escoja una opción mostrada. La opción ingresada por el usuario se guardara en la variable "opcion"</span>
+  <span class=""><span class="pr-n mr-3">8</span>  validamos si "opcion" es igual a 1</span>
+  <span class=""><span class="pr-n mr-3">9</span>  validamos si "opcion" es igual a 2</span>
+  <span class=""><span class="pr-n mr-3">10</span>validamos si "opcion" es igual a 3</span>
+  <span class=""><span class="pr-n mr-3">11</span>validamos si "opcion" es igual a 4</span>
+  <span class=""><span class="pr-n mr-3">12</span>validamos si "opcion" es igual a 5</span>
+  <span class=""><span class="pr-n mr-3">13</span>validamos si "opcion" es igual a 6</span>
+  <span class=""><span class="pr-n mr-3">14</span>validamos si "opcion" es igual a 7</span>
+  <span class=""><span class="pr-n mr-3">15</span>Si el usuario escogió la opción 7, se muestra un mensaje de despedida</span>
+  <span class=""><span class="pr-n mr-3">16</span>Como se menciono en la linea 5, el ciclo infinito solo corre siempre y cuando <span class="pr">fin</span> sea diferente de True, para terminar el ciclo, se iguala <span class="pr">fin</span> a True</span>
+  <span class=""><span class="pr-n mr-3">17</span>Validamos si ninguna de las opciones fue escogida, de ser así imprimimos por pantalla un mensaje de error</span>
+  <span class=""><span class="pr-n mr-3">18</span>Se hace el llamado a la función <span class="pr">main()</span> ya creada.</span>
+          </code>
+        </pre>
+        </div>
+    </div>
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto2/part8.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

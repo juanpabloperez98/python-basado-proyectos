@@ -1,0 +1,26 @@
+---------# 4---------------------
+for jugador in jugadores: **
+for jugadores:
+for jugador in range(jugadores):
+while jugador in jugadores:
+---------# 5---------------------
+print(str(i) +  "-" + jugador[nombre])
+print(str(i) +  "-" + jugador{'nombre'})
+print(str(i) +  "-" + jugador['nombre']) **
+str(i) +  "-" + jugador['nombre']
+---------# 6---------------------
+i=1
+i+1
+i++1
+i+=1 **
+---------# 8---------------------
+j2 = (input("Jugador 2 ingrese el numero del jugador a elegir: "))
+j2 = int(input("Jugador 2 ingrese el numero del jugador a elegir: ")) **
+j2 = int("Jugador 2 ingrese el numero del jugador a elegir: ")
+int(input("Jugador 2 ingrese el numero del jugador a elegir: "))
+---------# 11--------------------
+jugador2 = jugadores[j1]
+jugadores[j2]
+jugador2 = jugadores[j2] **
+jugador2 = jugadores["j2"]:
+

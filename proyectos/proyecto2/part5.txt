@@ -1,0 +1,16 @@
+---------# 1---------------------
+def ver_jugadores(jugadores): **
+def ver_jugadores():
+ver_jugadores(jugadores):
+def ver_jugadores("jugadores"):
+---------# 3---------------------
+for jugadores:
+for jugador is jugadores:
+for jugador in jugadores: **
+for jugador in range(jugadores):
+---------# 5---------------------
+print("Jugador: ",['nombre'])
+print("Jugador: ",jugador[''])
+print("Jugador: ",jugador['nombre']) **
+print("Jugador: ",jugador'nombre')
+

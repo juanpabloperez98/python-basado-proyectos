@@ -1,0 +1,25 @@
+---------# 2---------------------
+lista_fichas = ['']
+lista_fichas = {'*','@','$','&'}
+lista_fichas = ['*','@','$','&'] **
+lista_fichas = [*,@,$,&]
+---------# 4---------------------
+for ficha in range(lista_fichas):
+for ficha in len(lista_fichas):
+for ficha in lista_fichas:
+for ficha in range(len(lista_fichas)): **
+---------# 8---------------------
+if(ficha1 != ficha2): **
+if(ficha1 == ficha2):
+if(ficha1 ! ficha2):
+if(ficha1 and ficha2):
+---------# 11---------------------
+return j2 
+return j1, j2 **
+return j1 
+return j1['ficha'], j2['ficha] 
+---------# 14---------------------
+return 0,0 **
+return  
+return 0 
+return 1 

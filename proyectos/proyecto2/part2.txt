@@ -1,0 +1,15 @@
+---------# 2---------------------
+menu():
+def menu(jugadores):
+def menu(): **
+def menu(opcion):
+---------# 4---------------------
+print(2) Crear jugador)
+prin("2) Crear jugador")
+print("2) Crear jugador") **
+imprimir("2) Crear jugador")
+---------# 7---------------------
+print()
+print("¿Que opcion desea escoger?") **
+print(¿Que opcion desea escoger?)
+"¿Que opcion desea escoger?"

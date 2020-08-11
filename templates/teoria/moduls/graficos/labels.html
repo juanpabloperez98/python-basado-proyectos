@@ -1,0 +1,259 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/frames.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+
+{% block title %}
+Primera Interfaz grafica
+{% endblock title %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/tkinter/#frames"><i class="fas
+                        fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <!-- 1. Label -->
+    <div class="col-lg-12 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">1</span> Label</h1>
+        <hr>
+        <p class="text-justify">
+            Label() es un método que maneja la librería Tkinter, y sirve para crear etiquetas de texto o imágenes, ¿esto
+            qué quiere decir?, significa que se puede crear contenido de texto o contenido de imágenes que se podrán
+            implementar dentro de un contenedor frame.
+        </p>
+        <hr>
+        <div class="container code mx-auto text-justify">
+            <pre>
+            <code class="language-python">
+<span id=""><span class="pr-n mr-3">1</span>from tkinter import *</span>
+<span id=""><span class="pr-n mr-3">2</span>root = Tk()</span>
+<span id=""><span class="pr-n mr-3">3</span>miFrame = Frame()</span>
+<span id=""><span class="pr-n mr-3">4</span>miFrame.config(bg="red",width="200",height="200")</span>
+<span id=""><span class="pr-n mr-3">5</span>miFrame.pack()</span>
+<span id=""><span class="pr-n mr-3">6</span>miLabel = Label(miFrame, text = "Este es mi label")</span>
+<span id=""><span class="pr-n mr-3">7</span>miLabel.pack()</span>
+<span id=""><span class="pr-n mr-3">8</span>root.mainloop()</span>
+            </code>
+            </pre>
+        </div>
+
+        <div class="container code mt-2 desactivate" id="output">
+            <span class="pr-n">Salida</span> <br>
+            <div class="text-center p-3 mx-auto">
+                <img src="{% static 'images/Graficos/ejemplos_practicos/label.png' %}" alt="imagen-code">
+            </div>
+            <p class="text-justify mt-5" style="font-size: 80%;">
+                Como se puede ver, se utiliza el método <span class="pr">Label</span> para crear la etiqueta y se iguala
+                a la variable miLabel.
+                La sintaxis del método Label es sencilla, el primer parámetro que recibe es el contenedor donde será
+                almacenado esta etiqueta o label, y el resto de parámetros, vendrán siendo una serie de opciones que
+                permite la etiqueta label. Las opciones que recibe esta etiqueta son muchas, para este ejemplo
+                utilizamos el parámetro <span class="pr-n">text</span>, que permite indicarle el texto que va a llevar
+                esta etiqueta.
+                <br>
+                <span class="pr">NOTA</span>: nótese que se especificó el frame con un ancho, un alto y un color de
+                fondo correspondiente, pero
+                no se está respetando el tamaño asignado ni tampoco el color de fondo, esto es debido a que al crear la
+                etiqueta o label, utilizamos el método <span class="pr-n">pack</span> para empaquetarla dentro del frame
+                especificado. Esto hace
+                que el frame tome el tamaño del label y el color de este mismo.
+            </p>
+        </div>
+
+        <div class="text-center">
+            <button class="btn botonBlue btn-sm" id="btn-open" onclick="ShowCode('1')">Ejecutar codigo</button>
+            <button class="btn botonYellow btn-sm desactivate" id="btn-close" onclick="HidenCode('1')">Cerrar</button>
+        </div>
+
+    </div>
+
+    <!-- 2.Label (place) -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">2</span> Label (place)</h1>
+        <hr>
+        <p class="text-justify">
+            Como ya se vio, Label() es el método que nos permite crear la etiqueta de texto o imagen para poder
+            incluirla dentro de un contenedor o frame. Pero adicional a eso se vio que el método pack, empaqueta el
+            label dentro del frame sin respetar los atributos de configuración establecidos al frame. Para ello existe
+            otro método que permite posicionar los labels dentro del frame, sin omitir o ignorar los atributos de
+            configuración del frame. A continuación se muestra un ejemplo:
+        </p>
+        <hr>
+        <div class="container code mx-auto text-justify">
+            <pre>
+            <code class="language-python">
+<span id=""><span class="pr-n mr-3">1</span>from tkinter import *</span>
+<span id=""><span class="pr-n mr-3">2</span>root = Tk()</span>
+<span id=""><span class="pr-n mr-3">3</span>miFrame = Frame()</span>
+<span id=""><span class="pr-n mr-3">4</span>miFrame.config(bg="red",width="200",height="200")</span>
+<span id=""><span class="pr-n mr-3">5</span>miFrame.pack()</span>
+<span id=""><span class="pr-n mr-3">6</span>miLabel = Label(miFrame, text = "Este es mi label")</span>
+<span id=""><span class="pr-n mr-3">7</span>miLabel.place(x=50,y=50)</span>
+<span id=""><span class="pr-n mr-3">8</span>root.mainloop()</span>
+            </code>
+            </pre>
+        </div>
+
+        <div class="container code mt-2 desactivate" id="output2">
+            <span class="pr-n">Salida</span> <br>
+            <div class="text-center p-3 mx-auto">
+                <img src="{% static 'images/Graficos/ejemplos_practicos/place.png' %}" class="image-code"
+                    alt="imagen-code">
+            </div>
+            <p class="text-justify mt-5" style="font-size: 80%;">
+                El método <span class="pr">place</span> permite ubicar el <span class="pr-n">label</span> dentro del frame según la posición que se le indique, a este
+                método se le pasan dos parámetros (x,y), estos parámetros sirven para indicar en qué parte del frame se
+                desea ubicar el <span class="pr-n">label</span>. Los parámetros (x,y) se representan en pixeles.
+
+                <span class="pr">NOTA</span>: si a los parámetros (x,y) se le envían valores mayores a las dimensiones que tiene el frame
+                contenedor, el label no se podrá visualizar pues está excediendo las dimensiones del frame que lo
+                contiene.
+            </p>
+        </div>
+
+        <div class="text-center">
+            <button class="btn botonBlue btn-sm" id="btn-open2" onclick="ShowCode('2')">Ejecutar codigo</button>
+            <button class="btn botonYellow btn-sm desactivate" id="btn-close2" onclick="HidenCode('2')">Cerrar</button>
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+
+<script>
+    var ShowCode = (param) => {
+
+        if (parseInt(param) != 1) {
+            output = 'output' + param
+            btn_close = 'btn-close' + param
+            btn_open = 'btn-open' + param
+        } else {
+            output = 'output'
+            btn_close = 'btn-close'
+            btn_open = 'btn-open'
+        }
+
+        document.getElementById(output).setAttribute('class', 'container code mt-2')
+        document.getElementById(btn_close).setAttribute('class', 'btn botonYellow btn-sm')
+        document.getElementById(btn_open).setAttribute('class', 'desactivate')
+
+    }
+
+    var HidenCode = (param) => {
+
+        if (parseInt(param) != 1) {
+            output = 'output' + param
+            btn_close = 'btn-close' + param
+            btn_open = 'btn-open' + param
+        } else {
+            output = 'output'
+            btn_close = 'btn-close'
+            btn_open = 'btn-open'
+        }
+
+        document.getElementById(output).setAttribute('class', 'desactivate')
+        document.getElementById(btn_close).setAttribute('class', 'desactivate')
+        document.getElementById(btn_open).setAttribute('class', 'btn botonBlue btn-sm')
+    }
+
+    var ShowCodeEx = (param) => {
+        elemento = 'item-' + param
+        var num = parseInt(param)
+        if (num >= 6) {
+            item = 'items2'
+        } else {
+            item = 'items'
+        }
+        document.getElementById(item).setAttribute('class', 'desactivate') //Desactivo los elementos de la lista ul        
+        document.getElementById(elemento).setAttribute('class', 'container code mx-auto text-justify')
+        document.getElementById('text').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode8 = () => {
+        document.getElementById('output8').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+
+    var HideCoden = (param) => {
+        elemento = 'item-' + param
+        output = 'output' + (parseInt(param) + 1).toString()
+        boton = 'btn-' + param
+        var num = parseInt(param)
+        if (num >= 6) {
+            item = 'items2'
+        } else {
+            item = 'items'
+        }
+        document.getElementById(item).setAttribute('class', 'container text-justify') //Activo los elementos de la lista ul        
+        document.getElementById(elemento).setAttribute('class', 'container code mx-auto text-justify desactivate') //DEsactivo el codigo
+        document.getElementById(output).setAttribute('class', 'container code mt-2 desactivate')
+        document.getElementById('text').setAttribute('class', 'text-justify')
+        document.getElementById(boton).setAttribute('class', 'btn botonBlue btn-sm')
+    }
+</script>
+{% endblock scripts %}

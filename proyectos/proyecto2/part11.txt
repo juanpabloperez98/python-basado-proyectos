@@ -1,0 +1,26 @@
+---------# 1----------------------
+def validar_ganador(j1,j2,posiciones): **
+def validar_ganador(j1,j2):
+validar_ganador(j1,j2,posiciones):
+def validar_ganador():
+---------# 2----------------------
+ficha1 = j1['nombre']
+ficha1 = j1['']
+j1['ficha']
+ficha1 = j1['ficha'] **
+---------# 18---------------------
+ocupadas = 1
+ocupadas = 0 **
+ocupadas += 0
+ocupadas == 0
+---------# 20---------------------
+if(posiciones[i] /= i):
+if(posiciones[i] == i):
+if(posiciones[i] != i): **
+if(posiciones[i] += i):
+---------# 21---------------------
+ocupadas -= 1
+ocupadas += 1 **
+ocupadas *= 1
+ocupadas /= 1
+

@@ -1,0 +1,30 @@
+---------# 2---------------------
+posiciones = {0,1,2,3,4,5,6,7,8}
+[0,1,2,3,4,5,6,7,8]
+posiciones = [0,1,2,3,4,5,6,7,8] **
+posiciones = [012345678]
+---------# 4---------------------
+while(False):
+while(-1):
+for(True):
+while(True): **
+---------# 8---------------------
+validar_ganador(j1,j2,posiciones)
+ganador = validar_ganador(j1,j2,posiciones) **
+ganador = validar_ganador(j1)
+ganador = validar_ganador(j1,posiciones)
+---------# 15--------------------
+j2['partidas_ganadas'] -= 1
+j2['partidas_ganadas'] *= 1
+j2['partidas_ganadas'] += 1 **
+j2['partidas_ganadas'] /= 1
+---------# 19--------------------
+t = int("Ingrese posicion: ")
+t = int(input("Ingrese posicion: ")) **
+t = "Ingrese posicion: "
+t = input("Ingrese posicion: ")
+---------# 22--------------------
+posiciones[t] = j2['ficha']
+else: posiciones[t] = j2['nombre']
+else: posiciones[t] = j2['ficha'] **
+else: posiciones['nombre'] = j2['ficha']

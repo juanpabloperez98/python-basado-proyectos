@@ -15,14 +15,11 @@ Primera Interfaz grafica
 {% block headers %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand">
-        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo"
-            width="30">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
         <span id="title-navabar">Python basado en proyectos</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -91,16 +88,13 @@ Primera Interfaz grafica
         </div>
 
         <div class="text-center">
-            <button class="btn botonBlue btn-sm" id="btn-open"
-                onclick="ShowCode()">Ejecutar codigo</button>
-            <button class="btn botonYellow btn-sm desactivate" id="btn-close"
-                onclick="HidenCode()">Cerrar</button>
+            <button class="btn botonBlue btn-sm" id="btn-open" onclick="ShowCode()">Ejecutar codigo</button>
+            <button class="btn botonYellow btn-sm desactivate" id="btn-close" onclick="HidenCode()">Cerrar</button>
         </div>
 
     </div>
 
-    <div class="col-lg-12 mx-auto text-center part-1 p-5 mt-3"
-        id="posicionamiento">
+    <div class="col-lg-12 mx-auto text-center part-1 p-5 mt-3" id="posicionamiento">
         <h1 class="title-modul"><span class="pr mr-2">2</span> Posicionamiento
             de Frames</h1>
         <hr>
@@ -127,6 +121,17 @@ Primera Interfaz grafica
                 <li>
                     <a href="#posicionamiento" onclick="ShowCodeEx('2')">Anchor</a>
                 </li>
+                <li>
+                    <a href="#posicionamiento" onclick="ShowCodeEx('3')">Fill</a>
+                    <ul class="ml-3">
+                        <li>
+                            <a href="#posicionamiento" onclick="ShowCodeEx('5')">Both</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#posicionamiento" onclick="ShowCodeEx('4')">Expand</a>
+                </li>
             </ul>
 
 
@@ -149,7 +154,8 @@ Primera Interfaz grafica
                 <div class="container code mt-2 desactivate" id="output2">
                     <span class="pr-n">Salida</span> <br>
                     <div class="text-center p-3 salida-1 mx-auto">
-                        <img src="{% static 'images/Graficos/ejemplos_practicos/side.png' %}" class="image-code" alt="imagen-code">
+                        <img src="{% static 'images/Graficos/ejemplos_practicos/side.png' %}" class="image-code"
+                            alt="imagen-code">
                     </div>
                     <p class="text-justify mt-5" style="font-size: 80%;">
                         Similar al ejemplo anterior, se crea un contenedor con
@@ -170,10 +176,8 @@ Primera Interfaz grafica
                 </div>
 
                 <div class="text-center">
-                    <button class="btn botonBlue btn-sm" id="btn-1"
-                        onclick="ShowCode2()">Ejecutar codigo</button>
-                    <button class="btn botonYellow btn-sm"
-                        onclick="HideCoden('1')">Cerrar</button>
+                    <button class="btn botonBlue btn-sm" id="btn-1" onclick="ShowCode2()">Ejecutar codigo</button>
+                    <button class="btn botonYellow btn-sm" onclick="HideCoden('1')">Cerrar</button>
                 </div>
             </div>
 
@@ -196,7 +200,8 @@ Primera Interfaz grafica
                 <div class="container code mt-2 desactivate" id="output3">
                     <span class="pr-n">Salida</span> <br>
                     <div class="text-center p-3 salida-1 mx-auto">
-                        <img src="{% static 'images/Graficos/ejemplos_practicos/anchor.png'%}" class="image-code" alt="imagen-code" style="width:
+                        <img src="{% static 'images/Graficos/ejemplos_practicos/anchor.png'%}" class="image-code"
+                            alt="imagen-code" style="width:
                             100%;">
                     </div>
                     <p class="text-justify mt-5" style="font-size: 80%;">
@@ -221,10 +226,8 @@ Primera Interfaz grafica
                 </div>
 
                 <div class="text-center">
-                    <button class="btn botonBlue btn-sm" id="btn-2"
-                        onclick="ShowCode3()">Ejecutar codigo</button>
-                    <button class="btn botonYellow btn-sm"
-                        onclick="HideCoden('2')">Cerrar</button>
+                    <button class="btn botonBlue btn-sm" id="btn-2" onclick="ShowCode3()">Ejecutar codigo</button>
+                    <button class="btn botonYellow btn-sm" onclick="HideCoden('2')">Cerrar</button>
                 </div>
             </div>
 
@@ -247,23 +250,219 @@ Primera Interfaz grafica
                 <div class="container code mt-2 desactivate" id="output4">
                     <span class="pr-n">Salida</span> <br>
                     <div class="text-center p-3 salida-1 mx-auto">
-                        <img src="{% static 'images/Graficos/ejemplos_practicos/geometry.png'%}" class="image-code" alt="imagen-code"
-                            style="width: 100%;">
+                        <img src="{% static 'images/Graficos/ejemplos_practicos/fill.png'%}" class="image-code"
+                            alt="imagen-code" style="width: 100%;">
                     </div>
                     <p class="text-justify mt-5" style="font-size: 80%;">
-                        
+                        Ya vimos anteriormente cómo se podía posicionar un frame o contenedor en la pantalla principal o
+                        raíz del programa. El atributo fill, permite que el frame se extienda extienda a base de la raíz
+                        dependiendo el parámetro que se le envíe, para este ejemplo se usa: fill=”x”, lo que permite que
+                        cuando se redimensione la pantalla en el eje x, el frame se redimensiona con la raíz.
                     </p>
                 </div>
 
                 <div class="text-center">
-                    <button class="btn botonBlue btn-sm"id="btn-3"
-                        onclick="ShowCode4()">Ejecutar codigo</button>
-                    <button class="btn botonYellow btn-sm"onclick="HideCoden('3')">Cerrar</button>
+                    <button class="btn botonBlue btn-sm" id="btn-3" onclick="ShowCode4()">Ejecutar codigo</button>
+                    <button class="btn botonYellow btn-sm" onclick="HideCoden('3')">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="desactivate" id="item-4">
+                <div class="container code mx-auto text-justify">
+                    <pre>
+                    <code class="language-python">
+    <span id=""><span class="pr-n mr-3">1</span>from tkinter import *</span>
+    <span id=""><span class="pr-n mr-3">2</span>root = Tk()</span>
+    <span id=""><span class="pr-n mr-3">3</span>root.config()</span>
+    <span id=""><span class="pr-n mr-3">4</span>root.geometry("300x300")</span>
+    <span id=""><span class="pr-n mr-3">5</span>miFrame = Frame()</span>
+    <span id=""><span class="pr-n mr-3">6</span>miFrame.config(bg="red",width="100",height="100")</span>
+    <span id=""><span class="pr-n mr-3">7</span>miFrame.pack(fill="y",expand="True")</span>
+    <span id=""><span class="pr-n mr-3">8</span>root.mainloop()</span>
+                    </code>
+                    </pre>
+                </div>
+
+                <div class="container code mt-2 desactivate" id="output5">
+                    <span class="pr-n">Salida</span> <br>
+                    <div class="text-center p-3 salida-1 mx-auto">
+                        <img src="{% static 'images/Graficos/ejemplos_practicos/expand.png'%}" class="image-code"
+                            alt="imagen-code" style="width: 100%;">
+                    </div>
+                    <p class="text-justify mt-5" style="font-size: 80%;">
+                        En el ejemplo de fill, se mostró como se expande o redimensiona el frame en el eje x cuando la
+                        raíz se expande igual, ahora es por lógica pensar que agregando el <span
+                            class="pr">fill=”y”</span>, se puede expandir o
+                        redimensionar el frame en el eje y. Pues si ya lo intentaron se debieron dar de cuenta que no
+                        funciona, y esto es debido a que le falta al método <span class="pr-n">pack</span>, un parámetro
+                        adicional diferente al ya
+                        puesto fill, que permite decirle al método que se puede expandir en los ejes y. Este atributo se
+                        le llama <span class="pr">expand</span> y se iguala a un valor booleano.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn botonBlue btn-sm" id="btn-3" onclick="ShowCode5()">Ejecutar codigo</button>
+                    <button class="btn botonYellow btn-sm" onclick="HideCoden('4')">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="desactivate" id="item-5">
+                <div class="container code mx-auto text-justify">
+                    <pre>
+                    <code class="language-python">
+    <span id=""><span class="pr-n mr-3">1</span>from tkinter import *</span>
+    <span id=""><span class="pr-n mr-3">2</span>root = Tk()</span>
+    <span id=""><span class="pr-n mr-3">3</span>root.config()</span>
+    <span id=""><span class="pr-n mr-3">4</span>root.geometry("300x300")</span>
+    <span id=""><span class="pr-n mr-3">5</span>miFrame = Frame()</span>
+    <span id=""><span class="pr-n mr-3">6</span>miFrame.config(bg="red",width="100",height="100")</span>
+    <span id=""><span class="pr-n mr-3">7</span>miFrame.pack(fill="both",expand="True")</span>
+    <span id=""><span class="pr-n mr-3">8</span>root.mainloop()</span>
+                    </code>
+                    </pre>
+                </div>
+
+                <div class="container code mt-2 desactivate" id="output6">
+                    <span class="pr-n">Salida</span> <br>
+                    <div class="text-center p-3 salida-1 mx-auto">
+                        <img src="{% static 'images/Graficos/ejemplos_practicos/both.png'%}" class="image-code"
+                            alt="imagen-code" style="width: 100%;">
+                    </div>
+                    <p class="text-justify mt-5" style="font-size: 80%;">
+                        Hasta el momento se ha visto un atributo que permite expandir los frames con respecto a la
+                        raíz, como lo es fill. Ahora bien, se mencionó que <span class="pr">fill</span> igualandolo a x
+                        o y,
+                        permite que el frame se expanda con respecto a la raíz en el eje x o y
+                        respectivamente, ahora, si se quisiera poder expandir en los dos ejes, se puede utilizar
+                        fill=”both”, <span class="pr-n">both</span> lo que indica, es que se pueda expandir tanto en x
+                        como en y.
+                        <br>
+                        <span class="pr">NOTA</span>: el atributo expand, se explica en el siguiente enlace de la lista.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn botonBlue btn-sm" id="btn-3" onclick="ShowCode6()">Ejecutar codigo</button>
+                    <button class="btn botonYellow btn-sm" onclick="HideCoden('5')">Cerrar</button>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <div class="col-lg-12 mx-auto text-center part-1 p-5 mt-3" id="estilos">
+        <h1 class="title-modul"><span class="pr mr-2">3</span> Estilos
+            de Frames</h1>
+        <hr>
+        <p class="text-justify" id="text">
+            Hasta el momento se ha visto cómo crear un frame, los atributos de un frame, y como posicionarlo o
+            expandirlo con respecto a una raíz. Ahora se mostrará ciertos estilos que se le pueden dar a un frame, como
+            darle un borde, o cambiar el estilo del puntero cuando esté por encima del frame.
+            <br>
+            A continuación se muestran los estilos a explicar:
+        </p>
+
+        <div>
+            <ul class="container text-justify" id="items2">
+                <li>
+                    <a href="#estilos" onclick="ShowCodeEx('6')">Relief</a>
+                </li>
+                <li>
+                    <a href="#estilos" onclick="ShowCodeEx('7')">Cursor</a>
+                </li>
+            </ul>
+
+
+            <div class="desactivate" id="item-6">
+                <div class="container code mx-auto text-justify">
+                    <pre>
+                    <code class="language-python">
+<span id=""><span class="pr-n mr-3">1</span>from tkinter import *</span>
+<span id=""><span class="pr-n mr-3">2</span>root = Tk()</span>
+<span id=""><span class="pr-n mr-3">3</span>root.config()</span>
+<span id=""><span class="pr-n mr-3">4</span>root.geometry("300x300")</span>
+<span id=""><span class="pr-n mr-3">5</span>miFrame = Frame()</span>
+<span id=""><span class="pr-n mr-3">6</span>miFrame.config(bg="red",width="100",height="100",relief="groove",bd=10)</span>
+<span id=""><span class="pr-n mr-3">7</span>miFrame.pack()</span>
+<span id=""><span class="pr-n mr-3">8</span>root.mainloop()</span>
+                    </code>
+                    </pre>
+                </div>
+
+                <div class="container code mt-2 desactivate" id="output7">
+                    <span class="pr-n">Salida</span> <br>
+                    <div class="text-center p-3 salida-1 mx-auto">
+                        <img src="{% static 'images/Graficos/ejemplos_practicos/relief.png' %}" class="image-code"
+                            alt="imagen-code">
+                    </div>
+                    <p class="text-justify mt-5" style="font-size: 80%;">
+                        Como se puede observar en la salida, el frame que se creó tiene un color de fondo rojo y un
+                        ancho y alto de 100. Nada diferente a lo ya visto, pero adicional a esto se puede observar como
+                        se agrega un atributo llamado <span class="pr">relief</span>, este atributo lo que permite es
+                        colocar el tipo de borde
+                        que tiene el <span class="pr-n">frame</span>. Adicional a eso se le agrega el atributo <span
+                            class="pr">bd=10</span>, esto sirve para agregar el
+                        tamaño en píxeles del borde.
+                        <br>
+                        <span class="pr">NOTA:</span> Los tipos de bordes pueden variar dependiendo el valor que se le
+                        de al atributo relief, si
+                        desea averiguar más al respecto puede consultar en esta <a
+                            href="https://www.tutorialspoint.com/python/tk_relief.htm" target="_blank">documentación</a>
+                        no oficial sobre los
+                        estilos de relief
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn botonBlue btn-sm" id="btn-1" onclick="ShowCode7()">Ejecutar codigo</button>
+                    <button class="btn botonYellow btn-sm" onclick="HideCoden('6')">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="desactivate" id="item-7">
+                <div class="container code mx-auto text-justify">
+                    <pre>
+                    <code class="language-python">
+<span id=""><span class="pr-n mr-3">1</span>from tkinter import *</span>
+<span id=""><span class="pr-n mr-3">2</span>root = Tk()</span>
+<span id=""><span class="pr-n mr-3">3</span>root.config(bg="blue",bd=10,relief="groove")</span>
+<span id=""><span class="pr-n mr-3">4</span>root.geometry("300x300")</span>
+<span id=""><span class="pr-n mr-3">5</span>miFrame = Frame()</span>
+<span id=""><span class="pr-n mr-3">6</span>miFrame.config(bg="red",width="100",height="100",bd=10,relief="groove",cursor="pirate")</span>
+<span id=""><span class="pr-n mr-3">7</span>miFrame.pack()</span>
+<span id=""><span class="pr-n mr-3">8</span>root.mainloop()</span>
+                    </code>
+                    </pre>
+                </div>
+
+                <div class="container code mt-2 desactivate" id="output8">
+                    <span class="pr-n">Salida</span> <br>
+                    <div class="text-center p-3 salida-1 mx-auto">
+                        <img src="{% static 'images/Graficos/ejemplos_practicos/cursor.png' %}" style="width: 100%;"
+                            alt="imagen-code">
+                    </div>
+                    <p class="text-justify mt-5" style="font-size: 80%;">
+                        En este ejemplo se puede visualizar que a la raíz, también se le puede agregar el atributo
+                        <span class="pr">relief</span>, como se le ha hecho al frame.Tambien se puede observar que en los parámetros enviados al frame
+                        en el método <span class="pr">pack</span>, se agrega un nuevo atributo llamado <span class="pr-n">cursor</span>, este atributo sirve para darle
+                        estilos al puntero del mouse una vez esté esta encima del frame.
+                        <br>
+                        <span class="pr">NOTA</span>: los estilos que se le pueden dar al cursor se encuentra en la <a href="https://www.tutorialspoint.com/python/tk_cursors.htm" target="_blank">documentación</a> no oficial.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn botonBlue btn-sm" id="btn-1" onclick="ShowCode8()">Ejecutar codigo</button>
+                    <button class="btn botonYellow btn-sm" onclick="HideCoden('7')">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
 
 
 </div>
@@ -278,46 +477,82 @@ Primera Interfaz grafica
 </script>
 <script>
     var ShowCode = () => {
-        document.getElementById('output').setAttribute('class','container code mt-2')
-        document.getElementById('btn-close').setAttribute('class','btn botonYellow btn-sm')
-        document.getElementById('btn-open').setAttribute('class','desactivate')
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-close').setAttribute('class', 'btn botonYellow btn-sm')
+        document.getElementById('btn-open').setAttribute('class', 'desactivate')
 
     }
 
     var HidenCode = () => {
-        document.getElementById('output').setAttribute('class','desactivate')
-        document.getElementById('btn-close').setAttribute('class','desactivate')
-        document.getElementById('btn-open').setAttribute('class','btn botonBlue btn-sm')
+        document.getElementById('output').setAttribute('class', 'desactivate')
+        document.getElementById('btn-close').setAttribute('class', 'desactivate')
+        document.getElementById('btn-open').setAttribute('class', 'btn botonBlue btn-sm')
     }
 
     var ShowCodeEx = (param) => {
-        elemento = 'item-'+param
-        
-        document.getElementById('items').setAttribute('class','desactivate') //Desactivo los elementos de la lista ul        
-        document.getElementById(elemento).setAttribute('class','container code mx-auto text-justify')
-        document.getElementById('text').setAttribute('class','desactivate')
+        elemento = 'item-' + param
+        var num = parseInt(param)
+        if (num >= 6) {
+            item = 'items2'
+        } else {
+            item = 'items'
+        }
+        document.getElementById(item).setAttribute('class', 'desactivate') //Desactivo los elementos de la lista ul        
+        document.getElementById(elemento).setAttribute('class', 'container code mx-auto text-justify')
+        document.getElementById('text').setAttribute('class', 'desactivate')
     }
 
     var ShowCode2 = () => {
-        document.getElementById('output2').setAttribute('class','container code mt-2')
-        document.getElementById('btn-1').setAttribute('class','desactivate')
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
     }
 
     var ShowCode3 = () => {
-        document.getElementById('output3').setAttribute('class','container code mt-2')
-        document.getElementById('btn-1').setAttribute('class','desactivate')
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
+    }
+
+    var ShowCode8 = () => {
+        document.getElementById('output8').setAttribute('class', 'container code mt-2')
+        document.getElementById('btn-1').setAttribute('class', 'desactivate')
     }
 
 
     var HideCoden = (param) => {
-        elemento = 'item-'+param
-        output = 'output'+(parseInt(param)+1).toString()
-        boton = 'btn-'+param
-        document.getElementById('items').setAttribute('class','container text-justify') //Activo los elementos de la lista ul        
-        document.getElementById(elemento).setAttribute('class','container code mx-auto text-justify desactivate') //DEsactivo el codigo
-        document.getElementById(output).setAttribute('class','container code mt-2 desactivate')
-        document.getElementById('text').setAttribute('class','text-justify')
-        document.getElementById(boton).setAttribute('class','btn botonBlue btn-sm')
+        elemento = 'item-' + param
+        output = 'output' + (parseInt(param) + 1).toString()
+        boton = 'btn-' + param
+        var num = parseInt(param)
+        if (num >= 6) {
+            item = 'items2'
+        } else {
+            item = 'items'
+        }
+        document.getElementById(item).setAttribute('class', 'container text-justify') //Activo los elementos de la lista ul        
+        document.getElementById(elemento).setAttribute('class', 'container code mx-auto text-justify desactivate') //DEsactivo el codigo
+        document.getElementById(output).setAttribute('class', 'container code mt-2 desactivate')
+        document.getElementById('text').setAttribute('class', 'text-justify')
+        document.getElementById(boton).setAttribute('class', 'btn botonBlue btn-sm')
     }
 </script>
 {% endblock scripts %}

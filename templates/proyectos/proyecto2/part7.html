@@ -1,0 +1,315 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Proyecto2 parte - 7
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item desactivate" id="part2">
+                <a class="nav-link" href="{% url 'proyecto2_app:part8' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Parte 8</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto2_app:proyecto2' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+    <!-- Enunciado -->
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Parte 7</h1>
+        <hr>
+        <p class="text-justify">
+            En esta parte se va a realizar la función de escoger_jugadores, esta función tiene como objetivo permitirle
+            a los usuarios que van a empezar el juego, escoger con cuales jugadores que hay registrados desean empezar
+            la partida. También en esta función se va a validar que los jugadores escogidos no sean el mismo. Retornará
+            dos diccionarios con la información correspondiente de los jugadores elegidos o retornará dos ceros en su
+            defecto dado el caso de que los usuarios hayan escogido el mismo jugador.
+        </p>
+        <h1 class="title-modul">¿Como se realizara?</h1>
+        <hr>
+        <p class="text-justify">
+            Lo primero que se va hacer es recorrer la lista de jugadores, para poder mostrar los jugadores disponibles
+            que los usuarios pueden elegir. Después se va a pedir a los usuarios que escojan el jugador, luego se
+            validará que los jugadores escogidos sean diferentes y se retornan los elementos correspondientes a la
+            información de los jugadores escogidos, si los jugadores son iguales se imprime por pantalla que los
+            jugadores no pueden ser iguales y se retornan dos ceros.
+        </p>
+        <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+    </div>
+</div>
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+    <!-- Siguiente parte -->
+    <div class="text-center col-lg-12 mx-auto my-5 desactivate" id="siguiente-ejercicio">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+            <br> Puedes pasar a la siguiente parte</h1>
+        <hr>
+    </div>
+
+    <!-- Codigo -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+        <div class="container code text-justify mt-2">
+            <pre>
+              <code class="language-python">
+      <span><span class="pr-n mr-3">1</span>def escoger_jugadores(jugadores):</span>
+      <span><span class="pr-n mr-3">2</span>    print("---Jugadores---")</span>
+      <span><span class="pr-n mr-3">3</span>    i = 0</span>
+      <span id="l1" class="linea-code"><span class="pr-n mr-3">4</span>    <span class="desactivate" id="l-1">for jugador in jugadores:</span></span> 
+      <span id="l2" class="linea-code"><span class="pr-n mr-3">5</span>        <span class="desactivate" id="l-2">print(str(i) +  "-" + jugador['nombre'])</span></span> 
+      <span id="l3" class="linea-code"><span class="pr-n mr-3">6</span>        <span class="desactivate" id="l-3">i+=1</span></span> 
+      <span><span class="pr-n mr-3">7</span>    j1 = int(input("Jugador 1 ingrese el numero del jugador a elegir: "))</span>
+      <span id="l4" class="linea-code"><span class="pr-n mr-3">8</span>    <span class="desactivate" id="l-4">j2 = int(input("Jugador 2 ingrese el numero del jugador a elegir: "))</span></span> 
+      <span><span class="pr-n mr-3">9</span>    if(j1 != j2):</span>
+      <span><span class="pr-n mr-3">10</span>        jugador1 = jugadores[j1]</span>
+      <span id="l5" class="linea-code"><span class="pr-n mr-3">11</span>       <span class="desactivate" id="l-5">jugador2 = jugadores[j2]</span></span> 
+      <span><span class="pr-n mr-3">12</span>       return jugador1, jugador2 </span>
+      <span><span class="pr-n mr-3">13</span>   else:</span>
+      <span><span class="pr-n mr-3">14</span>       print("*Los jugadores no pueden ser iguales*")</span>
+      <span><span class="pr-n mr-3">15</span>       return 0,0</span>
+            </code>
+          </pre>
+        </div>
+        <div id="botones-1" class="desactivate">
+            <a href="#" class="btn botonYellow" id="explicar"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+        </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+        <div class="container code text-justify mt-2">
+            <!-- #4 -->
+            <div class="p-3 mt-3" id="1" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 4</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Hay que recorrer la lista de jugadores para mostrar los jugadores disponibles ¿Como se recorre
+                        una lista?
+                    </p>
+                    <form action="" name="formulario1" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-1">
+                            <option>Opciones</option>
+                            <option>for jugador in jugadores:</option>
+                            <option>for jugadores:</option>
+                            <option>for jugador in range(jugadores): </option>
+                            <option>while jugador in jugadores:</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Por cada iteración de la <span class="pr-n">lista</span>, se guarda en la variable <span class="pr">jugador</span> el elemento correspondiente,
+                        que en este caso cada elementos es un <span class="pr-n">diccionario</span> que contiene la información de un jugador
+                        (nombre,partidas_ganadas).
+                    </p>
+                </div>
+            </div>
+            <!-- #5 -->
+            <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 5</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se debe imprimir el nombre del jugador correspondiente a la iteración de la lista ¿Como se
+                        imprime el valor de un diccionario?
+                    </p>
+                    <form action="" name="formulario2" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-2">
+                            <option>Opciones</option>
+                            <option>print(str(i) +  "-" + jugador[nombre])</option>
+                            <option>print(str(i) +  "-" + jugador{'nombre'})</option>
+                            <option>print(str(i) +  "-" + jugador['nombre'])</option>
+                            <option>str(i) +  "-" + jugador['nombre']</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Como se mencionó anteriormente, <span class="pr">jugador</span> contiene el <span class="pr-n">diccionario</span> con la información
+                        correspondiente de un elemento de la lista <span class="pr">jugadores</span>, para obtener el nombre del jugador solo
+                        basta con colocar el nombre de la variable y entre <span class="pr">[ ]</span>, el nombre de la clave, en este caso solo
+                        se necesita el valor de [“nombre”]. <br> 
+                        <span class="pr">NOTA</span>: la variable <span class="pr-n">i</span> lo que indica es cual es la posición en
+                        la que se encuentra ese elemento.
+                    </p>
+                </div>
+            </div>
+            <!-- #6 -->
+            <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 6</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        En la línea # 3 se declara un i = 0, se necesita aumentar su valor en 1 cada vez que termine una
+                        iteración del ciclo ¿Como se aumenta el valor de una variable?
+                    </p>
+                    <form action="" name="formulario3" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-3">
+                            <option>Opciones</option>
+                            <option>i=1</option>
+                            <option>i+1</option>
+                            <option>i++1</option>
+                            <option>i+=1</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Utilizando el operador <span class="pr">+=</span> e indicando el valor en el que se desea aumentar se le puede sumar a
+                        la variable el valor indicado.
+                    </p>
+                </div>
+            </div>
+            <!-- #8 -->
+            <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-4">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 8</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se va a solicitar al usuario 2 que ingrese el número (posición) del jugador que desea elegir
+                        ¿Cómo se pide un dato entero en python?
+                    </p>
+                    <form action="" name="formulario4" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-4">
+                            <option>Opciones</option>
+                            <option>j2 = (input("Jugador 2 ingrese el numero del jugador a elegir: "))</option>
+                            <option>j2 = int(input("Jugador 2 ingrese el numero del jugador a elegir: "))</option>
+                            <option>j2 = int("Jugador 2 ingrese el numero del jugador a elegir: ")</option>
+                            <option>int(input("Jugador 2 ingrese el numero del jugador a elegir: "))</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-4">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        La palabra reservada <span class="pr">input</span> permite que el usuario pueda ingresar un valor por pantalla, ese
+                        valor debe ser convertido a entero utilizando la palabra reservada <span class="pr">int</span>.
+                    </p>
+                </div>
+            </div>
+            <!-- #11 -->
+            <div class="p-3 mt-3 desactivate" id="5" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-5">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 11</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se debe obtener el elemento correspondiente al escogido por el usuario # 2 ¿Cómo se debe hacer
+                        esto?
+                    </p>
+                    <form action="" name="formulario5" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-5">
+                            <option>Opciones</option>
+                            <option>jugador2 = jugadores[j1]</option>
+                            <option>jugadores[j2]</option>
+                            <option>jugador2 = jugadores[j2]</option>
+                            <option>jugador2 = jugadores["j2"]:</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-5">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Como se ha venido explicando, <span class="pr-n">jugadores</span> es una lista de elementos, donde cada elemento es un
+                        <span class="pr-n">diccionario</span> que contiene la información de un jugador. Para obtener un elemento en específico es
+                        necesario indicarle a la lista en que <span class="pr-n">posición</span> se encuentra dicho elemento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="botones text-center mb-3">
+                <button class="btn botonYellow" id="probar"><i class="fas
+              fa-arrow-right"></i> Probar</button>
+                <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+              fa-arrow-right"></i> Seguir</button>
+                <a id="reiniciar" href="./parte7" class="btn botonBlue" id="reiniciar"><i
+                        class='fas fa-undo-alt mr-2'></i>
+                    Reiniciar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Explicación -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="explicacionCode">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+        <div class="container code text-justify mt-2" id="explain-div">
+            <pre>
+          <code class="language-python" id="code-add">
+  <span class=""><span class="pr-n mr-3">1</span>  Se crea la función main. Con la palabra reservada "def", acompañada del nombre que se le quiera dar se pude crear una función en Python.</span>
+  <span class=""><span class="pr-n mr-3">2</span>  Creamos una variable fin y la igualamos a False. <br>  <span class="pr ml-4">NOTA</span>: esta variable es la que nos va a permitir manejar el ciclo while de la linea # 5</span>
+  <span class=""><span class="pr-n mr-3">3</span>  Creamos una lista donde se van a guardar los empleados registrados, la lista se llamara "lista_empleados" para evitar confusiones a la hora del desarrollo</span>
+  <span class=""><span class="pr-n mr-3">4</span>  Pedimos el capital de nomina con el que se va a trabajar.</span>
+  <span class=""><span class="pr-n mr-3">5</span>  Creamos un ciclo while, que nos permite hacer un ciclo infinito, que solo se detendrá cuando el usuario escoja la opción 7 <br>  <span class="pr ml-4">NOTA</span>: El ciclo while se ejecutara siempre y cuando <span class="pr">fin</span> sea diferente de True</span>
+  <span class=""><span class="pr-n mr-3">6</span>  Llamamos a la función "menu()" <br>  <span class="pr ml-4">NOTA</span>: Como se menciono anteriormente, la función menu() se creara en el apartado siguientes.</span>
+  <span class=""><span class="pr-n mr-3">7</span>  Una vez se muestre el menú, le pediremos al usuario que escoja una opción mostrada. La opción ingresada por el usuario se guardara en la variable "opcion"</span>
+  <span class=""><span class="pr-n mr-3">8</span>  validamos si "opcion" es igual a 1</span>
+  <span class=""><span class="pr-n mr-3">9</span>  validamos si "opcion" es igual a 2</span>
+  <span class=""><span class="pr-n mr-3">10</span>validamos si "opcion" es igual a 3</span>
+  <span class=""><span class="pr-n mr-3">11</span>validamos si "opcion" es igual a 4</span>
+  <span class=""><span class="pr-n mr-3">12</span>validamos si "opcion" es igual a 5</span>
+  <span class=""><span class="pr-n mr-3">13</span>validamos si "opcion" es igual a 6</span>
+  <span class=""><span class="pr-n mr-3">14</span>validamos si "opcion" es igual a 7</span>
+  <span class=""><span class="pr-n mr-3">15</span>Si el usuario escogió la opción 7, se muestra un mensaje de despedida</span>
+  <span class=""><span class="pr-n mr-3">16</span>Como se menciono en la linea 5, el ciclo infinito solo corre siempre y cuando <span class="pr">fin</span> sea diferente de True, para terminar el ciclo, se iguala <span class="pr">fin</span> a True</span>
+  <span class=""><span class="pr-n mr-3">17</span>Validamos si ninguna de las opciones fue escogida, de ser así imprimimos por pantalla un mensaje de error</span>
+  <span class=""><span class="pr-n mr-3">18</span>Se hace el llamado a la función <span class="pr">main()</span> ya creada.</span>
+          </code>
+        </pre>
+        </div>
+    </div>
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto2/part7.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Proyecto2 parte - 6
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item desactivate" id="part2">
+                <a class="nav-link" href="{% url 'proyecto2_app:part7' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Parte 7</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto2_app:proyecto2' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+    <!-- Enunciado -->
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Parte 6</h1>
+        <hr>
+        <p class="text-justify">
+            En este sexto apartado se va a crear la función pedir_datos, en este punto se va a realizar toda la lógica
+            de cuando el usuario escoja empezar un juego. Esta función al igual que la anteriores también recibe la
+            lista de jugadores y retorna la misma lista pero actualizada (es decir sumándole al jugador ganador el valor
+            de su clave partidas_ganadas.
+        </p>
+        <h1 class="title-modul">¿Como se realizara?</h1>
+        <hr>
+        <p class="text-justify">
+            Lo primero que se debe hacer es validar si hay jugadores suficientes para empezar una partida, es decir debe
+            haber más de un jugador creado para poder iniciar una partida, para validar esto, lo primero que se debe
+            hacer es ver si la longitud de la lista de jugadores es mayor a 1. De ser así llamamos a la función
+            escoger_jugadores la cual se le pasa como parámetro la lista de jugadores(esta función lo que permite es que
+            los usuarios escojan cuáles son los dos jugadores con los que desean iniciar la partida), esta función puede
+            a retornar dos diccionarios que contienen la información de los jugadores escogidos o puede retornar dos
+            ceros dado el caso de que hayan escogido el mismo jugador (ya que una partida no se puede realizar con el
+            mismo jugador). Lo que devuelve la función escoger_jugadores será guardado en dos variables j1 j2, después
+            se validará que j1 y j2 sean diferente de 0. Si la condición se cumple se llama ahora a la función
+            escoger_ficha (esta función es similar a la anterior), lo que permite es que los usuarios puedan escoger la
+            ficha con la que desean jugar, igual que la función anterior, esta devuelve los mismos diccionarios con la
+            información de los jugadores, pero adicional a eso, estos diccionarios tienen una clave nueva incluida que
+            corresponde a la ficha escogida por los usuarios, es decir ya no solo tendrán las claves (nombre y
+            partidas_ganadas), sino que adicional a eso tendrán una nueva clave (ficha). Lo que devuelve la función se
+            va a guardar en j1 y j2, se vuelve a validar que sean diferentes de 0, si la condición se cumple entonces se
+            hace la llamada a empezar_juego y se le pasa como parámetro las variables j1 y j2 a esta función (Esta
+            función lo que me hace es simular el juego). La función empezar_juego devolverá los diccionarios
+            actualizados que se le enviaron por parámetro j1 y j2 (es decir con el valor de la clave partidas_ganadas
+            aumentada en 1 al jugador ganador). Finalmente se debe actualizar en la lista jugadores los diccionarios de
+            los jugadores escogidos, para eso simplemente se recorre la lista a través de un ciclo for y se valida si el
+            elemento correspondiente a la iteración en la clave [nombre] es igual a j1 en la clave [nombre] o igual a j2
+            en la clave [nombre], si alguna condición se cumple entonces se dice que el elemento de la lista en esa
+            iteración es igual a j1 o j2 según corresponda, por último se retorna la lista de jugadores actualizada.
+        </p>
+
+        <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+    </div>
+</div>
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+    <!-- Siguiente parte -->
+    <div class="text-center col-lg-12 mx-auto my-5 desactivate" id="siguiente-ejercicio">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+            <br> Puedes pasar a la siguiente parte</h1>
+        <hr>
+    </div>
+
+    <!-- Codigo -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+        <div class="container code text-justify mt-2">
+            <pre>
+              <code class="language-python">
+      <span><span class="pr-n mr-3">1</span>def pedir_datos(jugadores):</span>
+      <span id="l1" class="linea-code"><span class="pr-n mr-3">2</span>    <span class="desactivate" id="l-1">if(len(jugadores)>1):</span></span> 
+      <span id="l2" class="linea-code"><span class="pr-n mr-3">3</span>        <span class="desactivate" id="l-2">j1,j2 = escoger_jugadores(jugadores)</span></span> 
+      <span><span class="pr-n mr-3">4</span>        if(j1 != 0 and j2 != 0):</span>
+      <span><span class="pr-n mr-3">5</span>            j1,j2 = escoger_ficha(j1,j2)</span>
+      <span id="l3" class="linea-code"><span class="pr-n mr-3">6</span>            <span class="desactivate" id="l-3">if(j1 != 0 and j2 != 0):</span></span> 
+      <span><span class="pr-n mr-3">7</span>                j1,j2 = empezar_juego(j1,j2)</span>
+      <span><span class="pr-n mr-3">8</span>                for jugador in jugadores:</span>
+      <span id="l4" class="linea-code"><span class="pr-n mr-3">9</span>                    <span class="desactivate" id="l-4">if jugador['nombre'] == j1['nombre']:</span></span> 
+      <span><span class="pr-n mr-3">10</span>                        jugador = j1</span>
+      <span><span class="pr-n mr-3">11</span>                    elif(jugador['nombre'] == j2['nombre']):</span>
+      <span id="l5" class="linea-code"><span class="pr-n mr-3">12</span>                        <span class="desactivate" id="l-5">jugador = j2</span></span> 
+      <span><span class="pr-n mr-3">13</span>                return jugadores</span>
+      <span><span class="pr-n mr-3">14</span>    else:</span>
+      <span><span class="pr-n mr-3">15</span>        print(*No hay jugadores suficiente*")</span>
+            </code>
+          </pre>
+        </div>
+
+        <div id="botones-1" class="desactivate">
+            <a href="#" class="btn botonYellow" id="explicar"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+        </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+        <div class="container code text-justify mt-2">
+            <!-- #2 -->
+            <div class="p-3 mt-3" id="1" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 2</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se necesita validar si la longitud de la lista jugadores es mayor a 1 ¿Como se haría esto?
+                    </p>
+                    <form action="" name="formulario1" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-1">
+                            <option>Opciones</option>
+                            <option>if(len(jugadores)>1):</option>
+                            <option>if(jugadores>1):</option>
+                            <option>if(len(jugadores)<1):</option>
+                            <option>if(len(jugadores1):</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Utilizando la palabra reservada <span class="pr">len</span> para obtener la <span class="pr-n">longitud</span> de la lista se valida si es mayor a
+                        1
+                    </p>
+                </div>
+            </div>
+            <!-- #3 -->
+            <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 3</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se necesita hacer el llamado a la función escoger_jugadores, hay que recordar que esta función
+                        se le envía como parámetro la lista jugadores y retorna dos diccionarios ¿Como se debe realizar
+                        esto?
+                    </p>
+                    <form action="" name="formulario2" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-2">
+                            <option>Opciones</option>
+                            <option>j1 = escoger_jugadores(jugadores)</option>
+                            <option>escoger_jugadores(jugadores)</option>
+                            <option>j1,j2 = escoger_jugadores(jugadores)</option>
+                            <option>j1,j2 = escoger_jugadores()</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se hace el llamado a la función y se le envia como parametro la lista <span class="pr">jugadores</span>, se utilizan las
+                        variables <span class="pr-n">j1 - j2</span> para guardar lo que retorna la función
+                    </p>
+                </div>
+            </div>
+            <!-- #6 -->
+            <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 6</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se necesita validar si j1 y j2 son diferentes de cero ¿Como se hace esto?
+                    </p>
+                    <form action="" name="formulario3" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-3">
+                            <option>Opciones</option>
+                            <option>if(j1 != 0 or j2 != 0):</option>
+                            <option>if(j1 != 0 and j1 != 0):</option>
+                            <option>if(j1 == 0 and j2 != 0):</option>
+                            <option>if(j1 != 0 and j2 != 0):</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Utilizando un <span class="pr">if</span> se valida si <span class="pr-n">j1 y j2</span> son diferentes de 0.
+                    </p>
+                </div>
+            </div>
+            <!-- #9 -->
+            <div class="p-3 mt-3 desactivate" id="4" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-4">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 9</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se requiere validar si el valor del elemento de la lista en su clave nombre es igual al valor
+                        del diccionario j1 en su clave nombre ¿Como hago esta validación?
+                    </p>
+                    <form action="" name="formulario4" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-4">
+                            <option>Opciones</option>
+                            <option>if jugador == j1['nombre']:</option>
+                            <option>if jugador['nombre'] == j1['nombre']:</option>
+                            <option>if jugador == j1:</option>
+                            <option>if jugador[''] == j1['']:</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-4">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        La variable <span class="pr">jugador</span> hace referencia a un elemento de la lista jugadores, este elemento es un
+                        diccionario, al igual que lo es j1, lo que se valida es que el elemento de la lista en su clave
+                        [<span class="pr-n">nombre</span>] sea igual a j1 en su clave [<span class="pr-n">nombre</span>] de esta manera se puede saber cual es el
+                        elemento que se debe actualizar.
+                    </p>
+                </div>
+            </div>
+            <!-- #12 -->
+            <div class="p-3 mt-3 desactivate" id="5" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-5">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 12</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Igual que como se hizo en la línea # 10, se debe igualar el elemento de la lista que corresponde
+                        a la iteración a j2 ¿Como se hace esto tomando como referencia la línea # 10?
+                    </p>
+                    <form action="" name="formulario5" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-5">
+                            <option>Opciones</option>
+                            <option>jugador = j2</option>
+                            <option>j2</option>
+                            <option>jugador = j1</option>
+                            <option>jugador != j2</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-5">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Si se sabe que el <span class="pr-n">elemento</span> de la lista en la <span class="pr-n">iteración</span> correspondiente es igual <span class="pr">j2</span>, entonces se
+                        debe igualar la variable <span class="pr">jugador</span> a <span class="pr">j2</span>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="botones text-center mb-3">
+                <button class="btn botonYellow" id="probar"><i class="fas
+              fa-arrow-right"></i> Probar</button>
+                <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+              fa-arrow-right"></i> Seguir</button>
+                <a id="reiniciar" href="./parte6" class="btn botonBlue" id="reiniciar"><i class='fas fa-undo-alt mr-2'></i>
+                    Reiniciar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Explicación -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="explicacionCode">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+        <div class="container code text-justify mt-2" id="explain-div">
+            <pre>
+          <code class="language-python" id="code-add">
+  <span class=""><span class="pr-n mr-3">1</span>  Se crea la función main. Con la palabra reservada "def", acompañada del nombre que se le quiera dar se pude crear una función en Python.</span>
+  <span class=""><span class="pr-n mr-3">2</span>  Creamos una variable fin y la igualamos a False. <br>  <span class="pr ml-4">NOTA</span>: esta variable es la que nos va a permitir manejar el ciclo while de la linea # 5</span>
+  <span class=""><span class="pr-n mr-3">3</span>  Creamos una lista donde se van a guardar los empleados registrados, la lista se llamara "lista_empleados" para evitar confusiones a la hora del desarrollo</span>
+  <span class=""><span class="pr-n mr-3">4</span>  Pedimos el capital de nomina con el que se va a trabajar.</span>
+  <span class=""><span class="pr-n mr-3">5</span>  Creamos un ciclo while, que nos permite hacer un ciclo infinito, que solo se detendrá cuando el usuario escoja la opción 7 <br>  <span class="pr ml-4">NOTA</span>: El ciclo while se ejecutara siempre y cuando <span class="pr">fin</span> sea diferente de True</span>
+  <span class=""><span class="pr-n mr-3">6</span>  Llamamos a la función "menu()" <br>  <span class="pr ml-4">NOTA</span>: Como se menciono anteriormente, la función menu() se creara en el apartado siguientes.</span>
+  <span class=""><span class="pr-n mr-3">7</span>  Una vez se muestre el menú, le pediremos al usuario que escoja una opción mostrada. La opción ingresada por el usuario se guardara en la variable "opcion"</span>
+  <span class=""><span class="pr-n mr-3">8</span>  validamos si "opcion" es igual a 1</span>
+  <span class=""><span class="pr-n mr-3">9</span>  validamos si "opcion" es igual a 2</span>
+  <span class=""><span class="pr-n mr-3">10</span>validamos si "opcion" es igual a 3</span>
+  <span class=""><span class="pr-n mr-3">11</span>validamos si "opcion" es igual a 4</span>
+  <span class=""><span class="pr-n mr-3">12</span>validamos si "opcion" es igual a 5</span>
+  <span class=""><span class="pr-n mr-3">13</span>validamos si "opcion" es igual a 6</span>
+  <span class=""><span class="pr-n mr-3">14</span>validamos si "opcion" es igual a 7</span>
+  <span class=""><span class="pr-n mr-3">15</span>Si el usuario escogió la opción 7, se muestra un mensaje de despedida</span>
+  <span class=""><span class="pr-n mr-3">16</span>Como se menciono en la linea 5, el ciclo infinito solo corre siempre y cuando <span class="pr">fin</span> sea diferente de True, para terminar el ciclo, se iguala <span class="pr">fin</span> a True</span>
+  <span class=""><span class="pr-n mr-3">17</span>Validamos si ninguna de las opciones fue escogida, de ser así imprimimos por pantalla un mensaje de error</span>
+  <span class=""><span class="pr-n mr-3">18</span>Se hace el llamado a la función <span class="pr">main()</span> ya creada.</span>
+          </code>
+        </pre>
+        </div>
+    </div>
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto2/part6.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

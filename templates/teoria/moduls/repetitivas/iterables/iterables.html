@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+for por elementos iterables
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'repetitivas_app:ciclofor' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Ejemplo del String</h1>
+            <p class="text-justify" style="min-height: 180px;">
+                En la parte de ciclos por índice, se puso el ejemplo de cómo recorrer un string con un ciclo for por
+                índice, ahora se va a realizar el mismo ejemplo pero esta vez utilizando el ciclo for por elementos
+                iterables.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>string  = "Mundo"</span>
+<span id="2"><span class="pr-n mr-3">2</span>for i in string:</span>
+<span id="3"><span class="pr-n mr-3">3</span>    print("Letra: ",i)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 365px;" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">
+                        Letra: M <br>
+                        Letra: u <br>
+                        Letra: n <br>
+                        Letra: d <br>
+                        Letra: o
+                    </span>            
+                </code>
+                <p class="text-left mt-3">
+                    Sí recuerda, es el mismo ejemplo, pero esta vez no se necesitó utilizar la <span
+                        class="pr-n">longitud</span> del string para
+                    manejar el ciclo <span class="pr">for</span>, al utilizar la palabra reservada <span
+                        class="pr">in</span> sin la función <span class="pr">range</span>, python itera sobre
+                    el elemento iterable obteniendo cada ítem o componente de este, es decir que por cada iteración que
+                    python haga, este guardará en la variable <span class="pr">i</span> la letra correspondiente a la
+                    iteración (M u n d o).
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Iterando una lista</h1>
+            <p class="text-justify" style="min-height: 180px;">
+                Una lista simplemente es una estructura que permite guardar diferentes elementos en ella. Como un tren,
+                en el que cada uno de sus vagones permiten llevar pasajeros, así podría ser vista una lista. Las listas
+                son elementos iterables ya que en ella guardan diversos tipos de datos (strings, enteros, flotantes,
+                etc), para iterar sobre una lista se puede hacer de la misma manera que con un string.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = [1,2,3,4,5]</span>
+<span id="2"><span class="pr-n mr-3">2</span>for i in lista:</span>
+<span id="2"><span class="pr-n mr-3">3</span>    print(i)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 365px;" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">1</span>               
+                    <span class="mt-2" style="color: black;">2</span>               
+                    <span class="mt-2" style="color: black;">3</span>               
+                    <span class="mt-2" style="color: black;">4</span>               
+                    <span class="mt-2" style="color: black;">5</span>                            
+                    </code>
+
+                <p class="text-left mt-3">
+                    De la misma manera que con un <span class="pr">string</span>, la lista coge cada elemento de esta y
+                    lo guarda en la variable
+                    <span class="pr">i</span>, de esta manera cada vez que el ciclo se repita, el valor de <span
+                        class="pr">i</span> corresponderá al elemento de la
+                    lista correspondiente, es decir que <span class="pr">i</span> toma el valor de <span
+                        class="pr-n">[1,2,3,4,5]</span>.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Suma los elementos</h1>
+            <p class="text-justify" style="min-height: 169px;">
+                Si se tiene una lista con ciertos números, y se quiere mostrar la suma de todos ellos se tendrá que
+                realizar algo parecido a esto:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 260px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numeros = [2,6,7,8]</span>
+<span id="3"><span class="pr-n mr-3">2</span>x = 0</span>
+<span id="3"><span class="pr-n mr-3">3</span>for i in numeros:</span>
+<span id="4"><span class="pr-n mr-3">4</span>    x+=i</span>
+<span id="5"><span class="pr-n mr-3">5</span>print("Suma de los numeros: ",x)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-5 desactivate" style="min-height: 340px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">
+                        Suma de los numeros: 23
+                    </span>               
+                </code>
+                <p class="text-left mt-3">
+                    Se recorren cada uno de los elementos de la lista y la variable <span class="pr">x</span> que
+                    empieza en 0, se irá
+                    aumentando en el valor que coja <span class="pr">i</span>.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">4</span> Suma entre dos elementos</h1>
+            <p class="text-justify" style="min-height: 169px;">
+                Anteriormente se ha visto como la función range coge un rango entre el 0 y el número que se le
+                especifique, es decir que si se envía un 10, se genera un rango entre 0-9, permitiendo repetir el ciclo
+                10 veces, pero que tal si ahora lo que se necesita es especificar ese rango, que ya no sea entre 0 - 10,
+                sino entre 5-10, para eso se puede especificar en el range, el rango con el que se desea trabajar.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numeros = [1,2,3,4,5]</span>
+<span id="3"><span class="pr-n mr-3">2</span>numeros2 = [6,7,8,9,10]</span>
+<span id="3"><span class="pr-n mr-3">3</span>for x,y in zip(numeros,numeros2):</span>
+<span id="3"><span class="pr-n mr-3">6</span>    suma = x + y</span>
+<span id="3"><span class="pr-n mr-3">7</span>    print(x,y,' = ',suma)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 340px;" id="output4">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">
+                        1 6  =  7 <br>
+                        2 7  =  9 <br>
+                        3 8  =  11 <br>
+                        4 9  =  13 <br>
+                        5 10  =  15
+                    </span>               
+                    </code>
+                <p class="text-left mt-3">
+                    La palabra reservada <span class="pr">zip</span>, sirve para agrupar o comprimir dos elementos
+                    iterables, lo que quiere
+                    decir que cada vez que se recorra un ciclo los valores de las listas <span
+                        class="pr">numeros</span> y <span class="pr">numeros2</span> serán
+                    almacenados en las variables <span class="pr">x,y</span> respectivamente. Es necesario que las
+                    listas tengan el mismo <span class="pr-n">tamaño
+                        o longitud</span>.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode4()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode8 = () => {
+        document.getElementById('output8').setAttribute('class', 'container code mt-2')
+    }
+
+</script>
+{% endblock scripts %}

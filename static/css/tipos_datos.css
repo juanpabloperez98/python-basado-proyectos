@@ -36,6 +36,28 @@ h1,
     font-weight: bold;
     color: #2c3e50;
 }
+
+.title-modul{
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.container .row .uno p.text-justify{
+    min-height: 80px;
+    /* background-color: red; */
+}
+.container .row .dos p.text-justify{
+    min-height: 168px;
+    /* background-color: red; */
+}
+
+.container .row div div.container{
+    min-height: 260px;
+    /* background-color: red; */
+}
+
 .text{
     height: 100%; 
 }

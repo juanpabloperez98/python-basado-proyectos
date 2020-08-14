@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+for por indice
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'repetitivas_app:ciclofor' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Ejemplo de Juan</h1>
+            <p class="text-justify">
+                Véase el ejemplo anterior de juan, se sabe que juan pesa 90 kilo y que cada día montando bicicleta
+                rebaja uno, ¿al finalizar los 10 días del reto cuanto pesara juan?.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>peso = 90</span>
+<span id="2"><span class="pr-n mr-3">2</span>dias = 10</span>
+<span id="3"><span class="pr-n mr-3">3</span>for i in range(dias):</span>
+<span id="3"><span class="pr-n mr-3">4</span>    peso -= 1</span>
+<span id="3"><span class="pr-n mr-3">5</span>print("Juan pesa ahora: ",peso)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Juan pesa ahora: 80</span>               
+                </code>
+                <p class="text-left mt-2">
+                    Se especifica en el <span class="pr">range</span>, el número de veces que se necesita realizar el
+                    ciclo, cada vez que el
+                    ciclo se repita el peso de juan se disminuye en 1, de esta manera se puede observar cómo se llega a
+                    la respuesta requerida a través de un ciclo for.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Imprimir primeros 9 digitos</h1>
+            <p class="text-justify">
+                Que tal que se necesiten los primeros nueve dígitos para hacer un programa que haga las tablas de
+                multiplicar, ¿Cómo se obtendrán estos primeros 9 dígitos?
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>for i in range(10):</span>
+<span id="2"><span class="pr-n mr-3">2</span>    print(i)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">1</span>               
+                    <span class="mt-2" style="color: black;">2</span>               
+                    <span class="mt-2" style="color: black;">3</span>               
+                    <span class="mt-2" style="color: black;">4</span>               
+                    <span class="mt-2" style="color: black;">5</span>               
+                    <span class="mt-2" style="color: black;">6</span>               
+                    <span class="mt-2" style="color: black;">7</span>               
+                    <span class="mt-2" style="color: black;">8</span>               
+                    <span class="mt-2" style="color: black;">9</span>               
+                    </code>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Caracteres de un string</h1>
+            <p class="text-justify">
+                Anteriormente se mencionaron sobre los strings diciendo que son un conjunto de caracteres como
+                números,letras,caracteres especiales (* @ _ ) etc. A continuación se muestra como visualizar cada
+                elemento
+                de
+                un string utilizando un ciclo for por índice.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>string = "Mundo"</span>
+<span id="3"><span class="pr-n mr-3">2</span>longitud = len(string)</span>
+<span id="3"><span class="pr-n mr-3">3</span>for i in range(longitud):</span>
+<span id="4"><span class="pr-n mr-3">4</span>    letra = string[i]</span>
+<span id="5"><span class="pr-n mr-3">5</span>    print("Letra # %d  -  %s" % (i,letra))</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 340px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">
+                        Letra # 0  -  M <br>
+                        Letra # 1  -  u <br>
+                        Letra # 2  -  n <br>
+                        Letra # 3  -  d <br>
+                        Letra # 4  -  o
+                    </span>               
+                </code>
+                <p class="text-left mt-3">
+                    La palabra reservada <span class="pr">len</span> ayuda a obtener la <span
+                        class="pr-n">longitud</span> de un elemento iterable como lo es un string
+                    (en el siguiente módulo se enseñara sobre otros elementos iterables). De esta manera se obtiene el
+                    número de veces que se requiere repetir el ciclo. Los <span class="pr-n">string</span> son elementos
+                    iterables lo que
+                    significa que para acceder a su contenido se utiliza la expresión
+                    [ índice ].
+
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">4</span> Rango específico</h1>
+            <p class="text-justify">
+                Anteriormente se ha visto como la función range coge un rango entre el 0 y el número que se le
+                especifique, es decir que si se envía un 10, se genera un rango entre 0-9, permitiendo repetir el ciclo
+                10 veces, pero que tal si ahora lo que se necesita es especificar ese rango, que ya no sea entre 0 - 10,
+                sino entre 5-10, para eso se puede especificar en el range, el rango con el que se desea trabajar.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>for i in range(5,10):</span>
+<span id="3"><span class="pr-n mr-3">2</span>    print(i)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 340px;" id="output4">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">
+                        5 <br>
+                        6 <br>
+                        7 <br>
+                        8 <br>
+                        9
+                    </span>               
+                    </code>
+                <p class="text-left mt-3">
+                    Tan sencillo como en los ejemplos anteriores para definir el rango solo basta con colocar dentro del
+                    range los rangos con los que se desea trabajar.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode4()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+       
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+</script>
+{% endblock scripts %}

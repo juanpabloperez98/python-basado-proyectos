@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Proyecto3 parte - 3
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item desactivate" id="part2">
+                <a class="nav-link" href="{% url 'proyecto2_app:part2' %}"><i class="fa fa-arrow-right"
+                        aria-hidden="true"></i> Parte4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto3_app:proyecto3' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+    <!-- Enunciado -->
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Parte 3</h1>
+        <hr>
+        <p class="text-justify">
+            Ahora en esta tercera parte se va a realizar una función que va a servir en los siguientes apartados, esta
+            función se va a llamar buscar_libro, recibe como parámetro dos variables, una es la lista de libros y la
+            otra es un entero con el isbn del libro (el isbn de un libro es un código identificativo). En esta función
+            lo que se hará es buscar un libro en la lista de libros de acuerdo al isbn que se haya mandado, esta función
+            cuando encuentre el libro lo retornara (cabe aclarar que el libro que se encuentre es un diccionario con la
+            información del libro).
+        </p>
+        <h1 class="title-modul">¿Como se realizara?</h1>
+        <hr>
+        <p class="text-justify">
+            Lo primero que se hace es crear la función recibiendo por parámetro dos variables, libros e isbn, luego se
+            recorre la lista de libros a través de un ciclo for por elementos iterables, cada vez que se haga la
+            iteración un elemento de la lista libros quedara guardado en la variable i de la lista (recordar que los
+            elementos de la lista libros son diccionarios con la información del libro). Se valida si la variable i
+            [“isbn”] es igual al isbn que se manda por parametro, de ser así retorna el diccionario que hay en i, si se
+            termina el ciclo y aun no ha retornado nada entonces retornará un None (un None es un tipo de dato vació).
+        </p>
+
+        <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+    </div>
+</div>
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+    <!-- Siguiente parte -->
+    <div class="text-center col-lg-12 mx-auto my-5 desactivate" id="siguiente-ejercicio">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+            <br> Puedes pasar a la siguiente parte</h1>
+        <hr>
+
+    </div>
+
+    <!-- Codigo -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+        <div class="container code text-justify mt-2">
+            <pre>
+              <code class="language-python">
+      <span><span class="pr-n mr-3">1</span>def buscar_libro(libros,isbn):</span>
+      <span id="l1" class="linea-code"><span class="pr-n mr-3">2</span>    <span class="desactivate" id="l-1">for i in libros:</span></span>
+      <span id="l2" class="linea-code"><span class="pr-n mr-3">3</span>        <span class="desactivate" id="l-2">if(i['isbn'] == isbn): return i</span></span>
+      <span id="l3" class="linea-code"><span class="pr-n mr-3">4</span>    <span class="desactivate" id="l-3">return None</span></span>
+            </code>
+          </pre>
+        </div>
+
+        <div id="botones-1" class="desactivate">
+            <a href="#" class="btn botonYellow" id="explicar"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+        </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+        <div class="container code text-justify mt-2">
+            <!-- #2 -->
+            <div class="p-3 mt-3" id="1" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 2</h1>
+                    <p class="text-justify mt-3 font-weight-bold">Se requiere hacer un ciclo for por elementos iterables
+                        con la lista de libros, ¿Cómo se haría esto?
+                    </p>
+                    <form action="" name="formulario1" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-1">
+                            <option>Opciones</option>
+                            <option>for i in range(libros):</option>
+                            <option>for i in libros:</option>
+                            <option>for i libros:</option>
+                            <option>while i in libros:</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Los elementos de la lista de <span class="pr">libros</span> serán almacenados en <span
+                            class="pr">i</span> de acuerdo a la iteración que haga.
+                        Hay que tener en cuenta que los elementos de la lista libros son <span
+                            class="pr-n">diccionarios</span> que contienen la
+                        información de un libro.
+                    </p>
+                </div>
+            </div>
+            <!-- #3 -->
+            <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 3</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se necesita validar si el diccionario que está almacenado en i, en su clave isbn es igual al
+                        isbn que recibió la función por parámetro, ¿Como se hace esto?
+                    </p>
+                    <form action="" name="formulario2" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-2">
+                            <option>Opciones</option>
+                            <option>if(i[''] == isbn): return i</option>
+                            <option>if(i['isbn'] = isbn): return i</option>
+                            <option>if(i['isbn'] == isbn): return i</option>
+                            <option>if(i['isbn'] == isbn): return 0</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Ya que en la variable hay almacenado un <span class="pr-n">diccionario</span>, para acceder al
+                        valor de una clave solo
+                        basta con colocar los <span class="pr">[ ]</span> y dentro de ellos el nombre de la clave, de
+                        esta manera se puede
+                        validar con el <span class="pr">if</span>, si ese valor es igual al recibido por el parámetro,
+                        de ser así se retorna la
+                        variable <span class="pr">i</span>, es decir el <span class="pr-n">diccionario</span> con la
+                        información de ese libro.
+                    </p>
+                </div>
+            </div>
+            <!-- #4 -->
+            <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 4</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Si se ha recorrido toda la lista de libros y no se encontró un libro con las coincidencias del
+                        isbn, se debe retornar un None, ¿Como se hace esto?
+                    </p>
+                    <form action="" name="formulario3" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-3">
+                            <option>Opciones</option>
+                            <option>return</option>
+                            <option>None</option>
+                            <option>return False</option>
+                            <option>return None</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        La expresión <span class="pr">None</span> es un tipo de dato que representa valores vacíos, es decir, no es un entero,
+                        ni un string, ni un bool.
+                    </p>
+                </div>
+            </div>
+
+            <div class="botones text-center mb-3">
+                <button class="btn botonYellow" id="probar"><i class="fas
+              fa-arrow-right"></i> Probar</button>
+                <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+              fa-arrow-right"></i> Seguir</button>
+                <a id="reiniciar" href="./parte3" class="btn botonBlue" id="reiniciar"><i
+                        class='fas fa-undo-alt mr-2'></i>
+                    Reiniciar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Explicación -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="explicacionCode">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+        <div class="container code text-justify mt-2" id="explain-div">
+            <pre>
+          <code class="language-python" id="code-add">
+  <span class=""><span class="pr-n mr-3">1</span>  Se crea la función main. Con la palabra reservada "def", acompañada del nombre que se le quiera dar se pude crear una función en Python.</span>
+  <span class=""><span class="pr-n mr-3">2</span>  Creamos una variable fin y la igualamos a False. <br>  <span class="pr ml-4">NOTA</span>: esta variable es la que nos va a permitir manejar el ciclo while de la linea # 5</span>
+  <span class=""><span class="pr-n mr-3">3</span>  Creamos una lista donde se van a guardar los empleados registrados, la lista se llamara "lista_empleados" para evitar confusiones a la hora del desarrollo</span>
+  <span class=""><span class="pr-n mr-3">4</span>  Pedimos el capital de nomina con el que se va a trabajar.</span>
+  <span class=""><span class="pr-n mr-3">5</span>  Creamos un ciclo while, que nos permite hacer un ciclo infinito, que solo se detendrá cuando el usuario escoja la opción 7 <br>  <span class="pr ml-4">NOTA</span>: El ciclo while se ejecutara siempre y cuando <span class="pr">fin</span> sea diferente de True</span>
+  <span class=""><span class="pr-n mr-3">6</span>  Llamamos a la función "menu()" <br>  <span class="pr ml-4">NOTA</span>: Como se menciono anteriormente, la función menu() se creara en el apartado siguientes.</span>
+  <span class=""><span class="pr-n mr-3">7</span>  Una vez se muestre el menú, le pediremos al usuario que escoja una opción mostrada. La opción ingresada por el usuario se guardara en la variable "opcion"</span>
+  <span class=""><span class="pr-n mr-3">8</span>  validamos si "opcion" es igual a 1</span>
+          </code>
+        </pre>
+        </div>
+    </div>
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto3/part3.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

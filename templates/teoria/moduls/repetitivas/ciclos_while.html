@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Ciclos while
+{% endblock title %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'repetitivas_app:repetitivas' %}"><svg width="2em" height="1em"
+                        viewBox="0 0 16 16" class="bi bi-bounding-box-circles" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M12.5 2h-9V1h9v1zm-10 1.5v9h-1v-9h1zm11 9v-9h1v9h-1zM3.5 14h9v1h-9v-1z" />
+                        <path fill-rule="evenodd"
+                            d="M14 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                    </svg>Estructuras repetitivas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    Siguiente Modulo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'repetitivas_app:repetitivas' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <!-- Que es un ciclo -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="for">
+        <h1 class="title-modul"><span class="pr mr-2">3.2.1</span> ¿Qué es un ciclo while?</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Un ciclo <span class="pr">while</span> al igual que un ciclo <span class="pr">for</span>, es una
+                estructura repetitiva, que permite que se pueda
+                ejecutar un segmento de código un número definido o indefinido de veces, ¿Que quiere decir?, que a
+                diferencia del ciclo for, el ciclo while puede repetirse un sin fin de veces, lo que significa que no es
+                necesario definir el número de veces que se va a repetir el ciclo. Los ciclos while realizan múltiples
+                iteraciones en base al resultado de una expresión lógica que puede tener como resultado un True o un
+                False, lo que quiere decir, que siempre que la condición sea True, el ciclo while se ejecutará.A
+                continuación un ejemplo.
+            </p>
+            <br>
+            <div class="mx-auto text-justify">
+                <pre>
+                <code class="language-c">
+Supongamos el ejemplo de Juan de la sección anterior, 
+pero cambiando algunas cosas. Ahora la meta de Juan no 
+es montar 10 días en bicicleta, ahora la meta es 
+rebajar 20 kilos, por lo que ya no se tienen los días 
+sino una condición que diga que mientras 
+Juan no haya bajado 20 kilos no pare de montar bicicleta. 
+¿Cuántos días pasan hasta que Juan haya rebajado los 20 kilos?
+                </code>
+                </pre>
+            </div>
+            <p>
+                Como ya se vio anteriormente se puede trabajar este problema modelandolo matemáticamente,pero se
+                realizará con un ciclo while.
+                A diferencia de la vez pasada se tenía que el ciclo terminaba cuando juan hubiese completado los 10
+                días, ahora para que el ciclo termine, juan debe haber bajado 20 kilos, por lo que utilizando la
+                sentencia while, se puede especificar que mientras el peso de juan no sea igual a la diferencia entre su
+                peso menos veinte, no pare de ejecutar el ciclo while, más adelante se observara este ejemplo, a
+                continuación véase la sintaxis
+
+            </p>
+        </div>
+    </div>
+
+    <!-- Sintaxis -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="sintax">
+        <h1 class="title-modul"><span class="pr mr-2">3.2.2</span> Sintaxis</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                La sintaxis del ciclo while en python es estándar y no se maneja de otras formas diferentes como si se
+                hacía en el ciclo for. A continuación su sintaxis
+            </p>
+
+
+            <h1 class="title-modul" style="font-size: 15px;">Ciclo infinito</h1>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    while (True):
+        estructura ...
+                </code>
+                </pre>
+            </div>
+
+            <h1 class="title-modul" style="font-size: 15px;">Por conteo</h1>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    i = 10
+    while (i!=0):
+        i -= 1
+                </code>
+                </pre>
+            </div>
+
+            <p>
+                El ciclo válida la <span class="pr-n">condición</span> que se le pasa como parámetro, las condiciones
+                son valores <span class="pr-n">booleanos</span> o
+                sentencias que devuelven valores <span class="pr-n">booleanos</span>, como por ejemplo en la parte de
+                <span class="font-weight-bold">conteo</span>, la expresión dice
+                que mientras i sea diferente de 0, ejecute el ciclo while, lo que quiere decir que valida si i es
+                diferente de 0 y si esa sentencia devuelve <span class="pr">True</span> entonces entra al ciclo. En el
+                ciclo <span class="font-weight-bold">infinito</span>, como la
+                condición siempre es <span class="pr">True</span>, entonces el ciclo se ejecutará infinitas veces.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">3.2.3</span> Bucles while por conteo</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p style="">
+                Los bucles while por conteo se usan cuando se necesita tener un conteo o registro de las veces que ha
+                ejecutado el ciclo, es decir que se declara un contador por fuera del ciclo while y se aumenta o se
+                disminuye cada vez que se ejecuta el ciclo, no siempre la condición del ciclo while sera relacionada con
+                el contador, alguna vez ni siquiera influirá para el desarrollo del mismo.
+                <br>
+                <span class="font-weight-bold">A
+                    continuación se muestran unos ejemplos del ciclo while:</span>
+            </p>
+            <ul class="container">
+                <li>
+                    <a href="{% url 'repetitivas_app:conteo' %}">Ciclos por conteo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"><span class="pr mr-2">3.2.4</span> Otras formas de tratar un ciclo while</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p style="">
+                Es muy común que a veces se encuentre con la situación de que no se deba manejar while por conteo, sino
+                por una interacción con el usuario o una condición que haga que el ciclo while se rompa en mitad de
+                proceso, es decir, que no haya una condición de parada fija, sino más bien un evento o caso particular
+                que haga que el ciclo while termine. <br>
+                <span class="font-weight-bold">A
+                    continuación se muestran unos ejemplos del ciclo while:</span>
+            </p>
+            <ul class="container">
+                <li>
+                    <a href="{% url 'repetitivas_app:otrasformas' %}">Otras formas de tratar un ciclo while</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Ejemplos -->
+<div class="container row mx-auto mb-5 mt-2 part-1" id="carrousel">
+    <div class="col-lg-12 text-center mt-5">
+        <h1 class="display-5"> Ejemplos</h1>
+        <hr>
+    </div>
+
+    <div class="col-lg-5 mx-auto" id="ejemplos">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner mx-auto text-center p-5">
+                {% for i in '123456' %}
+                {% if i == '1' %}
+                <div class="carousel-item active">
+                    <a href="{% url 'repetitivas_app:while-ejemplo1' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% else %}
+                {% if i == '2' %}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:while-ejemplo2' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '3'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:while-ejemplo3' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '4'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:while-ejemplo4' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '5'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:while-ejemplo5' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% elif i == '6'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:while-ejemplo6' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% endif %}
+
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+{% endblock scripts %}

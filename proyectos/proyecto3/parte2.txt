@@ -1,0 +1,16 @@
+-----Linea 1 -------
+def menu(reservas):
+def menu(libros):
+menu():
+def menu(): **
+-----Linea 3 -------
+print("")
+print("1)Crear libro") **
+prin("1)Crear libro")
+print(1)Crear libro)
+-----Linea 7 -------
+print(5)Ver Prestamos)
+prin("5)Ver Prestamos")
+print("5)Ver Prestamos") **
+"5)Ver Prestamos"
+

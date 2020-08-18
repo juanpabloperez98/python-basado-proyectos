@@ -8,7 +8,7 @@
         document.getElementById('explicacion').setAttribute('class','col-lg-5 mt-3 mx-auto bg-light')
         document.getElementById('explicar').removeEventListener('click',explicacion)
         document.getElementById('explicar').setAttribute('class','desactivate')
-        document.getElementById('reiniciar').setAttribute('class','btn botonYellow')
+        document.getElementById('reiniciar').setAttribute('class','btn botonBlue')
     }   
     if(!explicacion1){
         document.getElementById('explicar').addEventListener('click',explicacion) /* COgemos el elemento le agregamos la función click */
@@ -19,7 +19,7 @@
         document.getElementById('output').setAttribute('class','container code mt-2')
         document.getElementById('ejecutar').removeEventListener('click',ejecutar) /* Eliminamos evento */
         document.getElementById('ejecutar').setAttribute('class','desactivate')
-        document.getElementById('explicar').setAttribute('class','btn botonYellow')
+        document.getElementById('explicar').setAttribute('class','btn botonBlue')
 
     }
     if(!ejecutar1){

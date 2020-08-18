@@ -30,8 +30,8 @@
 }
 
 .botonBlue:hover{
-    color: black;
-}
+    background-color: #3c73a0; color: white;
+} 
 
 .botonYellow{
     background-color: #FFE873; color: black;

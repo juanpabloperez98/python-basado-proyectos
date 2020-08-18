@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Otras formas de tratar un ciclo while
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'repetitivas_app:ciclowhile' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Sentencia Break</h1>
+            <p class="text-justify">
+                Hay algunos casos en los que se necesitará romper el flujo del ciclo while, a mitad de proceso o
+                ejecución. Para realizar esto se debe utilizar la palabra reservada break, esta palabra lo que hace es
+                romper la ejecución de un ciclo, ya sea un while o un for, dependiendo de cuándo y cómo se usen, a
+                continuación un ejemplo:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 300px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>contador = 0</span>
+<span id="2"><span class="pr-n mr-3">2</span>while(contador < 10):</span>
+<span id="3"><span class="pr-n mr-3">3</span>    print(contador)</span>
+<span id="3"><span class="pr-n mr-3">4</span>    contador+=1</span>
+<span id="3"><span class="pr-n mr-3">5</span>    if (contador == 4):</span>
+<span id="3"><span class="pr-n mr-3">6</span>        break</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 405px;" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">0</span><br>               
+                    <span class="mt-2" style="color: black;">1</span><br>               
+                    <span class="mt-2" style="color: black;">2</span><br>               
+                    <span class="mt-2" style="color: black;">3</span><br>               
+                </code>
+                <p class="text-left mt-2">
+                    En este ejemplo si se puede observar en la <span class="pr-n">línea # 5</span> se valida si el
+                    contador es igual a 4, dado el
+                    caso de que sea igual a 4, el ciclo se romperá por la sentencia break, en el resultado por ende solo
+                    se visualiza el contador hasta el número 3, a pesar de que la sentencia while dice que se ejecute
+                    mientras contador sea diferente de 10.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Sentencia continue</h1>
+            <p class="text-justify" style="min-height: 143px;">
+                Que tal ahora que se necesite hacer el ciclo while imprimiendo el mismo contador pero esta vez sin tener
+                en cuenta el número 5, es decir, que imprima todos los valores del 0 hasta el 10 pero sin imprimir el
+                número 5, ¿como se hace esto?:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 301px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>contador = 0</span>
+<span id="2"><span class="pr-n mr-3">2</span>while(contador < 10):</span>
+<span id="2"><span class="pr-n mr-3">3</span>    if (contador == 5):</span>
+<span id="2"><span class="pr-n mr-3">4</span>        continue</span>
+<span id="2"><span class="pr-n mr-3">5</span>    contador+=1</span>
+<span id="2"><span class="pr-n mr-3">6</span>    print(contador)</span>  
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">0</span> <br>              
+                    <span class="mt-2" style="color: black;">1</span> <br>              
+                    <span class="mt-2" style="color: black;">2</span> <br>              
+                    <span class="mt-2" style="color: black;">3</span> <br>              
+                    <span class="mt-2" style="color: black;">4</span> <br>              
+                    <span class="mt-2" style="color: black;">6</span> <br>              
+                    <span class="mt-2" style="color: black;">7</span> <br>              
+                    <span class="mt-2" style="color: black;">8</span> <br>              
+                    <span class="mt-2" style="color: black;">9</span> <br>              
+                    <span class="mt-2" style="color: black;">10</span><br>               
+                    </code>
+
+                <p class="text-left mt-2" style="">
+                    Como se puede observar, el resultado muestra los números del <span class="pr-n">0 al 10</span> pero excluyendo el número 5. La
+                    sentencia <span class="pr">continue</span> hace que pase de nuevo al principio del bucle aunque no se haya terminado de
+                    ejecutar el ciclo anterior.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+</script>
+{% endblock scripts %}

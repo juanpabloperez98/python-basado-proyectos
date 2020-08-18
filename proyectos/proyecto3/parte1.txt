@@ -1,0 +1,26 @@
+-----Linea 2 -------
+[]
+libros = ['libros']
+libros = [] **
+libros[]
+-----Linea 4 -------
+while():
+for(True):
+while:
+while(True): **
+-----Linea 6 -------
+op = int("Ingrese una opcion: ")
+op = input("Ingrese una opcion: ")
+op = int(input("Ingrese una opcion: ")) **
+int(input("Ingrese una opcion: "))
+-----Linea 9 -------
+elif(op==3):libros = eliminar_libros()
+libros = eliminar_libros(libros)
+elif(op==3):eliminar_libros(libros)
+elif(op==3):libros = eliminar_libros(libros) **
+-----Linea 16 -------
+main() **
+main
+main:
+main(libros)
+

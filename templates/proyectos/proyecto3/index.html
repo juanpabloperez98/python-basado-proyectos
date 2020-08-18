@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main_app:proyectos' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Proyecto 3</h1>
+        <hr>
+        <p class="text-center pr">Asistente de biblioteca</p>
+        <div class="text-justify mt-3">
+            <p>
+                Este tercer proyecto consiste en crear un software para una biblioteca, la biblioteca necesita un
+                software para poder hacer préstamos de los libros que dispone. Desde el software se debe poder crear
+                nuevos libros, o eliminarlos, consultar si un libro está en préstamo o no, realizar préstamos y
+                devoluciones. En caso de no haber disponibilidad de un libro debe notificarse.
+            </p>
+            <div class="desactivate" id="content-show">
+                <h1 class="title-modul mb-3"> Para tener en cuenta:</h1>
+                <ul class="container">
+                    <li class="mt-1">Al crear un libro nuevo, debe tener en cuenta, la siguiente información: Nombre del
+                        libro, autor, año de publicación, copias disponibles, y el ISBN
+                    </li>
+                    <hr>
+                    <li class="mt-1">
+                        Si se va a crear un nuevo libro se debe validar que ya no esté creado un libro con el mismo
+                        ISBN.
+                    </li>
+                    <hr>
+                    <li class="mt-1">
+                        Al realizar un préstamo se debe tener en cuenta la siguiente información: Cédula de la persona
+                        que lo prestó, nombre del libro que prestó, fecha de préstamo y fecha de devolución.
+                    </li>
+                    <hr>
+                    <li class="mt-1">
+                        Se debe poder listar todos los libros existentes con la información relacionada.
+                    </li>
+                    <hr>
+                    <li class="mt-1">
+                        En caso de que un usuario intente sacar prestado un libro, para el cual no hay unidades
+                        disponibles. Debe notificarle que no es posible prestar el libro
+                    </li>
+                    <hr>
+                    <li class="mt-1">
+                        El software debe contar con un menú que le muestre al usuario las opciones disponibles.
+                    </li>
+                    <hr>
+                </ul>
+                <br>
+                <h1 class="title-modul"> Temas a tratar:</h1>
+                <ul class="container">
+                    <li>
+                        <a href="{% url 'main_app:estructuras_de_secuencia' %}">
+                            Estructuras de secuencia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Estructuras condicionales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Estructuras repetitivas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Estructuras de datos (listas, diccionarios)
+                        </a></li>
+                    <li>
+                        <a href="#">
+                            Funciones
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <h1 class="title-modul"> Partes a tratar:</h1>
+                <ul class="container">
+                    <li>
+                        <a href="{% url 'proyecto3_app:part1' %}">
+                            Parte 1: Crear función principal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto3_app:part2' %}">
+                            Parte 2: Función menu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto3_app:part3' %}">
+                            Parte 3: Función buscar_libro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto3_app:part4' %}">
+                            Parte 4: Función crear_libro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part5' %}">
+                            Parte 5: Función ver_jugadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part6' %}">
+                            Parte 6: Función pedir_datos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part7' %}">
+                            Parte 7: Función escoger_jugadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part8' %}">
+                            Parte 8: Función escoger_ficha
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part9' %}">
+                            Parte 9: Función empezar_juego
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part10' %}">
+                            Parte 10: Función pintar_tablero
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:part11' %}">
+                            Parte 11: Función validar_ganador
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'proyecto2_app:proyecto2-final' %}">
+                            Parte final: Ver codigo completo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <a href="#content-show" onclick="ShowStatement()" id="leer-mas">Leer más</a>
+            <a href="#" onclick="HideStatement()" class="desactivate" id="leer-menos">Leer menos</a>
+
+            <div class="w-25 mx-auto mt-4">
+                <a href="{% url 'proyecto3_app:part1' %}" class="btn btn-block botonBlue">Empezar proyecto</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="margin-top: 10%;"></div>
+{% endblock content %}
+
+
+{% block scripts %}
+
+<script>
+    var ShowStatement = () => {
+        document.getElementById('content-show').setAttribute('class', 'mt-5')
+        document.getElementById('leer-mas').setAttribute('class', 'desactivate')
+        document.getElementById('leer-menos').setAttribute('class', '')
+    }
+
+    var HideStatement = () => {
+        document.getElementById('content-show').setAttribute('class', 'desactivate')
+        document.getElementById('leer-mas').setAttribute('class', '')
+        document.getElementById('leer-menos').setAttribute('class', 'desactivate')
+    }
+</script>
+
+{% endblock scripts %}

@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/practica-estructuras-secuencia.css' %}">
+{% endblock styles %}
+
+
+{% block title %}
+Estructuras de datos
+{% endblock title %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main_app:teoria_index' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="col-lg-12 text-center mt-5">
+        <h1 class="display-5">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-back" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z" />
+            </svg>
+            Estructuras de datos
+        </h1>
+    </div>
+    <div class="col-lg-6 col-sm-12 text-lg-justify mt-5 part-1 p-5 ">
+        <h1 class="display-5">¿Que son las estructuras de datos?</h1>
+        <div class="">
+            <p class="mt-5 font-weight-bold">
+                Hablar de estructuras de datos es hablar de una forma particular de cómo organizar los datos que se
+                manejan en una computadora para que estos puedan ser utilizados de manera más rápida y eficiente. Las
+                estructuras de datos no son más que un medio para manejar grandes cantidades de información de una
+                manera fácil y rápida. A medida que se ha ido avanzando en esta guía de programación de python, en la
+                parte de la teoría se ha podido evidenciar o se ha hablado de lo que son las cadenas de caracteres o
+                listas. Pues bien, estas son consideradas estructuras de datos, que permiten agrupar diversos tipos de
+                datos dentro de ellas, para así poder manejar de manera ordenada y óptima la información que se
+                presente, en este módulo se hablarán de las estructuras de datos mas comunes en python.
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12  mt-5">
+        <div class="text">
+            <img src="{% static 'images/Diag_matrices.png' %}" alt="estructuras_datos"
+                style="width: 100%; margin-left: 30px;">
+        </div>
+    </div>
+</div>
+
+
+<div class="container row mx-auto part-1 mt-5">
+    <div class="col-lg-12 text-center mt-5 p-5">
+        <h1 class="display-5">Vamos aprender</h1>
+        <hr>
+    </div>
+    <div class="col-lg-6 my-5 text-center modul">
+        <a href="{% url 'repetitivas_app:ciclofor' %}" class="modulos">
+            <div class="img">
+                <img src="{% static 'images/Estructura_datos/Diag_estructura_datos1.png' %}" alt="img" width="200">
+                <div class="text">
+                    <h1 class="title-modul">Cadenas de caracteres</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-6 my-5 text-center modul">
+        <a href="{% url 'repetitivas_app:ciclowhile' %}" class="modulos">
+            <div class="img">
+                <img src="{% static 'images/Estructura_datos/Diag_estructuradatos1 – 1.png' %}" alt="img" width="200">
+                <div class="text">
+                    <h1 class="title-modul">Listas</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-6 my-5 text-center modul">
+        <a href="{% url 'repetitivas_app:ciclowhile' %}" class="modulos">
+            <div class="img">
+                <img src="{% static 'images/Estructura_datos/Diag_estructuradatos1 – 1.png' %}" alt="img" width="200">
+                <div class="text">
+                    <h1 class="title-modul">Tuplas</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-6 my-5 text-center modul">
+        <a href="{% url 'repetitivas_app:ciclowhile' %}" class="modulos">
+            <div class="img">
+                <img src="{% static 'images/Estructura_datos/Diag_estructuradatos1 – 1.png' %}" alt="img" width="200">
+                <div class="text">
+                    <h1 class="title-modul">Diccionarios</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock content %}

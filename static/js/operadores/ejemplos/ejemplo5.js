@@ -18,7 +18,7 @@
         document.getElementById('explicacion').setAttribute('class','col-lg-5 mt-3 mx-auto bg-light')
         document.getElementById('explicar').removeEventListener('click',explicacion)
         document.getElementById('explicar').setAttribute('class','desactivate')
-        document.getElementById('reiniciar').setAttribute('class','btn botonYellow')
+        document.getElementById('reiniciar').setAttribute('class','btn botonBlue')
     }   
 
     // Comprobar datos
@@ -51,7 +51,7 @@
             document.getElementById('seguir').setAttribute('class','desactivate') /* Ocultar boton */
             document.getElementById('output').setAttribute('class','container code mt-2') /* Mostrar salida */
             document.getElementById('date').setAttribute('class','desactivate') /* Desactivamos */
-            document.getElementById('explicar').setAttribute('class','btn botonYellow') /* Mostrar boton explicar */
+            document.getElementById('explicar').setAttribute('class','btn botonBlue') /* Mostrar boton explicar */
             document.getElementById('explicar').addEventListener('click',explicacion) /* COgemos el elemento le agregamos la función click */
             salida()
         }

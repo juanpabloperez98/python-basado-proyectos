@@ -1,0 +1,15 @@
+-----Linea # 2------
+for i in range(libros):
+for i in libros: **
+for i libros:
+while i in libros:
+-----Linea # 3------
+if(i[''] == isbn): return i
+if(i['isbn'] = isbn): return i
+if(i['isbn'] == isbn): return i **
+if(i['isbn'] == isbn): return 0
+-----Linea # 4------
+return
+None
+return False
+return None **

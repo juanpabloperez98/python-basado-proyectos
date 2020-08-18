@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+while por conteo
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'repetitivas_app:ciclowhile' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Ejemplo de Juan</h1>
+            <p class="text-justify">
+                Anteriormente se había realizado el ejercicio de juan con los ciclos for, ahora se utilizará el ciclo
+                while para poder realizar lo que se pide, se necesita saber cuántos días pasan hasta que juan haya
+                bajado 20 kilos, se haría algo más o menos así.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>peso = 90</span>
+<span id="2"><span class="pr-n mr-3">2</span>meta = peso - 20</span>
+<span id="3"><span class="pr-n mr-3">3</span>dias = 0</span>
+<span id="3"><span class="pr-n mr-3">4</span>while(meta != peso):</span>
+<span id="3"><span class="pr-n mr-3">5</span>    peso-=1</span>
+<span id="3"><span class="pr-n mr-3">6</span>    dias +=1</span>
+<span id="3"><span class="pr-n mr-3">7</span>print("Pasaron %d días para que juan bajara 20 kilos" %dias)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Pasaron 20 días para que juan bajara 20 kilos</span>               
+                </code>
+                <p class="text-left mt-2">
+                    Se dice que mientras meta (que es la diferencia entre el peso de juan menos 20) sea diferente de
+                    peso se ejecute el ciclo while, en cada iteración peso disminuye en 1 y días aumenta en 1, aquí se
+                    puede ver la importancia de un contador.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Imprimir numeros del 10 al 20</h1>
+            <p class="text-justify" style="min-height: 94px;">
+                Ahora imprimamos los números del 10 al 20, para realizar esto toca utilizar contadores, a continuación
+                el código.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 301px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero = 10</span>
+<span id="2"><span class="pr-n mr-3">2</span>while(numero <= 20):</span>
+<span id="2"><span class="pr-n mr-3">3</span>    print(numero)</span>
+<span id="2"><span class="pr-n mr-3">4</span>    numero +=1</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">10</span>               
+                    <span class="mt-2" style="color: black;">11</span>               
+                    <span class="mt-2" style="color: black;">12</span>               
+                    <span class="mt-2" style="color: black;">13</span>               
+                    <span class="mt-2" style="color: black;">14</span>               
+                    <span class="mt-2" style="color: black;">15</span>               
+                    <span class="mt-2" style="color: black;">16</span>               
+                    <span class="mt-2" style="color: black;">17</span>               
+                    <span class="mt-2" style="color: black;">18</span>               
+                    <span class="mt-2" style="color: black;">19</span>               
+                    <span class="mt-2" style="color: black;">20</span>               
+                    </code>
+
+                <p class="text-left mt-2" style="min-height: 0px;">
+                    Dentro de el <span class="pr-n">while</span> se hace la validación de si número es menor o igual a
+                    20, ejecute el código, es
+                    por eso que una vez este dentro del ciclo <span class="pr">while</span> se aumenta en 1 el numero
+                    para cuando llegue a 20,
+                    no se vuelva a repetir el ciclo.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-12 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Imprimir numeros a la inversa</h1>
+            <p class="text-justify" style="min-height: 0px;">
+                Ahora se busca realizar un programa que imprima los números pero a la inversa es decir del 20 al 10. A
+                continuación el código:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero = 20</span>
+<span id="3"><span class="pr-n mr-3">2</span>while(numero >= 10):</span>
+<span id="3"><span class="pr-n mr-3">3</span>    print(numero)</span>
+<span id="4"><span class="pr-n mr-3">4</span>    numero -=1</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 340px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">20</span>               
+                    <span class="mt-2" style="color: black;">19</span>               
+                    <span class="mt-2" style="color: black;">18</span>               
+                    <span class="mt-2" style="color: black;">17</span>               
+                    <span class="mt-2" style="color: black;">16</span>               
+                    <span class="mt-2" style="color: black;">15</span>               
+                    <span class="mt-2" style="color: black;">14</span>               
+                    <span class="mt-2" style="color: black;">13</span>               
+                    <span class="mt-2" style="color: black;">12</span>               
+                    <span class="mt-2" style="color: black;">11</span>               
+                    <span class="mt-2" style="color: black;">10</span>               
+                    </code>
+                <p class="text-left mt-3">
+                    Es muy similar al código anterior, solo que en este se dice que mientras número sea mayor o igual a
+                    10 entre al ciclo while, de esta manera ya no se le sumará una unidad a número, esta vez se
+                    disminuye para poder obtener el resultado.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+</script>
+{% endblock scripts %}

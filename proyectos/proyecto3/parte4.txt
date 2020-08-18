@@ -1,0 +1,25 @@
+------ Linea #2 ---------
+libro == None 
+None 
+libro = None **
+libro != None 
+------ Linea #4 ---------
+libro = buscar_libro(isbn) 
+libro = buscar_libro(libros) 
+libro = buscar_libro(libros,isbn) **
+buscar_libro(libros,isbn) 
+------ Linea #5 ---------
+if(libro != None): 
+if(libro = None): 
+if(libro): 
+if(libro == None): **
+------ Linea #9 ---------
+libro = dict(isbn = isbn, titulo = titulo, autor = autor, copias = copias) **
+libro = (isbn = isbn, titulo = titulo, autor = autor, copias = copias) 
+libro = dict(isbn, titulo, autor, copias) 
+dict(isbn = isbn, titulo = titulo, autor = autor, copias = copias) 
+------ Linea #13 ---------
+return  
+return libros **
+return -1 
+return None 

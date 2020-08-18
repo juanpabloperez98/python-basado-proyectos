@@ -78,13 +78,14 @@ h1,
     color: blue;
 }
 
+
 .botonBlue{
     background-color: #4B8BBE; color: white;
 }
 
 .botonBlue:hover{
-    color: black;
-}
+    background-color: #3c73a0; color: white;
+} 
 
 
 .code{

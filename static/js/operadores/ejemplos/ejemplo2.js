@@ -15,7 +15,7 @@
         document.getElementById('explicacion').setAttribute('class','col-lg-5 mt-3 mx-auto bg-light')
         document.getElementById('explicar').removeEventListener('click',explicacion)
         document.getElementById('explicar').setAttribute('class','desactivate')
-        document.getElementById('reiniciar').setAttribute('class','btn botonYellow')
+        document.getElementById('reiniciar').setAttribute('class','btn botonBlue')
     }   
 
     // Comprobar datos

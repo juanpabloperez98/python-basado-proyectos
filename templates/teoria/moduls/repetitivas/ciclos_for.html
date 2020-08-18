@@ -38,8 +38,8 @@ Ciclos for
                     </svg>Estructuras repetitivas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i>
-                    Siguiente Modulo</a>
+                <a class="nav-link" href="{% url 'repetitivas_app:ciclowhile' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    Siguiente Sección</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'repetitivas_app:repetitivas' %}"><i
@@ -201,7 +201,7 @@ rebaja 1 kilo.
                 {% for i in '123456' %}
                 {% if i == '1' %}
                 <div class="carousel-item active">
-                    <a href="{% url 'main_app:ejemplo1-op' %}">
+                    <a href="{% url 'repetitivas_app:for-ejemplo1' %}">
                         <h1 class="title-modul pr"><i class="fas fa-book-open
                                 mr-2"></i> Ir al ejemplo {{ i }}</h1>
                     </a>
@@ -209,28 +209,28 @@ rebaja 1 kilo.
                 {% else %}
                 {% if i == '2' %}
                 <div class="carousel-item">
-                    <a href="{% url 'main_app:ejemplo2-op' %}">
+                    <a href="{% url 'repetitivas_app:for-ejemplo2' %}">
                         <h1 class="title-modul pr"><i class="fas fa-book-open
                                 mr-2"></i> Ir al ejemplo {{ i }}</h1>
                     </a>
                 </div>
                 {% elif i == '3'%}
                 <div class="carousel-item">
-                    <a href="{% url 'main_app:ejemplo3-op' %}">
+                    <a href="{% url 'repetitivas_app:for-ejemplo3' %}">
                         <h1 class="title-modul pr"><i class="fas fa-book-open
                                 mr-2"></i> Ir al ejemplo {{ i }}</h1>
                     </a>
                 </div>
                 {% elif i == '4'%}
                 <div class="carousel-item">
-                    <a href="{% url 'main_app:ejemplo4-op' %}">
+                    <a href="{% url 'repetitivas_app:for-ejemplo4' %}">
                         <h1 class="title-modul pr"><i class="fas fa-book-open
                                 mr-2"></i> Ir al ejemplo {{ i }}</h1>
                     </a>
                 </div>
                 {% elif i == '5'%}
                 <div class="carousel-item">
-                    <a href="{% url 'main_app:ejemplo5-op' %}">
+                    <a href="{% url 'repetitivas_app:for-ejemplo5' %}">
                         <h1 class="title-modul pr"><i class="fas fa-book-open
                                 mr-2"></i> Ir al ejemplo {{ i }}</h1>
                     </a>
@@ -238,7 +238,7 @@ rebaja 1 kilo.
 
                 {% elif i == '6'%}
                 <div class="carousel-item">
-                    <a href="{% url 'main_app:ejemplo6-op' %}">
+                    <a href="{% url 'repetitivas_app:for-ejemplo6' %}">
                         <h1 class="title-modul pr"><i class="fas fa-book-open
                                 mr-2"></i> Ir al ejemplo {{ i }}</h1>
                     </a>
@@ -270,20 +270,6 @@ rebaja 1 kilo.
 <script src="{% static 'js/highlight.pack.js' %}"></script>
 <script>
     hljs.initHighlightingOnLoad()
-
-    const vermas = (op) => {
-        switch (op) {
-            case 1:
-                $('#vermas').toggle('fold')
-                $('#vermenos').toggle('fold')
-                $('#vermas2').toggle('fold')
-                break
-            case 2:
-                $('#vermas3').toggle('fold')
-                $('#vermenos2').toggle('fold')
-                $('#vermas4').toggle('fold')
-                break
-        }
-    }
 </script>
+
 {% endblock scripts %}

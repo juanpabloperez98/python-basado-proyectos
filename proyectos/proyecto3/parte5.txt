@@ -1,0 +1,25 @@
+-----LINEA #2  -------------
+isbn = int("Ingrese isbn del libro a prestar: ")
+isbn = input("Ingrese isbn del libro a prestar: ")
+int(input("Ingrese isbn del libro a prestar: "))
+isbn = int(input("Ingrese isbn del libro a prestar: ")) **
+-----LINEA #5  -------------
+if(libro[copias] > 0):
+if(libro['copias'] < 0):
+if(libro['copias'] > 0): **
+if(['copias'] > 0):
+-----LINEA #10  -------------
+libro['copias'] -= 1 **
+libro['copias'] += 1
+libro[copias] -= 1
+['copias'] -= 1
+-----LINEA #12  -------------
+prestamos.add(prestamo)
+prestamos.append(prestamo) **
+prestamos(prestamo)
+prestamos.insert(prestamo)
+-----LINEA #16  -------------
+return prestamos
+return libros
+return prestamos, libros **
+return False, True

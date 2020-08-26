@@ -26,9 +26,7 @@ def eliminar_libros(libros):
     if (indice != -1):
         libros.pop(indice)
         print("**Libro eliminado con exito**")
-    else:
-        print("**Libro no encontrado intente de nuevo**")
-
+    else:print("**Libro no encontrado intente de nuevo**")
     return libros
 
 # Parte 5

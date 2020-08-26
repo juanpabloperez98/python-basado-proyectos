@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Proyecto3 parte - 8
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/partes.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item desactivate" id="part2">
+                <a class="nav-link" href="{% url 'proyecto3_app:part2' %}"><i class="fa fa-arrow-right"
+                        aria-hidden="true"></i> Parte final</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto3_app:proyecto3' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto" id="statment">
+    <!-- Enunciado -->
+    <div class="col-lg-10 mx-auto text-center part-1 p-5 mt-3">
+        <h1 class="title-modul"> Parte 8</h1>
+        <hr>
+        <p class="text-justify">
+            Ya en esta parte final, se realizará la función de ver los préstamos que se han realizado, es similar a la
+            función de ver_libros(), esta función va a recibir como parámetro la lista de préstamos e imprimirá la
+            información correspondiente a cada uno de los diccionarios que contiene esta lista.
+        <h1 class="title-modul">¿Como se realizara?</h1>
+        <hr>
+        <p class="text-justify">
+            Lo primero que se va a realizar es crear la función ver_prestamos, que recibirá como parámetro la lista de
+            préstamos, luego se recorre la lista a través de un ciclo for por elementos iterables, y por último se
+            imprimirá la información correspondiente de cada préstamo, como por ejemplo, nombre, cédula, fecha en que lo
+            prestó, fecha en la que lo devuelve y el nombre del libro.
+        </p>
+
+        <a class="btn btn-success mx-auto mt-3" href="#" id="go">Vamos a realizarlo</a>
+    </div>
+</div>
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+    <!-- Siguiente parte -->
+    <div class="text-center col-lg-12 mx-auto my-5 desactivate" id="siguiente-ejercicio">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Felicitaciones
+            <br> Puedes pasar a la siguiente parte</h1>
+        <hr>
+
+    </div>
+
+    <!-- Codigo -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Solución</h1>
+        <div class="container code text-justify mt-2">
+            <pre>
+              <code class="language-python">
+      <span id="l1" class="linea-code"><span class="pr-n mr-3">1</span><span class="desactivate" id="l-1">def ver_prestamos(prestamos):</span></span>
+      <span><span class="pr-n mr-3">2</span>    print("***Prestamos realizados***")</span>
+      <span id="l2" class="linea-code"><span class="pr-n mr-3">3</span>    <span class="desactivate" id="l-2">for i in prestamos:</span></span>
+      <span><span class="pr-n mr-3">4</span>        print("Nombre: ",i['nombre'])</span>
+      <span><span class="pr-n mr-3">5</span>        print("Cedula: ",i['cedula'])</span>
+      <span><span class="pr-n mr-3">6</span>        print("Fecha del prestamo: ",i['prestamos'])</span>
+      <span><span class="pr-n mr-3">7</span>        print("Fecha de devolucion: ",i['devolucion'])</span>
+      <span id="l3" class="linea-code"><span class="pr-n mr-3">8</span>        <span class="desactivate" id="l-3">print("Libro: ",i['libro']['titulo'])</span></span>
+            </code>
+          </pre>
+        </div>
+
+        <div id="botones-1" class="desactivate">
+            <a href="#" class="btn botonBlue" id="explicar"><i class="fas
+            fa-align-justify"></i> Explicar codigo</a>
+        </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light" id="explicacion">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Desarrollo</h1>
+        <div class="container code text-justify mt-2">
+            <!-- #1 -->
+            <div class="p-3 mt-3" id="1" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 1</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se debe declarar la función ver_prestamos, ésta recibe como parámetro la lista prestamos ¿Cómo
+                        se
+                        haría esto?
+                    </p>
+                    <form action="" name="formulario1" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-1">
+                            <option>Opciones</option>
+                            <option>ver_prestamos(prestamos):</option>
+                            <option>def ver_prestamos():</option>
+                            <option>def ver_prestamos(prestamos):</option>
+                            <option>def ver_prestamos():</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-1">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Utilizando la palabra reservada <span class="pr">def</span> se declara la función con el nombre
+                        y se le pasan los
+                        parámetros, en este caso solo uno que es la lista <span class="pr">prestamos</span>.
+                    </p>
+                </div>
+            </div>
+            <!-- #3 -->
+            <div class="p-3 mt-3 desactivate" id="2" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 3</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se necesita recorrer la lista de prestamos a través de un ciclo for por elementos iterables
+                        ¿Cómo
+                        hacer esto?
+                    </p>
+                    <form action="" name="formulario2" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-2">
+                            <option>Opciones</option>
+                            <option>for i prestamos:</option>
+                            <option>for i in range(prestamos):</option>
+                            <option>for i in prestamos:</option>
+                            <option>while i in prestamos:</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-2">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        La lista de prestamos contiene como elementos un conjunto de diccionarios donde cada diccionario
+                        contiene la información de un prestamo específico, en cada iteración, la variable <span
+                            class="pr">i</span>, cogerá como
+                        valor esos diccionarios.
+                    </p>
+                </div>
+            </div>
+            <!-- #8 -->
+            <div class="p-3 mt-3 desactivate" id="3" style="width: 100%;">
+                <div class="seleccion p-5" id="sel-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Linea # 8</h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Se requiere imprimir el titulo del libro que se presto
+                        ¿Como se hace esto?
+                    </p>
+                    <form action="" name="formulario3" class="section-ejemplos mx-auto
+              text-justify p-3" style="width: 75%;">
+                        <select class="form-control form-control-lg" id="s-3">
+                            <option>Opciones</option>
+                            <option>print("Libro: ",i['libro']['titulo'])</option>
+                            <option>print("Libro: ",i[]['titulo'])</option>
+                            <option>print("Libro: ",i['libro'])</option>
+                            <option>print("Libro: ",i['titulo'])</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="seleccion p-5 desactivate" id="exp-3">
+                    <h1 style="font-size: 30px;color: rgba(149, 165, 166,1);" class="text-center mt-2">Felicitaciones
+                    </h1>
+                    <p class="text-justify mt-3 font-weight-bold">
+                        Como se ha explicado, i coge el valor del <span class="pr-n">diccionario</span> correspondiente que contiene la
+                        información del préstamo, cuando se creó la función de crear_prestamos(), el diccionario del
+                        préstamo que se creaba contenía al diccionario del libro correspondiente, por lo que se crea un
+                        diccionario que dentro tiene como valor otro diccionario, de esta manera se accede a la clave
+                        [‘libro’] que es el diccionario del <span class="pr">libro</span> y luego a ese diccionario del libro se accede a la
+                        <span class="pr-n">clave</span> [‘titulo’]
+                    </p>
+                </div>
+            </div>
+            <div class="botones text-center mb-3">
+                <button class="btn botonBlue" id="probar"><i class="fas
+              fa-arrow-right"></i> Probar</button>
+                <button class="btn botonBlue desactivate" id="siguiente"><i class="fas
+              fa-arrow-right"></i> Seguir</button>
+                <a id="reiniciar" href="./parte8" class="btn botonBlue" id="reiniciar"><i
+                        class='fas fa-undo-alt mr-2'></i>
+                    Reiniciar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Explicación -->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="explicacionCode">
+        <h1 class="text-center mt-3 p-2 pr" style="font-size: 20px;">Explicación</h1>
+        <div class="container code text-justify mt-2" id="explain-div">
+            <pre>
+          <code class="language-python" id="code-add">
+  <span class=""><span class="pr-n mr-3">1</span>  Se crea la función main. Con la palabra reservada "def", acompañada del nombre que se le quiera dar se pude crear una función en Python.</span>
+  <span class=""><span class="pr-n mr-3">2</span>  Creamos una variable fin y la igualamos a False. <br>  <span class="pr ml-4">NOTA</span>: esta variable es la que nos va a permitir manejar el ciclo while de la linea # 5</span>
+  <span class=""><span class="pr-n mr-3">3</span>  Creamos una lista donde se van a guardar los empleados registrados, la lista se llamara "lista_empleados" para evitar confusiones a la hora del desarrollo</span>
+  <span class=""><span class="pr-n mr-3">4</span>  Pedimos el capital de nomina con el que se va a trabajar.</span>
+  <span class=""><span class="pr-n mr-3">5</span>  Creamos un ciclo while, que nos permite hacer un ciclo infinito, que solo se detendrá cuando el usuario escoja la opción 7 <br>  <span class="pr ml-4">NOTA</span>: El ciclo while se ejecutara siempre y cuando <span class="pr">fin</span> sea diferente de True</span>
+  <span class=""><span class="pr-n mr-3">6</span>  Llamamos a la función "menu()" <br>  <span class="pr ml-4">NOTA</span>: Como se menciono anteriormente, la función menu() se creara en el apartado siguientes.</span>
+  <span class=""><span class="pr-n mr-3">7</span>  Una vez se muestre el menú, le pediremos al usuario que escoja una opción mostrada. La opción ingresada por el usuario se guardara en la variable "opcion"</span>
+  <span class=""><span class="pr-n mr-3">8</span>  validamos si "opcion" es igual a 1</span>
+  <span class=""><span class="pr-n mr-3">9</span>  validamos si "opcion" es igual a 2</span>
+  <span class=""><span class="pr-n mr-3">10</span>validamos si "opcion" es igual a 3</span>
+  <span class=""><span class="pr-n mr-3">11</span>validamos si "opcion" es igual a 4</span>
+  <span class=""><span class="pr-n mr-3">12</span>validamos si "opcion" es igual a 5</span>
+  <span class=""><span class="pr-n mr-3">13</span>validamos si "opcion" es igual a 6</span>
+  <span class=""><span class="pr-n mr-3">14</span>validamos si "opcion" es igual a 7</span>
+  <span class=""><span class="pr-n mr-3">15</span>Si el usuario escogió la opción 7, se muestra un mensaje de despedida</span>
+  <span class=""><span class="pr-n mr-3">16</span>Como se menciono en la linea 5, el ciclo infinito solo corre siempre y cuando <span class="pr">fin</span> sea diferente de True, para terminar el ciclo, se iguala <span class="pr">fin</span> a True</span>
+  <span class=""><span class="pr-n mr-3">17</span>Validamos si ninguna de las opciones fue escogida, de ser así imprimimos por pantalla un mensaje de error</span>
+  <span class=""><span class="pr-n mr-3">18</span>Se hace el llamado a la función <span class="pr">main()</span> ya creada.</span>
+          </code>
+        </pre>
+        </div>
+    </div>
+
+</div>
+
+<div style="margin-bottom: 10%;">
+
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto3/part8.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+{% endblock scripts %}

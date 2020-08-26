@@ -1,0 +1,438 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<link rel="stylesheet" href="{% static 'css/final.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/jquery-ui-git.js"> </script>
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" id="part">
+                <a class="nav-link" href="{% url 'proyecto1_app:proyecto1-part7'
+                    %}"><i class="fa fa-arrow-right" aria-hidden="true"></i> Siguiente proyecto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto3_app:proyecto3' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+
+{% block content %}
+<!-- Principal -->
+<div class="content row mx-auto" id="main">
+    <div class="col-lg-8 mx-auto text-center part-1 p-5 mt-5">
+        <h1 class="title-modul" style="font-size: 30px;color: rgba(149, 165,
+            166,1);"> ¡¡Felicitaciones!!</h1>
+        <p class="text-justify mt-3">
+            Felicitaciones usted ha completado todo el proyecto del Asistente de biblioteca,
+            la Universidad Tecnológica de Pereira, espera que el
+            estudiante haya podido entender al máximo los temas tratados en este
+            proyecto, si tiene alguna duda, no dude en volver a realizar el
+            proyecto o el/los apartados en los que encuentre falencias y dudas.
+            También puede consultar a su profesor sobre las dudas puntuales que
+            se tengan o repasar la <a href="{% url 'main_app:teoria_index' %}">teoría</a>
+            de Python.
+            <br>
+            A continuación se presentara todo el código del proyecto y las
+            funciones realizadas, le recomendamos copiar el código en su
+            computadora
+        </p>
+
+        <button class="btn btn-block mx-auto botonBlue" id="ShowCompleteCode">Ver
+            codigo completo</button>
+    </div>
+
+</div>
+
+<!-- Codigos -->
+<div class="content row mx-auto desactivate" id="codes">
+    <!-- Función main()  -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light" id="codemain">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función main()</h1>
+            <pre>
+            <code class="language-python">
+        <span><span class="pr-n mr-3">1</span>def main():</span>
+        <span><span class="pr-n mr-3">2</span>    libros = []</span>
+        <span><span class="pr-n mr-3">3</span>    prestamos = []</span>
+        <span><span class="pr-n mr-3">4</span>    while(True):</span>
+        <span><span class="pr-n mr-3">5</span>        <span id="f-menu" class="call_f" onclick="menu()">menu()</span></span>
+        <span><span class="pr-n mr-3">6</span>        op = int(input("Ingrese una opcion: "))</span>
+        <span><span class="pr-n mr-3">7</span>        if(op==1):libros = <span id="f-crear_l" class="call_f" onclick="crear_libro()">crear_libro(libros)</span></span>
+        <span><span class="pr-n mr-3">8</span>        elif(op==2):prestamos,libros = <span id="f-crear_p" class="call_f" onclick="prestamo()">prestamo(libros,prestamos)</span></span>
+        <span><span class="pr-n mr-3">9</span>        elif(op==3):libros = <span id="f-eliminar_l" class="call_f" onclick="eliminar()">eliminar_libros(libros)</span></span>
+        <span><span class="pr-n mr-3">10</span>      elif(op==4):ver_libros(libros)</span>
+        <span><span class="pr-n mr-3">11</span>      elif(op==5):ver_prestamos(prestamos)</span>
+        <span><span class="pr-n mr-3">13</span>      elif(op==6):</span>
+        <span><span class="pr-n mr-3">14</span>          print("\nHasta luego\n")</span>
+        <span><span class="pr-n mr-3">15</span>          break</span>
+        <span><span class="pr-n mr-3">16</span>      else:print("\nOpción no valida\n")</span>
+                        </code>
+                  </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+        </div>
+    </div>
+    <!-- Función menu()-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="codemenu">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función menu()</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def menu():</span>
+          <span><span class="pr-n mr-3">2</span>    print("***Menu biblioteca***")</span>
+          <span><span class="pr-n mr-3">3</span>    print("1)Crear libro")</span>
+          <span><span class="pr-n mr-3">4</span>    print("2)Prestar libro")</span>
+          <span><span class="pr-n mr-3">5</span>    print("3)Eliminar libro")</span>
+          <span><span class="pr-n mr-3">6</span>    print("4)Ver libros")</span>
+          <span><span class="pr-n mr-3">7</span>    print("5)Ver Prestamos")</span>
+          <span><span class="pr-n mr-3">7</span>    print("6)Salir")</span>
+                          </code>
+                    </pre>
+        </div>
+    </div>
+
+    <!-- Función buscar_libro(libros,isbn) -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="buscarlibro">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función buscar_libro(libros,isbn)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def buscar_libro(libros,isbn):</span>
+          <span><span class="pr-n mr-3">2</span>    for i in libros:</span>
+          <span><span class="pr-n mr-3">3</span>        if(i['isbn'] == isbn): return i</span>
+          <span><span class="pr-n mr-3">4</span>    return None</span>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- Función crear_libro(libros)-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="crear_libro">
+        <div class="container code text-justify mt-2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,165, 166,1);">Función crear_libro(libros)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def crear_libro(libros):</span>
+          <span><span class="pr-n mr-3">2</span>    libro = None</span>
+          <span><span class="pr-n mr-3">3</span>    isbn = int(input("Ingrese ISBN: "))</span>
+          <span><span class="pr-n mr-3">4</span>    libro = buscar_libro(libros,isbn)            </span>
+          <span><span class="pr-n mr-3">5</span>    if(libro == None):</span>
+          <span><span class="pr-n mr-3">6</span>        titulo = input("Ingrese titulo del libro: ")</span>
+          <span><span class="pr-n mr-3">7</span>        autor = input("Autor del libro: ")</span>
+          <span><span class="pr-n mr-3">8</span>        copias = int(input("Numero de copias disponibles: "))</span>
+          <span><span class="pr-n mr-3">9</span>        libro = dict(isbn = isbn, titulo = titulo, autor = autor, copias = copias)</span>
+          <span><span class="pr-n mr-3">10</span>      libros.append(libro)</span>
+          <span><span class="pr-n mr-3">11</span>      print("**Libro creado con exito**")</span>
+          <span><span class="pr-n mr-3">12</span>  else:print("\nEl libro que intenta crear ya esta creado, intentelo de nuevo\n")</span>
+          <span><span class="pr-n mr-3">13</span>  return libros</span>
+                          </code>
+                    </pre>
+            <div id="botones-register" class="desactivate">
+                <a href="#" class="btn botonYellow" id="explicarregister"><i class="fas
+                        fa-align-justify"></i> Explicar codigo</a>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Función def prestamo(libros,prestamos)-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="prestamo">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,165, 166,1);">Función prestamo(libros,prestamos)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def prestamo(libros,prestamos):</span>
+          <span><span class="pr-n mr-3">2</span>    isbn = int(input("Ingrese isbn del libro a prestar: "))</span>
+          <span><span class="pr-n mr-3">3</span>    libro = buscar_libro(libros,isbn)</span>
+          <span><span class="pr-n mr-3">4</span>    if(libro != None):</span>
+          <span><span class="pr-n mr-3">5</span>        if(libro['copias'] > 0):</span>
+          <span><span class="pr-n mr-3">6</span>            nombre = input("Ingrese nombre del usuario: ")</span>
+          <span><span class="pr-n mr-3">7</span>            cc = int(input("Ingrese documento: "))</span>
+          <span><span class="pr-n mr-3">8</span>            fecha_prestamo = input("Ingrese la fecha prestamo: (dd/mm/año)")</span>
+          <span><span class="pr-n mr-3">9</span>            fecha_devolución = input("Ingrese la fecha devolución: (dd/mm/año)")</span>
+          <span><span class="pr-n mr-3">10</span>          libro['copias'] -= 1</span>
+          <span><span class="pr-n mr-3">11</span>          prestamo = dict(nombre = nombre, cedula = cc, prestamos = fecha_prestamo, devolucion = fecha_devolución, libro = libro)</span>
+          <span><span class="pr-n mr-3">12</span>          prestamos.append(prestamo)</span>
+          <span><span class="pr-n mr-3">13</span>          print("**Prestamo realizado con exito**")</span>
+          <span><span class="pr-n mr-3">14</span>      else:print("El libro no tiene copias disponibles")</span>
+          <span><span class="pr-n mr-3">15</span>  else:print("No existe libro")</span>
+          <span><span class="pr-n mr-3">16</span>  return prestamos, libros</span>
+                          </code>
+                    </pre>
+        </div>
+
+
+    </div>
+
+    <!-- Función def eliminar_libros(libros):-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="eliminar">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,165, 166,1);">Función def eliminar_libros(libros)</h1>
+            <pre>
+              <code class="language-python">
+                <span class="call_f" onclick=""></span>
+          <span><span class="pr-n mr-3">1</span>def eliminar_libros(libros):</span>
+          <span><span class="pr-n mr-3">2</span>    isbn = int(input("Ingrese ISBN: "))</span>
+          <span><span class="pr-n mr-3">3</span>    indice = -1</span>
+          <span><span class="pr-n mr-3">4</span>    for i in range(len(libros)):</span>
+          <span><span class="pr-n mr-3">5</span>        if(libros[i]['isbn'] == isbn):indice = i</span>
+          <span><span class="pr-n mr-3">6</span>    if (indice != -1):</span>
+          <span><span class="pr-n mr-3">7</span>        libros.pop(indice)</span>
+          <span><span class="pr-n mr-3">8</span>        print("**Libro eliminado con exito**")</span>
+          <span><span class="pr-n mr-3">9</span>    else:print("**Libro no encontrado intente de nuevo**")</span>
+          <span><span class="pr-n mr-3">10</span>  return libros</span>
+                          </code>
+                    </pre>
+        </div>
+    </div>
+
+    <!-- Función def ver_libros(libros)-->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="verlibros">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,165, 166,1);">Función ver_libros(libros)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def ver_libros(libros):</span>
+          <span><span class="pr-n mr-3">2</span>    print("***Libros disponibles***")</span>
+          <span><span class="pr-n mr-3">3</span>    for i in libros:</span>
+          <span><span class="pr-n mr-3">4</span>        print("isbn",i['isbn'])</span>
+          <span><span class="pr-n mr-3">5</span>        print("titulo",i['titulo'])</span>
+          <span><span class="pr-n mr-3">6</span>        print("autor",i['autor'])</span>
+          <span><span class="pr-n mr-3">7</span>        print("copias disponibles",i['copias'])</span>
+                          </code>
+                    </pre>
+        </div>
+
+
+    </div>
+
+    <!-- Función def escoger_jugadores(jugadores):-->
+    <div class="col-lg-6 mt-3 mx-auto bg-light desactivate" id="codeescogerfichas">
+        <div class="container code text-justify mt-2" id="code2">
+            <h1 class="text-center mt-5 p-2" style="font-size: 20px;color:
+                rgba(149,
+                165, 166,1);">Función
+                escoger_ficha(j1,j2)</h1>
+            <pre>
+              <code class="language-python">
+          <span><span class="pr-n mr-3">1</span>def escoger_ficha(j1,j2):</span>
+          <span><span class="pr-n mr-3">2</span>    lista_fichas = ['*','@','$','&']</span>
+          <span><span class="pr-n mr-3">3</span>    print("***Fichas disponibles***")</span>
+          <span><span class="pr-n mr-3">4</span>    for ficha in range(len(lista_fichas)):</span>
+          <span><span class="pr-n mr-3">5</span>        print(str(ficha),lista_fichas[ficha])</span>
+          <span><span class="pr-n mr-3">6</span>    ficha1 = int(input("Jugador 1 ingrese que ficha desea utilizar:"))    </span>
+          <span><span class="pr-n mr-3">7</span>    ficha2 = int(input("Jugador 2 ingrese que ficha desea utilizar:"))</span>
+          <span><span class="pr-n mr-3">8</span>    if(ficha1 != ficha2):</span>
+          <span><span class="pr-n mr-3">9</span>        j1['ficha'] = lista_fichas[ficha1]</span>
+          <span><span class="pr-n mr-3">10</span>      j2['ficha'] = lista_fichas[ficha2] </span>
+          <span><span class="pr-n mr-3">11</span>      return j1, j2 </span>
+          <span><span class="pr-n mr-3">12</span>  else:</span>
+          <span><span class="pr-n mr-3">13</span>      print("***Los jugadores no pueden tener la misma ficha***")</span>
+          <span><span class="pr-n mr-3">14</span>      return 0,0 </span>
+                          </code>
+                    </pre>
+        </div>
+
+
+    </div>
+
+    <div class="col-lg-12 text-center desactivate" id="boton">
+        <button class="btn botonBlue" onclick="openMain()" id="boton-volver"><i
+                class="fas fa-step-backward mr-2"></i>main()</button>
+    </div>
+    <!-- <div class="col-lg-12 text-center desactivate" id="boton2">
+        <button class="btn botonBlue" onclick="openllamada_funciones()"><i
+                class="fas fa-step-backward mr-2"></i>llamada_funciones()</button>
+    </div>
+    <div class="col-lg-12 text-center desactivate" id="boton3">
+        <button class="btn botonBlue" onclick="openPedirDatos()"><i
+                class="fas fa-step-backward mr-2"></i>pedir_datos()</button>
+    </div> -->
+
+
+</div>
+
+
+<div style="margin-bottom: 14%;">
+</div>
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/proyectos/proyecto1/part-final.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()
+    var1 = 0
+
+    // Parte # 1
+    const bton1 = () => {
+        $('#boton').toggle('fold')
+    }
+    const main = () => {
+        $('#codemain').toggle('fold')
+    }
+    const menu = () => {
+        $('#codemenu').toggle('fold')
+        main()
+        bton1()
+        var1 = 1
+    }
+    const buscar = () => {
+        $('#buscarlibro').toggle('fold')
+        main()
+        bton1()
+        var1 = 2
+    }
+    const crear_libro = () => {
+        $('#crear_libro').toggle('fold')
+        main()
+        bton1()
+        var1 = 3
+    }
+    const prestamo = () => {
+        $('#prestamo').toggle('fold')
+        main()
+        bton1()
+        var1 = 4
+    }
+    const eliminar = () => {
+        $('#eliminar').toggle('fold')
+        main()
+        bton1()
+        var1 = 5
+    }
+    const openMain = (op) => {
+        switch (var1) {
+            case 1:
+                menu()
+                break
+            case 2:
+                buscar()
+                break
+            case 3:
+                crear_libro()
+                break
+            case 4:
+                prestamo()
+                break
+            case 5:
+                eliminar()
+                break
+        }
+    }
+    // Parte # 2
+    /* const bton2 = () => {
+        $('#boton2').toggle('fold')
+    }
+    const crear_jugador = () => {
+        $('#codecrearjugador').toggle('fold')
+        llamada_funciones()
+        bton2()
+        var2 = 1
+    }
+    const ver_jugador = () => {
+        $('#codeverjugador').toggle('fold')
+        llamada_funciones()
+        bton2()
+        var2 = 2
+    }
+    const pedir_datos = (op) => {
+        $('#codepedirdatos').toggle('fold')
+        if (op == 1) {
+            llamada_funciones()
+        }
+        bton2()
+        var2 = 3
+    }
+    const openllamada_funciones = () => {
+        switch (var2) {
+            case 1:
+                crear_jugador()
+                break;
+            case 2:
+                ver_jugador()
+                break;
+            case 3:
+                pedir_datos(1)
+                break
+        }
+    } */
+    // Parte # 3
+    /* const bton3 = () => {
+        $('#boton3').toggle('fold')
+    }
+    const escoger_jugadores = () => {
+        $('#codeescogerjugadores').toggle('fold')
+        pedir_datos()
+        bton3()
+        var3 = 1
+    }
+    const escoger_fichas = () => {
+        $('#codeescogerfichas').toggle('fold')
+        pedir_datos()
+        bton3()
+        var3 = 2
+    }
+    const openPedirDatos = () => {
+        switch (var3) {
+            case 1:
+                escoger_jugadores()
+                break;
+            case 2:
+                escoger_fichas()
+                break;
+        }
+    }
+
+
+ */
+
+</script>
+{% endblock scripts %}

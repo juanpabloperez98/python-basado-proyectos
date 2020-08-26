@@ -1,0 +1,5 @@
+cadena = input("Ingrese cadena: ")
+indice = int(input("Ingrese un indice: "))
+longitud = len(cadena)
+if(indice > longitud or indice < 0): print("Indice erroneo")
+else: print("El caracter ubicado en esa posición es: ",cadena[indice])

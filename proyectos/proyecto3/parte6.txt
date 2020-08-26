@@ -1,0 +1,20 @@
+---Linea #4 -------
+for i in range(len(libros)): **
+for i in range(libros):
+for i in len(libros):
+for i in libros:
+---Linea #6 -------
+if (indice == -1):
+if (indice):
+if (indice != -1): **
+if (-1):
+---Linea #7 -------
+libros.pop(indice) **
+libros.remove(indice)
+libros.add(indice)
+libros.delete(indice)
+---Linea #10 -------
+return libros[indice]
+return 1
+return libros **
+return len(libros)

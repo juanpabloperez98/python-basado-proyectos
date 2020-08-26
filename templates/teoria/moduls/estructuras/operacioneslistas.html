@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Métodos - listas
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_app:listas' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Append()</h1>
+            <p class="text-justify" style="min-height: 50px;">
+                Este método lo que permite es agregar un elemento al final de una lista.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 100px;margin-bottom: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = []</span>
+<span id="2"><span class="pr-n mr-3">2</span>numero = 5</span>
+<span id="3"><span class="pr-n mr-3">3</span>lista.append(numero)</span>
+<span id="3"><span class="pr-n mr-3">4</span>print(lista)    </span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">5</span>               
+                    </code>
+                <p class="mt-3" style="min-height: 50px;">
+                    Para utilizar el método append, solo se coloca el nombre de la lista, en este caso se llama variable
+                    lista luego se coloca un punto y seguido del método append(), de esta manera se agrega al final de
+                    la lista.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Count</h1>
+            <p class="text-justify" style="min-height: 50px;">
+                Este método recibe un elemento como argumento, y cuenta la cantidad de veces que aparece en la lista.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 239px;margin-bottom: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = [2,4,6,"Programacion",2.5,4]</span>
+<span id="2"><span class="pr-n mr-3">2</span>num_veces = lista.count(4)</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(num_veces)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">2</span>               
+                    </code>
+                <p class="mt-3" style="min-height: 96px;">
+                    Igual que en el método anterior, en este se utiliza el nombre de la lista acompañado de un punto y
+                    luego el nombre del método que sería count
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> index()</h1>
+            <p class="text-justify" style="min-height: 0px;">
+                Este método recibe un elemento como argumento, y devuelve el índice de su primera aparición en la lista.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 258px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = [1,2,3,4,5,6,7,8,9]</span>
+<span id="3"><span class="pr-n mr-3">2</span>indice = lista.index(4)</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(indice)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 156px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">3</span>               
+                    </code>
+            </div>
+
+            <div class="text-center" style="margin-top: 0px;">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">4</span> insert()</h1>
+            <p class="text-justify" style="min-height: 46px;">
+                Este método inserta el elemento x en la lista, en el índice i.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>x = 7</span>
+<span id="3"><span class="pr-n mr-3">2</span>indice = 6</span>
+<span id="3"><span class="pr-n mr-3">3</span>lista = [1,2,3,4,5,6,8,9]</span>
+<span id="3"><span class="pr-n mr-3">4</span>lista.insert(indice,x)</span>
+<span id="3"><span class="pr-n mr-3">5</span>print(lista)</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output4">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">[1,2,3,4,5,6,7.8,9]</span>               
+                    </code>
+                <p class="text-justify">
+                    x es el valor que se desea insertar en la lista, e índice es la posición en la que se desea colocar,
+                    para dejar la lista del 1 al 9, se dice que el índice es igual a 6.
+                </p>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode4()">Ejecutar codigo</button>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">5</span> pop()</h1>
+            <p class="text-justify" style="min-height: 46px;">
+                Este método devuelve el último elemento de la lista, y lo borra de la misma.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = [1,2,3,4,5,6,8,9]</span>
+<span id="3"><span class="pr-n mr-3">2</span>lista.pop()</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(lista)</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output5">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">[1,2,3,4,5,6,7.8,9]</span>               
+                    </code>
+                <p class="text-justify mt-3">
+                    x es el valor que se desea insertar en la lista, e índice es la posición en la que se desea colocar,
+                    para dejar la lista del 1 al 9, se dice que el índice es igual a 6.
+                </p>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode5()">Ejecutar codigo</button>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">6</span> remove()</h1>
+            <p class="text-justify" style="min-height: 46px;">
+                Este método recibe como argumento un elemento, y borra su primera aparición en la lista.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = [1,2,3,4,5,6,8,9]</span>
+<span id="3"><span class="pr-n mr-3">2</span>lista.remove(3)</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(lista)</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 171px;" id="output6">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">[1,2,4,5,6,7.8,9]</span>               
+                    </code>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode6()">Ejecutar codigo</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode8 = () => {
+        document.getElementById('output8').setAttribute('class', 'container code mt-2')
+    }
+
+</script>
+{% endblock scripts %}

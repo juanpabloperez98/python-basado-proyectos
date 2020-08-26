@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Manejo y sintaxis - listas
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_app:listas' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Declarar una lista</h1>
+            <p class="text-justify" style="min-height: 50px;">
+                Para declarar una lista solo basta con colocar el nombre de la variable e igualarla a los corchetes
+                vacíos(si lo que se quiere es crear una lista vacía), o con los elementos de la lista dentro de los
+                corchetes si lo que se requiere es crear la lista con elementos
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;margin-bottom: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista_vacia = []</span>
+<span id="2"><span class="pr-n mr-3">2</span>lista_numeros = [1,2,3,4,5,6,7]</span>
+<span id="3"><span class="pr-n mr-3">3</span>print("Lista vacia",lista_vacia)</span>
+<span id="3"><span class="pr-n mr-3">4</span>print("Lista numeros",lista_numeros)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 196px;" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Lista vacias [] <br>Lista numeros [1, 2, 3, 4, 5, 6, 7]</span>               
+                    </code>
+                <!-- <p class="mt-3" style="min-height: 50px;">
+                    Para utilizar el método append, solo se coloca el nombre de la lista, en este caso se llama variable
+                    lista luego se coloca un punto y seguido del método append(), de esta manera se agrega al final de
+                    la lista.
+                </p> -->
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Acceder a un elemento de la lista</h1>
+            <p class="text-justify" style="min-height: 50px;">
+                En las listas al igual que en las cadenas de caracteres, se puede acceder a sus elementos utilizando los
+                corchetes y especificando el índice en el que se encuentra el elemento, hay que recordar que el índice
+                del primer elemento de la lista es 0.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 239px;margin-bottom: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = ["Esto es una cadena",2,5.6,"Esto es otra cadena"]</span>
+<span id="2"><span class="pr-n mr-3">2</span>elemento = lista[0]</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(elemento)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Esto es una cadena</span>               
+                    </code>
+
+                <p class="mt-3" style="min-height: 96px;">
+                    Se tiene una lista con elementos de diferentes tipos de datos, al acceder al indice 0, se esta
+                    cogiendo el primer elemento de la lista, que en este caso sería la cadena “Esto es una cadena”
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Recorrer una lista</h1>
+            <p class="text-justify" style="min-height: 0px;">
+                Recorrer una lista similar a recorrer una cadena de caracteres, la diferencia, es que por cada iteración
+                que se haga en el ciclo for, esta vez no se cogerá un carácter, sino que se cogerá un elemento de la
+                lista, lo que quiere decir que si se tiene una lista con un entero, una cadena de caracteres, y un
+                float, por cada iteración del ciclo for, esté cogerá el entero, la cadena de caracteres y el float
+                respectivamente.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 302px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = [15,"Hola mundo",9.5]</span>
+<span id="3"><span class="pr-n mr-3">2</span>for i in lista:print(i)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">15 <br>Hola mundo <br>9.5</span>               
+                    </code>
+                <p style="min-height: 119px;" class="mt-3">
+                    Como se puede observar, en cada iteración que se hace con el ciclo for, la variable i va a obtener
+                    el valor de cada uno de los elementos, en este caso 15, Hola mundo y 9.5
+                </p>
+            </div>
+
+            <div class="text-center" style="margin-top: 0px;">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">4</span> Listas anidadas</h1>
+            <p class="text-justify" style="min-height: 167px;">
+                Ya se tiene entendido lo que es una lista, se resume como una estructura que permite guardar y listar
+                tipos de datos de manera secuencial, pero ahora suponga que se necesita almacenar en una lista los datos
+                personales de un cliente, para este tipo de cosas se usan las listas anidadas.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>datos = [</span>
+<span id="3"><span class="pr-n mr-3">2</span>    ["Juan Pablo",21,10992345],</span>
+<span id="3"><span class="pr-n mr-3">3</span>    ["Andres David",19,102349924],</span>
+<span id="3"><span class="pr-n mr-3">4</span>    ["Carlos Jose",25,1293999412],</span>
+<span id="3"><span class="pr-n mr-3">5</span>]</span>
+<span id="3"><span class="pr-n mr-3">6</span>for i in datos:</span>
+<span id="3"><span class="pr-n mr-3">7</span>    print(i)</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 100px;" id="output4">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">['Juan Pablo', 21, 10992345] <br>['Andres David', 19, 102349924] <br>['Carlos Jose', 25, 1293999412]</span>               
+                    </code>
+                <p class="text-justify mt-3">
+                    Antes se manejaban las listas con elementos tales como enteros, cadenas de caracteres, etc. Ahora se
+                    manejan listas dentro de una lista, esta forma de hacerlo sirve mucho para manejar matrices, o
+                    también tener de manera organizada la información.
+                </p>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode4()">Ejecutar codigo</button>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">5</span> Recorrer listas anidadas</h1>
+            <p class="text-justify" style="min-height: 46px;">
+                Similar a como se ha venido haciendo, para recorrer una lista anidada, ya no solo basta con realizar un
+                ciclo for, pues al hacer esto, se estaría obteniendo otra lista, ahora es necesario hacer dos ciclos
+                for, de esta manera.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>datos = [["Juan Pablo",21,10992345]]</span>
+<span id="3"><span class="pr-n mr-3">2</span>for i in datos:</span>
+<span id="3"><span class="pr-n mr-3">3</span>    for p in i:print(p)</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output5">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Juan Pablo <br>21 <br>10992345</span>               
+                    </code>
+                <p class="text-justify mt-3">
+                    Para este ejemplo se va a manejar una sola lista dentro de la lista datos, el primer ciclo for,
+                    representa el recorrido de la lista datos, es decir, va a coger por cada iteración (en este caso
+                    solo una), otra lista, que contiene los datos de un usuario (Nombre,edad,documento), el segundo
+                    ciclo for que se realiza es para poder obtener los datos de esa lista que se obtuvo.
+                </p>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode5()">Ejecutar codigo</button>
+            </div>
+        </div>
+
+
+        <!-- <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">6</span> remove()</h1>
+            <p class="text-justify" style="min-height: 46px;">
+                Este método recibe como argumento un elemento, y borra su primera aparición en la lista.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lista = [1,2,3,4,5,6,8,9]</span>
+<span id="3"><span class="pr-n mr-3">2</span>lista.remove(3)</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(lista)</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 171px;" id="output6">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">[1,2,4,5,6,7.8,9]</span>               
+                    </code>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode6()">Ejecutar codigo</button>
+            </div>
+        </div> -->
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode8 = () => {
+        document.getElementById('output8').setAttribute('class', 'container code mt-2')
+    }
+
+</script>
+{% endblock scripts %}

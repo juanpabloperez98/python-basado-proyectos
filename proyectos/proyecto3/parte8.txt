@@ -1,0 +1,15 @@
+--- Linea # 1 ---
+ver_prestamos(prestamos):
+def ver_prestamos():
+def ver_prestamos(prestamos): xx
+def ver_prestamos():
+--- Linea # 4 ---
+for i prestamos:
+for i in range(prestamos):
+for i in prestamos: xx
+while i in prestamos:
+--- Linea # 8 ---
+print("Libro: ",i['libro']['titulo']) xx
+print("Libro: ",i[]['titulo'])
+print("Libro: ",i['libro'])
+print("Libro: ",i['titulo'])

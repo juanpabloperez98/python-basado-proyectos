@@ -1,0 +1,15 @@
+--- Linea # 1 ---
+ver_libros(libros):
+def ver_libros():
+def ver_libros(libros): xx
+ver_libros():
+--- Linea # 4 ---
+for i libros:
+for i in range(len(libros)):
+for i in range(libros):
+for i in libros: xx
+--- Linea # 7 ---
+print("copias disponibles",i['copias']) xx
+"copias disponibles",i['copias']
+print("copias disponibles")
+i['copias']

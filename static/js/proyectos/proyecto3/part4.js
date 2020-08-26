@@ -34,7 +34,7 @@
             $('#' + contador_actual).toggle("fold")
             $('#' + contador_siguient).toggle("explode")
             document.getElementById('siguiente').setAttribute('class', 'desactivate') /* Oculto el boton siguient */
-            document.getElementById('probar').setAttribute('class', 'btn botonYellow') /* Muestro el boton probar */
+            document.getElementById('probar').setAttribute('class', 'btn botonBlue') /* Muestro el boton probar */
             document.getElementById('reiniciar').setAttribute('class','btn botonBlue') /* Cambio de color */
         }else{
             document.getElementById('explicacion').setAttribute('class','desactivate')
@@ -54,7 +54,7 @@
             agregar_codigo() /* Llamo a la función que me agrega el codigo */
             document.getElementById('siguiente').setAttribute('class', 'btn botonBlue') /* Muestro el boton siguiente */
             document.getElementById('probar').setAttribute('class', 'desactivate') /* Oculto el boton  probar*/
-            document.getElementById('reiniciar').setAttribute('class','btn botonYellow') /* Cambio de color */
+            document.getElementById('reiniciar').setAttribute('class','btn botonBlue') /* Cambio de color */
         } else {
             alertify.error("¿Estas seguro?<br>Revisa nuevamente")
             cont--

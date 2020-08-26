@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Operadores - cadenas de caracteres
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_app:cadenas-caracteres' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Asignación</h1>
+            <p class="text-justify" style="min-height: 120px;">
+                Como su nombre lo indica, esta operación sirve para asignar una cadena a otra, en otros lenguajes de
+                programación esto podría ser algo complejo, es python basta con utilizar el operador = de esta manera:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 238px;margin-bottom: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>cadena1 = "Hola mundo"</span>
+<span id="2"><span class="pr-n mr-3">2</span>cadena2 =  cadena1</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(cadena2)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Hola mundo</span>               
+                    </code>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Concatenación</h1>
+            <p class="text-justify" style="min-height: 120px;">
+                Al hablar de concatenación se habla de unir una cadena con otra y guardarla en una variable, es como
+                decir 1 + 1 = 2, similar a eso con cadenas de caracteres si se dice que “Juan” + “Andres” = JuanAndres.
+                Para concatenar dos cadenas se utiliza el operador + de esta manera:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 100px;margin-bottom: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>cadena1 = "Hola mundo"</span>
+<span id="2"><span class="pr-n mr-3">2</span>cadena2 =  "Mi nombre es juan"</span>
+<span id="3"><span class="pr-n mr-3">3</span>cadena3 = cadena1 + cadena2</span>
+<span id="3"><span class="pr-n mr-3">4</span>print(cadena3)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Hola mundoMi nombre es juan</span>               
+                    </code>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Búsqueda</h1>
+            <p class="text-justify" style="min-height: 216px;">
+                En las estructuras de datos es muy común encontrarse con la necesidad de buscar un dato específico
+                dentro de la estructura. Imaginen que se debe encontrar cuántas veces se encuentra la letra a en una
+                cadena de caracteres, esto es una operación común que se debe realizar con lo visto en estructuras
+                repetitivas, más específicamente con un ciclo for por elementos iterables.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>palabra = "En la facultad fomentaron la disciplina"</span>
+<span id="3"><span class="pr-n mr-3">2</span>con = 0</span>
+<span id="3"><span class="pr-n mr-3">3</span>for i in palabra:</span>
+<span id="3"><span class="pr-n mr-3">4</span>    if(i == 'a'):</span>
+<span id="3"><span class="pr-n mr-3">5</span>        con+=1</span>
+<span id="3"><span class="pr-n mr-3">6</span>print("Numero de veces encontrada la palabra a: ",con)</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 178px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">6</span>               
+                    </code>
+            </div>
+
+            <div class="text-center" style="margin-top: 0px;">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">4</span> Extracción</h1>
+            <p class="text-justify">
+                Como se mencionó anteriormente, las cadenas de caracteres son un conjunto de caracteres que están de
+                manera secuencial, en términos más generales imaginen un tren, donde cada vagón del tren es una letra de
+                la cadena de caracteres. Ej: Si tenemos una cadena “Hoy es mi día”, El primer vagón del tren vendría
+                siendo la letra “H”, el segundo la letra “o”, y así sucesivamente hasta llegar al último vagón que sería
+                la letra “a”, para acceder a un caracter en especifico (sin tener que recorrer toda la cadena), se puede
+                utilizar la siguiente forma:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 279px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>palabra = "Hoy es mi día"</span>
+<span id="3"><span class="pr-n mr-3">2</span>letra = palabra[0]</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(letra)</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 100px;" id="output4">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">H</span>               
+                    </code>
+                <p class="text-justify">
+                    Como se puede observar, de esa manera se puede acceder a un elemento de una cadena de caracteres, en
+                    este caso se coge la primera letra de la cadena. Hay que recordar que en programación no se empieza
+                    en 1, sino en 0.
+                </p>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode4()">Ejecutar codigo</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode8 = () => {
+        document.getElementById('output8').setAttribute('class', 'container code mt-2')
+    }
+
+</script>
+{% endblock scripts %}

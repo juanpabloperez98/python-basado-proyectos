@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Formateo - cadenas de caracteres
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_app:cadenas-caracteres' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Formateo %</h1>
+            <p class="text-justify" style="min-height: 120px;">
+                El carácter modulo % es un operador integrado en Python. Ese es conocido como el operador de
+                interpolación. Usted necesitará proveer el % seguido por el tipo que necesita ser formateado o
+                convertido. El operador % entonces substituye la frase ‘%tipodato’ con cero o mas elementos del tipo de
+                datos especificado:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 238px;margin-bottom: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>raiz = 2 ** 2</span>
+<span id="2"><span class="pr-n mr-3">2</span>imprimir = "La raiz cuadrada de %d es %d"</span>
+<span id="3"><span class="pr-n mr-3">3</span>print(imprimir % (2,raiz))</span>
+                    </code>
+                    </pre>
+            </div>
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">La raiz cuadrada de 2 es 4</span>               
+                    </code>
+            </div>
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+        </div>
+        <div class="col-lg-6 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Sintaxis para el formateo %</h1>
+            <p class="text-justify" style="min-height: 120px;">
+                El formateo % presenta una sintaxis simple, en el caso anterior se utilizó el %d determinando que el
+                formateo de la cadena iba a contener números decimales, es decir que hay que especificar el tipo de dato
+                con el que sea desea formatear, a continuación los tipos de datos con los que se pueden concatenar:
+            </p>
+            <hr>
+            <ul class="container">
+                <li>
+                    %c = str, simple carácter.
+                </li>
+                <li>
+                    %s = str, cadena de carácter.
+                </li>
+                <li>
+                    %d = int, enteros.
+                </li>
+                <li>
+                    %f = float, coma flotante.
+                </li>
+                <li>
+                    %o = octal.
+                </li>
+                <li>
+                    %x = hexadecimal.
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-12 mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> format()</h1>
+            <p class="text-justify" style="min-height: 0px;">
+                Este método devuelve una versión formateada de una cadena de caracteres. Las substituciones son
+                identificadas entre llaves { } dentro de la cadena de
+                caracteres (llamados campos de formato), y son sustituidos en el orden con que aparecen como argumentos
+                de format(), contando a partir de cero (argumentos posicionales).
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 0px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>edad = 20</span>
+<span id="3"><span class="pr-n mr-3">2</span>nombre = "Juan"</span>
+<span id="3"><span class="pr-n mr-3">3</span>print("El nombre es {} y la edad es {}".format(nombre,edad))</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 0px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">El nombre es Juan y la edad es 20</span>               
+                    </code>
+            </div>
+
+            <div class="text-center" style="margin-top: 0px;">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode5 = () => {
+        document.getElementById('output5').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode6 = () => {
+        document.getElementById('output6').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode7 = () => {
+        document.getElementById('output7').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode8 = () => {
+        document.getElementById('output8').setAttribute('class', 'container code mt-2')
+    }
+
+</script>
+{% endblock scripts %}

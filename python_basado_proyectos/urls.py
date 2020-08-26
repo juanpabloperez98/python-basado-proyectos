@@ -10,4 +10,6 @@ urlpatterns = [
     re_path('',include('apps.proyecto1.urls')),
     re_path('',include('apps.proyecto2.urls')),
     re_path('',include('apps.proyecto3.urls')),
+    re_path('',include('apps.funciones.urls')),
+    re_path('',include('apps.estructura_seleccion.urls')),
 ]

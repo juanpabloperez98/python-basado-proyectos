@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Condicional elif
+{% endblock title %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:estructuras_seleccion' %}"><svg width="2em" height="1em"
+                        viewBox="0 0 16 16" class="bi bi-bounding-box-circles" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M12.5 2h-9V1h9v1zm-10 1.5v9h-1v-9h1zm11 9v-9h1v9h-1zM3.5 14h9v1h-9v-1z" />
+                        <path fill-rule="evenodd"
+                            d="M14 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                    </svg>Estructuras de selección</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:celse' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    Siguiente Sección</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:estructuras_seleccion' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <!-- Que es un ciclo -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="for">
+        <h1 class="title-modul"><span class="pr mr-2">3.1.1</span> ¿Qué es un condicional elif?</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Un condicional <span class="pr">elif</span> puede traducirse a "sino, entonces si", lo que quiere
+                decir que si la primera no se cumple, el programa seguirá evaluando el resto de condiciones
+                hasta que alguna sea verdadera, dando un mejor control de flujo al programa y poder elegir mejor
+                el código que se quiere ejecutar dependiendo del resultado de la operación lógica.
+            </p>
+            <div class="mx-auto text-justify">
+                <pre>
+                <code class="language-c">
+Un estudiante de bachillerato quiere clasificar a las
+personas en niños o jóvenes, adultos y personas de la 
+tercera edad. El primer grupo está entre los 0 y 17 
+años, el segundo entre los 18 y los 59 años. Y el 
+último grupo, los que tienen de 60 años en adelante.
+Para lograrlo, el estudiante se debe preguntar:
+¿Es menor de 18?¿Está entre los 18 y los 59?¿Es mayor
+de 60?
+                </code>
+                </pre>
+            </div>
+            <p>
+                La respuesta es fácil, se podría hacer esta clasificación utilizando la confición if y además,
+                la condición elif. Para empezar, con el if se debe preguntar si la persona es menor de 18, si 
+                la respuesta es sí, se suma uno en el grupo de jóvenes o niños, de lo contrario, con el 
+                condicional elif se debe preguntar si la persona esta entre los 18 y los 59, si la respuesta es 
+                verdadera, se debe sumar uno en el grupo de adultos, pero de no ser así, debe utilizarse nuevamente 
+                la condición elif para preguntarse si es mayor de 60 y sumar uno en el grupo de personas de la 
+                tercera edad.
+            </p>
+        </div>
+    </div>
+
+<!-- Sintaxis -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="sintax">
+        <h1 class="title-modul"><span class="pr mr-2">3.1.2</span> Sintaxis</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Teniendo un poco de idea de lo que es un condicional elif a continuación se explica sobre su 
+                sintaxis. Python maneja la sintaxis de este como un complemento de la condición if, aunque es 
+                muy simple, permite mejorar el control de flujo del programa y es muy sencillo implementarlo, 
+                ya que al igual que el if, solo basta con utilizar los operadores lógicos para realizar la 
+                operación de comparación:
+            </p>
+            <br>
+            <h1 class="title-modul" style="font-size: 15px;">Su estructura básica es:</h1>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    if parámetro 1 + operador lógico + parámetro 2:
+        bloque de código ...
+
+    elif parámetro 1 + operador lógico + parámetro 2:
+        bloque de código ...
+                </code>
+                </pre>
+            </div>
+
+            <p>
+                Como en el if, el parámetro 1 y parámetro 2, pueden ser números, palabras u otros elementos,
+                los cuales se van a comparar en el momento de realizar la operación y esta comparación también va a 
+                depender del operador lógico que se esté usando.
+            </p>
+            
+            <ul class="container">
+                <li>
+                    <a href="{% url 'estructuras_seleccion_app:condicionelif' %}">Condiciones elif</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Ejemplos -->
+<div class="container row mx-auto mb-5 mt-2 part-1" id="carrousel">
+    <div class="col-lg-12 text-center mt-5">
+        <h1 class="display-5"> Ejemplos</h1>
+        <hr>
+    </div>
+
+    <div class="col-lg-5 mx-auto" id="ejemplos">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner mx-auto text-center p-5">
+                {% for i in '123456' %}
+                {% if i == '1' %}
+                <div class="carousel-item active">
+                    <a href="{% url 'repetitivas_app:for-ejemplo1' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% else %}
+                {% if i == '2' %}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo2' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '3'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo3' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '4'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo4' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '5'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo5' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% elif i == '6'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo6' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% endif %}
+
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+{% endblock scripts %}

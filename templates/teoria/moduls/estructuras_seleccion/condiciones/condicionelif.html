@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Condición elif
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:celif' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Clasificación de personas</h1>
+            <p class="text-justify">
+                Un estudiante de bachillerato quiere clasificar a una persona en niño o jóven, adulto o
+                persona de la tercera edad. El primer grupo está entre los 0 y 17 años, el segundo entre los 
+                18 y los 59 años. Y el último grupo, los que tienen de 60 años en adelante. Para lograrlo, el 
+                estudiante se debe preguntar: ¿Es menor de 18?¿Está entre los 18 y los 59?¿Es mayor de 60?
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>Persona = 20</span>
+<span id="2"><span class="pr-n mr-3">2</span>if persona < 18:</span>
+<span id="3"><span class="pr-n mr-3">3</span>   print('La persona es un niño o jóven.')</span>
+<span id="3"><span class="pr-n mr-3">4</span>elif persona >= 18 and persona < 60:</span>
+<span id="3"><span class="pr-n mr-3">5</span>   print('La persona es un adulto.')</span>
+<span id="3"><span class="pr-n mr-3">6</span>elif persona >= 60:</span>
+<span id="3"><span class="pr-n mr-3">7</span>   print('La persona es del grupo de la tercera edad.')</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">La persona es un adulto.</span>               
+                </code>
+                <p class="text-left mt-2">
+                    Sabiendo la edad de la persona, el programa se pregunta si la persona es menor de 18, si está
+                    entre los 18 y los 60; o si la persona es mayor de 60. En este caso la persona tiene 20 años,
+                    por eso se puede decir que es una persona adulta.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span>Determinar si un número es par o impar</h1>
+            <p class="text-justify" style="min-height: 94px;">
+                Ahora se determinará si un número es par o es impar, escribir en pantalla si lo es o no. A continuación
+                el código: 
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 301px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero = 10</span>
+<span id="2"><span class="pr-n mr-3">2</span>if numero%2 == 0:</span>
+<span id="2"><span class="pr-n mr-3">3</span>   print('El número es par')</span>
+<span id="2"><span class="pr-n mr-3">4</span>elif numero%2 != 0:</span>
+<span id="2"><span class="pr-n mr-3">5</span>   print('El número es impar.')</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">El número es par.</span>            
+                </code>
+
+                <p class="text-left mt-2" style="min-height: 0px;">
+                    Allí se puede observar que hay un buen control de flujo, esto se debe a que si dividimos
+                    el número ingresado por el módulo de 2, solo hay dos posibles respuestas, cero o algún número 
+                    diferente de cero. Por lo que la condición <span class="pr-n">if</span> junto con la 
+                    condición <span class="pr-n">elif</span> permite que solo se puedan elegir entre dos opciones.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-12 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Determinar si un número se encuentra en un intervalo o en otro</h1>
+            <p class="text-justify" style="min-height: 0px;">
+                Ahora se busca determinar si x número se encuentra entre un rango o un intervalo de números u 
+                otro, esto permite clasificar los números. A continuación se muestra cómo:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>x = 25</span>
+<span id="3"><span class="pr-n mr-3">2</span>if x >= 10 and x <=20 :</span>
+<span id="3"><span class="pr-n mr-3">3</span>    print(x)</span>
+<span id="4"><span class="pr-n mr-3">4</span>    print('El número se encuentra en el rango definido entre 10 y 20.')</span>
+<span id="4"><span class="pr-n mr-3">5</span>elif x > 20 and x <= 30:</span>
+<span id="4"><span class="pr-n mr-3">6</span>    print(x)</span>
+<span id="4"><span class="pr-n mr-3">7</span>    print('El número se encuentra en el rango definido entre 21 y 30.')</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 340px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">25, el número se encuentra en el rango definido entre 21 y 20.</span>                                         
+                    </code>
+                <p class="text-left mt-3">
+                    En este caso se determina si un número está dentro de un intervalo de números u otro y para 
+                    esto se utiliza el comando <span class="pr-n">and</span>, este permite determinar si 
+                    se cumplen dos operaciones lógicas a la vez o no. Con este comando es que se pregunta si el
+                    número es mayor que 10 y si el número es menor que 20, así el intervalo es de 10 a 20 o 
+                    también se pregunta si el número está en el intervalo entre 21 y 30.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+</script>
+{% endblock scripts %}

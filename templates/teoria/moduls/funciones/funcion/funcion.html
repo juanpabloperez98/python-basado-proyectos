@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Funciones
+{% endblock title %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'funciones_app:funciones' %}"><svg width="2em" height="1em"
+                        viewBox="0 0 16 16" class="bi bi-bounding-box-circles" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M12.5 2h-9V1h9v1zm-10 1.5v9h-1v-9h1zm11 9v-9h1v9h-1zM3.5 14h9v1h-9v-1z" />
+                        <path fill-rule="evenodd"
+                            d="M14 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                    </svg>Funciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'funciones_app:funciones' %}"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    Siguiente Sección</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'funciones_app:funciones' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <!-- Que es una función -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="for">
+        <h1 class="title-modul"><span class="pr mr-2">5.1.1</span> ¿Qué es una función?</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Una función es un bloque de código con un nombre asociado, que recibe cero o más argumentos 
+                como entrada, sigue una secuencia de sentencias, la cuales ejecuta una operación deseada y 
+                devuelve un valor y/o realiza una tarea, este bloque puede ser llamados cuando se necesite.
+                La sentencia <span class="pr">def</span> es una definición de función usada para crear objetos 
+                funciones definidas por el usuario.
+                Una definición de función es una sentencia ejecutable. La definición de función no ejecuta el 
+                cuerpo de la función; esto es ejecutado solamente cuando la función es llamada.
+            </p>
+            <div class="mx-auto text-justify">
+                <pre>
+                <code class="language-c">
+Una persona desea crear una calculadora con la que
+pretende hacer las 4 operaciones básicas como suma,
+resta, multiplicación y división. Para lograr esto
+debe hacer un menú en el que el usuario elija cual 
+es la operación que desea realizar. Pero cada que 
+el usuario entra a alguna opción, la persona observa
+que debe poner el menú al final. Aquella persona
+quiere evitar escribir tantas veces las mismas lineas
+de código para hacer el menú.¿Cómo lo hace?
+                </code>
+                </pre>
+            </div>
+            <p>
+                La solución a este problema es simple, solo debe crear una función definida por el mismo, la cual
+                se va a llamar menú y en ella se va a imprimir el menú. Para mostrar el menú cada que el usuario 
+                queira volver a elegir otra opción, basta con llamar la función "menú" al final de cada opción y 
+                de esta manera, la persona se evita tener que copiar tantas lineas de cógido.
+            </p>
+        </div>
+    </div>
+
+<!-- Sintaxis -->
+    <div class="col-lg-6 mx-auto text-center part-1 p-5 mt-3" id="sintax">
+        <h1 class="title-modul"><span class="pr mr-2">5.1.2</span> Sintaxis</h1>
+        <hr>
+        <div class="text-justify mt-3">
+            <p>
+                Teniendo un poco de idea de lo que es una función, a continuación se explica sobre su sintaxis.
+                Python maneja la sintaxis para definir una función de una manera muy simple, pues para definirla
+                solo basta con poner el comando <span class="pr">def</span>, su nombre y los parámetros de entrada
+                y salida que se quieren, a continuación se muestra cómo:
+            </p>
+            <br>
+            <h1 class="title-modul" style="font-size: 15px;">Su estructura básica es:</h1>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                <code class="language-python">
+    def nombre_de_la_funcion(Parámetros de entrada):
+
+        Bloque de código ...
+
+        return [Parámetros de salida]
+                </code>
+                </pre>
+            </div>
+
+            <p>
+                Para que la función se comporte correctamente en el programa, hay que entender que en primer
+                lugar el nombre_de_la_funcion es el mismo con el cual se va a llamar la función en el resto 
+                del desarrollo del programa, en segundo lugar, los parámetros de entrada son los parámetros 
+                necesarios para que la función se ejecute correctamente y con los cuales pueda cumplir su 
+                objetivo. Por último, el comando <span class="pr">return</span> es quien va a retornar los 
+                parámetros que resultan después de ejecutar el bloque de código que hay dentro de la función.
+            </p>
+            
+            <ul class="container">
+                <li>
+                    <a href="{% url 'funciones_app:funciondef' %}">Funciones</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+
+<!-- Ejemplos -->
+<div class="container row mx-auto mb-5 mt-2 part-1" id="carrousel">
+    <div class="col-lg-12 text-center mt-5">
+        <h1 class="display-5"> Ejemplos</h1>
+        <hr>
+    </div>
+
+    <div class="col-lg-5 mx-auto" id="ejemplos">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner mx-auto text-center p-5">
+                {% for i in '123456' %}
+                {% if i == '1' %}
+                <div class="carousel-item active">
+                    <a href="{% url 'repetitivas_app:for-ejemplo1' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% else %}
+                {% if i == '2' %}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo2' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '3'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo3' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '4'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo4' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+                {% elif i == '5'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo5' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% elif i == '6'%}
+                <div class="carousel-item">
+                    <a href="{% url 'repetitivas_app:for-ejemplo6' %}">
+                        <h1 class="title-modul pr"><i class="fas fa-book-open
+                                mr-2"></i> Ir al ejemplo {{ i }}</h1>
+                    </a>
+                </div>
+
+                {% endif %}
+
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+{% endblock scripts %}

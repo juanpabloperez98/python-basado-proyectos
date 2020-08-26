@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Condición if
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:cif' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Salir a dar un paseo</h1>
+            <p class="text-justify">
+                Pedro desea salir a dar un paseo por la ciudad ya que le encanta caminar, antes de salir el 
+                chico se asoma a la ventana y observa el cielo, al observarlo, se da cuenta que está un poco 
+                oscuro y cree que va a llover, para saber si salir a dar su paseo o no, Pedro se hace la 
+                siguiente pregunta: ¿Lloverá en el momento en que salga?
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>lluvia = 'si'</span>
+<span id="2"><span class="pr-n mr-3">2</span>if lluvia == 'si':</span>
+<span id="3"><span class="pr-n mr-3">3</span>   print('Pedro debe quedarse en casa.')</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Pedro debe quedarse en casa.</span>               
+                </code>
+                <p class="text-left mt-2">
+                    Se pregunta si está lloviendo o no, si la respuesta es sí, entonces Pedro debe de quedarse
+                    en casa, sino, entonces Pedro puede salir a dar un paseo por la ciudad.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span> Averiguar si un número es igual a otro</h1>
+            <p class="text-justify" style="min-height: 94px;">
+                Ahora se determinará si un número es igual a otro o no a partir de un programa. A continuación el código: 
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 301px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>numero = 10</span>
+<span id="2"><span class="pr-n mr-3">2</span>if numero == 10:</span>
+<span id="2"><span class="pr-n mr-3">3</span>   print('Los números son iguales.')</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">Los números son iguales.</span>            
+                </code>
+
+                <p class="text-left mt-2" style="min-height: 0px;">
+                    Con la condición se hace la pregunta de si los números son iguales, en este caso el número es 10 y
+                    y la comparación se está haciendo con un 10, por ende la respuesta es verdadera y como salida
+                    se tiene el código que está dentro del <span class="pr-n">if</span>.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-12 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span> Determinar si un número se encuentra en un rango</h1>
+            <p class="text-justify" style="min-height: 0px;">
+                Ahora se busca determinar si x número se encuentra entre un rango o un intervalo de números. A
+                continuación se muestra cómo:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>x = 17</span>
+<span id="3"><span class="pr-n mr-3">2</span>if x >= 10 and x <=20 :</span>
+<span id="3"><span class="pr-n mr-3">3</span>    print(x)</span>
+<span id="4"><span class="pr-n mr-3">4</span>    print('el número se encuentra en el rango definido.')</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 340px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">17, el número se encuentra en el rango definido.</span>                                         
+                    </code>
+                <p class="text-left mt-3">
+                    En este caso se determina si un número está dentro de un intervalo de números o no y para 
+                    esto se utiliza el comando <span class="pr-n">and</span>, el cuál permite determinar si 
+                    se cumplen dos operaciones lógicas a la vez o no, con este comando es que se pregunta si el
+                    número es mayor que 10 y si el número es menor que 20, así el intervalo es de 10 a 20. Como
+                    el número es 17, se puede decir que el número sí se encuentra dentro del intervalo.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+</script>
+{% endblock scripts %}

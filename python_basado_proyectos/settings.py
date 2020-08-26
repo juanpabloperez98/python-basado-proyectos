@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'apps.proyecto1',
     'apps.proyecto2',
     'apps.repetitivas',
+    'apps.funciones',
+    'apps.estructuras_seleccion',
 ]
 
 MIDDLEWARE = [

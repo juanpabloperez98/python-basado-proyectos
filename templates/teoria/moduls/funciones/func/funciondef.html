@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/tipos_datos.css' %}">
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Función def
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'funciones_app:funcion' %}"><i
+                        class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<div class="container row mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">1</span> Sumar varias veces</h1>
+            <p class="text-justify">
+                Un estudiante de bachillerato quiere sumar varias veces diferentes números, la idea es que él 
+                se demore el menor tiempo posible para acabar rápido.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>def suma(a,b):</span>
+<span id="2"><span class="pr-n mr-3">2</span>   c = a + b</span>
+<span id="3"><span class="pr-n mr-3">3</span>   return c</span>
+<span id="3"><span class="pr-n mr-3">3</span></span>
+<span id="3"><span class="pr-n mr-3">4</span>print(suma(1,2))</span>
+<span id="3"><span class="pr-n mr-3">5</span>print(suma(3,4))</span>
+<span id="3"><span class="pr-n mr-3">6</span>print(suma(2,3))</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">3</span>
+                    <span class="mt-2" style="color: black;">7</span>   
+                    <span class="mt-2" style="color: black;">5</span>             
+                </code>
+                <p class="text-left mt-2">
+                    Al crear la función definida por el estudiante, solo basta con ingresarle los parámetros a y b
+                    los cuales son necesarios para que se ejecute el código y de como resultado la suma de estos dos,
+                    la suma es almacenada en la variable c la cual posteriormente es retornada con el resultado.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-6 uno mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">2</span>Determinar si un número es par o impar</h1>
+            <p class="text-justify" style="min-height: 94px;">
+                Ahora se determinará si un número es par o es impar, deberá obtenerse como resultado true o false 
+                dependiendo de si lo es o no.
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify" style="min-height: 301px;">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>def espar(a):</span>
+<span id="2"><span class="pr-n mr-3">2</span>   if a%2 == 0:</span>
+<span id="2"><span class="pr-n mr-3">3</span>       b = true</span>
+<span id="2"><span class="pr-n mr-3">4</span>   else:</span>
+<span id="2"><span class="pr-n mr-3">5</span>       b = false</span>
+<span id="2"><span class="pr-n mr-3">5</span>   return b</span>
+<span id="2"><span class="pr-n mr-3">5</span></span>
+<span id="2"><span class="pr-n mr-3">5</span>print(espar(2))</span>
+<span id="2"><span class="pr-n mr-3">5</span>print(espar(3))</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" id="output2">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">true</span>
+                    <span class="mt-2" style="color: black;">false</span>          
+                </code>
+
+                <p class="text-left mt-2" style="min-height: 0px;">
+                    Allí se puede observar que basta con ingresar el parámetro a, el cual es un número cualquiera
+                    y la función automáticamente hace las respectivas comparaciones para determinar si es par o
+                    impar y así devolver true o false respectivamente. Basta con llamar la función con cualquier
+                    número dentro y el programa imprime true o false.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode2()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-12 dos mx-auto part-1 p-5 mt-3">
+            <h1 class="title-modul text-center"><span class="pr mr-2">3</span>Mostrar un mensaje de error</h1>
+            <p class="text-justify" style="min-height: 0px;">
+                Ahora se busca emitir un error cada que se elija mal una opción. A continuación se muestra cómo:
+            </p>
+            <hr>
+            <div class="container code mx-auto text-justify">
+                <pre>
+                    <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>def mensaje():</span>
+<span id="3"><span class="pr-n mr-3">2</span>   print('error')</span>
+<span id="3"><span class="pr-n mr-3">3</span></span>
+<span id="4"><span class="pr-n mr-3">4</span>a = 0</span>
+<span id="4"><span class="pr-n mr-3">5</span>if a == 0</span>
+<span id="4"><span class="pr-n mr-3">6</span>    print(a)</span>
+<span id="4"><span class="pr-n mr-3">7</span>else:</span>
+<span id="4"><span class="pr-n mr-3">7</span>   mensaje()</span>
+<span id="4"><span class="pr-n mr-3">7</span>b = 1:</span>
+<span id="4"><span class="pr-n mr-3">7</span>if b == 2:</span>
+<span id="4"><span class="pr-n mr-3">7</span>   print(b)</span>
+<span id="4"><span class="pr-n mr-3">7</span>else:</span>
+<span id="4"><span class="pr-n mr-3">7</span>   mensaje()</span>
+                    </code>
+                    </pre>
+            </div>
+
+            <div class="container code mt-2 desactivate" style="min-height: 340px;" id="output3">
+                <code class="text-justify">
+                    <span class="pr-n">Salida</span> <br>
+                    <span class="mt-2" style="color: black;">0</span>
+                    <span class="mt-2" style="color: black;">error</span>                                     
+                    </code>
+                <p class="text-left mt-3">
+                    En este caso se define una función sin parámetros de entrada ya que estos no son necesarios
+                    para la ejecución de la función. Dentro de ella solo se muestra un mensaje de error lo cual
+                    servirá para en un futuro, cada que el programa lo necesite basta con llamar a la función 
+                    sin ningún parámetro de entrada y esta imprimirá en pantalla el mensaje de error.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <button class="btn botonBlue btn-sm" onclick="ShowCode3()">Ejecutar codigo</button>
+            </div>
+
+
+        </div>
+        
+
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script>
+    var ShowCode = () => {
+        document.getElementById('output').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode2 = () => {
+        document.getElementById('output2').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode3 = () => {
+        document.getElementById('output3').setAttribute('class', 'container code mt-2')
+    }
+
+    var ShowCode4 = () => {
+        document.getElementById('output4').setAttribute('class', 'container code mt-2')
+    }
+</script>
+{% endblock scripts %}

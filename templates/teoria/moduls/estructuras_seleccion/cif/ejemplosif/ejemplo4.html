@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<link rel="stylesheet" href="{% static 'css/ejemplos.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Condición if - ejemplo 4
+{% endblock title %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" class="mr-3" alt="logo" width="30">
+        <span id="title-navabar">Python basado en proyectos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:cif' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<!-- Enunciado -->
+<div class="container row mx-auto mt-5" id="enunciado">
+    <div class="col-lg-12 text-center my-3 mx-auto">
+        <h1 class="">Ejemplo 1</h1>
+    </div>
+    <div class="col-lg-6 part-1 mx-auto mt-5 p-5" style="margin-bottom: 5%; height: 100%;">
+        <h1 class="title-modul text-center my-3">Enunciado</h1>
+        <div class="container">
+            <p>
+                Realizar un programa que pida dos valores, uno de inicio y otro de fin, e imprimir la suma total de los
+                valores comprendidos entre el valor de inicio y el valor de fin. Se debe verificar que el valor de
+                inicio sea menor que el valor de fin.
+            </p>
+        </div>
+        <button class="btn btn-block botonBlue" id="start">Empezar</button>
+    </div>
+</div>
+<!-- Codigo -->
+<div class="container row mx-auto mt-5 desactivate" id="codigo">
+    <div class="col-lg-5 mt-3 mx-auto bg-light">
+        <h1 class="text-center mt-3 p-2" style="font-size: 20px;">Solución</h1>
+
+        <div class="container code text-justify mt-2">
+            <pre>
+        <code class="language-python">
+<span id="1"><span class="pr-n mr-3">1</span>inicio = int(input("Ingrese numero inicio: "))</span>
+<span id="2"><span class="pr-n mr-3">2</span>fin = int(input("Ingrese numero fin: "))</span>
+<span id="3"><span class="pr-n mr-3">3</span>if(inicio < fin):</span>
+<span id="3"><span class="pr-n mr-3">4</span>    suma = 0</span>
+<span id="3"><span class="pr-n mr-3">5</span>    for i in range(inicio,fin):</span>
+<span id="3"><span class="pr-n mr-3">6</span>        suma += i</span>
+<span id="3"><span class="pr-n mr-3">7</span>    print("La suma total es: ",suma)</span>
+<span id="3"><span class="pr-n mr-3">8</span>else: print("Inicio no es menor a fin")</span>
+        </code>
+      </pre>
+        </div>
+        <!-- Datos -->
+        <div class="container code mt-2 desactivate" id="date">
+            <form class="mt-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese numero inicio:">
+                </div>
+                <div class="form-group desactivate" id="parent-1">
+                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese numero fin:">
+                </div>
+            </form>
+        </div>
+
+        <div class="container code mt-2 desactivate" id="output">
+            <code>
+        <span class="pr-n">Salida</span> <br>
+        <span class="mt-2" id="salida" style="color: black;"></span>               
+      </code>
+        </div>
+
+        <div class="my-5 text-justify" id="botones">
+            <button id="ejecutar" class="btn btn-outline botonBlue"><i class="fas fa-play mr-2"></i> Ejecutar</button>
+            <button id="seguir" class="btn btn-outline botonBlue desactivate"><i class="fas fa-play mr-2"></i>
+                Seguir</button>
+            <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i>
+                Explicar codigo</button>
+            <a id="reiniciar" href="/for-ejemplo1" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
+                Reiniciar</a>
+        </div>
+
+    </div>
+    <!-- Explicación -->
+    <div class="col-lg-5 mt-3 mx-auto bg-light desactivate" id="explicacion">
+        <h1 class="text-center mt-3 p-2" style="font-size: 20px;">Explicación</h1>
+
+        <div class="container code text-justify mt-2">
+            <pre>
+        <code class="language-python">
+<span id=""><span class="pr-n mr-3">1</span>Declaramos una variable llamada "numero" y la igualamos al valor que ingreso el usuario.</span>
+<span id=""><span class="pr-n mr-3">2</span>Utilizamos el operador *= para multiplicar "numero" por 2.</span>
+<span id=""><span class="pr-n mr-3">3</span>Imprimimos el doble del "numero".</span>
+        </code>
+      </pre>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
+<script>
+    hljs.initHighlightingOnLoad()      
+</script>
+<script src="{% static 'js/for/ejemplos/ejemplo1.js' %}"></script>
+{% endblock scripts %}

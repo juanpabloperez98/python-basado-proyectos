@@ -7,7 +7,7 @@
 {% endblock styles %}
 
 {% block title %}
-Ciclo for - ejemplo 1
+Condición if - ejemplo 1
 {% endblock title %}
 
 {% block headers %}
@@ -25,7 +25,7 @@ Ciclo for - ejemplo 1
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             <li class="nav-item">
-                <a class="nav-link" href="/ciclosfor#ejemplos"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:cif' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
             </li>
             </li>
         </ul>
@@ -44,9 +44,8 @@ Ciclo for - ejemplo 1
         <h1 class="title-modul text-center my-3">Enunciado</h1>
         <div class="container">
             <p>
-                Realizar un programa que pida dos valores, uno de inicio y otro de fin, e imprimir la suma total de los
-                valores comprendidos entre el valor de inicio y el valor de fin. Se debe verificar que el valor de
-                inicio sea menor que el valor de fin.
+                Dado pida al usuario que ingrese 3 números enteros n1, n2, n3, con el programa se desea 
+                determinar cuál es el mayor de los 3 números ingresados.
             </p>
         </div>
         <button class="btn btn-block botonBlue" id="start">Empezar</button>
@@ -60,14 +59,15 @@ Ciclo for - ejemplo 1
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id="1"><span class="pr-n mr-3">1</span>inicio = int(input("Ingrese numero inicio: "))</span>
-<span id="2"><span class="pr-n mr-3">2</span>fin = int(input("Ingrese numero fin: "))</span>
-<span id="3"><span class="pr-n mr-3">3</span>if(inicio < fin):</span>
-<span id="3"><span class="pr-n mr-3">4</span>    suma = 0</span>
-<span id="3"><span class="pr-n mr-3">5</span>    for i in range(inicio,fin):</span>
-<span id="3"><span class="pr-n mr-3">6</span>        suma += i</span>
-<span id="3"><span class="pr-n mr-3">7</span>    print("La suma total es: ",suma)</span>
-<span id="3"><span class="pr-n mr-3">8</span>else: print("Inicio no es menor a fin")</span>
+<span id="1"><span class="pr-n mr-3">1</span>n1 = int(input("Ingrese el primer número: "))</span>
+<span id="2"><span class="pr-n mr-3">2</span>n2 = int(input("Ingrese el segundo número: "))</span>
+<span id="3"><span class="pr-n mr-3">3</span>n3 = int(input("Ingrese el tercer número: "))</span>
+<span id="3"><span class="pr-n mr-3">4</span>mayor = n1</span>
+<span id="3"><span class="pr-n mr-3">5</span>if mayor < n2:</span>
+<span id="3"><span class="pr-n mr-3">6</span>   mayor = n2</span>
+<span id="3"><span class="pr-n mr-3">7</span>if mayor < n3:</span>
+<span id="3"><span class="pr-n mr-3">8</span>   mayor = n3</span>
+<span id="3"><span class="pr-n mr-3">9</span>print('El número mayor es: ',mayor)</span>
         </code>
       </pre>
         </div>
@@ -75,10 +75,13 @@ Ciclo for - ejemplo 1
         <div class="container code mt-2 desactivate" id="date">
             <form class="mt-3">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese numero inicio:">
+                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese el primer número: ">
                 </div>
                 <div class="form-group desactivate" id="parent-1">
-                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese numero fin:">
+                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese el segundo número: ">
+                </div>
+                <div class="form-group desactivate" id="parent-2">
+                    <input type="text" class="form-control" id="dato-3" placeholder="Ingrese el tercer número: ">
                 </div>
             </form>
         </div>
@@ -96,7 +99,7 @@ Ciclo for - ejemplo 1
                 Seguir</button>
             <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i>
                 Explicar codigo</button>
-            <a id="reiniciar" href="/for-ejemplo1" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
+            <a id="reiniciar" href="/if-ejemplo1" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
                 Reiniciar</a>
         </div>
 
@@ -108,9 +111,15 @@ Ciclo for - ejemplo 1
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id=""><span class="pr-n mr-3">1</span>Declaramos una variable llamada "numero" y la igualamos al valor que ingreso el usuario.</span>
-<span id=""><span class="pr-n mr-3">2</span>Utilizamos el operador *= para multiplicar "numero" por 2.</span>
-<span id=""><span class="pr-n mr-3">3</span>Imprimimos el doble del "numero".</span>
+<span id=""><span class="pr-n mr-3">1</span>Se pide al usuario que ingrese el primer número.</span>
+<span id=""><span class="pr-n mr-3">2</span>Se pide al usuario que ingrese el segundo número.</span>
+<span id=""><span class="pr-n mr-3">3</span>Se pide al usuario que ingrese el tercer número.</span>
+<span id=""><span class="pr-n mr-3">4</span>Se le asigna el primer número a la variable "mayor".</span>
+<span id=""><span class="pr-n mr-3">5</span>Se comprueba si mayor ese menor que el segundo valor.</span>
+<span id=""><span class="pr-n mr-3">6</span>De cumplirse la comparación anterior, se iguala mayor al segundo valor.</span>
+<span id=""><span class="pr-n mr-3">7</span>Se comprueba si mayor ese menor que el tercer valor.</span>
+<span id=""><span class="pr-n mr-3">8</span>De cumplirse la comparación anterior, se iguala mayor al tercer valor.</span>
+<span id=""><span class="pr-n mr-3">9</span>Imprimimos el número mayor.</span>
         </code>
       </pre>
         </div>
@@ -124,5 +133,5 @@ Ciclo for - ejemplo 1
 <script>
     hljs.initHighlightingOnLoad()      
 </script>
-<script src="{% static 'js/for/ejemplos/ejemplo1.js' %}"></script>
+<script src="{% static 'js/if/ejemplo1.js' %}"></script>
 {% endblock scripts %}

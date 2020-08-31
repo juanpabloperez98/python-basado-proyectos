@@ -9,13 +9,9 @@
         var dato1 = lista_datos[0],
             dato2 = 0
         if(dato1 >= 10){
-            document.getElementById('salida').innerHTML = "El helado fue vendido."
             dato2 = dato1 - 10
-            document.getElementById('salida').innerHTML = "Le sobran " + dato2.toString() + " pesos."
-        }else{
-            document.getElementById('salida').innerHTML = "Dinero insuficiente."
+            document.getElementById('salida').innerHTML = "El heledo fue vendido, le sobran " + dato2.toString() + " pesos."
         }
-       
     } 
 
     explicacion = () => { /* La función */

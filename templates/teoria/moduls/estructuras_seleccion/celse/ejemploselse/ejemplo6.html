@@ -25,7 +25,7 @@ Condición else - ejemplo 6
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             <li class="nav-item">
-                <a class="nav-link" href="/ciclosfor#ejemplos"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:celse' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
             </li>
             </li>
         </ul>
@@ -38,15 +38,17 @@ Condición else - ejemplo 6
 <!-- Enunciado -->
 <div class="container row mx-auto mt-5" id="enunciado">
     <div class="col-lg-12 text-center my-3 mx-auto">
-        <h1 class="">Ejemplo 1</h1>
+        <h1 class="">Ejemplo 6</h1>
     </div>
     <div class="col-lg-6 part-1 mx-auto mt-5 p-5" style="margin-bottom: 5%; height: 100%;">
         <h1 class="title-modul text-center my-3">Enunciado</h1>
         <div class="container">
             <p>
-                Realizar un programa que pida dos valores, uno de inicio y otro de fin, e imprimir la suma total de los
-                valores comprendidos entre el valor de inicio y el valor de fin. Se debe verificar que el valor de
-                inicio sea menor que el valor de fin.
+                Determinar la cantidad de dinero que recibirá un trabajador por concepto de las horas extras 
+                trabajadas en una empresa, sabiendo que cuando las horas de trabajo exceden de 40, el resto 
+                se consideran horas extras y que estas se pagan al doble de una hora normal cuando no exceden 
+                de 8; si las horas extras exceden de 8 se pagan las primeras 8 al doble de lo que se pagan las
+                horas normales y el resto al triple.
             </p>
         </div>
         <button class="btn btn-block botonBlue" id="start">Empezar</button>
@@ -60,14 +62,21 @@ Condición else - ejemplo 6
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id="1"><span class="pr-n mr-3">1</span>inicio = int(input("Ingrese numero inicio: "))</span>
-<span id="2"><span class="pr-n mr-3">2</span>fin = int(input("Ingrese numero fin: "))</span>
-<span id="3"><span class="pr-n mr-3">3</span>if(inicio < fin):</span>
-<span id="3"><span class="pr-n mr-3">4</span>    suma = 0</span>
-<span id="3"><span class="pr-n mr-3">5</span>    for i in range(inicio,fin):</span>
-<span id="3"><span class="pr-n mr-3">6</span>        suma += i</span>
-<span id="3"><span class="pr-n mr-3">7</span>    print("La suma total es: ",suma)</span>
-<span id="3"><span class="pr-n mr-3">8</span>else: print("Inicio no es menor a fin")</span>
+<span id="1"><span class="pr-n mr-3">1</span>horas = int(input("Ingrese el número de horas trabajadas: "))</span>
+<span id="2"><span class="pr-n mr-3">2</span>valor = int(input("Ingrese el valor de la hora: "))</span>
+<span id="3"><span class="pr-n mr-3">3</span>if horas <= 40:</span>
+<span id="3"><span class="pr-n mr-3">4</span>    totalpagar = valor * horas</span>
+<span id="3"><span class="pr-n mr-3">5</span>else:</span>
+<span id="3"><span class="pr-n mr-3">6</span>   horasextras = horas - 40</span>
+<span id="3"><span class="pr-n mr-3">7</span>   if horasextras <= 8:</span>
+<span id="3"><span class="pr-n mr-3">8</span>       pagardobles = horasextras * valor * 2</span>
+<span id="3"><span class="pr-n mr-3">9</span>       totalpagar = pagardobles</span>
+<span id="3"><span class="pr-n mr-3">10</span>  else:</span>
+<span id="3"><span class="pr-n mr-3">11</span>      pagardobles = 8 * valor * 2</span>
+<span id="3"><span class="pr-n mr-3">12</span>      pagartriples = (horasextras - 8) * valor * 3</span>
+<span id="3"><span class="pr-n mr-3">13</span>      totalpagar = pagardobles + pagartribles</span>
+<span id="3"><span class="pr-n mr-3">14</span>  totalpagar = (40 * valor) + totalpagar</span>
+<span id="3"><span class="pr-n mr-3">15</span>print("Al trabajador se le deben pagar "+totalpagar+"pesos.")</span>
         </code>
       </pre>
         </div>
@@ -75,10 +84,10 @@ Condición else - ejemplo 6
         <div class="container code mt-2 desactivate" id="date">
             <form class="mt-3">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese numero inicio:">
+                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese el número de horas trabajadas:">
                 </div>
                 <div class="form-group desactivate" id="parent-1">
-                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese numero fin:">
+                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese el valor de la hora:">
                 </div>
             </form>
         </div>
@@ -96,7 +105,7 @@ Condición else - ejemplo 6
                 Seguir</button>
             <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i>
                 Explicar codigo</button>
-            <a id="reiniciar" href="/for-ejemplo1" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
+            <a id="reiniciar" href="/else-ejemplo6" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
                 Reiniciar</a>
         </div>
 
@@ -108,9 +117,21 @@ Condición else - ejemplo 6
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id=""><span class="pr-n mr-3">1</span>Declaramos una variable llamada "numero" y la igualamos al valor que ingreso el usuario.</span>
-<span id=""><span class="pr-n mr-3">2</span>Utilizamos el operador *= para multiplicar "numero" por 2.</span>
-<span id=""><span class="pr-n mr-3">3</span>Imprimimos el doble del "numero".</span>
+<span id=""><span class="pr-n mr-3">1</span>Se pide al usuario que ingrese el número de horas trabajadas por teclado.</span>
+<span id=""><span class="pr-n mr-3">2</span>Se pide al usuario que ingrese el valor al que le pagan las horas trabajadas.</span>
+<span id=""><span class="pr-n mr-3">3</span>Se pregunta si estas horas son menores o iguales a 40.</span>
+<span id=""><span class="pr-n mr-3">4</span>De ser asi se calcula el valor total a pagar multiplicando el valor de las horas por las horas.</span>
+<span id=""><span class="pr-n mr-3">5</span>Si no se cumple la condición anterior, entonces se continua con el resto del programa.</span>
+<span id=""><span class="pr-n mr-3">6</span>De ser asi, se calculan las horas extras restándole al número de horas ingresada, 40 horas.</span>
+<span id=""><span class="pr-n mr-3">7</span>Luego, se pregunta si las horas extras son menores o iguales a 8.</span>
+<span id=""><span class="pr-n mr-3">8</span>De ser asi, se calcula el doble de precio de las horas debido a que son horas extras.</span>
+<span id=""><span class="pr-n mr-3">9</span>Se igual valor calculado al total a pagar.</span>
+<span id=""><span class="pr-n mr-3">10</span>Si no se cumple la condición anterior, entonces se pregunta si las horas extras son mayores a 8 horas.</span>
+<span id=""><span class="pr-n mr-3">11</span>De ser asi, se continua con el resto del programa.</span>
+<span id=""><span class="pr-n mr-3">12</span>Luego se calculan el resto de horas al doble de precio.</span>
+<span id=""><span class="pr-n mr-3">13</span>Se calcula el total a pagar sumando las horas pagadas al doble y las horas pagadas al triple.</span>
+<span id=""><span class="pr-n mr-3">14</span>Finalizando, se calcula el total a pagar sumando las horas pagdas al precio normal, con las horas pagadas al doble y al triple.</span>
+<span id=""><span class="pr-n mr-3">15</span>Se imprime en pantalla el valor total que se le debe pagar al trabajador.</span>
         </code>
       </pre>
         </div>
@@ -124,5 +145,5 @@ Condición else - ejemplo 6
 <script>
     hljs.initHighlightingOnLoad()      
 </script>
-<script src="{% static 'js/for/ejemplos/ejemplo1.js' %}"></script>
+<script src="{% static 'js/else/ejemplo6.js' %}"></script>
 {% endblock scripts %}

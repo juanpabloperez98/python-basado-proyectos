@@ -25,7 +25,7 @@ Condición else - ejemplo 1
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             <li class="nav-item">
-                <a class="nav-link" href="/ciclosfor#ejemplos"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:celse' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
             </li>
             </li>
         </ul>
@@ -44,9 +44,8 @@ Condición else - ejemplo 1
         <h1 class="title-modul text-center my-3">Enunciado</h1>
         <div class="container">
             <p>
-                Realizar un programa que pida dos valores, uno de inicio y otro de fin, e imprimir la suma total de los
-                valores comprendidos entre el valor de inicio y el valor de fin. Se debe verificar que el valor de
-                inicio sea menor que el valor de fin.
+                Pida al usuario que ingrese un número y determinar si el número es par, es multiplo de tres o 
+                no es ninguno de los dos.
             </p>
         </div>
         <button class="btn btn-block botonBlue" id="start">Empezar</button>
@@ -60,14 +59,13 @@ Condición else - ejemplo 1
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id="1"><span class="pr-n mr-3">1</span>inicio = int(input("Ingrese numero inicio: "))</span>
-<span id="2"><span class="pr-n mr-3">2</span>fin = int(input("Ingrese numero fin: "))</span>
-<span id="3"><span class="pr-n mr-3">3</span>if(inicio < fin):</span>
-<span id="3"><span class="pr-n mr-3">4</span>    suma = 0</span>
-<span id="3"><span class="pr-n mr-3">5</span>    for i in range(inicio,fin):</span>
-<span id="3"><span class="pr-n mr-3">6</span>        suma += i</span>
-<span id="3"><span class="pr-n mr-3">7</span>    print("La suma total es: ",suma)</span>
-<span id="3"><span class="pr-n mr-3">8</span>else: print("Inicio no es menor a fin")</span>
+<span id="1"><span class="pr-n mr-3">1</span>n = int(input("Ingrese el primer número: "))</span>
+<span id="2"><span class="pr-n mr-3">2</span>if n%2 == 0:</span>
+<span id="3"><span class="pr-n mr-3">3</span>   print("El número ingresado es par.")</span>
+<span id="3"><span class="pr-n mr-3">4</span>elif n%3 == 0:</span>
+<span id="3"><span class="pr-n mr-3">5</span>   print("El número ingresado es multiplo de 3.")</span>
+<span id="3"><span class="pr-n mr-3">6</span>else:</span>
+<span id="3"><span class="pr-n mr-3">7</span>   print("El número no es ni par, ni multiplo de 3.")</span>
         </code>
       </pre>
         </div>
@@ -75,10 +73,7 @@ Condición else - ejemplo 1
         <div class="container code mt-2 desactivate" id="date">
             <form class="mt-3">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese numero inicio:">
-                </div>
-                <div class="form-group desactivate" id="parent-1">
-                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese numero fin:">
+                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese el primer número: ">
                 </div>
             </form>
         </div>
@@ -96,7 +91,7 @@ Condición else - ejemplo 1
                 Seguir</button>
             <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i>
                 Explicar codigo</button>
-            <a id="reiniciar" href="/for-ejemplo1" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
+            <a id="reiniciar" href="/else-ejemplo1" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
                 Reiniciar</a>
         </div>
 
@@ -108,9 +103,14 @@ Condición else - ejemplo 1
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id=""><span class="pr-n mr-3">1</span>Declaramos una variable llamada "numero" y la igualamos al valor que ingreso el usuario.</span>
-<span id=""><span class="pr-n mr-3">2</span>Utilizamos el operador *= para multiplicar "numero" por 2.</span>
-<span id=""><span class="pr-n mr-3">3</span>Imprimimos el doble del "numero".</span>
+<span id=""><span class="pr-n mr-3">1</span>Se pide al usuario que ingrese un número.</span>
+<span id=""><span class="pr-n mr-3">2</span>Se comprueba si el módulo de este número con dos es igual a cero.</span>
+<span id=""><span class="pr-n mr-3">3</span>De ser asi, se imprime en pantalla que el número es par.</span>
+<span id=""><span class="pr-n mr-3">4</span>Si no se cumple la condición anterior, se comprueba si el módulo del número con tres es igual a cero.</span>
+<span id=""><span class="pr-n mr-3">5</span>De cumplirse la condición anterior, se imprime en pantalla que el número es multiplo de tres.</span>
+<span id=""><span class="pr-n mr-3">6</span>Si no se cumplen las dos condiciones, entonces se continua con el resto del programa.</span>
+<span id=""><span class="pr-n mr-3">7</span>Se imprime en pantalla un mensaje diciendo que el número ni es par, ni es multiplo de tres.</span>
+
         </code>
       </pre>
         </div>
@@ -124,5 +124,5 @@ Condición else - ejemplo 1
 <script>
     hljs.initHighlightingOnLoad()      
 </script>
-<script src="{% static 'js/for/ejemplos/ejemplo1.js' %}"></script>
+<script src="{% static 'js/else/ejemplo1.js' %}"></script>
 {% endblock scripts %}

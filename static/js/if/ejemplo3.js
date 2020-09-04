@@ -74,5 +74,4 @@
         document.getElementById('codigo').setAttribute("class","container row mx-auto mt-5")
     }
     document.getElementById('start').addEventListener('click',empezar)
-    alert("Buca es marica.")
 }())

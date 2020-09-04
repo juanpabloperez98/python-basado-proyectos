@@ -25,7 +25,7 @@ Condición else - ejemplo 5
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             <li class="nav-item">
-                <a class="nav-link" href="/ciclosfor#ejemplos"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
+                <a class="nav-link" href="{% url 'estructuras_seleccion_app:celse' %}"><i class="fas fa-undo-alt mr-2"></i>Volver</a>
             </li>
             </li>
         </ul>
@@ -38,15 +38,15 @@ Condición else - ejemplo 5
 <!-- Enunciado -->
 <div class="container row mx-auto mt-5" id="enunciado">
     <div class="col-lg-12 text-center my-3 mx-auto">
-        <h1 class="">Ejemplo 1</h1>
+        <h1 class="">Ejemplo 5</h1>
     </div>
     <div class="col-lg-6 part-1 mx-auto mt-5 p-5" style="margin-bottom: 5%; height: 100%;">
         <h1 class="title-modul text-center my-3">Enunciado</h1>
         <div class="container">
             <p>
-                Realizar un programa que pida dos valores, uno de inicio y otro de fin, e imprimir la suma total de los
-                valores comprendidos entre el valor de inicio y el valor de fin. Se debe verificar que el valor de
-                inicio sea menor que el valor de fin.
+                Pedir al usuario que ingrese por teclado 3 números enteros n1, n2, n3, se desea realizar un 
+                programa que imprima por pantalla los números ingresados por el usuario de manera ascendente, 
+                es decir, de menor a mayor.
             </p>
         </div>
         <button class="btn btn-block botonBlue" id="start">Empezar</button>
@@ -60,14 +60,24 @@ Condición else - ejemplo 5
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id="1"><span class="pr-n mr-3">1</span>inicio = int(input("Ingrese numero inicio: "))</span>
-<span id="2"><span class="pr-n mr-3">2</span>fin = int(input("Ingrese numero fin: "))</span>
-<span id="3"><span class="pr-n mr-3">3</span>if(inicio < fin):</span>
-<span id="3"><span class="pr-n mr-3">4</span>    suma = 0</span>
-<span id="3"><span class="pr-n mr-3">5</span>    for i in range(inicio,fin):</span>
-<span id="3"><span class="pr-n mr-3">6</span>        suma += i</span>
-<span id="3"><span class="pr-n mr-3">7</span>    print("La suma total es: ",suma)</span>
-<span id="3"><span class="pr-n mr-3">8</span>else: print("Inicio no es menor a fin")</span>
+<span id="1"><span class="pr-n mr-3">1</span>n1 = int(input("Ingrese el primer número: "))</span>
+<span id="2"><span class="pr-n mr-3">2</span>n2 = int(input("Ingrese el segundo número: "))</span>
+<span id="3"><span class="pr-n mr-3">3</span>n3 = int(input("Ingrese el tercer número: "))</span>
+<span id="3"><span class="pr-n mr-3">4</span>if n1 < n2 and n2 < n3:</span>
+<span id="3"><span class="pr-n mr-3">5</span>   if n2 < n3:</span>
+<span id="3"><span class="pr-n mr-3">6</span>       print(n1, n2, n3)</span>
+<span id="3"><span class="pr-n mr-3">7</span>   else n3 < n2:</span>
+<span id="3"><span class="pr-n mr-3">8</span>       print(n1, n3, n2)</span>
+<span id="3"><span class="pr-n mr-3">9</span>elif n2 < n1 and n2 < n3:</span>
+<span id="3"><span class="pr-n mr-3">10</span>  if n1 < n3:</span>
+<span id="3"><span class="pr-n mr-3">11</span>      print(n2, n1, n3)</span>
+<span id="3"><span class="pr-n mr-3">12</span>  else n3 < n1:</span>
+<span id="3"><span class="pr-n mr-3">13</span>      print(n2, n3, n1)</span>
+<span id="3"><span class="pr-n mr-3">14</span>elif n3 < n1 and n3 < n2:</span>
+<span id="3"><span class="pr-n mr-3">15</span>  if n1 < n2:</span>
+<span id="3"><span class="pr-n mr-3">16</span>      print(n3, n1, n2)</span>
+<span id="3"><span class="pr-n mr-3">17</span>  else n2 < n1:</span>
+<span id="3"><span class="pr-n mr-3">18</span>      print(n3, n2, n1)</span>
         </code>
       </pre>
         </div>
@@ -75,10 +85,13 @@ Condición else - ejemplo 5
         <div class="container code mt-2 desactivate" id="date">
             <form class="mt-3">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese numero inicio:">
+                    <input type="text" class="form-control" id="dato-1" placeholder="Ingrese el primer número:">
                 </div>
                 <div class="form-group desactivate" id="parent-1">
-                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese numero fin:">
+                    <input type="text" class="form-control" id="dato-2" placeholder="Ingrese el segundo número:">
+                </div>
+                <div class="form-group desactivate" id="parent-2">
+                    <input type="text" class="form-control" id="dato-3" placeholder="Ingrese el tercer número:">
                 </div>
             </form>
         </div>
@@ -96,7 +109,7 @@ Condición else - ejemplo 5
                 Seguir</button>
             <button id="explicar" class="btn btn-outline-success desactivate"><i class="fas fa-align-justify"></i>
                 Explicar codigo</button>
-            <a id="reiniciar" href="/for-ejemplo1" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
+            <a id="reiniciar" href="/else-ejemplo5" class="btn btn-outline-success desactivate"><i class='fas fa-undo-alt mr-2'></i>
                 Reiniciar</a>
         </div>
 
@@ -108,9 +121,24 @@ Condición else - ejemplo 5
         <div class="container code text-justify mt-2">
             <pre>
         <code class="language-python">
-<span id=""><span class="pr-n mr-3">1</span>Declaramos una variable llamada "numero" y la igualamos al valor que ingreso el usuario.</span>
-<span id=""><span class="pr-n mr-3">2</span>Utilizamos el operador *= para multiplicar "numero" por 2.</span>
-<span id=""><span class="pr-n mr-3">3</span>Imprimimos el doble del "numero".</span>
+<span id=""><span class="pr-n mr-3">1</span>Se pide al usuario que ingrese el primer número por teclado.</span>
+<span id=""><span class="pr-n mr-3">2</span>Se pide al usuario que ingrese el segundo número por teclado.</span>
+<span id=""><span class="pr-n mr-3">3</span>Se pide al usuario que ingrese el tercer número por teclado.</span>
+<span id=""><span class="pr-n mr-3">4</span>Se compara para saber si el primer número es el más pequeño de todos.</span>
+<span id=""><span class="pr-n mr-3">5</span>Se compara para saber si el segundo número es menor que el tercero.</span>
+<span id=""><span class="pr-n mr-3">6</span>Se imprime en pantalla el primer número, luego el segundo y por último el tercero.</span>
+<span id=""><span class="pr-n mr-3">7</span>De no cumplirse la condición anterior, se continua con el resto del programa.</span>
+<span id=""><span class="pr-n mr-3">8</span>Se imprime en pantalla el primer número, luego el tercero y por último el segundo.</span>
+<span id=""><span class="pr-n mr-3">9</span>De no cumplirse la condición anterior, se compara para saber si el segundo número es el más pequeño de todos.</span>
+<span id=""><span class="pr-n mr-3">10</span>Se compara para saber si el primer número es menor que el tercero.</span>
+<span id=""><span class="pr-n mr-3">11</span>Se imprime en pantalla el segundo número, luego el primero y por último el tercero.</span>
+<span id=""><span class="pr-n mr-3">12</span>De no cumplirse la condición anterior, se continua con el resto del programa.</span>
+<span id=""><span class="pr-n mr-3">13</span>Se imprime en pantalla el segundo número, luego el tercero y por último el primero.</span>
+<span id=""><span class="pr-n mr-3">14</span>De no cumplirse las dos condiciones anteriores, se compara para saber si el tercer número es el más pequeño de todos.</span>
+<span id=""><span class="pr-n mr-3">15</span>Se compara para saber si el primer número es menor que el segundo.</span>
+<span id=""><span class="pr-n mr-3">16</span>Se imprime en pantalla el tercer número, luego el primero y por último el segundo.</span>
+<span id=""><span class="pr-n mr-3">17</span>De no cumplirse la condición anterior, se continua con el resto del prgrama.</span>
+<span id=""><span class="pr-n mr-3">18</span>Se imprime en pantalla el tercer número, luego el segundo y por último el primero.</span>
         </code>
       </pre>
         </div>
@@ -124,5 +152,5 @@ Condición else - ejemplo 5
 <script>
     hljs.initHighlightingOnLoad()      
 </script>
-<script src="{% static 'js/for/ejemplos/ejemplo1.js' %}"></script>
+<script src="{% static 'js/else/ejemplo5.js' %}"></script>
 {% endblock scripts %}
